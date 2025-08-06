@@ -989,7 +989,7 @@
                 border-bottom: none;
                 > ul{display: block;
                   > li{ width: 94%;
-                    > a{ font-size: $fs-15; color: #222; padding: 15px 0; background: url(../images/common/m_menu_arrow_down.png) no-repeat right 20px center/ 9px auto;
+                    > a{ font-size: $fs-15; color: $color-grey1; padding: 15px 0; background: url(../images/common/m_menu_arrow_down.png) no-repeat right 20px center/ 9px auto;
                       &:before{display: none;}
                     }
                     // 하위 메뉴가 없는 메뉴 항목의 배경 제거 (모바일)
@@ -1447,6 +1447,7 @@ body.sitemap-open {
           border-right: unset;
         }
         button {
+          font-size: $fs-16;
           width: 202px;
           color: #000;
           height: 44px;

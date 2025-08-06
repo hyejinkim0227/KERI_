@@ -254,6 +254,9 @@ section {
 // ==========================================================================
 .main {
 
+button{
+  font-size: $fs-16;
+}
   h2 {
     position: relative;
     font-family: $ff-sbaggro;
@@ -1516,13 +1519,10 @@ section {
       z-index: 2;
       //max-width: min(1600px, 100%); // 최대 너비를 늘리고 반응형으로 조정
       margin-left: 0;
-      //height: 830px;
-      //height: 100vh !important;
-      //width: 100%;
+
       display: flex;
       align-items: center;
-      //overflow: visible; // visual 이미지가 보이도록
-      //min-width: 320px; // 최소 너비 보장
+
       transition: height 0.3s ease; // 높이 변화 시 부드러운 전환
 
       &.ready {
@@ -1539,24 +1539,6 @@ section {
       margin-left: 0;
       margin-right: 0;
       max-height: 900px;
-
-      // .slick-list {
-      //   height: 100%;
-      //   overflow: hidden;
-      //   padding: 81px 0 !important;
-      //   width: 320px;
-      //   transition: all 0.3s ease; // 부드러운 전환 효과
-      // }
-
-      // .slick-track {
-      //   height: 100%;
-      //   display: flex !important;
-      //   flex-direction: column;
-      //   transition: transform 0.3s ease; // 슬라이더 이동 시 부드러운 전환
-      //   .slick-slide{
-      //     min-height: unset !important;
-      //   }
-      // }
 
       .swiper-wrapper {
         height: 100%;
@@ -1875,50 +1857,7 @@ section {
       }
     }
 
-    /*
-    @media (max-width: 1420px) {
-      .domain-content { max-width: 700px; transition: all 0.3s ease;}
-      
-      &.even-slide{
-        .domain-controls{
-          right: calc(50vw - 500px); 
-          top: calc(50vh - 50px);
-        }
-
-        .main .domain .domain-controls-wrap .domain-controls
-        .domain-content{
-          .content-slide{
-            .content-slide-inner{
-              height: 350px;
-              padding: 46px 50px;
-              right: 0;
-            }
-            .visual{
-            left: 0;
-            }
-          }
-        }
-    }
-    .domain-controls{
-      right: calc(100% - 600px);
-    }
-      .domain-content{
-        padding-left: 30px;
-        .content-slide{
-          .visual{
-            right: 0;
-          }
-        }
-      }
-
-    //   &.even-slide{
-    //     .domain-controls{
-    //       right: calc(50vw - 380px); 
-    //     }
-    // }
-    }
-    */
-
+   
     // 반응형 - 모바일 (1080px 이하)
     @media (max-width: 1330px) {
       padding: 120px !important;
@@ -2454,34 +2393,6 @@ section {
           z-index: 4;
           flex-direction: column;
 
-          // 반응형 처리
-          // @media screen and (max-width: 1200px) {
-          //   left: calc(100% + 15px);
-          //   top: 80px;
-          // }
-
-          // @media screen and (max-width: 1080px) {
-          //   left: calc(100% + 10px);
-          //   top: 60px;
-
-          //   a {
-          //     width: 50px;
-          //     height: 50px;
-          //   }
-          // }
-
-          // @media screen and (max-width: 960px) {
-          //   position: static;
-          //   flex-direction: row;
-          //   justify-content: center;
-          //   margin-top: 20px;
-
-          //   a {
-          //     width: 45px;
-          //     height: 45px;
-          //   }
-          // }
-
           a {
             width: 60px;
             height: 60px;
@@ -2779,61 +2690,7 @@ section {
           padding: 0;
         }
 
-        // .news_tab_menu {
-        //   background: transparent;
-        //   width: 100%;
-        //   margin-top: 0;
-        //   display: flex;
-        //   justify-content: center;
-        //   gap: 0;
-        //   align-items: center;
-        //   padding-top: 0;
-        //   position: relative;
-        //   z-index: 1;
-
-        //   li {
-        //     border-bottom: none;
-        //     display: flex;
-
-        //     width: 100%;
-
-        //     &:first-child {
-        //       border-bottom: none;
-
-        //       button,
-        //       a {
-        //         height: 30px;
-        //         font-size: $fs-15;
-
-        //         &::after {
-        //           display: none;
-        //         }
-        //       }
-        //     }
-
-        //     button,
-        //     a {
-        //       height: 30px;
-        //       font-size: $fs-16;
-        //       font-weight: 400;
-        //       align-items: center;
-        //       justify-content: space-around;
-
-
-        //       &::after {
-        //         display: none;
-        //       }
-
-        //       &:hover {
-        //         color: #183365;
-        //       }
-        //     }
-
-
-
-
-        //   }
-        // }
+ 
         .news_tab_menu {
           padding: 0 20px;
           width: 100%;

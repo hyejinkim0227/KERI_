@@ -132,7 +132,7 @@ input[type=radio] {
         span{display: block; width: calc(100% - 105px); height: 44px; line-height: 44px; position: absolute; left: 0; top: 0; z-index: 0; padding: 0 20px; font-size: $fs-17; font-weight: 400; color: $color-grey1; border: 1px solid $bor_gray; border-radius: 6px;}
 
     }
-    button{width: 100px; background: #fff !important; color: #000 !important;;}
+    button{width: 100px; background: #fff !important; color: $color-bk !important;;}
 }
 
 // file 리스트
@@ -167,20 +167,20 @@ input[type=radio] {
 
 /*button @@@0803 종미수정*/
 button{
-    color: #000; font-size:$fs-18; font-weight: 400; height: 50px; border: none; line-height: 50px;
+    color: $color-bk; font-size:$fs-18; font-weight: 400; height: 50px; border: none; line-height: 50px;
     
     &[data-btn] {padding: 0 30px; border-radius: 9px; border: 1px solid $bor_gray;
         &.btn_sm{height: 44px; line-height: 44px; font-size: $fs-15; border-radius: 6px;}
     }
     &[data-btn="blue"]{background: $color-blue; color :#fff; border: none;}
-    &[data-btn="black"]{background: #fff; color :#000; border-color: #000;}
+    &[data-btn="black"]{background: #fff; color :$color-bk; border-color: $color-bk;}
     &[data-btn="blueBg"]{background: #eaf1ff; color : $color-blue; border-color: $color-blue;}
-    &[data-btn="line"]{background: #fff; color :#000; border-color: #000;}
+    &[data-btn="line"]{background: #fff; color :$color-bk; border-color: $color-bk;}
     &[data-btn="gray"]{background: #717171; color :#fff; border-color: #717171;}
-    &[data-btn="blackBg"]{background: #000; color :#fff; border-color: none}
+    &[data-btn="blackBg"]{background: $color-bk; color :#fff; border-color: none}
 
 
-    &[data-btn="table_card"]{background: #fff; color :#222; border-color: $bor_gray; font-size:$fs-16; border-radius: 10px; border: 1px solid $bor_gray;
+    &[data-btn="table_card"]{background: #fff; color :$color-grey1; border-color: $bor_gray; font-size:$fs-16; border-radius: 10px; border: 1px solid $bor_gray;
         &::before{display: inline-block; content: ""; width: 40px; height: 49px; background: url(../images/sub/table_card.png) no-repeat left center; vertical-align: top;}
         &.active{
             &::before{background-image: url(../images/sub/table_list.png);}
@@ -259,7 +259,7 @@ a{
                         &[data-type="print"] a{background: url(../images/sub/icon_lnb_print.png) no-repeat center center;}
                         &[data-type="sns"] a{background: url(../images/sub/icon_lnb_sns.png) no-repeat center center;}
                         div{
-                            display: none; position: absolute; top: 60px; right: 5px; width: 172px; height: 142px; border: 1px solid #000; background: #fff; z-index: 1; transition: all 0.4s; box-shadow: 0 10px 10px rgba(0,0,0,0.15); opacity: 0; padding: 30px 10px 10px; border-radius: 7px;
+                            display: none; position: absolute; top: 60px; right: 5px; width: 172px; height: 142px; border: 1px solid $color-bk; background: #fff; z-index: 1; transition: all 0.4s; box-shadow: 0 10px 10px rgba(0,0,0,0.15); opacity: 0; padding: 30px 10px 10px; border-radius: 7px;
                             ul{
                                 display: flex; flex-wrap: wrap;
                                 li{
@@ -336,7 +336,7 @@ a{
     background: #f4f6f9; padding: 30px 50px; border-radius: 20px; margin-bottom: 40px;
     h4{
         display: flex; align-items: center;
-        strong{ display: block; font-size: $fs-18; font-weight: 600; color: #000; line-height: 1.5em; width: calc(100% - 166px);}
+        strong{ display: block; font-size: $fs-18; font-weight: 600; color: $color-bk; line-height: 1.5em; width: calc(100% - 166px);}
         &::before{display: inline-block; content: ""; width: 126px; height: 126px; background: #fff url(../images/sub/title_101.png) no-repeat center; 
             border-radius: 40px 20px 40px 20px; box-shadow: 0 0 15px rgba(24,62,119, 0.15); margin-right: 40px;}
     }
@@ -410,15 +410,15 @@ a{
 // 타이틀 박스
 .titlebox{ margin-bottom: 10px;
     h5{
-        font-size: $fs-16; color: #000; font-weight: 400; line-height: 30px;
-        b{font-size: $fs-16; color: #000; line-height: 30px; margin: 0 3px; vertical-align: top;
+        font-size: $fs-16; color: $color-bk; font-weight: 400; line-height: 30px;
+        b{font-size: $fs-16; color: $color-bk; line-height: 30px; margin: 0 3px; vertical-align: top;
             &.blue{color: $color-blue;}
         }
     }
     div{
         button{margin-left: 10px;}
     }
-    h2{font-size: $fs-24; color: #000; font-weight: 600; line-height: 30px; margin-bottom: 10px; font-family: SBAggro, Pretendard, sans-serif;}
+    h2{font-size: $fs-24; color: $color-bk; font-weight: 600; line-height: 30px; margin-bottom: 10px; font-family: SBAggro, Pretendard, sans-serif;}
 
     // 타이틀 박스 반응형
     @media screen and (max-width: 720px) {
@@ -551,7 +551,7 @@ a{
     border-top: 2px solid $color-grey1;
     th, td{padding: 10px 20px; color: $color-grey1; border-bottom: 1px solid $bor_form; text-align: left; font-size: $fs-17; font-weight: 400; vertical-align: middle;}
     th{
-        background: #f8f9fa; font-weight: 500; color: #000; padding-left: 30px;
+        background: #f8f9fa; font-weight: 500; color: $color-bk; padding-left: 30px;
     }
     // table 반응형
     @media (max-width: 1080px) {
@@ -663,7 +663,7 @@ span.noti{
 
 // 게시판 상세
 .board_detail{
-    border-top: 2px solid #000; border-bottom: 1px solid #b2b2b2; padding-bottom: 40px;
+    border-top: 2px solid $color-bk; border-bottom: 1px solid #b2b2b2; padding-bottom: 40px;
     .info{
         padding: 35px 20px 25px; border-bottom: 1px solid #e9e9e9;
         h2 {
@@ -681,9 +681,9 @@ span.noti{
     }
     .contents{
         padding: 30px 20px 0;
-        h2{font-size:$fs-20; font-weight: 500; color: #000; line-height: 1.4em; margin-bottom: 30px;}
-        p{font-size: $fs-17; font-weight: 300; color: #000; line-height: 1.8em;}
-        h4{font-size: $fs-17; font-weight: 500; color: #000; line-height: 1.4em; margin-bottom: 10px; display: flex; align-items: center;
+        h2{font-size:$fs-20; font-weight: 500; color: $color-bk; line-height: 1.4em; margin-bottom: 30px;}
+        p{font-size: $fs-17; font-weight: 300; color: $color-bk; line-height: 1.8em;}
+        h4{font-size: $fs-17; font-weight: 500; color: $color-bk; line-height: 1.4em; margin-bottom: 10px; display: flex; align-items: center;
             &::before{display: inline-block; content: ""; width: 16px; height: 16px; border: 1px solid #aaa;margin-right: 10px;}
         }
         .detail_file{margin-top: 40px;}
@@ -695,7 +695,7 @@ span.noti{
         padding-bottom: 30px;
         .info{
             padding: 20px 0;
-            h2 b{font-size: $fs-21; color: #222; display: block; margin: 12px 0 8px;}
+            h2 b{font-size: $fs-21; color: $color-grey1; display: block; margin: 12px 0 8px;}
             ul{gap: 0 20px; margin-top: 5px;
                 li:not(:last-child)::after{right: -10px;}
             }
@@ -718,12 +718,12 @@ span.noti{
 
 // 상세 파일
 .detail_file{
-    dt{font-size: $fs-20; font-weight: 500; color: #000; line-height: 1.4em; margin-bottom: 15px;}
+    dt{font-size: $fs-20; font-weight: 500; color: $color-bk; line-height: 1.4em; margin-bottom: 15px;}
     dd{
         background: #f7f7f9; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; padding: 10px 10px 10px 20px;
 
         >a{
-            font-size: $fs-16; font-weight: 400; color: #000; line-height: 20px; position: relative; display: flex; align-items: center;
+            font-size: $fs-16; font-weight: 400; color: $color-bk; line-height: 20px; position: relative; display: flex; align-items: center;
 
             &:before{content: ""; display: i; width: 20px; height: 20px; line-height: 20px; background: url(../images/sub/icon_file2.png) no-repeat center / auto 16px; margin-right: 5px;}
             span{font-size: $fs-15; font-weight: 400; color: #707070; line-height: 20px;}
@@ -732,7 +732,7 @@ span.noti{
         div{
             display: flex; gap: 0 6px; align-items: center; width: 240px; justify-content: right;
             a{
-                font-size:$fs-15; font-weight: 400; color: #000; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;
+                font-size:$fs-15; font-weight: 400; color: $color-bk; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;
 
                 &[data-btn="download"]{background: #fff url(../images/sub/icon_download.png) no-repeat right 12px center;}
                 &[data-btn="preview"]{background: #fff url(../images/sub/icon_view.png) no-repeat right 12px center;}
@@ -760,7 +760,7 @@ span.noti{
     a{
         border-bottom: 1px solid #dcdcdc; padding: 30px 0; display: flex; align-items: center;
         strong, span{
-            display: block; font-size: $fs-17; color: #000; line-height: 1.4em; font-weight: 500;
+            display: block; font-size: $fs-17; color: $color-bk; line-height: 1.4em; font-weight: 500;
         }
         strong{ width: 120px; text-align: center; position: relative;
             &::after{content: ""; display: block; width: 1px; height: 17px; background: #dcdcdc; position: absolute; right: 0; top: 4px;}
@@ -786,9 +786,9 @@ span.noti{
         li{
             width: 50%; position: relative; z-index: 1;
             a{
-                display: block; font-size: $fs-17; font-weight: 400; color: #000; line-height: 50px; background: url(../images/sub/icon_company.png) no-repeat left center / auto 50px; padding-left: 70px; padding: 20px 0 20px 70px; 
+                display: block; font-size: $fs-17; font-weight: 400; color: $color-bk; line-height: 50px; background: url(../images/sub/icon_company.png) no-repeat left center / auto 50px; padding-left: 70px; padding: 20px 0 20px 70px; 
                 strong,span{font-weight: 600; font-size: $fs-19; line-height: 1.4em; margin-right: 40px;}
-                span{color:#222;}
+                span{color:$color-grey1;}
             }
             &:last-child{
                 a{background: url(../images/sub/icon_question.png) no-repeat 30px center / auto 50px; padding-left: 100px;}

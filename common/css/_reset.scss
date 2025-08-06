@@ -1,4 +1,4 @@
-@use "sass:math";
+
 /* SUIT 폰트 - 여러 굵기 (공공기관 호환성 최적화) */
 @font-face {
   font-family: 'SUIT';
@@ -393,7 +393,7 @@ $ff-centuryGothic:'century-gothic-bold','Pretendard';
 #skipToMenu a {display: block;height: 1px;width: 1px;margin: -1px;overflow: hidden;text-align: center;color: #000;white-space: nowrap;}
 #skipToMenu a:focus,#skipToMenu a:active {position: absolute;top: 0;left: 0;z-index: 999999;height: auto;width: 100%;padding: 5px;margin-bottom: 10px;background: #767575;color: #fff;font-weight: bold;}
 
-
+//인쇄용 레이아웃
 @media print {
 	#seoul-common-gnb, .gnb,
 	#header, #allmenu, .nav,
@@ -404,117 +404,3 @@ $ff-centuryGothic:'century-gothic-bold','Pretendard';
 		width: 200px;
 	}
 }
-
-//font-size
-$fs-10:0.625rem;// 10px
-$fs-12:0.75rem;// 12px
-$fs-13:0.8125rem;// 13px
-$fs-14:0.875rem;// 14px
-$fs-15:0.9375rem;// 15px
-$fs-16:1rem;// 16px
-$fs-17:1.0625rem;// 17px
-$fs-18:1.125rem;// 18px
-$fs-19:1.1875rem;// 19px
-$fs-20:1.25rem;// 20px
-$fs-21:1.3125rem;// 21px
-$fs-22:1.375rem;// 22px
-$fs-23:1.4375rem;// 23px
-$fs-24:1.5rem;// 24px
-$fs-25:1.5625rem;// 25px
-$fs-26:1.625rem;// 26px
-$fs-28:1.75rem;// 28px
-$fs-30:1.875rem;// 30px
-$fs-32:2rem;// 32px
-$fs-34:2.125rem;// 34px
-$fs-40:2.5rem;// 40px
-$fs-46:2.875rem;// 46px
-$fs-60:3.75rem;// 60px
-
-//헤더 높이
-$header-height: 85px;
-
-
-
-// ... 처리
-//@mixin ell2{text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
-
-//jm
-@mixin w1300 { max-width: 1360px; padding: 0 30px; margin: 0 auto; 
-  @media (max-width: 900px) {padding: 0 15px;}
-}
-@mixin both { display: block; content: ""; clear: both; }
-@mixin elli { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-@mixin elli2 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; text-overflow: ellipsis;}
-@mixin elli_no {display: block; -webkit-line-clamp: unset; -webkit-box-orient: unset; overflow: visible; text-overflow: unset; white-space: normal;}
-
-
-
-
-/*요소중앙정렬*/
-@mixin align($align,$font-size){
-    font-size:0;
-    &:before{display:inline-block;height:100%;content:''; vertical-align:$align;}
-    > :nth-child(n) {font-size:$font-size;display:inline-block;vertical-align:$align;}
-}
-
-/*아이템 정렬*/
-@mixin ftItem($i,$pd){
-	> :nth-child(n){
-		float:left;
-		$width-percent: math.div(100, $i) * 1%;
-		$margin-px: math.div(($i - 1) * $pd, $i) * 1px;
-		width:calc(#{$width-percent} - #{$margin-px});
-		margin-right:#{$pd}px;
-	}
-	> :nth-of-type(#{$i}n){margin-right:0;}
-}
-
-// 반응형 중단점
-$container: 1920px;
-$pc1200: 1200px;
-$tb1080: 1080px;
-$m720: 720px;
-
-//스크롤바
-@mixin scrollBar{
-  &::-webkit-scrollbar {
-    width: 6px;
-    height:6px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #17469d;
-    border-radius: 6px;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: #d4d4d4;
-    border-radius: 6px;
-  }
-}
-@mixin scrollBar2{
-  &::-webkit-scrollbar {
-    width: 8px;
-    height:8px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #17469d;
-    border-radius: 8px;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-    border-radius: 8px;
-  }
-}
-
-
-
-@mixin maxWidth($width){
-	@media screen and (max-width:$width){
-        @content;
-    }
-}
-@mixin minWidth($width){
-	@media screen and (min-width:$width){
-        @content;
-    }   
-}
-

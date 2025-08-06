@@ -989,7 +989,7 @@
                 border-bottom: none;
                 > ul{display: block;
                   > li{ width: 94%;
-                    > a{ font-size: $fs-15; color: #222; padding: 15px 0; background: url(../images/common/m_menu_arrow_down.png) no-repeat right 20px center/ 9px auto;
+                    > a{ font-size: $fs-15; color: $color-grey1; padding: 15px 0; background: url(../images/common/m_menu_arrow_down.png) no-repeat right 20px center/ 9px auto;
                       &:before{display: none;}
                     }
                     // 하위 메뉴가 없는 메뉴 항목의 배경 제거 (모바일)
@@ -1289,9 +1289,9 @@ body.sitemap-open {
           margin-bottom: 25px;
           width: calc((100% - 132px) / 4);
           
-          // ol li a에 hover했을 때 부모 메뉴에 $color1 적용
+          // ol li a에 hover했을 때 부모 메뉴에 $color-blue2 적용
           &:has(ol li a:hover) > a {
-            color: $color1;
+            color: $color-blue2;
           }
           
           > a {
@@ -1309,7 +1309,7 @@ body.sitemap-open {
             text-align: left;
             font-family: $ff-pretendardgov;
             &:hover{
-              color: $color1;
+              color: $color-blue2;
             }
             &[target="_blank"] {
               width: calc(100% + 20px);
@@ -1447,6 +1447,7 @@ body.sitemap-open {
           border-right: unset;
         }
         button {
+          font-size: $fs-16;
           width: 202px;
           color: #000;
           height: 44px;

@@ -1,26 +1,32 @@
+//============헤더 높이=========//
+$header-height: 85px;
 
-//메인 컬러
-$color1:#17469d;
-$grey:#666;
-$bg-color1:#e9a027;
-$bg-color2:#1f60c2;
 
-//서브 컬러
+//============컬러============//
+$color-bk : #000;
+$color-wh : #fff;
+$color-grey1 : #222;
+$color-grey2:#666;
+$color-skyblue : #177ac8;
+$color-blue: #1f60c2;
+$color-blue2 : #17469d;
+$color-blue3 : #1d5fe8;
+$color-orange:#e9a027;
+
 $placeholder : #4c4e5a; //placeholder
-$color_2 : #222;
-$color_0 : #000;
-$skyblue : #177ac8;
-$blue: #1f60c2;
-$blue2 : #17469d;
-$blue3 : #1d5fe8;
-.link, .blue {color: $blue3;}
-
-
-//border
+.link, .blue {color: $color-blue3;}
 $bor_form : #dbdee1;
 $bor_gray : #e1e3e1;
 
-//width
+
+
+//============반응형 중단점=========//
+$container: 1920px;
+$pc1200: 1200px;
+$tb1080: 1080px;
+$m720: 720px;
+
+//============width============//
 $w1500 : 1500px;
 $w1300 : 1300px;
 $w1100 : 1100px;
@@ -28,7 +34,34 @@ $w1000 : 1000px;
 $w900 : 900px;
 $w720 : 720px;
 
-//size
+
+//============font-size=========//
+$fs-10:0.625rem;// 10px
+$fs-12:0.75rem;// 12px
+$fs-13:0.8125rem;// 13px
+$fs-14:0.875rem;// 14px
+$fs-15:0.9375rem;// 15px
+$fs-16:1rem;// 16px
+$fs-17:1.0625rem;// 17px
+$fs-18:1.125rem;// 18px
+$fs-19:1.1875rem;// 19px
+$fs-20:1.25rem;// 20px
+$fs-21:1.3125rem;// 21px
+$fs-22:1.375rem;// 22px
+$fs-23:1.4375rem;// 23px
+$fs-24:1.5rem;// 24px
+$fs-25:1.5625rem;// 25px
+$fs-26:1.625rem;// 26px
+$fs-28:1.75rem;// 28px
+$fs-30:1.875rem;// 30px
+$fs-32:2rem;// 32px
+$fs-34:2.125rem;// 34px
+$fs-40:2.5rem;// 40px
+$fs-46:2.875rem;// 46px
+$fs-60:3.75rem;// 60px
+
+
+//============size============//
 .w100{width: 100px!important;}
 .w130{width: 130px;}
 .auto{flex: 1;}
@@ -47,6 +80,19 @@ $w720 : 720px;
 .mb40	{margin-bottom: 40px;}
 .mt40	{margin-top: 40px;}
 
+
+//============...처리 ============//
+@mixin w1300 { max-width: 1360px; padding: 0 30px; margin: 0 auto; 
+    @media (max-width: 900px) {padding: 0 15px;}
+  }
+@mixin both { display: block; content: ""; clear: both; }
+@mixin elli { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+@mixin elli2 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; text-overflow: ellipsis;}
+@mixin elli_no {display: block; -webkit-line-clamp: unset; -webkit-box-orient: unset; overflow: visible; text-overflow: unset; white-space: normal;}
+
+
+
+//============레이아웃 정렬============//
 
 // 영역나누기
 .flex { display: flex; align-items: center;}
@@ -67,24 +113,89 @@ $w720 : 720px;
 // 왼쪽 너비고정
 .flex_nF { display: flex; justify-content: center; align-items: center; 
     > div { &:first-child {flex: 1;} } 
-    @media (max-width: 720px) {display: block}
+    @media (max-width: 1080px) {display: block}
 }
 // 오른쪽 너비고정
 .flex_Fn { display: flex; justify-content: center; align-items: center; 
     > div { &:last-child {flex: 1;} } 
-    @media (max-width: 720px) {display: block}
+    @media (max-width: 1080px) {display: block}
 }
 // 리스트
 .flex_list { 
     display: flex; flex-wrap: wrap; align-items: center; 
     > div { &:last-child {flex: 1;} } 
-    @media (max-width: 720px) {display: block}
+    @media (max-width: 1080px) {display: block}
 }
 .btn_box{
     text-align: right; margin-top: 30px;
 
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         margin: 30px 0 0;
     }
     button,a{text-align: center;}
+}
+
+
+/*요소중앙정렬*/
+@mixin align($align,$font-size){
+    font-size:0;
+    &:before{display:inline-block;height:100%;content:''; vertical-align:$align;}
+    > :nth-child(n) {font-size:$font-size;display:inline-block;vertical-align:$align;}
+}
+  
+/*아이템 정렬*/
+@mixin ftItem($i,$pd){
+    > :nth-child(n){
+        float:left;
+        $width-percent: (100 / $i) * 1%;
+        $margin-px: (($i - 1) * $pd / $i) * 1px;
+        width:calc(#{$width-percent} - #{$margin-px});
+        margin-right:#{$pd}px;
+    }
+    > :nth-of-type(#{$i}n){margin-right:0;}
+}
+  
+  
+  
+//============스크롤바============//
+@mixin scrollBar{
+&::-webkit-scrollbar {
+    width: 6px;
+    height:6px;
+}
+&::-webkit-scrollbar-thumb {
+    background-color: #17469d;
+    border-radius: 6px;
+}
+&::-webkit-scrollbar-track {
+    background-color: #d4d4d4;
+    border-radius: 6px;
+}
+}
+@mixin scrollBar2{
+&::-webkit-scrollbar {
+    width: 8px;
+    height:8px;
+}
+&::-webkit-scrollbar-thumb {
+    background-color: #17469d;
+    border-radius: 8px;
+}
+&::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 8px;
+}
+}
+  
+  
+  
+@mixin maxWidth($width){
+    @media screen and (max-width:$width){
+        @content;
+    }
+}
+@mixin minWidth($width){
+    @media screen and (min-width:$width){
+        @content;
+    }   
 }

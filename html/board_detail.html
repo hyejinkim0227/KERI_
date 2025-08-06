@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국전기연구원 홈페이지에 오신것을 환영합니다.</title>
+  <!-- <link rel="shortcut" type="image/x-icon" href="../common/images/common/favicon.ico" />  파비콘 사용시-->
+
+
+  <link rel="stylesheet" href="../common/css/animate.css" >
+  <link rel="stylesheet" href="../common/css/jquery-ui.min.css" >
+  <link rel="stylesheet" href="../common/css/default.css" >
+
+  <!-- AOS CSS -->
+  <link href="../common/css/aos.css" rel="stylesheet">
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="../common/css/swiper-bundle.min.css" />
+  
+  <!-- 공통 js -->
+  <script src="../common/js/jquery-3.7.1.min.js"></script>
+  <script src="../common/js/swiper-bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="../common/js/aos.js"></script>
+  
+  
+  <!-- 공통 함수 (먼저 로드) -->
+  <script src="../common/js/common-shared.js"></script>
+  <!-- 사이트별 스크립트 -->
+  <script src="../common/js/common.js"></script>
+  <script src="../common/js/sub.js"></script>
+  <!-- //공통 js -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+      <div id="scale-container">
+        <!-- 스킵내비게이션 -->
+        <div class="skip_navi">
+          <strong class="sr-only">바로가기 메뉴</strong>
+          <a href="#contents">본문 바로가기</a>
+          <a href="#gnb">주메뉴 바로가기</a>
+        </div>
+        <!--//스킵내비게이션 -->
+        <!-- 헤더 -->
+        <div class="header">
+          <div class="head">
+            <h1 class="logo">
+              <a href="index.html"><span class="sr-only">한국전기연구원</span></a>
+            </h1>
+            <div id="gnb">
+              <ul class="dep1">
+                <li>
+                  <a href="sub_common.html">KERI소개</a>
+                  <div class="dep2_wrap">
+                    <div>
+                      <strong>KERI소개</strong>
+                      <span>About KERI</span>
+                    </div>
+                    <ul>
+                      <li>
+                        <a href="#">원장인사말</a>
+                        <ol>
+                          <li><a href="#">원장인사말</a></li>
+                          <li><a href="#">역대원장</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">KERI는?</a>
+                        <ol>
+                          <li><a href="#">일반현황</a></li>
+                          <li><a href="#">경영목표</a></li>
+                          <li><a href="#">안전경영</a></li>
+                          <li><a href="#">대외협력현황</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">조직안내</a>
+                      </li>
+                      <li>
+                        <a href="#">역사기록관</a>
+                        <ol>
+                          <li><a href="#">연혁</a></li>
+                          <li><a href="#">대표성과(KERITAGE)</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">홍보관</a>
+                        <ol>
+                          <li><a href="#">출간물(e-book)</a></li>
+                          <li><a href="#">영상관</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">CI·캐릭터</a>
+                        <ol>
+                          <li><a href="#">기관상징 소개</a></li>
+                          <li><a href="#">캐릭터 소개</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">찾아오시는 길</a>
+                        <ol>
+                          <li><a href="#">창원본원</a></li>
+                          <li><a href="#">안산분원</a></li>
+                          <li><a href="#">의왕분원</a></li>
+                          <li><a href="#">스마트그리드본부(광주)</a></li>
+                          <li><a href="#" target="_blank">사이버투어</a></li>
+                        </ol>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <a href="sub_common.html">연구분야</a>
+                  <div class="dep2_wrap">
+                    <div><strong>연구분야</strong>
+                    <span>Research Areas</span>
+                    </div>
+                    <ul>
+                      <li>
+                        <a href="#">연구부원장 인사말</a>
+                      </li>
+                      <li>
+                        <a href="#" >전력망연구</a>
+                        <ol>
+                          <li><a href="#">연구소개</a></li>
+                          <li><a href="#">차세대전력망연구</a></li>
+                          <li><a href="#">전력ICT연구</a></li>
+                          <li><a href="#">전력정책연구</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">전기기기연구</a>
+                        <ol>
+                          <li><a href="#">연구소개</a></li>
+                          <li><a href="#">친환경전력기기연구</a></li>
+                          <li><a href="#">극저온기기연구</a></li>
+                          <li><a href="#">전기환경연구</a></li>
+                          <li><a href="#">전력케이블연구</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">전기응용연구</a>
+                        <ol>
+                          <li><a href="#">연구소개</a></li>
+                          <li><a href="#">전기물리연구</a></li>
+                          <li><a href="#">정밀제어연구</a></li>
+                          <li><a href="#">인공지능연구</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">전기재료연구</a>
+                        <ol>
+                          <li><a href="#">연구소개</a></li>
+                          <li><a href="#">나노융합연구</a></li>
+                          <li><a href="#">절연재료연구</a></li>
+                          <li><a href="#">전기변환소재연구</a></li>
+                          <li><a href="#">스마트3D프린팅연구</a></li>
+                          <li><a href="#">소재분석실</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">스마트그리드연구</a>
+                        <ol>
+                          <li><a href="#">연구소개</a></li>
+                          <li><a href="#">에너지신산업연구</a></li>
+                          <li><a href="#">분산전력시스템연구</a></li>
+                          <li><a href="#">전력변환시스템연구</a></li>
+                          <li><a href="#">에너지플랫폼연구</a></li>
+                          <li><a href="#">그리드신뢰성연구</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">전기의료기기연구</a>
+                        <ol>
+                          <li><a href="#">연구소개</a></li>
+                          <li><a href="#">전기융합휴먼케어연구</a></li>
+                          <li><a href="#">전자기파융합연구</a></li>
+                          <li><a href="#">정밀의료기기연구</a></li>
+                          <li><a href="#">청각인지뇌기능진단연구</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">전력반도체연구</a>
+                        <ol>
+                          <li><a href="#">연구소개</a></li>
+                          <li><a href="#">차세대반도체연구</a></li>
+                          <li><a href="#">파워SoC연구</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">전기모빌리티연구</a>
+                        <ol>
+                          <li><a href="#">연구소개</a></li>
+                          <li><a href="#">전기추진시스템연구</a></li>
+                          <li><a href="#">전동력연구</a></li>
+                          <li><a href="#">수소전기연구</a></li>
+                          <li><a href="#">항공모빌리티 추진연구</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">이차전지연구</a>
+                        <ol>
+                          <li><a href="#">연구소개</a></li>
+                          <li><a href="#">전지소재·공정연구</a></li>
+                          <li><a href="#">차세대전지연구</a></li>
+                        </ol>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <a href="sub_common.html">시험인증검사</a>
+                  <div class="dep2_wrap">
+                    <div><strong>시험인증검사</strong> 
+                      <span>Certification & Inspection
+                      </span>
+                    </div>
+                    <ul>
+                      <li><a href="#" >시험부원장 인사말</a></li>
+                      <li>
+                        <a href="#">시험인증</a>
+                        <ol>
+                          <li><a href="#">시험인증서비스</a></li>
+                          <li><a href="#">시험품목</a></li>
+                          <li><a href="#">주요시험</a></li>
+                          <li><a href="#">시험인증 신청</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">제품인증</a>
+                        <ol>
+                          <li><a href="#">제품인증서비스</a></li>
+                          <li><a href="#">제품인증 신청</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">검사</a>
+                        <ol>
+                          <li><a href="#">검사서비스</a></li>
+                          <li><a href="#">검사 신청</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">고객서비스</a>
+                        <ol>
+                          <li><a href="#">접수하기</a></li>
+                          <li><a href="#">성적서 진위 확인</a></li>
+                          <li><a href="#">기타 문의</a></li>
+                        </ol>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <a href="sub_common.html">기술지원</a>
+                  <div class="dep2_wrap">
+                    <div><strong>기술지원</strong>
+                    <span>Technology Assistance</span>
+                    </div>
+                    <ul>
+                      <li>
+                        <a href="#">기술이전</a>
+                        <ol>
+                          <li><a href="#">기술이전 소개(조건)</a></li>
+                          <li><a href="#">기술이전 절차</a></li>
+                          <li><a href="#">기술이전 상담</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">KERI 기술 검색</a>
+                        <ol>
+                          <li><a href="#">지식재산권</a></li>
+                          <li><a href="#">기술소개자료</a></li>
+                          <li><a href="#">기술소개영상</a></li>
+                          <li><a href="#">연구자연구팀</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">TLO Partners</a>
+                        <ol>
+                          <li><a href="#">TLO Partners 소개</a></li>
+                          <li><a href="#" target="_blank">전담특허사무소</a></li>
+                          <li><a href="#">기술이전 중개기관</a></li>
+                          <li><a href="#">keriCus(고객기업)</a></li>
+                          <li><a href="#">IP보호센터</a></li>
+                        </ol>
+                      </li>
+                      <li><a href="#" >기업지원</a>
+                        <ol>
+                          <li><a href="#">기업지원</a></li>
+                          <li><a href="#">기술개발지원</a></li>
+                          <li><a href="#">기술자문</a></li>
+                          <li><a href="#">교육지원</a></li>
+                          <li><a href="#">인력지원</a></li>
+                          <li><a href="#">창업지원</a></li>
+                          <li><a href="#">패밀리기업</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#">위탁연구</a>
+                        <ol>
+                          <li><a href="#">위탁연구 안내</a></li>
+                        </ol>
+                      </li>
+                      <li><a href="#" >소재분석의뢰</a>
+                        <ol>
+                          <li><a href="#">소재분석실 안내</a></li>
+                          <li><a href="#">이용료 안내</a></li>
+                          <li><a href="#">분석의뢰절차</a></li>
+                        </ol>
+                      </li>
+                      <li>
+                        <a href="#" target="_blank">공동활용기자재</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <a href="sub_common.html">열린KERI</a>
+                  <div class="dep2_wrap">
+                    <div><strong>열린KERI</strong>
+                    <span>Information Disclosure</span>
+                    </div>
+                    <ul>
+                      <li>
+                        <a href="sub_common.html">공지사항</a>
+                      </li>
+                      <li><a href="#" class="link">뉴스룸</a></li>
+                      <li>
+                        <a href="#">채용정보</a>
+                        <ol>
+                          <li><a href="#">채용안내</a></li>
+                          <li><a href="#">인재상</a></li>
+                          <li><a href="#">복리후생</a></li>
+                          <li><a href="#">미래인재등록</a></li>
+                        </ol>
+                      </li>
+                      <li><a href="#" >입찰정보</a></li>
+                      <li>
+                        <a href="#">KERI School</a>
+                        <ol>
+                          <li><a href="#">KERI School</a></li>
+                          <li><a href="#">학생연구자(학연협동과정)</a></li>
+                        </ol>
+                      </li>
+                      <li><a href="#">제증명서 신청</a></li>
+                      <li><a href="#">고객서비스헌장</a></li>
+                      <li><a href="#">감사제보</a></li>
+                      <li>
+                        <a href="#">신고센터</a>
+                        <ol>
+                          <li><a href="#" target="_blank">부패공익신고</a></li>
+                          <li><a href="#">갑질 등 고충신고</a></li>
+                          <li><a href="#">예산낭비신고</a></li>
+                          <li><a href="#">성희롱·성폭력 신고</a></li>
+                          <li><a href="#">KERI 자율 안전신고제</a></li>
+                        </ol>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <a href="sub_common.html">정보공개</a>
+                  <div class="dep2_wrap">
+                    <div><strong>정보공개</strong>
+                    <span>Information Disclosure</span>
+                    </div>
+                    <ul>
+                      <li>
+                        <a href="#">정보공개제도</a>
+                      </li>
+                      <li>
+                        <a href="#">사전정보공표</a>
+                      </li>
+                      <li>
+                        <a href="#">공공데이터개방</a>
+                      </li>
+                      <li>
+                        <a href="#">경영공시</a>
+                        <ol>
+                          <li><a href="#" target="_blank">경영공시</a></li>
+                          <li><a href="#">친인척 채용인원 현황</a></li>
+                        </ol>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="util">
+              <a href="https://www.keri.re.kr/html/en/"  target="_blank" class="lang">ENG</a>
+              <button type="button" class="popup_zone">POPUP<em> ZONE</em></button>
+              <a href="#" class="search_open"><span class="sr-only">통합검색 이동</span></a>
+              <button type="button" class="sitemap_open"><span class="sr-only">사이트맵 열기</span></button>
+              <div class="sitemap">
+                <div class="container">
+                  <div class="sitemap_top">
+                    <div>
+                      <img src="../common/images/common/logo.png" alt="로고">
+                      <button type="button" class="btn_sitemap_close"><span class="sr-only">사이트맵 닫기</span></button>
+                    </div>
+                   
+                    <ol>
+                      <li><a href="https://www.keri.re.kr/html/en/" target="_blank">ENG</a></li>
+                      <li><a href="#">POPUP</a></li>
+                      <li><a href="#">SEARCH</a></li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //헤더 -->
+
+        <!-- sub_header -->
+        <div id="sub" class="bg_01">
+            <!-- sub_title -->
+            <div class="sub_top">
+                <h2 class="title">공지사항</h2>
+            </div>
+            <div class="white">
+                <!-- lnb -->
+                <div class="lnb">
+                    <div class="flex_LR">
+                        <div>
+                          <ul class="flex">
+                            <li>
+                                <a href="#">KERI소개</a>
+                                <div>
+                                    <ol>
+                                        <li><a href="#">KERI소개</a></li>
+                                        <li><a href="#">연구분야</a></li>
+                                        <li><a href="#">시험인증검사</a></li>
+                                        <li><a href="#">기술지원</a></li>
+                                        <li><a href="#">열린KERI</a></li>
+                                        <li><a href="#">정보공개</a></li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="sub_common.html">공지사항</a>
+                                <div>
+                                      <ol>
+                                        <li><a href="#">공지사항</a></li>
+                                        <li><a href="#">뉴스룸</a></li>
+                                        <li><a href="#">채용정보</a></li>
+                                        <li><a href="#">채용안내</a></li>
+                                        <li><a href="#">입찰정보</a></li>
+                                        <li><a href="#">KERI School</a></li>
+                                        <li><a href="#">제증명서 신청</a></li>
+                                        <li><a href="#">고객서비스헌장</a></li>
+                                        <li><a href="#">감사제보</a></li>
+                                        <li><a href="#">신고센터</a></li>
+                                    </ol>
+                                </div>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="etc">
+                            <ul>
+                                <li data-type="sns">
+                                    <a href="#"><span class="hidden">sns 공유</span></a>
+                                    <div>
+                                        <ul>
+                                            <li><a href="#" class="ins"><span class="hidden">인스타그램</span></a></li>
+                                            <li><a href="#" class="fb"><span class="hidden">페이스북</span></a></li>
+                                            <li><a href="#" class="blog"><span class="hidden">블로그</span></a></li>
+                                            <li><a href="#" class="twi"><span class="hidden">트위터</span></a></li>
+                                            <li><a href="#" class="link"><span class="hidden">링크</span></a></li>
+                                        </ul>
+                                        <button type="button" data-type=""><span class="hidden">닫기</span></button>
+                                    </div>
+                                </li>
+                                <li data-type="file"><a href="#"><span class="hidden">첨부파일</span></a></li>
+                                <li data-type="print"><a href="#"><span class="hidden">프린트하기</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- sub_content -->
+                <div class="sub_content">
+                    <div class="title">
+                        <h4>
+                            <strong>한국전기연구원은 중소기업의 기술력 및 경쟁력 강화를 위한 기업지원 서비스를 제공하고 있습니다. <br/>기업지원 상담을 희망하시는 분들의 많은 관심과 문의 바랍니다.</strong>
+                        </h4>
+                    </div>
+
+                    <!--board_detail-->
+                    <div class="board_detail">
+                        <div class="info">
+                            <h2>
+                                <span class="noti">공지</span> <span class="noti" data-color="red">일반공지</span>
+                                <b>한국전기연구원 방문고객관리시스템 도입 안내</b>
+                            <ul>
+                                <li>전체관리자</li>
+                                <li>2025-07-25</li>
+                                <li class="eye">1,256</li>
+                                <!--li>NO.1,2</li-->
+                            </ul>
+                        </div>
+                        <div class="contents">
+                            <h2>한국전기연구원(KERI) 방문고객관리시스템 도입 안내</h2>
+                            <p>한국전기연구원(KERI)은 방문객의 편의성과 보안 강화를 위해 4월 7일부터 ‘방문고객관리시스템’을 도입·운영합니다. 방문객은 사전 방문 신청 및 승인 절차를 통해 보다 빠르고 편리하게 출입할 수 있으며, QR코드 인증을 통해 대기 시간을 최소화할 수 있습니다.</p>
+                            <h4 class="mt40">한국전기연구원(KERI) 방문고객관리시스템 이용절차</h4>
+                            <ul class="list_num">
+                                <li>방문객이 방문신청 페이지에 접속하여 사전 방문을 신청한다(방문신청 페이지 접속 URL</li>
+                                <li>임직원이 카카오톡으로 승인 또는 반려한다 - 설정에 따라 추가결재 자동생성</li>
+                                <li>방문객이 카카오톡 승인알림을 받는다 - 외국인은 (영문)이메일이 발송됨</li>
+                                <li>경비근무자가 방문객 정보를 확인하고 방문객이 입문한다</li>
+                            </ul>
+                            <p>사전 신청 후 승인 내역은 카카오톡, 이메일 등을 통해 실시간으로 전달되며, 방문 당일 경비실에서 별도 서류 작성 없이 출입이 가능합니다. 이를 통해 방문객의 편의성이 향상되며, 기관의 보안 및 출입 관리가 더욱 체계적으로 운영될 예정입니다.</p>
+
+                            <dl class="detail_file">
+                                <dt>첨부파일</dt>
+                                <dd>
+                                    <a href="#">한국전기연구원 방문고객관리시스템 도입 안내.pdf <span>(1.2MB)</span></a>
+                                    <div>
+                                        <a href="#" data-btn="download">다운로드</a>
+                                        <a href="#" data-btn="preview">미리보기</a>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <a href="#">
+                                        한국전기연구원 방문고객관리시스템 도입 방문고객관리시스템 도입 안내.pdf <span>(1.2MB)</span></a>
+                                    <div>
+                                        <a href="#" data-btn="download">다운로드</a>
+                                        <a href="#" data-btn="preview">미리보기</a>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <!--btn_box-->
+                    <div class="btn_box flex_R">
+                        <button type="button" data-btn="line">수정</button>
+                        <button type="button" data-btn="blueBg">삭제</button>
+                        <a href="sub_common.html"><button type="button" data-btn="blue">목록</button></a>
+                    </div>
+
+                    <!--이전글 다음글-->
+                    <div class="prev_next">
+                        <a href="#none" class="prev">
+                            <strong>이전글</strong>
+                            <span>한국전기연구원 방문고객관리시스템 도입 안내</span>
+                        </a>
+                        <a href="#none" class="next">
+                            <strong>다음글</strong>
+                            <span>한국전기연구원 방문고객관리시스템 도입 안내</span>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+                
+        <!--담당부서/문의-->
+        <div class="sub_footer">
+            <ul>
+                <li>
+                    <a href="#none">
+                        <strong>담당부서</strong>
+                        <span>대외협력팀</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none">
+                        <strong>문의</strong>
+                        <span>055-2258-9635</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+  
+        <!-- 푸터 -->
+        <div class="footer sub" data-mainnavi="footer" id="footer">
+        <div>
+            <nav class="fnb container">
+            <ol>
+                <li>
+                <button type="button" class="btn_modal_open" data-modal="related-sites">관련사이트 바로가기</button>
+                </li>
+                <li>
+                <button type="button" class="btn_modal_open" data-modal="related-agencies">관련기관 바로가기</button>
+                </li>
+            </ol>
+            </nav>
+        </div>
+        <div>
+            <div class="footer_con">
+            <div class="footer_info container">
+                <div class="footer_left">
+                <img src="../common/images/common/logo.png" alt="한국전기연구원">
+                <ul>
+                    <li>
+                    <b>창원본원</b>
+                    <span>(51543) 경상남도 창원시 성산구 전기의길 12 (성주동)</span>
+                    <span>TEL 055-280-1114</span>
+                    <span>FAX 055-280-121</span>
+                    </li>
+                    <li>
+                    <b>안산분원</b>
+                    <span>(15588) 경기도 안산시 상록구 항가울로 111 (사동)</span>
+                    <span>TEL 031-8040-4114</span>
+                    <span>FAX 031-8040-402</span>
+                    </li>
+                    <li>
+                    <b>의왕분원</b>
+                    <span>(16029)경기도 의왕시 내손순환로 138 (내손동)</span>
+                    <span>TEL 031-420-6114 </span>
+                    <span>FAX 031-420-600</span>
+                    </li>
+                    <li>
+                    <b>광주스마트그리드본부</b>
+                    <span>(61751) 광주광역시 남구 도시첨단산업로 27(압촌동)</span>
+                    <span>TEL 062-606-7214</span>
+                    <span>FAX 062-606-7226</span>
+                    </li>
+                    <li>
+                    <b>홈페이지 담당자</b>
+                    <span>TEL 055-280-1074</span>
+                    <span>MAIL : jihyun@keri.re.kr</span>
+                    </li>
+                </ul>
+                </div>
+                <div class="footer_right">
+                <div>
+                    <a href="#">직원찾기</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <ul>
+                    <li>
+                    <a href="#" target="_blank" title="새창열기">
+                        <img
+                        src="../common/images/common/logo_mark_wa.png" alt="심사기관에서 제시한 alt값 넣어주세요.">
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#" target="_blank" title="새창열기">
+                        <img
+                        src="../common/images/common/logo_mark_HRD.png" alt="심사기관에서 제시한 alt값 넣어주세요.">
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#" target="_blank" title="새창열기">
+                        <img
+                        src="../common/images/common/logo_mark_HRD02.png" alt="심사기관에서 제시한 alt값 넣어주세요.">
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#" target="_blank" title="새창열기">
+                    <img
+                        src="../common/images/common/logo_.png" alt="심사기관에서 제시한 alt값 넣어주세요.">
+                    </a>
+                </li>
+                </ul>
+                </div>
+            </div>
+            <div class="footer_menu container">
+                <a href="#">개인정보처리방침</a>
+                <a href="#">이메일무단수집거부</a>
+                <a href="https://www.keri.re.kr/bid/" target="_blank" title="입찰공고 페이지로 이동합니다.">입찰공고</a>
+                <a href="#">채용공고</a>
+                <div class="copyright">
+                CopyrightⓒKorea Electrotechnology Research Institute
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+
+        
+        <!-- 관련사이트 모달 -->
+        <div class="modal_overlay" id="modal-related-sites">
+        <div class="modal_container">
+            <div class="modal_header">
+            <h3>관련사이트</h3>
+            <button type="button" class="btn_modal_close"><span class="sr-only">닫기</span></button>
+            </div>
+            <div class="modal_content">
+                <h4>관련 정부부처</h4>
+                <ul class="modal_list">
+                <li><a href="http://www.gov.kr/" target="_blank" title="새창">대한민국 정부24</a></li>
+                <li><a href="http://www.assembly.go.kr/" target="_blank" title="새창">대한민국 국회</a></li>
+                <li><a href="http://www.president.go.kr/" target="_blank" title="새창">대한민국 청와대</a></li>
+                <li><a href="http://www.opm.go.kr/" target="_blank" title="새창">국무조정실·국무총리비서실</a></li>
+                <li><a href="https://www.moef.go.kr/" target="_blank" title="새창">기획재정부</a></li>
+                <li><a href="http://www.moe.go.kr/" target="_blank" title="새창">교육부</a></li>
+                <li><a href="http://www.msit.go.kr/" target="_blank" title="새창">과학기술정보통신부</a></li>
+                <li><a href="http://www.mofa.go.kr/" target="_blank" title="새창">외교부</a></li>
+                <li><a href="http://www.unikorea.go.kr/" target="_blank" title="새창">통일부</a></li>
+                <li><a href="http://www.moj.go.kr/" target="_blank" title="새창">법무부</a></li>
+                <li><a href="http://www.mnd.go.kr/" target="_blank" title="새창">국방부</a></li>
+                <li><a href="http://www.mois.go.kr/" target="_blank" title="새창">행정안전부</a></li>
+                <li><a href="http://www.mcst.go.kr/" target="_blank" title="새창">문화체육관광부</a></li>
+                <li><a href="http://www.mafra.go.kr/" target="_blank" title="새창">농림축산식품부</a></li>
+                <li><a href="https://www.motie.go.kr/" target="_blank" title="새창">산업통상자원부</a></li>
+                <li><a href="http://www.mohw.go.kr/" target="_blank" title="새창">보건복지부</a></li>
+                <li><a href="http://www.me.go.kr/" target="_blank" title="새창">환경부</a></li>
+                <li><a href="http://www.moel.go.kr/" target="_blank" title="새창">고용노동부</a></li>
+                <li><a href="http://www.mogef.go.kr/" target="_blank" title="새창">여성가족부</a></li>
+                <li><a href="http://www.molit.go.kr/" target="_blank" title="새창">국토교통부</a></li>
+                <li><a href="http://www.mof.go.kr/" target="_blank" title="새창">해양수산부</a></li>
+                <li><a href="http://www.mss.go.kr/" target="_blank" title="새창">중소벤처기업부</a></li>
+                <li><a href="http://www.nts.go.kr/" target="_blank" title="새창">국세청</a></li>
+                <li><a href="http://www.customs.go.kr/" target="_blank" title="새창">관세청</a></li>
+                <li><a href="http://www.pps.go.kr/" target="_blank" title="새창">조달청</a></li>
+                <li><a href="http://www.kostat.go.kr/" target="_blank" title="새창">통계청</a></li>
+                <li><a href="http://www.spo.go.kr/" target="_blank" title="새창">검찰청</a></li>
+                <li><a href="http://www.mma.go.kr/" target="_blank" title="새창">병무청</a></li>
+                <li><a href="http://www.dapa.go.kr/" target="_blank" title="새창">방위사업청</a></li>
+                <li><a href="http://www.police.go.kr/" target="_blank" title="새창">경찰청</a></li>
+                <li><a href="http://www.nfa.go.kr/" target="_blank" title="새창">소방청</a></li>
+                <li><a href="http://www.cha.go.kr/" target="_blank" title="새창">국가유산청</a></li>
+                <li><a href="http://www.rda.go.kr/" target="_blank" title="새창">농촌진흥청</a></li>
+                <li><a href="http://www.forest.go.kr/" target="_blank" title="새창">산림청</a></li>
+                <li><a href="http://www.kipo.go.kr/" target="_blank" title="새창">특허청</a></li>
+                <li><a href="http://www.kma.go.kr/" target="_blank" title="새창">기상청</a></li>
+                <li><a href="http://www.naacc.go.kr/" target="_blank" title="새창">행정중심복합도시건설청</a></li>
+                <li><a href="http://www.saemangeum.go.kr/" target="_blank" title="새창">새만금개발청</a></li>
+                <li><a href="http://www.kcg.go.kr/" target="_blank" title="새창">해양경찰청</a></li>
+                <li><a href="http://www.mpva.go.kr/" target="_blank" title="새창">국가보훈부</a></li>
+                <li><a href="http://www.mpm.go.kr/" target="_blank" title="새창">인사혁신처</a></li>
+                <li><a href="http://www.moleg.go.kr/" target="_blank" title="새창">법제처</a></li>
+                <li><a href="http://www.mfds.go.kr/" target="_blank" title="새창">식품의약품안전처</a></li>
+                <li><a href="http://www.bai.go.kr/" target="_blank" title="새창">감사원</a></li>
+                <li><a href="http://www.nis.go.kr/" target="_blank" title="새창">국가정보원</a></li>
+                <li><a href="http://www.kcc.go.kr/" target="_blank" title="새창">방송통신위원회</a></li>
+                <li><a href="http://www.humanrights.go.kr/" target="_blank" title="새창">국가인권위원회</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <!-- //관련사이트 모달 -->
+
+        <!-- 관련기관 모달 -->
+        <div class="modal_overlay" id="modal-related-agencies">
+        <div class="modal_container">
+            <div class="modal_header">
+            <h3>관련기관</h3>
+            <button type="button" class="btn_modal_close"><span class="sr-only">닫기</span></button>
+            </div>
+            <div class="modal_content">
+                <h4>관련 기관</h4>
+            <ul class="modal_list">
+                <li><a href="https://www.gov.kr/portal/main?Mcode=9999#" title="클릭시 새창으로 정부24 페이지로 이동합니다." target="_blank">정부24</a></li>
+                <li><a href="https://www.msit.go.kr/index.do" title="클릭시 새창으로 과학기술정보통신부 페이지로 이동합니다." target="_blank">과학기술정보통신부</a></li>
+                <li><a href="https://www.motie.go.kr/" title="클릭시 새창으로 산업통상자원부 페이지로 이동합니다." target="_blank">산업통상자원부</a></li>
+                <li><a href="https://www.nst.re.kr /" title="클릭시 새창으로 NST 페이지로 이동합니다." target="_blank">NST</a></li>
+                <li><a href="https://www.sos1379.go.kr/" title="클릭시 새창으로 공공기관 1379 페이지로 이동합니다." target="_blank">1379</a></li>
+                <li><a href="https://www.ust.ac.kr/" title="클릭시 새창으로 ust 페이지로 이동합니다." target="_blank">UST</a></li>
+                <li><a href="http://policy.nl.go.kr/" title="클릭시 새창으로 POINT 페이지로 이동합니다." target="_blank">POINT</a></li>
+                <li><a href="http://www.acrc.go.kr/" title="클릭시 새창으로 국민권익위원회 페이지로 이동합니다." target="_blank">국민권익위원회</a></li>
+                <li><a href="https://job.alio.go.kr/main.do" title="클릭시 새창으로 공공기관 채용정보시스템 페이지로 이동합니다." target="_blank">공공기관 채용정보시스템</a></li>
+                <li><a href="https://www.data.go.kr/" title="클릭시 새창으로 공공데이터 페이지로 이동합니다." target="_blank">공공데이터포털</a></li>
+                <li><a href="http://www.creativekorea.or.kr" title="클릭시 새창으로 창조경제타운 페이지로 이동합니다." target="_blank">창조경제타운</a></li>
+                <li><a href="http://www.smartregulation.or.kr/" title="클릭시 새창으로 민관합동규제개선추진단 페이지로 이동합니다." target="_blank">민관합동규제개선추진단</a></li>
+                <li><a href="http://www.changwon.go.kr/" title="클릭시 새창으로 창원시 페이지로 이동합니다." target="_blank">창원시</a></li>
+                <li><a href="http://www.kepco.co.kr/" title="클릭시 새창으로 한국전력공사 페이지로 이동합니다." target="_blank">한국전력공사</a></li>
+                <li><a href="https://www.eshare.go.kr/UserPortal/Upm/Main/index.do" title="클릭시 새창으로 공유누리 페이지로 이동합니다." target="_blank">공유누리</a></li>
+            </ul>
+            </div>
+        </div>
+        </div>
+        <!-- //관련기관 모달 -->
+
+        <!-- TOP 버튼 -->
+        <button type="button" id="topBtn" class="top_btn">
+        <span>TOP</span>
+        </button>
+  
+        </div>
+      </div>
+  </body>
+  
+  </html>

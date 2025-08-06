@@ -1,0 +1,90 @@
+
+//메인 컬러
+$color1:#17469d;
+$grey:#666;
+$bg-color1:#e9a027;
+$bg-color2:#1f60c2;
+
+//서브 컬러
+$placeholder : #4c4e5a; //placeholder
+$color_2 : #222;
+$color_0 : #000;
+$skyblue : #177ac8;
+$blue: #1f60c2;
+$blue2 : #17469d;
+$blue3 : #1d5fe8;
+.link, .blue {color: $blue3;}
+
+
+//border
+$bor_form : #dbdee1;
+$bor_gray : #e1e3e1;
+
+//width
+$w1500 : 1500px;
+$w1300 : 1300px;
+$w1100 : 1100px;
+$w1000 : 1000px;
+$w900 : 900px;
+$w720 : 720px;
+
+//size
+.w100{width: 100px!important;}
+.w130{width: 130px;}
+.auto{flex: 1;}
+.w150{width: 150px;}
+
+//css : margin 
+.m0	{margin: 0 !important;}
+.mb00	{margin-bottom: 0;}
+.mb05	{margin-bottom: 5px;}
+.mb10	{margin-bottom: 10px;}
+.mb15	{margin-bottom: 15px;}
+.mb20	{margin-bottom: 20px;}
+.mb25	{margin-bottom: 25px;}
+.mb30	{margin-bottom: 30px;}
+.mb35	{margin-bottom: 35px;}
+.mb40	{margin-bottom: 40px;}
+.mt40	{margin-top: 40px;}
+
+
+// 영역나누기
+.flex { display: flex; align-items: center;}
+// 좌우정렬
+.flex_LR { display: flex; align-items: center; justify-content: space-between;}
+// 왼쪽 중앙 오른쪽
+.flex_LCR { display: flex; justify-content: space-between; align-items: center; 
+    .flex_1 {flex: 1;} 
+}
+// 오른쪽 정렬
+.flex_R { display: flex; justify-content: end; align-items: center;}
+// 중앙 정렬
+.flex_C { display: flex; justify-content: center; align-items: center;}
+// 균등하게
+.flex_n { display: flex; justify-content: space-between; 
+    & > * {flex: 1;} 
+}
+// 왼쪽 너비고정
+.flex_nF { display: flex; justify-content: center; align-items: center; 
+    > div { &:first-child {flex: 1;} } 
+    @media (max-width: 720px) {display: block}
+}
+// 오른쪽 너비고정
+.flex_Fn { display: flex; justify-content: center; align-items: center; 
+    > div { &:last-child {flex: 1;} } 
+    @media (max-width: 720px) {display: block}
+}
+// 리스트
+.flex_list { 
+    display: flex; flex-wrap: wrap; align-items: center; 
+    > div { &:last-child {flex: 1;} } 
+    @media (max-width: 720px) {display: block}
+}
+.btn_box{
+    text-align: right; margin-top: 30px;
+
+    @media (max-width: 900px) {
+        margin: 30px 0 0;
+    }
+    button,a{text-align: center;}
+}

@@ -12,7 +12,6 @@ var resizeTimers = {
   news: null,
   layout: null
 };
-//수정
 
 // 리사이즈 디바운싱 헬퍼 함수
 function debounceResize(key, callback, delay = 300) {
@@ -20,15 +19,14 @@ function debounceResize(key, callback, delay = 300) {
   resizeTimers[key] = setTimeout(callback, delay);
 }
 
-// scrolled 클래스 보호 함수 - 스크롤 위치와 header active 상태에 따라 관리
+// scrolled 클래스 보호 함수
 function protectScrolledClass() {
-  var scrollTop = $(window).scrollTop();
-  var $header = $('.header');
+  var shouldHaveScrolled = $(window).scrollTop() > 150 || 
+                          $('.header #gnb > ul > li.active').length > 0 ||
+                          $('.header').hasClass('active');
   
-  if (scrollTop > 0 || $header.hasClass('active')) {
-    $header.addClass('scrolled');
-  } else {
-    $header.removeClass('scrolled');
+  if (shouldHaveScrolled && !$('.header').hasClass('scrolled')) {
+    $('.header').addClass('scrolled');
   }
 }
 
@@ -149,7 +147,7 @@ function resizeHeadHeight(target) {
     var dep2H = $(target).next('.dep2_wrap').outerHeight();
     $('.header')
       .stop()
-      .animate({ height: headH + dep2H + 'px' }, 150, function () {
+      .animate({ height: headH + dep2H + 'px' }, 200, function () {
         // dep2_wrap이 열린 후 scrolled 클래스 복원
         if (shouldKeepScrolled) {
           $('.header').addClass('scrolled');
@@ -187,7 +185,7 @@ function gnbReset() {
     
     $('.header')
       .stop()
-      .animate({ height: headH + 'px' }, 150, function () {
+      .animate({ height: headH + 'px' }, 200, function () {
         // scrolled 클래스 유지 조건 확인
         if (shouldKeepScrolled) {
           $('.header').addClass('scrolled');
@@ -199,7 +197,7 @@ function gnbReset() {
     if (shouldKeepScrolled) {
       setTimeout(function() {
         $('.header').addClass('scrolled');
-      }, 200);
+      }, 250);
     }
   }
   // GNB 메뉴 모든 active 상태 제거
@@ -236,22 +234,22 @@ function gnbFloatClear() {
   });
 }
 
-function openSearch() {
-  $('.header .util > .search_box,.search_open').addClass('active');
-  $('.search_open').attr('title', '검색창 닫기');
-  var schBoxH = $('.search_box').outerHeight();
-  $('.header').addClass('active').stop().animate({ height: headH + schBoxH + 'px' }, 150);
-  return false;
-}
+// function openSearch() {
+//   $('.header .util > .search_box,.search_open').addClass('active');
+//   $('.search_open').attr('title', '검색창 닫기');
+//   var schBoxH = $('.search_box').outerHeight();
+//   $('.header').addClass('active').stop().animate({ height: headH + schBoxH + 'px' }, 200);
+//   return false;
+// }
 
-function resetSearch() {
-  $('.header').stop().animate({ height: headH + 'px' }, 150, function () {
-    $('.header').removeClass('active');
-    $('.util > .search_box,.search_open').removeClass('active');
-    $('.search_open').attr('title', '검색창 열기');
+// function resetSearch() {
+//   $('.header').stop().animate({ height: headH + 'px' }, 200, function () {
+//     $('.header').removeClass('active');
+//     $('.util > .search_box,.search_open').removeClass('active');
+//     $('.search_open').attr('title', '검색창 열기');
     
-  });
-}
+//   });
+// }
 
 function openPopup() {
   saveFocus(); //이벤트 발생한 요소 기억
@@ -356,16 +354,19 @@ function stopIframe(target) {
 function initHeaderScroll() {
   $(window).off('scroll.headerScroll');
   
-  var scrollThreshold = 0; 
+  var scrollThreshold = 150; 
   
   $(window).on('scroll.headerScroll', function() {
     var scrollTop = $(window).scrollTop();
     var $header = $('.header');
+    var isMenuOpen = $header.hasClass('active') || $('.header #gnb > ul > li.active').length > 0;
     
     if (scrollTop > scrollThreshold) {
       $header.addClass('scrolled');
     } else {
-      $header.removeClass('scrolled');
+      if (!isMenuOpen) {
+        $header.removeClass('scrolled');
+      }
     }
   });
   
@@ -488,10 +489,14 @@ $(function () {
         gnbReset(); // 헤더 높이 초기화
       }
       
-      // 잠시 후 보호 중지 (애니메이션 완료 후)
+      // 잠시 후 보호 중지 및 scrolled 클래스 확인 (애니메이션 완료 후)
       setTimeout(function() {
         if (!$('.header').hasClass('active') && $('.header #gnb > ul > li.active').length === 0) {
           stopScrolledProtection();
+          // section1일 때 (스크롤 위치가 150 이하일 때) scrolled 클래스 제거
+          if ($(window).scrollTop() <= 150) {
+            $('.header').removeClass('scrolled');
+          }
         }
       }, 500);
     },
@@ -1257,7 +1262,7 @@ function initNewsSlider() {
 
     // 반응형에 따른 itemsPerPage 설정
     var itemsPerPage;
-    if (window.innerWidth >= 1281) {
+    if (window.innerWidth >= 1285) {
       // 1920px~1281px: 3개씩 2줄 = 6개
       itemsPerPage = 6;
     } else if (window.innerWidth >= 901) {
@@ -1348,6 +1353,7 @@ function onYouTubeIframeAPIReady() {
         onReady: function(event) {
             event.target.mute();        // autoplay 제한 회피
             event.target.playVideo();   // 재생
+            console.log('YouTube Player Ready');
           }
       }
     });
@@ -1355,3 +1361,37 @@ function onYouTubeIframeAPIReady() {
 
 // YouTube API가 함수를 찾을 수 있도록 전역으로 노출
 window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+
+
+
+
+
+/**
+ * 뉴스 탭 메뉴 기능 
+ * news_tab_menu의 버튼 클릭 시 해당하는 tab_panel을 활성화하고 뉴스 슬라이더를 재초기화합니다.
+ */
+$(document).ready(function() {
+  // 뉴스 탭 메뉴 버튼 클릭 이벤트
+  $('.news_tab_menu li button').on('click', function() {
+    // 클릭된 버튼의 인덱스를 구합니다 (입찰공고 a태그 제외하고 button만 카운트)
+    var clickedIndex = $(this).closest('li').index();
+    
+    // 모든 탭 메뉴에서 active 클래스 제거
+    $('.news_tab_menu li').removeClass('active');
+    
+    // 클릭된 탭 메뉴에 active 클래스 추가
+    $(this).closest('li').addClass('active');
+    
+    // 모든 탭 패널에서 active 클래스 제거
+    $('.news_tab_content .tab_panel').removeClass('active');
+    
+    // 해당 인덱스의 탭 패널에 active 클래스 추가
+    $('.news_tab_content .tab_panel').eq(clickedIndex).addClass('active');
+    
+    // 뉴스 슬라이더 재초기화 (새로 활성화된 탭 패널의 슬라이더를 위해)
+    setTimeout(function() {
+      initNewsSlider();
+    }, 100);
+    
+  });
+});

@@ -38,10 +38,10 @@ HTML 파일에서 다음 순서로 스크립트를 로드합니다:
 
 ```html
 <!-- 1. jQuery 및 플러그인들 -->
-<script src="../common/js/jquery-1.12.4.min.js"></script>
+<script src="../common/js/library/jquery-3.7.1.min.js"></script>
 <script src="../common/js/wow.js"></script>
-<script src="../common/js/slick.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../common/js/library/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/library/aos.js"></script>
 
 <!-- 2. 공통 함수 (필수 - 먼저 로드) -->
 <script src="../common/js/common-shared.js"></script>

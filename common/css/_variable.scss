@@ -1,19 +1,19 @@
 
-//메인 컬러
-$color1:#17469d;
-$grey:#666;
-$bg-color1:#e9a027;
-$bg-color2:#1f60c2;
 
-//서브 컬러
+//컬러
+
+$color-bk : #000;
+$color-wh : #fff;
+$color-grey1 : #222;
+$color-grey2:#666;
+$color-skyblue : #177ac8;
+$color-blue: #1f60c2;
+$color-blue2 : #17469d;
+$color-blue3 : #1d5fe8;
+$color-orange:#e9a027;
+
 $placeholder : #4c4e5a; //placeholder
-$color_2 : #222;
-$color_0 : #000;
-$skyblue : #177ac8;
-$blue: #1f60c2;
-$blue2 : #17469d;
-$blue3 : #1d5fe8;
-.link, .blue {color: $blue3;}
+.link, .blue {color: $color-blue3;}
 
 
 //border
@@ -67,23 +67,23 @@ $w720 : 720px;
 // 왼쪽 너비고정
 .flex_nF { display: flex; justify-content: center; align-items: center; 
     > div { &:first-child {flex: 1;} } 
-    @media (max-width: 720px) {display: block}
+    @media (max-width: 1080px) {display: block}
 }
 // 오른쪽 너비고정
 .flex_Fn { display: flex; justify-content: center; align-items: center; 
     > div { &:last-child {flex: 1;} } 
-    @media (max-width: 720px) {display: block}
+    @media (max-width: 1080px) {display: block}
 }
 // 리스트
 .flex_list { 
     display: flex; flex-wrap: wrap; align-items: center; 
     > div { &:last-child {flex: 1;} } 
-    @media (max-width: 720px) {display: block}
+    @media (max-width: 1080px) {display: block}
 }
 .btn_box{
     text-align: right; margin-top: 30px;
 
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         margin: 30px 0 0;
     }
     button,a{text-align: center;}

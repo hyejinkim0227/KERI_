@@ -1,119 +1,3 @@
-// body.menuOpen,
-// body.open {overflow:hidden !important;}
-
-// .skip {
-// 	position: absolute !important;
-// 	width: 0px !important;
-// 	height: 0px !important;
-// 	top: -99999px !important;
-// 	left: -99999px !important;
-// }
-
-
-// $w1500 : 1500px;
-// $w1300 : 1300px;
-// $w1100 : 1100px;
-// $w1000 : 1000px;
-// $w900 : 900px;
-// $w720 : 720px;
-// .W100 {width: 100% !important;}
-
-
-//.hidden, legend, caption {width: 1px; height: 1px; overflow: hidden; position: absolute; top: -100px; left: -100px;}
-//.elli {white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-// .link, .blue {color: #1d5fe8;}
-//.cursor {cursor: pointer;}
-// .word_break{word-break: break-all;}
-// .overflow-x {overflow-x: auto;}
-// .overflow-y {overflow-y: auto;}
-//$blue : #17469d;
-
-//css : margin 
-// .m0	{margin: 0 !important;}
-// .mb00	{margin-bottom: 0;}
-// .mb05	{margin-bottom: 5px;}
-// .mb10	{margin-bottom: 10px;}
-// .mb15	{margin-bottom: 15px;}
-// .mb20	{margin-bottom: 20px;}
-// .mb25	{margin-bottom: 25px;}
-// .mb30	{margin-bottom: 30px;}
-// .mb35	{margin-bottom: 35px;}
-// .mb40	{margin-bottom: 40px;}
-// .mt40	{margin-top: 40px;}
-
-// // 영역나누기
-// .flex { display: flex; align-items: center;}
-// // 좌우정렬
-// .flex_LR { display: flex; align-items: center; justify-content: space-between;}
-// // 왼쪽 중앙 오른쪽
-// .flex_LCR { display: flex; justify-content: space-between; align-items: center; 
-//     .flex_1 {flex: 1;} 
-// }
-// // 오른쪽 정렬
-// .flex_R { display: flex; justify-content: end; align-items: center;}
-// // 중앙 정렬
-// .flex_C { display: flex; justify-content: center; align-items: center;}
-// // 균등하게
-// .flex_n { display: flex; justify-content: space-between; 
-//     & > * {flex: 1;} 
-// }
-// // 왼쪽 너비고정
-// .flex_nF { display: flex; justify-content: center; align-items: center; 
-//     > div { &:first-child {flex: 1;} } 
-//     @media (max-width: 720px) {display: block}
-// }
-// // 오른쪽 너비고정
-// .flex_Fn { display: flex; justify-content: center; align-items: center; 
-//     > div { &:last-child {flex: 1;} } 
-//     @media (max-width: 720px) {display: block}
-// }
-// // 리스트
-// .flex_list { 
-//     display: flex; flex-wrap: wrap; align-items: center; 
-//     > div { &:last-child {flex: 1;} } 
-//     @media (max-width: 720px) {display: block}
-// }
-// .btn_box{
-//     text-align: right; margin-top: 30px;
-
-//     @media (max-width: 900px) {
-//         margin: 30px 0 0;
-//     }
-//     button,a{text-align: center;}
-// }
-
-
-
-/***************** SUB PAGE *****************/
-// 서브 페이지 헤더
-// .header{
-//     .head{ 
-//         margin-left: 0;
-//         .logo_sub > a{    
-//             display: block; width: 250px; height: 86px; background: url(../images/sub/logo_sub.png) no-repeat center; border-radius: 0 ;
-//         }
-//         .util .popup_zone em{color: #fff;}
-//     }
-//     // 스크롤 시 헤더 스타일
-//     &.scrolled .head{
-//         .logo_sub > a{
-//             background-image: url(../images/common/logo.png);
-//         }
-//         .util .popup_zone em{color: #000;}
-//     }
-//     // 모바일 헤더
-//     @media (max-width: 900px) {
-//         .head{
-//             .logo_sub > a{
-//                 width: 180px;
-//         height: 24px;
-//         border-radius: 0;
-//         background-size: contain;
-//                 background-image: url(../images/common/logo.png);
-//             }
-//         }
-//     }
-// }
 
 // 서브 페이지 배경
 #sub {
@@ -138,12 +22,12 @@ input[type='text'],input[type='password'],input[type='number'], select, .form-co
     line-height: 44px; height: 44px;
     border: 1px solid $bor_form;
     background-color: #fff;
-    color: $color_0;
+    color: $color-bk;
     box-sizing: border-box;
     border-radius: 6px;
     font-size: $fs-17;
     font-weight: 500;
-    color: $color_2; 
+    color: $color-grey1; 
     width: 240px; 
     font-family:  'SUITE','Pretendard', 'sans-serif';
 }
@@ -185,7 +69,7 @@ textarea {
     height: 130px; line-height: 1.4em; padding: 20px;
     border: 1px solid $bor_form;
     background-color: #fff;
-    color: $color_0;
+    color: $color-bk;
     box-sizing: border-box;
     border-radius: 6px;
     width: 100%;
@@ -201,7 +85,7 @@ select::-ms-expand {display: none;}
 
 // label
 label{
-    cursor: pointer; line-height: 44px; height: 44px; color: $color_0; box-sizing: border-box; font-size: $fs-17; font-weight: 500; display: flex; align-items: center;
+    cursor: pointer; line-height: 44px; height: 44px; color: $color-bk; box-sizing: border-box; font-size: $fs-17; font-weight: 500; display: flex; align-items: center;
     span{ display: block; white-space: normal; word-break: break-word; flex: 1;}
 }
 // checkbox, radio 버튼
@@ -220,7 +104,7 @@ input[type=checkbox] {
     border-radius: 6px;
     background: url('../images/sub/checkbox_off.png') no-repeat center / auto 10px;
     &:checked {
-        background: $blue url('../images/sub/checkbox_on.png') no-repeat center / auto 10px;
+        background: $color-blue url('../images/sub/checkbox_on.png') no-repeat center / auto 10px;
     }
 }
 
@@ -228,8 +112,8 @@ input[type=radio] {
     border-radius: 50%;
         &::after{display: block; content: ""; width: 14px; height: 14px; background: $bor_gray; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
     &:checked {
-        border-color: $blue;
-        &::after{background:$blue;}
+        border-color: $color-blue;
+        &::after{background:$color-blue;}
     }
 }
 
@@ -240,12 +124,12 @@ input[type=radio] {
         flex: 1; height: 44px; line-height: 44px; overflow: hidden; position: relative; z-index: 1;
 
         b{
-            display: block; width: 100px; height: 44px; line-height: 44px; text-align: center; font-size: $fs-15; font-weight: 400; color: #fff; background: $blue; position: absolute; right: 0; top: 0; z-index: 0; border-radius: 6px; margin-left: 7px;
+            display: block; width: 100px; height: 44px; line-height: 44px; text-align: center; font-size: $fs-15; font-weight: 400; color: #fff; background: $color-blue; position: absolute; right: 0; top: 0; z-index: 0; border-radius: 6px; margin-left: 7px;
         }
         input{
             width: 100%; position: absolute; top: -50px; left: -50px; width: 150%; height: 300px; background: transparent;
         }
-        span{display: block; width: calc(100% - 105px); height: 44px; line-height: 44px; position: absolute; left: 0; top: 0; z-index: 0; padding: 0 20px; font-size: $fs-17; font-weight: 400; color: $color_2; border: 1px solid $bor_gray; border-radius: 6px;}
+        span{display: block; width: calc(100% - 105px); height: 44px; line-height: 44px; position: absolute; left: 0; top: 0; z-index: 0; padding: 0 20px; font-size: $fs-17; font-weight: 400; color: $color-grey1; border: 1px solid $bor_gray; border-radius: 6px;}
 
     }
     button{width: 100px; background: #fff !important; color: #000 !important;;}
@@ -261,14 +145,14 @@ input[type=radio] {
         }
         
         h6{
-            font-size: $fs-17; font-weight: 400; color: $color_0; 
+            font-size: $fs-17; font-weight: 400; color: $color-bk; 
             b{font-size: $fs-16; font-weight: 300; color: #888; margin-left: 10px;}
         }
     }
 }
 
 // 폼 반응형
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
     input[type='text'],input[type='password'],input[type='number'], select, .form-control {font-size: $fs-15; height: 40px;}
     input[type='text']::placeholder,input[type='password']::placeholder,input[type='file']::placeholder,textarea::placeholder, select::placeholder {
         color: #4c4e5a; font-weight: 400; font-size: $fs-15; 
@@ -288,9 +172,9 @@ button{
     &[data-btn] {padding: 0 30px; border-radius: 9px; border: 1px solid $bor_gray;
         &.btn_sm{height: 44px; line-height: 44px; font-size: $fs-15; border-radius: 6px;}
     }
-    &[data-btn="blue"]{background: $blue; color :#fff; border: none;}
+    &[data-btn="blue"]{background: $color-blue; color :#fff; border: none;}
     &[data-btn="black"]{background: #fff; color :#000; border-color: #000;}
-    &[data-btn="blueBg"]{background: #eaf1ff; color : $blue; border-color: $blue;}
+    &[data-btn="blueBg"]{background: #eaf1ff; color : $color-blue; border-color: $color-blue;}
     &[data-btn="line"]{background: #fff; color :#000; border-color: #000;}
     &[data-btn="gray"]{background: #717171; color :#fff; border-color: #717171;}
     &[data-btn="blackBg"]{background: #000; color :#fff; border-color: none}
@@ -322,7 +206,7 @@ button{
 /*button @@@0803 종미수정*/
 a{
     &.btn_blue{
-	    border-radius: 10px; padding: 0 30px; font-size: $fs-18; font-weight: 400; height: 50px; line-height: 50px; background: $blue; color :#fff;
+	    border-radius: 10px; padding: 0 30px; font-size: $fs-18; font-weight: 400; height: 50px; line-height: 50px; background: $color-blue; color :#fff;
     }
 }
 
@@ -330,7 +214,7 @@ a{
 .sub_top {
     h2.title { @include w1300; font: 500 56px SBAggro, Pretendard; padding-top: 160px; color: #fff; text-align: center; height: 340px;}
     // 서브 상단 영역 반응형
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         h2.title{
             font-size:$fs-28; height: 240px; line-height: 300px
         }
@@ -354,7 +238,7 @@ a{
                             li{
                                 a{line-height: 46px; height: 46px; padding: 0 10px; font-size: $fs-17; font-weight: 400; color: #454545; position: relative;}
                                 &:not(:first-child){border-top: 1px solid $bor_gray;}
-                                &:hover a{color: $blue;
+                                &:hover a{color: $color-blue;
                                     &::before{display: block; content: ""; width: 100%; height: 100%; background: #f4f6f9; position: absolute; bottom: 0; left: -10px; width: calc(100% + 20px); z-index: -1;}
                                 }
                             }
@@ -412,7 +296,7 @@ a{
             }
         }
     }
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         border-width: 1px 0; 
         margin-bottom: 40px;
         >div{ padding: 0;
@@ -457,7 +341,7 @@ a{
             border-radius: 40px 20px 40px 20px; box-shadow: 0 0 15px rgba(24,62,119, 0.15); margin-right: 40px;}
     }
     // 서브 콘텐츠 타이틀 반응형
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         padding: 20px 30PX;
         h4{
             display: block;
@@ -489,7 +373,7 @@ a{
         }
     }
     // 탭 리스트 반응형
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         ul{ 
             background: none; padding: 0; border: 1px solid #c2c2c2; border-width: 1px 0 0 1px; border-radius: 0px; height: auto; gap: 0;
             li{
@@ -528,7 +412,7 @@ a{
     h5{
         font-size: $fs-16; color: #000; font-weight: 400; line-height: 30px;
         b{font-size: $fs-16; color: #000; line-height: 30px; margin: 0 3px; vertical-align: top;
-            &.blue{color: $blue;}
+            &.blue{color: $color-blue;}
         }
     }
     div{
@@ -549,7 +433,7 @@ a{
 
 //table_card,list
 .tab_thum{
-    border-top: 2px solid $color_2;
+    border-top: 2px solid $color-grey1;
 
     //table 형태
     ol{
@@ -557,13 +441,13 @@ a{
             ul{
                 display: flex;
                 li{
-                    padding: 0 15px; color: $color_2; line-height: 60px; border-bottom: 1px solid $bor_form; text-align: center; font-size: $fs-17; font-weight: 400; min-width: 0; 
+                    padding: 0 15px; color: $color-grey1; line-height: 60px; border-bottom: 1px solid $bor_form; text-align: center; font-size: $fs-17; font-weight: 400; min-width: 0; 
 
                     a{
                         text-align: left;
                         &.file_icon{ background: url(../images/sub/icon_file.png) no-repeat center; height: 60px;}
                         b{display: none;}
-                        strong{line-height: 60px; height: 60px; font-size: $fs-18; font-weight: 400; color: $color_2; @include elli; text-align: left; min-width: 0; display: block;}
+                        strong{line-height: 60px; height: 60px; font-size: $fs-18; font-weight: 400; color: $color-grey1; @include elli; text-align: left; min-width: 0; display: block;}
                         .noti{display: none;}
                     }
                     >b{font-size: $fs-17; line-height: 60px; height: 60px;}
@@ -574,7 +458,7 @@ a{
             }
         }
         // table 반응형
-        @media (max-width: 900px) {
+        @media (max-width: 1080px) {
             >li{
                 &.thead{display: none;}
                 ul{
@@ -636,7 +520,7 @@ a{
               > li { width: calc((100% - 60px) / 3); }
             }
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1080px) {
             ol {
                 gap: 40px 25px;
                 > li { width: calc((100% - 25px) / 2); 
@@ -664,13 +548,13 @@ a{
 
 // table
 .table{
-    border-top: 2px solid $color_2;
-    th, td{padding: 10px 20px; color: $color_2; border-bottom: 1px solid $bor_form; text-align: left; font-size: $fs-17; font-weight: 400; vertical-align: middle;}
+    border-top: 2px solid $color-grey1;
+    th, td{padding: 10px 20px; color: $color-grey1; border-bottom: 1px solid $bor_form; text-align: left; font-size: $fs-17; font-weight: 400; vertical-align: middle;}
     th{
         background: #f8f9fa; font-weight: 500; color: #000; padding-left: 30px;
     }
     // table 반응형
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         colgroup{display: none;}
         tbody, tr, th, td {
             display: block; width: 100%;
@@ -733,7 +617,7 @@ span.noti{
         }
     }
     // 라디오 버튼 반응형
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         ul{
             flex-wrap: wrap;
             li{
@@ -761,11 +645,11 @@ span.noti{
         display: flex; margin: 0 20px;
         li{
             a{border: none; color: #aaa; background: none;}
-            &.active a{color: $blue;}
+            &.active a{color: $color-blue;}
         }
     }
     // pagination 반응형
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         margin-bottom: 0;
         ul{
             margin: 0 auto;
@@ -807,7 +691,7 @@ span.noti{
     }
 
     // 게시판 상세 반응형
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         padding-bottom: 30px;
         .info{
             padding: 20px 0;
@@ -857,7 +741,7 @@ span.noti{
         }
     }
     // 상세 파일 반응형
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         dt{font-size: $fs-17; font-weight: 600; margin-bottom: 10px;}
         dd{
             flex-direction: column;
@@ -884,7 +768,7 @@ span.noti{
         span{flex: 1; text-align: left; padding-left: 35px;}
     }
     // prev_next 반응형
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
         a{
             padding: 15px 0;
             strong,span{font-size: $fs-15;}
@@ -932,11 +816,11 @@ span.noti{
         }
         &:before{display: none;}
     }
-    @media (max-width: 900px) {margin-top: 45px;}
+    @media (max-width: 1080px) {margin-top: 45px;}
 }
 
 // footer 반응형
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
     .footer{
         &.sub{ 
             margin-top: 0; 

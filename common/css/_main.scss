@@ -272,7 +272,7 @@ section {
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background-color: $color1;
+      background-color: $color-blue2;
       margin-left: 11px;
       vertical-align: bottom;
       margin-bottom: 10px;
@@ -521,7 +521,7 @@ section {
               content: '';
               display: block;
               position: absolute;
-              background: url(../images/main/search_icon_01.png) no-repeat center/24px 23px, linear-gradient(135deg, $color1, $bg-color2);
+              background: url(../images/main/search_icon_01.png) no-repeat center/24px 23px, linear-gradient(135deg, $color-blue2, $color-blue);
               width: 56.5px;
               height: 56.5px;
               box-shadow: 8.9px 4.5px 10px 0 rgba(19, 58, 131, 0.2);
@@ -538,7 +538,7 @@ section {
               border: double 2px transparent;
               border-radius: 50px;
               background-image: linear-gradient(white, white),
-                linear-gradient(to right, #2d8cff, $color1);
+                linear-gradient(to right, #2d8cff, $color-blue2);
               background-origin: border-box;
               background-clip: padding-box, border-box;
               font-size: $fs-17;
@@ -566,7 +566,7 @@ section {
               padding: 0 23px 0 48px;
               border: none;
               border-radius: 59px;
-              background: linear-gradient(to right, #2d8cff, $color1);
+              background: linear-gradient(to right, #2d8cff, $color-blue2);
               color: #fff;
               font-size: $fs-16;
               cursor: pointer;
@@ -755,7 +755,7 @@ section {
                 justify-content: center;
                 width: 24px;
                 height: 24px;
-                background: $color1;
+                background: $color-blue2;
                 border-radius: 8px;
                 font-size: 15px;
                 font-weight: 700;
@@ -1606,7 +1606,7 @@ section {
           border-radius: 15px;
           position: relative;
           z-index: 10;
-          background: $color1 url(../images/main/domain_arrow.png) no-repeat right bottom;
+          background: $color-blue2 url(../images/main/domain_arrow.png) no-repeat right bottom;
           justify-content: space-between;
           transform: scale(1); // 크기 변화 효과 복원
         //  transition: all 0.3s ease; // 전환 효과 복원
@@ -2553,11 +2553,11 @@ section {
                 font-weight: 300;
 
                 &.blue {
-                  background: $bg-color2;
+                  background: $color-blue;
                 }
 
                 &.orange {
-                  background: $bg-color1;
+                  background: $color-orange;
                 }
               }
 
@@ -3242,8 +3242,8 @@ section {
               &:hover{  //혜진 0804수정
                 transform: translateY(-2px);
                 span{
-                  background-color: $color1;
-                  box-shadow: 0 0 20px rgba($color1, 0.4), 0 0 40px rgba($color1, 0.2), 0 0 60px rgba($color1, 0.1);
+                  background-color: $color-blue2;
+                  box-shadow: 0 0 20px rgba($color-blue2, 0.4), 0 0 40px rgba($color-blue2, 0.2), 0 0 60px rgba($color-blue2, 0.1);
                   transform: scale(1.05);
                 }
               }
@@ -3356,7 +3356,7 @@ section {
             font-family: $ff-sbaggro;
             font-weight: 500;
             font-size: $fs-17;
-            background: $bg-color2 url(../images/main/service_icon_arrow.png) no-repeat center right 20px/17px 8px;
+            background: $color-blue url(../images/main/service_icon_arrow.png) no-repeat center right 20px/17px 8px;
 
             // 혜진 0804수정 : hover 효과 추가
             transition: all 0.3s ease-in-out;
@@ -3364,7 +3364,7 @@ section {
               transform: translateY(-4px);
             }
             &:last-child{ // 혜진 0804수정 : 버튼 색상 변경
-              background-color: $bg-color1;
+              background-color: $color-orange;
             }
           }
         }

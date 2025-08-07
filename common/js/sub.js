@@ -114,3 +114,98 @@ $(function(){
     });
 
 });
+
+// 페이지 로드 시 인터뷰 슬라이더 초기화
+$(document).ready(function() {
+  initInterviewSlider();
+});
+
+// AI 제안 코드
+// 세부 연구분야 슬라이더
+$(document).ready(function() {
+  let fieldSwiper;
+
+  function initFieldSlider() {
+    const screenWidth = $(window).width();
+    if (screenWidth <= 1080 && !fieldSwiper) {
+      fieldSwiper = new Swiper('.field_slider', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: false,
+      });
+    } else if (screenWidth > 1080 && fieldSwiper) {
+      fieldSwiper.destroy();
+      fieldSwiper = undefined;
+    }
+  }
+
+  initFieldSlider();
+
+  $(window).on('resize', function() {
+    initFieldSlider();
+  });
+});
+
+// AI 제안 코드
+$(document).ready(function() {
+    // 보안문자 모달의 '확인' 버튼 클릭 시
+    $('#btn-captcha-confirm').on('click', function(e) {
+        e.preventDefault();
+        // 보안문자 모달 닫기
+        $('#modal-captcha').removeClass('show');
+        // 연락처 확인 모달 열기
+        $('#modal-contact-result').addClass('show');
+    });
+});
+
+// AI 제안 코드
+$(document).ready(function() {
+  function toggleAccordion(button, open) {
+    const accordionBox = $(button).closest('.accordion_box');
+    const content = accordionBox.find('.accordion_content');
+    const srOnly = $(button).find('.sr-only');
+
+    accordionBox.toggleClass('on', open);
+
+    if (open) {
+      content.slideDown();
+      $(button).removeClass('btn_accordion_open').addClass('btn_accordion_close');
+      srOnly.text('연구실적 닫기');
+    } else {
+      content.slideUp();
+      $(button).removeClass('btn_accordion_close').addClass('btn_accordion_open');
+      srOnly.text('연구실적 열기');
+    }
+  }
+
+  // 동적으로 생성될 수 있는 요소에 이벤트 위임
+  $(document).on('click', '.btn_accordion_open', function() {
+    toggleAccordion(this, true);
+  });
+
+  $(document).on('click', '.btn_accordion_close', function() {
+    toggleAccordion(this, false);
+  });
+});
+
+// AI 제안 코드
+$(document).ready(function() {
+  $('.accordion_list').each(function() {
+    var $list = $(this);
+    var $items = $list.find('li');
+    var $btnAll = $list.siblings('.btn_all');
+
+    if ($items.length > 5) {
+      $items.slice(5).hide();
+      $btnAll.show();
+    } else {
+      $btnAll.hide();
+    }
+
+    $btnAll.on('click', function() {
+      var $list = $(this).siblings('.accordion_list');
+      $list.find('li').show();
+      $(this).hide();
+    });
+  });
+});

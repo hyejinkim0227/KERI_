@@ -214,10 +214,38 @@ a{
 .sub_top {
     h2.title { @include w1300; font: 500 56px SBAggro, Pretendard; padding-top: 160px; color: #fff; text-align: center; height: 340px;}
     // 서브 상단 영역 반응형
-    @media (max-width: 1080px) {
+    @media (max-width: 1080px) { display: flex;flex-direction: column; justify-content: center;align-items: center; 
         h2.title{
-            font-size:$fs-28; height: 240px; line-height: 300px
+            font-size:$fs-28; height: 240px; line-height: 300px; padding-top: 0;
         }
+    }
+    // 탭메뉴
+    .tabmenu{  width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.15); margin-top: -4px;
+        ul{@include w1300;display: flex;
+            li{ flex: 1; text-align: center;
+                a{ color: $color-wh2; opacity: 0.5; font-size: $fs-18; padding: 20px 10px;
+                    &.active{
+                        border-bottom: 4px solid $color-greenblue;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        
+        @media (max-width: 1080px) { border-top: none;
+            ul{ flex-wrap: wrap; gap: 6px; margin-bottom: 15px;
+                li{ flex: calc(50% - 3px);
+                    a{font-size: $fs-15; border: 1px solid rgba(255, 255, 255, 0.15); padding: 16px 10px;
+                        &.active{
+                            border-color:$color-greenblue;
+                            border-width: 1px;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
 
@@ -428,7 +456,6 @@ a{
         }
     }
 }
-
 
 
 //table_card,list
@@ -800,7 +827,7 @@ span.noti{
     }
 
     // sub_footer 반응형
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 1080px) {
         ul{
             flex-direction: column; padding: 0;
         

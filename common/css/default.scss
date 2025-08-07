@@ -4,10 +4,9 @@
 @import 'common'; // 2. header, footer, 공통(popup,sitemap)
 @import 'board'; // 3. form,table,input,btnStyle1
 @import 'main'; // 4. 메인페이지
-//@import 'sub'; // 5. 서브페이지
-
-//@import 'class'; // 6. 클래스 정의(animation포함)
-
+@import 'sub'; // 5. 서브페이지
+@import 'sub_modal';
+@import 'class'; // 6. 클래스 정의(animation포함)
 
 
 

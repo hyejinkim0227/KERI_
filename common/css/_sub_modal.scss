@@ -1,0 +1,122 @@
+// sub_modal.scss
+
+.sub_modal {
+    .modal_container {
+        max-width: 1002px; // 기본 max-width
+        border-radius: 20px;
+        padding: 0;
+    }
+    .modal_header{ padding: 21px 30px 18px; background: $color-blue; border-bottom: unset;
+        h3{color: $color-wh; font-size: $fs-17 !important; font-family: $ff-sbaggro;}
+        .btn_modal_close{background: url(../images/sub/modal_close.png) no-repeat center/18px; padding: 10px; width: 20px; height: 20px;}
+    }
+
+    &.sm {
+        .modal_container {
+            max-width: 522px; // .sm 클래스가 있을 경우 max-width
+        }
+    }
+
+    .modal_content {@include scrollBar2; flex-direction: column; padding: 30px 20px;  background: #fff;}
+    .btn_box{ margin: 29px auto 0;}
+    .modal_txt {
+        font-size: $fs-17; font-family: $ff-sbaggro; font-weight: 400;
+        margin-bottom: 18px;
+    }
+    // 보안문자 박스
+    .captcha_box { margin: 0 auto; border: 1px solid $color-grey5; width: 306px; height: 84px;
+        display: flex;align-items: center; margin-bottom: 15px;
+        .captcha_img{width: 259px;}
+        >div{ display: flex;flex-direction: column; border-left: $color-grey5 ; border-left: 1px solid $color-grey5 ;
+            button {  width: 48px; height: 40px; box-sizing: border-box;
+                &.btn_refresh { border-bottom: 1px solid $color-grey5;
+                    background: $color-grey4 url('/common/images/sub/btn_refresh.png') no-repeat center center;
+                    background-size: 20px;
+                }
+                &.btn_sound {
+                    background: $color-grey4 url('/common/images/sub/btn_sound.png') no-repeat center center;
+                    background-size: 20px;
+                }
+            }
+        }
+     
+    }
+    .input_box { display: flex; align-items: center; gap: 20px; flex-direction: column;
+        input[type="text"] { height: 48px; width: 306px;font-size: $fs-16;
+            &::placeholder{color: #7f7f7f;}
+        }
+
+    }
+    // 연락처 확인 모달 결과
+    .email_info {display: flex; align-items: center; justify-content: center; margin: 0 auto; background: $color-blue-light; border-radius: 10px;width: 420px; height: 80px;
+        span{font-size: $fs-18; }
+        em{color: $color-blue2;}
+    }
+    // 특허 요약정보 모달
+    .summary_detail { padding: 20px 35px 20px 29px;
+        background: $color-blue-light; border-radius: 10px;}
+    // 구성원 안내
+    .member_info{display: flex;  border: 3px solid $color-greenblue; border-radius: 10px; padding: 36px 34px;
+        .member_info_left{ flex: 1;
+            span{display: block; font-size: $fs-15; margin-bottom: 10px;}
+            b{display: block; font-size: $fs-24; font-family: $ff-sbaggro; margin-bottom: 5px;
+                em{color: #c0c0c0; font-weight: 50;margin-left: 8px;}
+            }
+            p{font-size: $fs-16;}
+            ol{ display: flex; flex-direction: column; gap: 18px; margin-top: 28px;
+                >li{ font-size: $fs-17; font-family: $ff-sbaggro; font-weight: 300;
+                }
+                .call{ padding-left: 36px;
+                    background: url(../images/sub/member_call_blue.png) no-repeat top left;
+                }
+                .email{ padding-left: 36px; 
+                    background: url(../images/sub/member_email_blue.png) no-repeat top 2px left;
+                    &:hover{text-decoration: underline; text-underline-offset: 4px;}
+                }
+                .site{ padding-left: 36px; width: 100%; 
+                    background: url(../images/sub/member_site.png) no-repeat top left;
+                    a{ position: relative; text-decoration: underline; text-underline-offset: 4px; display: inline-block;
+                        &::after{content: ''; display: block;position: absolute; right: -24px; top: 4px; width: 16px; height: 16px; background: url(../images/sub/menber_outlink.png) no-repeat center right; margin-left: 37px;}
+                    }
+                }
+            }
+        }
+        .member_info_right{ border-radius: 15px; padding:20px; background: $color-blue-light2; width: 376px;
+            b{color: $color-blue2; display: block; margin-bottom: 18px; font-size: $fs-20; font-family: $ff-sbaggro;}
+            ul{ display: flex; flex-direction: column; gap: 5px;
+                li{background: #fff; border-radius: 8px;  padding: 11px 15px; box-shadow: 0px 0px 10px rgba(0, 13, 50, 0.10);
+                    span{font-size: $fs-15; 
+                        &:before{content: '';margin-right: 8px; vertical-align: middle; margin-bottom: 4px; display: inline-block;background-color: #b9b9b9; width: 4px; height: 4px; border-radius: 50%;}
+                    }
+                }
+            }
+        }
+        
+    }
+    // 연구실적
+    .accordion_box{ margin-top: 40px;
+        .accordion_header{ display: flex;justify-content: space-between; align-items: center; height: 54px;
+            h5{font-size: $fs-24; font-family: $ff-sbaggro;}
+            button{background: url(../images/sub/accordion_close.png) no-repeat center right; width: 20px; height: 11px;}
+            .btn_accordion_open{background: url(../images/sub/accordion_open.png) no-repeat center right; width: 20px; height: 11px;;}
+        }
+       .accordion_content{
+        ol{ display: flex; flex-direction: column; gap: 10px;
+            li{background: $color-blue-light2; border-radius: 10px; padding: 18px 15px; display: flex; align-items: center;
+               span{font-size: $fs-15; color: #323232; margin-left: auto;}
+                &:before{content: '';margin-right: 8px; vertical-align: middle; margin-bottom: 4px; display: inline-block;background-color: #b9b9b9; width: 4px; height: 4px; border-radius: 50%;}
+                &.link{ 
+                    b{color: $color-blue2; position: relative;
+                        &::after{content: ''; display: block; position: absolute;  background: url(../images/sub/menber_outlink.png) no-repeat center right; width: 16px; height: 16px;margin-left: 8px; top: 4px; right: -24px}
+                    }
+                    &:before{background-color: $color-blue2;}
+
+                }
+            }
+        }
+        .btn_all{display: block; width: 100%; background: #f4f4f4;  border-radius: 10px; padding: 10px 15px; font-size: $fs-16; height: 58px; line-height: 43px; text-align: center;
+            &:after{content: ''; display: inline-block; background: url(../images/sub/btn_all.png) no-repeat center right; width: 8px; height: 8px;margin-left: 8px; top: 4px; right: -24px}
+        }
+       }
+    }
+}

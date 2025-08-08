@@ -117,7 +117,7 @@
 
 // 구성원 소개
 .member_list{ display: flex; gap: 30px 50px; flex-wrap: wrap;
-    >li{width: calc(50% - 25px); background: $color-grey4; border-radius: 10px; padding: 30px;display: flex; gap: 10px;
+    >li{width: calc(50% - 25px); background: $color-grey4; border-radius: 10px; padding: 40px 30px;display: flex; gap: 10px;
         .info{display: flex; flex-direction: column; gap: 45px;
             h4{ font-size: $fs-24; font-family: $ff-sbaggro; margin-top: 20px; font-weight: 400;
                 span{font-size: $fs-16; color: $color-grey1; font-family: $ff-suit;}

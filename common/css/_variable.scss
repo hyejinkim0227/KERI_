@@ -11,6 +11,7 @@ $color-grey2:#666;
 $color-grey3 : #333;
 $color-grey4 : #f8f8f8;
 $color-grey5 : #dbdbdb;
+$color-grey6 : #57585e;
 $color-skyblue : #177ac8;
 $color-blue: #1f60c2;
 $color-blue2 : #17469d;
@@ -213,4 +214,11 @@ $fs-60:3.75rem;// 60px
     @media screen and (min-width:$width){
         @content;
     }   
+}
+
+//블릿 적용
+.dot{ 
+    > li{ position: relative; padding-left: 16px !important;
+        &:before{position: absolute; content: ''; display: block;left: 0px; top: 10px; background-color: #b9b9b9; width: 4px; height: 4px; border-radius: 50%; }
+    }
 }

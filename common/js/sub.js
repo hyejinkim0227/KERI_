@@ -42,6 +42,18 @@ $(function(){
     // 초기 실행
     table_list();
 
+    // 이메일 인증 기능
+    // 인증번호 전송 버튼 클릭 시 email_check_box 보여주기 및 버튼 텍스트 변경
+    $(document).on('click', '.email .btn_sm:contains("인증번호 전송"), .email .btn_sm:contains("인증번호 재전송")', function(){
+        $(this).closest('.email').siblings('.email_check').find('.email_check_box').show();
+        $(this).text('인증번호 재전송');
+    });
+
+    // 인증하기 버튼 클릭 시 완료 메시지 보여주기
+    $(document).on('click', '.email_check_box .btn_sm:contains("인증하기")', function(){
+        $(this).closest('.email_check').find('b').show();
+    });
+
     /*/공지태그 이미지다음에 추가
     $('#card').on('click', function() {
         $(this).toggleClass('active');
@@ -115,12 +127,14 @@ $(function(){
 
 });
 
+
+//혜진추가
 // 페이지 로드 시 인터뷰 슬라이더 초기화
 $(document).ready(function() {
   initInterviewSlider();
 });
 
-// AI 제안 코드
+
 // 세부 연구분야 슬라이더
 $(document).ready(function() {
   let fieldSwiper;
@@ -146,7 +160,7 @@ $(document).ready(function() {
   });
 });
 
-// AI 제안 코드
+// 보안문자 모달 열기/닫기
 $(document).ready(function() {
     // 보안문자 모달의 '확인' 버튼 클릭 시
     $('#btn-captcha-confirm').on('click', function(e) {
@@ -158,7 +172,7 @@ $(document).ready(function() {
     });
 });
 
-// AI 제안 코드
+// 구성원안내 연구실적 아코디언
 $(document).ready(function() {
   function toggleAccordion(button, open) {
     const accordionBox = $(button).closest('.accordion_box');
@@ -188,11 +202,12 @@ $(document).ready(function() {
   });
 });
 
-// AI 제안 코드
+// 구성원안내 전체보기 아코디언
 $(document).ready(function() {
   $('.accordion_list').each(function() {
     var $list = $(this);
-    var $items = $list.find('li');
+    // 직계 자식 li 요소들만 선택 (자식 ul, ol 안의 li는 제외)
+    var $items = $list.children('li');
     var $btnAll = $list.siblings('.btn_all');
 
     if ($items.length > 5) {
@@ -204,8 +219,112 @@ $(document).ready(function() {
 
     $btnAll.on('click', function() {
       var $list = $(this).siblings('.accordion_list');
-      $list.find('li').show();
-      $(this).hide();
+      // 직계 자식 li 요소들만 선택 (자식 ul, ol 안의 li는 제외)
+      var $items = $list.children('li');
+      
+      if ($(this).text() === '전체보기') {
+        // 전체보기 클릭 시
+        $items.show();
+        $(this).text('닫기').addClass('close');
+      } else {
+        // 닫기 클릭 시
+        $items.slice(5).hide();
+        $(this).text('전체보기').removeClass('close');
+      }
     });
   });
 });
+
+// 특허 요약정보 모달 열기
+$(document).on('click', '.btn_summary', function(e) {
+  e.preventDefault(); // 기본 이벤트 방지
+  e.stopPropagation(); // 이벤트 전파 방지
+  
+  
+  const $modal = $('#modal-patent-summary');
+  
+  // 기존 모달 시스템과 동일하게 스크롤 방지 및 모달 표시
+  if (typeof preventBodyScroll === 'function') {
+    preventBodyScroll();
+  }
+  
+  if ($modal.length > 0) {
+    $modal.addClass('show');
+    console.log('모달에 show 클래스 추가됨');
+  } else {
+    console.error('모달 요소를 찾을 수 없습니다');
+  }
+  
+  return false;
+});
+
+// modal-member-info 모달이 닫힐 때 아코디언 리셋
+$(document).on('click', '#modal-member-info .btn_modal_close', function() {
+  // 모달이 닫힌 후 아코디언 리셋 (모달 애니메이션 후 실행)
+  setTimeout(function() {
+    resetMemberInfoAccordion();
+  }, 300);
+});
+
+// 배경 클릭으로 모달 닫기 시에도 리셋
+$(document).on('click', '#modal-member-info', function(e) {
+  if (e.target === this) {
+    setTimeout(function() {
+      resetMemberInfoAccordion();
+    }, 300);
+  }
+});
+
+// ESC 키로 모달 닫기 시에도 리셋
+$(document).on('keydown', function(e) {
+  if (e.keyCode === 27 && $('#modal-member-info').hasClass('show')) {
+    setTimeout(function() {
+      resetMemberInfoAccordion();
+    }, 300);
+  }
+});
+
+// 구성원 안내 모달 아코디언 리셋 함수
+function resetMemberInfoAccordion() {
+  const $modal = $('#modal-member-info');
+  if ($modal.length === 0) return;
+  
+  // 모든 accordion_box 리셋
+  $modal.find('.accordion_box').each(function() {
+    const $accordionBox = $(this);
+    const $content = $accordionBox.find('.accordion_content');
+    const $button = $accordionBox.find('.accordion_header button');
+    const $srOnly = $button.find('.sr-only');
+    
+    // accordion_box를 on 상태로 설정
+    $accordionBox.addClass('on');
+    
+    // accordion_content를 보이게 설정 (slideDown 효과 없이 즉시)
+    $content.show();
+    
+    // 버튼 상태를 닫기 버튼으로 설정
+    $button.removeClass('btn_accordion_open').addClass('btn_accordion_close');
+    $srOnly.text('연구실적 닫기');
+  });
+  
+  // 모든 accordion_list 리셋
+  $modal.find('.accordion_list').each(function() {
+    const $list = $(this);
+    const $items = $list.children('li');
+    const $btnAll = $list.siblings('.btn_all');
+    
+    // 모든 li 요소를 먼저 보이게 설정
+    $items.show();
+    
+    if ($items.length > 5) {
+      // 5개 초과 항목들 숨기기
+      $items.slice(5).hide();
+      // 전체보기 버튼 표시 및 텍스트 리셋
+      $btnAll.text('전체보기').removeClass('close').show();
+    } else {
+      // 5개 이하면 전체보기 버튼 숨기기
+      $btnAll.hide();
+    }
+  });
+  
+}

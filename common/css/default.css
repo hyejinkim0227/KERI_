@@ -165,6 +165,22 @@
 
 /*요소중앙정렬*/
 /*아이템 정렬*/
+.dot > li {
+  position: relative;
+  padding-left: 16px !important;
+}
+.dot > li:before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 0px;
+  top: 10px;
+  background-color: #b9b9b9;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
 /* SUIT 폰트 - 여러 굵기 (공공기관 호환성 최적화) */
 @font-face {
   font-family: "SUIT";
@@ -499,7 +515,6 @@ form {
 }
 
 input, select, textarea {
-  padding: 0 15px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -2668,6 +2683,7 @@ input[type=radio]:checked::after {
   margin-left: 7px;
 }
 .file_box > div input {
+  cursor: pointer;
   width: 100%;
   position: absolute;
   top: -50px;
@@ -3710,13 +3726,13 @@ span.noti[data-color=orange] {
   }
 }
 
-.phone {
+.phone, .fax {
   display: flex;
 }
-.phone select, .phone input {
+.phone select, .phone input, .fax select, .fax input {
   width: 200px;
 }
-.phone span {
+.phone span, .fax span {
   display: block;
   width: 15px;
   text-align: center;
@@ -3726,12 +3742,35 @@ span.noti[data-color=orange] {
   font-size: 1.25rem;
 }
 @media (max-width: 1100px) {
-  .phone input {
+  .phone input, .fax input {
     width: 33% !important;
   }
-  .phone select {
+  .phone select, .fax select {
     width: 34% !important;
   }
+}
+
+.email_check {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.email_check > span {
+  color: #f43f3f;
+}
+.email_check b {
+  color: #17469d;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.4em;
+  display: block;
+  width: 100%;
+  display: none;
+}
+.email_check .email_check_box {
+  display: none;
 }
 
 .point_b:before {
@@ -8019,8 +8058,8 @@ section .fp-tableCell {
   margin-top: auto;
   display: block;
   background: url(../images/sub/member_more_black.png) no-repeat center/25px;
-  width: 46px;
-  height: 46px;
+  width: 25px;
+  height: 25px;
 }
 .member_list > li.director {
   background-color: #17469d;
@@ -8047,7 +8086,32 @@ section .fp-tableCell {
   background-image: url(../images/sub/member_more_white.png);
   cursor: pointer;
 }
+@media (max-width: 1080px) {
+  .member_list {
+    flex-direction: column;
+  }
+  .member_list > li {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
 
+.mark {
+  position: relative;
+  padding-left: 0;
+  color: #57585e;
+  font-size: 1rem;
+  display: block;
+}
+.mark::before {
+  content: "※ ";
+  color: #57585e;
+  font-weight: 400;
+}
+
+.sub_modal#modal-patent-summary {
+  z-index: 100002;
+}
 .sub_modal .modal_container {
   max-width: 1002px;
   border-radius: 20px;
@@ -8089,6 +8153,11 @@ section .fp-tableCell {
   background-color: #f7f7f9;
   border-radius: 8px;
   width: 15px;
+}
+.sub_modal .modal_content h5 {
+  font-size: 1.5rem;
+  font-family: "SBAggro", "Pretendard";
+  margin-bottom: 18px;
 }
 .sub_modal .btn_box {
   margin: 29px auto 0;
@@ -8290,8 +8359,7 @@ section .fp-tableCell {
   height: 54px;
 }
 .sub_modal .accordion_box .accordion_header h5 {
-  font-size: 1.5rem;
-  font-family: "SBAggro", "Pretendard";
+  margin-bottom: 0;
 }
 .sub_modal .accordion_box .accordion_header button {
   background: url(../images/sub/accordion_close.png) no-repeat center right;
@@ -8308,34 +8376,28 @@ section .fp-tableCell {
   flex-direction: column;
   gap: 10px;
 }
-.sub_modal .accordion_box .accordion_content ol li {
+.sub_modal .accordion_box .accordion_content ol > li {
+  padding-left: 31px !important;
   background: #f2f6fc;
   border-radius: 10px;
   padding: 18px 15px;
   display: flex;
   align-items: center;
 }
-.sub_modal .accordion_box .accordion_content ol li span {
+.sub_modal .accordion_box .accordion_content ol > li span {
   font-size: 0.9375rem;
   color: #323232;
   margin-left: auto;
 }
-.sub_modal .accordion_box .accordion_content ol li:before {
-  content: "";
-  margin-right: 8px;
-  vertical-align: middle;
-  margin-bottom: 4px;
-  display: inline-block;
-  background-color: #b9b9b9;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
+.sub_modal .accordion_box .accordion_content ol > li:before {
+  top: 50%;
+  left: 17px;
 }
-.sub_modal .accordion_box .accordion_content ol li.link b {
+.sub_modal .accordion_box .accordion_content ol > li.link b {
   color: #17469d;
   position: relative;
 }
-.sub_modal .accordion_box .accordion_content ol li.link b::after {
+.sub_modal .accordion_box .accordion_content ol > li.link b::after {
   content: "";
   display: block;
   position: absolute;
@@ -8346,10 +8408,11 @@ section .fp-tableCell {
   top: 4px;
   right: -24px;
 }
-.sub_modal .accordion_box .accordion_content ol li.link:before {
+.sub_modal .accordion_box .accordion_content ol > li.link:before {
   background-color: #17469d;
 }
 .sub_modal .accordion_box .accordion_content .btn_all {
+  margin-top: 10px;
   display: block;
   width: 100%;
   background: #f4f4f4;
@@ -8369,6 +8432,56 @@ section .fp-tableCell {
   margin-left: 8px;
   top: 4px;
   right: -24px;
+  transition: transform 0.3s ease;
+}
+.sub_modal .accordion_box .accordion_content .btn_all.close:after {
+  transform: rotate(180deg);
+}
+.sub_modal .accordion_box .accordion_content .PatentInfo li {
+  padding-left: 18px !important;
+}
+.sub_modal .accordion_box .accordion_content .PatentInfo li ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 19px 56px;
+}
+.sub_modal .accordion_box .accordion_content .PatentInfo li ul li {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+.sub_modal .accordion_box .accordion_content .PatentInfo li ul li span {
+  font-weight: 400;
+}
+.sub_modal .accordion_box .accordion_content .PatentInfo li ul li .btn_summary {
+  position: relative;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  height: auto;
+  line-height: 1;
+}
+.sub_modal .accordion_box .accordion_content .PatentInfo li ul li .btn_summary::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -24px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  background: url(../images/sub/menber_outlink.png) no-repeat center right/14px;
+  margin-left: 37px;
+}
+.sub_modal .accordion_box .accordion_content .PatentInfo li ul li:first-of-type {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.sub_modal .accordion_box .accordion_content .PatentInfo li ul li:first-of-type::before {
+  top: 10px;
 }
 
 .left {

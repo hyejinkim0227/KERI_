@@ -1,6 +1,10 @@
 // sub_modal.scss
 
 .sub_modal {
+    // 특허 요약정보 모달이 다른 모달 위로 표시되도록 높은 z-index 설정
+    &#modal-patent-summary {
+        z-index: 100002;
+    }
     .modal_container {
         max-width: 1002px; // 기본 max-width
         border-radius: 20px;
@@ -17,7 +21,9 @@
         }
     }
 
-    .modal_content {@include scrollBar2; flex-direction: column; padding: 30px 20px;  background: #fff;}
+    .modal_content {@include scrollBar2; flex-direction: column; padding: 30px 20px;  background: #fff;
+        h5{font-size: $fs-24; font-family: $ff-sbaggro; margin-bottom: 18px;}
+    }
     .btn_box{ margin: 29px auto 0;}
     .modal_txt {
         font-size: $fs-17; font-family: $ff-sbaggro; font-weight: 400;
@@ -96,15 +102,15 @@
     // 연구실적
     .accordion_box{ margin-top: 40px;
         .accordion_header{ display: flex;justify-content: space-between; align-items: center; height: 54px;
-            h5{font-size: $fs-24; font-family: $ff-sbaggro;}
+            h5{margin-bottom: 0;}
             button{background: url(../images/sub/accordion_close.png) no-repeat center right; width: 20px; height: 11px;}
             .btn_accordion_open{background: url(../images/sub/accordion_open.png) no-repeat center right; width: 20px; height: 11px;;}
         }
        .accordion_content{
         ol{ display: flex; flex-direction: column; gap: 10px;
-            li{background: $color-blue-light2; border-radius: 10px; padding: 18px 15px; display: flex; align-items: center;
+            >li{padding-left: 31px !important; background: $color-blue-light2; border-radius: 10px; padding: 18px 15px; display: flex; align-items: center;
                span{font-size: $fs-15; color: #323232; margin-left: auto;}
-                &:before{content: '';margin-right: 8px; vertical-align: middle; margin-bottom: 4px; display: inline-block;background-color: #b9b9b9; width: 4px; height: 4px; border-radius: 50%;}
+                &:before{top:50% ;left:17px;} 
                 &.link{ 
                     b{color: $color-blue2; position: relative;
                         &::after{content: ''; display: block; position: absolute;  background: url(../images/sub/menber_outlink.png) no-repeat center right; width: 16px; height: 16px;margin-left: 8px; top: 4px; right: -24px}
@@ -114,9 +120,29 @@
                 }
             }
         }
-        .btn_all{display: block; width: 100%; background: #f4f4f4;  border-radius: 10px; padding: 10px 15px; font-size: $fs-16; height: 58px; line-height: 43px; text-align: center;
-            &:after{content: ''; display: inline-block; background: url(../images/sub/btn_all.png) no-repeat center right; width: 8px; height: 8px;margin-left: 8px; top: 4px; right: -24px}
+        .btn_all{margin-top: 10px; display: block; width: 100%; background: #f4f4f4;  border-radius: 10px; padding: 10px 15px; font-size: $fs-16; height: 58px; line-height: 43px; text-align: center;
+            &:after{content: ''; display: inline-block; background: url(../images/sub/btn_all.png) no-repeat center right; width: 8px; height: 8px;margin-left: 8px; top: 4px; right: -24px; transition: transform 0.3s ease;}
+            &.close:after{transform: rotate(180deg);}
+        }
+        // 특허정보
+        .PatentInfo{
+            li{
+                padding-left: 18px !important;
+                ul{ display: flex; flex-wrap: wrap; gap: 19px 56px;
+                    li{  display: flex; flex-wrap: wrap; font-size: $fs-15; font-weight: 500;
+                        span{font-weight: 400;}
+                        .btn_summary{ position: relative; font-size: $fs-15; font-weight: 500; height: auto; line-height: 1;
+                            &::after{ content: "";display: block; position: absolute;right: -24px; top: 4px; width: 14px;
+                            height: 14px; background: url(../images/sub/menber_outlink.png) no-repeat center right/ 14px;margin-left: 37px;}
+                        }
+                        &:first-of-type{ @include elli2;  width: 100%; 
+                            &::before{top: 10px;}
+                        }
+                    }
+                }
+            }
         }
        }
     }
+ 
 }

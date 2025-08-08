@@ -170,7 +170,7 @@ button{
     color: $color-bk; font-size:$fs-18; font-weight: 400; height: 50px; border: none; line-height: 50px;
     
     &[data-btn] {padding: 0 30px; border-radius: 9px; border: 1px solid $bor_gray;
-        &.btn_sm{height: 44px; line-height: 44px; font-size: $fs-15; border-radius: 6px;}
+        &.btn_sm{height: 44px; line-height: 44px; font-size: $fs-15; border-radius: 7px;}
     }
     &[data-btn="blue"]{background: $color-blue; color :#fff; border: none;}
     &[data-btn="black"]{background: #fff; color :$color-bk; border-color: $color-bk;}
@@ -259,7 +259,7 @@ a{
                 border-left: 1px solid $bor_gray; background: url(../images/sub/icon_home.png) no-repeat 5px 8px / auto 50px; padding-left: 60px;
                 >li{
                     position: relative; border-right: 1px solid $bor_gray;
-                    >a{line-height: 60px; height: 60px; width: 240px; transition: all 0.4s; padding: 0 20px; font-size: $fs-17; color: #333; background: url(../images/sub/icon_lnb_down.png) no-repeat right 20px center;}
+                    >a{line-height: 60px; height: 60px; width: 240px; transition: all 0.4s; padding: 0 20px; font-size: $fs-17; color: $color-bk; background: url(../images/sub/icon_lnb_down.png) no-repeat right 20px center;}
                     div{ 
                         position: absolute; top: 60px; left: -1px; width: calc(100% + 2px); height: 0; background: #fff; z-index: 1; transition: all 0.4s; overflow: hidden; box-shadow: 0 5px 10px rgba(0,0,0,0.15); opacity: 0;
                         ol{ border: 1px solid $bor_gray; padding: 0 10px;
@@ -272,9 +272,9 @@ a{
                             }
                         }
                     }
-                    &:hover div{height: auto; opacity: 1; transition: all 0.4s;}
+                    &:hover div{height: auto; opacity: 1; transition: all 0.4s; color: $color-blue;}
                     &:first-child{border-left: 1px solid $bor_gray;}
-                    &:hover>a, &.active>a{background-image: url(../images/sub/icon_lnb_up.png); background-color: #fff;}
+                    &:hover>a, &.active>a{background-image: url(../images/sub/icon_lnb_up.png); background-color: #fff; color: $color-blue; font-weight: 500;}
                 }
             }
             .etc{
@@ -364,7 +364,7 @@ a{
     background: #f4f6f9; padding: 30px 50px; border-radius: 20px; margin-bottom: 40px;
     h4{
         display: flex; align-items: center;
-        strong{ display: block; font-size: $fs-18; font-weight: 600; color: $color-bk; line-height: 1.5em; width: calc(100% - 166px);}
+        strong{ display: block; font-size: $fs-18; font-weight: 500; color: $color-bk; line-height: 1.5em; width: calc(100% - 166px);}
         &::before{display: inline-block; content: ""; width: 126px; height: 126px; background: #fff url(../images/sub/title_101.png) no-repeat center; 
             border-radius: 40px 20px 40px 20px; box-shadow: 0 0 15px rgba(24,62,119, 0.15); margin-right: 40px;}
     }
@@ -474,7 +474,7 @@ a{
                         text-align: left;
                         &.file_icon{ background: url(../images/sub/icon_file.png) no-repeat center; height: 60px;}
                         b{display: none;}
-                        strong{line-height: 60px; height: 60px; font-size: $fs-18; font-weight: 400; color: $color-grey1; @include elli; text-align: left; min-width: 0; display: block;}
+                        strong{line-height: 60px; height: 60px; font-size: $fs-18; font-weight: 600; color: $color-grey1; @include elli; text-align: left; min-width: 0; display: block;}
                         .noti{display: none;}
                     }
                     >b{font-size: $fs-17; line-height: 60px; height: 60px;}
@@ -701,7 +701,7 @@ span.noti{
     .info{
         padding: 35px 20px 25px; border-bottom: 1px solid #e9e9e9;
         h2 {
-            b{font-size: $fs-26; font-weight: 500; color: #1d1d1d; line-height: 1.4em; vertical-align: top; margin-left: 3px;}
+            b{font-size: $fs-28; font-weight: 600; color: #1d1d1d; line-height: 1.4em; vertical-align: top; margin-left: 3px;}
             span{margin-right: 5px;}
         }
         ul{ margin-top: 25px;
@@ -715,7 +715,7 @@ span.noti{
     }
     .contents{
         padding: 30px 20px 0;
-        h2{font-size:$fs-20; font-weight: 500; color: $color-bk; line-height: 1.4em; margin-bottom: 30px;}
+        h2{font-size:$fs-24; font-weight: 600; color: $color-bk; line-height: 1.4em; margin-bottom: 30px;}
         p{font-size: $fs-17; font-weight: 300; color: $color-bk; line-height: 1.8em;}
         h4{font-size: $fs-17; font-weight: 500; color: $color-bk; line-height: 1.4em; margin-bottom: 10px; display: flex; align-items: center;
             &::before{display: inline-block; content: ""; width: 16px; height: 16px; border: 1px solid #aaa;margin-right: 10px;}
@@ -759,7 +759,7 @@ span.noti{
         >a{
             font-size: $fs-16; font-weight: 400; color: $color-bk; line-height: 20px; position: relative; display: flex; align-items: center;
 
-            &:before{content: ""; display: i; width: 20px; height: 20px; line-height: 20px; background: url(../images/sub/icon_file2.png) no-repeat center / auto 16px; margin-right: 5px;}
+            &:before{content: ""; display: i; width: 22px; height: 22px; line-height: 22px; background: url(../images/sub/icon_file2.png) no-repeat center / auto 22px; margin-right: 5px;}
             span{font-size: $fs-15; font-weight: 400; color: #707070; line-height: 20px;}
         }
         &:not(:last-child){margin-bottom: 10px;}
@@ -782,6 +782,7 @@ span.noti{
             div,a{width: 100%;}
             a{
                 font-size: $fs-15; line-height: 1.4em; margin-bottom: 10px; align-items: flex-start;
+                &:before{background-size: auto 18px; margin-right: 10px;}
             }
         }
     }
@@ -794,7 +795,7 @@ span.noti{
     a{
         border-bottom: 1px solid #dcdcdc; padding: 30px 0; display: flex; align-items: center;
         strong, span{
-            display: block; font-size: $fs-17; color: $color-bk; line-height: 1.4em; font-weight: 500;
+            display: block; font-size: $fs-17; color: $color-bk; line-height: 1.4em; font-weight: 600;
         }
         strong{ width: 120px; text-align: center; position: relative;
             &::after{content: ""; display: block; width: 1px; height: 17px; background: #dcdcdc; position: absolute; right: 0; top: 4px;}

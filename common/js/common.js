@@ -893,7 +893,7 @@ $(document).ready(function() {
       const footerTop = $footer.offset().top;
       const windowHeight = $(window).height();
 
-      if (scrollTop + windowHeight > footerTop + 200) {
+      if (scrollTop + windowHeight > footerTop + 100) {
           $indicator.fadeOut();
       } else {
           if ($(window).width() > 1080) {

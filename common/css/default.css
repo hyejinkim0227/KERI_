@@ -630,6 +630,9 @@ iframe {
     font-size: 0.875rem;
   }
 }
+#wrapper.sub .header .head {
+  padding-left: 0;
+}
 
 .skip_navi {
   position: absolute;
@@ -814,6 +817,9 @@ iframe {
 .header #gnb > ul > li.active .dep2_wrap {
   visibility: visible;
 }
+.header #gnb > ul > li.active .dep2_wrap::after {
+  display: block;
+}
 .header #gnb .dep2_wrap {
   position: absolute;
   left: 0;
@@ -823,9 +829,29 @@ iframe {
   text-align: left;
   width: 100%;
   z-index: 1;
-  background-color: #fff;
+  background: #fff;
   border-top: 1px solid #ddd;
   transition: visibility 0.15s ease;
+}
+.header #gnb .dep2_wrap::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  content: "";
+}
+.header #gnb .dep2_wrap::after {
+  position: fixed;
+  top: calc(85px + 1px);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 85px);
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  display: none;
+  content: "";
 }
 .header #gnb .dep2_wrap > ul > li > a {
   position: relative;
@@ -864,6 +890,7 @@ iframe {
   min-height: 599px;
   padding: 43px 0 0 118px;
   border-radius: 0 0 100px 0;
+  z-index: 999;
   font-family: "SBAggro", "Pretendard";
 }
 .header #gnb .dep2_wrap > div strong {
@@ -891,7 +918,7 @@ iframe {
   background: #fff;
   padding: 32px 0 40px 50px;
   overflow-y: auto;
-  max-height: 90vh;
+  max-height: 80vh;
   height: auto;
 }
 .header #gnb .dep2_wrap > ul > li {
@@ -2370,6 +2397,7 @@ body.modal-open {
 }
 .modal_header h3 {
   margin: 0;
+  font-family: "SBAggro", "Pretendard";
   font-size: 2rem !important;
 }
 .modal_header .btn_modal_close {

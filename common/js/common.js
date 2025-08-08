@@ -21,7 +21,7 @@ function debounceResize(key, callback, delay = 300) {
 
 // scrolled 클래스 보호 함수
 function protectScrolledClass() {
-  var shouldHaveScrolled = $(window).scrollTop() > 150 || 
+  var shouldHaveScrolled = $(window).scrollTop() > 0 || 
                           $('.header #gnb > ul > li.active').length > 0 ||
                           $('.header').hasClass('active');
   
@@ -354,7 +354,7 @@ function stopIframe(target) {
 function initHeaderScroll() {
   $(window).off('scroll.headerScroll');
   
-  var scrollThreshold = 150; 
+  var scrollThreshold = 0; 
   
   $(window).on('scroll.headerScroll', function() {
     var scrollTop = $(window).scrollTop();
@@ -397,7 +397,7 @@ $(function () {
   $('.header').removeClass('active');
   
   // 초기 scrolled 상태 설정
-  if ($(window).scrollTop() > 150) {
+  if ($(window).scrollTop() > 0) {
     $('.header').addClass('scrolled');
   }
 

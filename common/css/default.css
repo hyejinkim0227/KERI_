@@ -6633,7 +6633,7 @@ section .fp-tableCell {
   border-left: 1px solid #dbdbdb;
 }
 .main .certification .support .support_banner .support_list .support_item {
-  flex: 0 0 50%;
+  width: 309px;
 }
 .main .certification .support .support_banner .support_list .support_item:nth-child(even) {
   border-left: 1px solid #dbdbdb;
@@ -7170,24 +7170,10 @@ section .fp-tableCell {
 .main .promo_top .interview:not(.slick-initialized) {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
   padding: 20px 0;
 }
-.main .promo_top .interview:not(.slick-initialized) > div {
-  width: calc((100% - 40px) / 3);
-  max-width: 290px;
-}
-.main .promo_top .interview.slick-initialized .slick-track {
-  display: flex;
-  align-items: center;
-  margin-left: -14px;
-}
-.main .promo_top .interview.slick-initialized .slick-slide {
-  margin: 0 20px;
-  border-radius: 30px;
-}
-.main .promo_top .interview.slick-initialized .slick-slide a {
-  box-shadow: 8.9px 4.5px 21px 0 rgba(0, 0, 0, 0.06);
+.main .promo_top .interview > div div.swiper-slide {
+  width: 290px;
 }
 .main .promo_top .interview > div a {
   display: block;

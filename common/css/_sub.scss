@@ -117,12 +117,12 @@
 
 // 구성원 소개
 .member_list{ display: flex; gap: 30px 50px; flex-wrap: wrap;
-    >li{width: calc(50% - 25px); background: $color-grey4; border-radius: 10px; padding: 40px 30px;display: flex; gap: 10px;
+    >li{width: calc(50% - 25px); background: $color-grey4; border-radius: 10px; padding: 36px 30px;display: flex; gap: 10px;
         .info{display: flex; flex-direction: column; gap: 45px;
             h4{ font-size: $fs-24; font-family: $ff-sbaggro; margin-top: 20px; font-weight: 400;
                 span{font-size: $fs-16; color: $color-grey1; font-family: $ff-suit;}
             }
-            ol{ flex-wrap: wrap; display: flex; gap: 20px 70px; width: 100%;
+            ol{ flex-wrap: wrap; display: flex; gap: 20px 70px; width: 100%; margin-bottom: 10px;
                 >li{ font-size: $fs-17; font-family: $ff-sbaggro; font-weight: 300;
                 }
                 .call{ padding-left: 36px;
@@ -143,9 +143,9 @@
             .link{ background: url(../images/sub/member_home.png) no-repeat center center; display: block;
                 width: 46px;height: 46px;
             }
-            button{ margin-top: auto; display: block;background: url(../images/sub/member_more_black.png) no-repeat center/25px; width: 25px; height: 25px;}
+            button{ margin-top: auto; display: block;background: url(../images/sub/member_more_black.png) no-repeat center/25px; padding: 0 10px; width: 45px; height: 25px;}
         }
-        &.director{ background-color: $color-blue2;
+        &:hover{ background-color: $color-blue2;
             .info{
                 h4{color: $color-wh;
                     span{color: $color-wh;}

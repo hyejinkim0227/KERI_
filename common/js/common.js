@@ -1134,7 +1134,10 @@ function initInterviewSlider() {
       speed: 600,
       loop: true,
       autoplay: false,
-      navigation: false,
+      navigation: {
+        nextEl: '.interview_btn_next',
+        prevEl: '.interview_btn_prev',
+      },
       // breakpoints: {
         // 1080 이상 2개씩 보여주기
         // 1080: {

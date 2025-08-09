@@ -1293,7 +1293,7 @@ button{
     }
 
     @media screen and (max-width: 1080px) {
-      background: url(../images/main/m_main_bg.png) no-repeat top center/cover;
+      background: url(../images/main/m_main_bg.png) no-repeat center/cover;
       height: auto; // 자동 높이로 변경
       min-height: fit-content;
       padding: 0 0 0;
@@ -3633,7 +3633,29 @@ button{
         flex: 1; // 남은 공간을 차지하도록 변경
         min-width: 300px; // 최소 너비 설정
         max-width: 100%;
-
+        .flex{
+          align-items: center;
+          justify-content: space-between;
+          .control {
+            margin-right: 23px;
+            margin-top: -4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: -20px;
+            button {
+              cursor: pointer;
+              box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.10);
+              width: 42px;
+              height: 42px;
+              border-radius: 50%;
+              background: #fff url(../images/main/support_btn_prev.png) no-repeat center center/8px 13px;
+            }
+            .interview_btn_next{
+              background-image: url(../images/main/support_btn_next.png);
+            }
+          }
+        }
         h3 {
           margin-bottom: 0px;
         }
@@ -3984,14 +4006,18 @@ button{
       }
 
       &_top {
+        .interview_wrap{
+          .flex{
+            .control{
+              margin-right: 0px;
+            }
+          }
+        }
         .publications_wrap {
-
           flex-shrink: 0; // 크기 고정
-
           h3 {
             margin-left: -25px;
           }
-
           .inner {
             margin-left: -25px;
 
@@ -4042,7 +4068,10 @@ button{
         flex-direction: column;
         margin: 10px 0 40px;
         gap: 14px;
-
+       
+        .flex{
+          .control{ display: none; }
+        }
 
         h3 {
           margin-left: 0 !important; 

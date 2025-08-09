@@ -408,7 +408,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   font: inherit;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -479,7 +478,6 @@ address {
 button {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border: 0 none;
   background-color: transparent;
@@ -488,9 +486,7 @@ button {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
-  -ms-appearance: none;
   appearance: none;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -528,9 +524,7 @@ form {
 input, select, textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
-  -ms-appearance: none;
   appearance: none;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   display: block;
@@ -638,6 +632,10 @@ iframe {
 }
 #wrapper.sub .header .head {
   padding-left: 0;
+}
+#wrapper.sub .header .head .logo a {
+  height: 73px;
+  vertical-align: middle;
 }
 
 .skip_navi {
@@ -1134,6 +1132,11 @@ iframe {
     color: #000;
     height: 85px;
     line-height: 85px;
+  }
+  .header.scrolled #gnb > ul > li.active > a {
+    font-weight: 700;
+    color: #254093;
+    border-bottom: 4px solid #254093;
   }
   .header.scrolled .util .lang {
     color: #000;
@@ -2564,6 +2567,12 @@ input[type=file] {
   width: 100%;
 }
 
+input[type=text]::-moz-placeholder, input[type=password]::-moz-placeholder, input[type=file]::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+  color: #4c4e5a;
+  font-weight: 400;
+  font-size: 1.0625rem;
+}
+
 input[type=text]::placeholder, input[type=password]::placeholder, input[type=file]::placeholder, textarea::placeholder, select::placeholder {
   color: #4c4e5a;
   font-weight: 400;
@@ -2643,7 +2652,9 @@ label span {
 
 input[type=checkbox], input[type=radio] {
   position: relative;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 24px;
   height: 24px;
   line-height: 44px;
@@ -2780,6 +2791,11 @@ input[type=radio]:checked::after {
   input[type=text], input[type=password], input[type=number], select, .form-control {
     font-size: 0.9375rem;
     height: 40px;
+  }
+  input[type=text]::-moz-placeholder, input[type=password]::-moz-placeholder, input[type=file]::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+    color: #4c4e5a;
+    font-weight: 400;
+    font-size: 0.9375rem;
   }
   input[type=text]::placeholder, input[type=password]::placeholder, input[type=file]::placeholder, textarea::placeholder, select::placeholder {
     color: #4c4e5a;
@@ -4706,6 +4722,10 @@ section .fp-tableCell {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
+.main .main_banner .main_banner_left .search form .search_input input::-moz-placeholder {
+  color: #000;
+  font-family: "SBAggro", "Pretendard";
+}
 .main .main_banner .main_banner_left .search form .search_input input::placeholder {
   color: #000;
   font-family: "SBAggro", "Pretendard";
@@ -5266,8 +5286,9 @@ section .fp-tableCell {
 }
 @media screen and (max-width: 1080px) {
   .main .main_banner {
-    background: url(../images/main/m_main_bg.png) no-repeat top center/cover;
+    background: url(../images/main/m_main_bg.png) no-repeat center/cover;
     height: auto;
+    min-height: -moz-fit-content;
     min-height: fit-content;
     padding: 0 0 0;
     display: flex;
@@ -5365,7 +5386,8 @@ section .fp-tableCell {
   .main .main_banner .main_banner_left > ul li a span img {
     width: 30px;
     height: 30px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .main .main_banner .main_banner_left > ul li a b {
     color: #fff;
@@ -5513,7 +5535,8 @@ section .fp-tableCell {
   height: auto;
   max-width: 60px;
   max-height: 60px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .main .domain .domain-nav .swiper-slide.nav-item.slick-active {
   transform: scale(0.95);
@@ -7164,6 +7187,29 @@ section .fp-tableCell {
   min-width: 300px;
   max-width: 100%;
 }
+.main .promo_top .interview_wrap .flex {
+  align-items: center;
+  justify-content: space-between;
+}
+.main .promo_top .interview_wrap .flex .control {
+  margin-right: 23px;
+  margin-top: -4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: -20px;
+}
+.main .promo_top .interview_wrap .flex .control button {
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff url(../images/main/support_btn_prev.png) no-repeat center center/8px 13px;
+}
+.main .promo_top .interview_wrap .flex .control .interview_btn_next {
+  background-image: url(../images/main/support_btn_next.png);
+}
 .main .promo_top .interview_wrap h3 {
   margin-bottom: 0px;
 }
@@ -7428,6 +7474,9 @@ section .fp-tableCell {
     padding: 0 0 0 0;
     width: 100% !important;
   }
+  .main .promo_top .interview_wrap .flex .control {
+    margin-right: 0px;
+  }
   .main .promo_top .publications_wrap {
     flex-shrink: 0;
   }
@@ -7473,6 +7522,9 @@ section .fp-tableCell {
     flex-direction: column;
     margin: 10px 0 40px;
     gap: 14px;
+  }
+  .main .promo_top .flex .control {
+    display: none;
   }
   .main .promo_top h3 {
     margin-left: 0 !important;
@@ -8011,7 +8063,7 @@ section .fp-tableCell {
   width: calc(50% - 25px);
   background: #f8f8f8;
   border-radius: 10px;
-  padding: 40px 30px;
+  padding: 36px 30px;
   display: flex;
   gap: 10px;
 }
@@ -8036,6 +8088,7 @@ section .fp-tableCell {
   display: flex;
   gap: 20px 70px;
   width: 100%;
+  margin-bottom: 10px;
 }
 .member_list > li .info ol > li {
   font-size: 1.0625rem;
@@ -8075,31 +8128,32 @@ section .fp-tableCell {
   margin-top: auto;
   display: block;
   background: url(../images/sub/member_more_black.png) no-repeat center/25px;
-  width: 25px;
+  padding: 0 10px;
+  width: 45px;
   height: 25px;
 }
-.member_list > li.director {
+.member_list > li:hover {
   background-color: #17469d;
 }
-.member_list > li.director .info h4 {
+.member_list > li:hover .info h4 {
   color: #fff;
 }
-.member_list > li.director .info h4 span {
+.member_list > li:hover .info h4 span {
   color: #fff;
 }
-.member_list > li.director .info ol li {
+.member_list > li:hover .info ol li {
   color: #fff;
 }
-.member_list > li.director .info ol .call {
+.member_list > li:hover .info ol .call {
   background-image: url(../images/sub/member_call.png);
 }
-.member_list > li.director .info ol .email {
+.member_list > li:hover .info ol .email {
   background-image: url(../images/sub/member_email.png);
 }
-.member_list > li.director .info ol .job {
+.member_list > li:hover .info ol .job {
   background-image: url(../images/sub/member_job.png);
 }
-.member_list > li.director .flex_col button {
+.member_list > li:hover .flex_col button {
   background-image: url(../images/sub/member_more_white.png);
   cursor: pointer;
 }
@@ -8228,6 +8282,9 @@ section .fp-tableCell {
   width: 306px;
   font-size: 1rem;
 }
+.sub_modal .input_box input[type=text]::-moz-placeholder {
+  color: #7f7f7f;
+}
 .sub_modal .input_box input[type=text]::placeholder {
   color: #7f7f7f;
 }
@@ -8330,6 +8387,8 @@ section .fp-tableCell {
   padding: 20px;
   background: #f2f6fc;
   width: 376px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .sub_modal .member_info .member_info_right b {
   color: #17469d;
@@ -9005,6 +9064,4 @@ section .fp-tableCell {
 
 .mr40 {
   margin-right: 40px;
-}
-
-/*# sourceMappingURL=default.css.map */
+}/*# sourceMappingURL=default.css.map */

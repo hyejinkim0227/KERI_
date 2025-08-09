@@ -3016,8 +3016,7 @@ button{
           // 조정현 수정 : 2025.08.03
 
           .support_item {
-            flex: 0 0 calc(50%);
-            // margin-right: 28px;
+            width: 309px;
 
             &:nth-child(even) {
               border-left: 1px solid #dbdbdb;
@@ -3646,36 +3645,40 @@ button{
         &:not(.slick-initialized) {
           display: flex;
           justify-content: space-between;
-          gap: 20px;
+          //gap: 20px;
           padding: 20px 0;
 
 
-          >div {
-            width: calc((100% - 40px) / 3);
-            max-width: 290px;
-          }
+          //>div {
+          //  width: calc((100% - 40px) / 3);
+          //  max-width: 290px;
+          //}
         }
 
         // 슬라이더가 초기화되었을 때
-        &.slick-initialized {
-          .slick-track {
-            display: flex;
-            align-items: center;
-            margin-left: -14px;
-          }
-
-          .slick-slide {
-
-            margin: 0 20px;
-            border-radius: 30px;
-
-            a {
-              box-shadow: 8.9px 4.5px 21px 0 rgba(0, 0, 0, 0.06);
-            }
-          }
-        }
+        //&.slick-initialized {
+        //  .slick-track {
+        //    display: flex;
+        //    align-items: center;
+        //    margin-left: -14px;
+        //  }
+        //
+        //  .slick-slide {
+        //
+        //    margin: 0 20px;
+        //    border-radius: 30px;
+        //
+        //    a {
+        //      box-shadow: 8.9px 4.5px 21px 0 rgba(0, 0, 0, 0.06);
+        //    }
+        //  }
+        //}
 
         >div {
+          div.swiper-slide {
+            width: 290px;
+          }
+
           a {
             display: block;
             height: 345px;

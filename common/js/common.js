@@ -242,14 +242,14 @@ function gnbFloatClear() {
 //   return false;
 // }
 
-// function resetSearch() {
+function resetSearch() {
 //   $('.header').stop().animate({ height: headH + 'px' }, 200, function () {
 //     $('.header').removeClass('active');
 //     $('.util > .search_box,.search_open').removeClass('active');
 //     $('.search_open').attr('title', '검색창 열기');
     
 //   });
-// }
+}
 
 function openPopup() {
   saveFocus(); //이벤트 발생한 요소 기억
@@ -705,7 +705,9 @@ function initDomainSlider() {
   if (window.domainNavSwiper) {
     window.domainNavSwiper.destroy();
   }
-  
+
+  var item_len = 10;
+
   // 함수들을 먼저 정의
   function initMobileSlider() {
     // 모바일 세로 카드 슬라이더
@@ -718,14 +720,14 @@ function initDomainSlider() {
         delay: 4000,
         disableOnInteraction: false,
         pauseOnMouseEnter: true
-      },
-      on: {
-        slideChange: function(swiper) {
-          $('.domain-controls .pagination .current').text(swiper.realIndex + 1);
-        }
       }
     });
-    
+
+    // slideChange 이벤트를 별도로 등록
+    window.domainSwiper.off('slideChange').on('slideChange', function(swiper) {
+      $('.domain-controls .pagination .current').text(swiper.realIndex % item_len + 1);
+    });
+
     // 모바일 컨트롤 버튼 연결
     $('.domain-controls .prev').on('click', function() {
       window.domainSwiper.slidePrev();
@@ -747,17 +749,17 @@ function initDomainSlider() {
 
     $('.domain-controls').show();
   }
-  
+
   function initDesktopSlider() {
     // 아이템 복제 nav 쪽 개수가 적어서 스크롤시 비어있는것이 보여서 2배로 셋팅함
-    if ($('.domain-nav .nav-item').length === 10) {
-        var navItems = $('.domain-nav .nav-item').clone();
-        $('.domain-nav .swiper-wrapper').append(navItems);
+    if ($('.domain-nav .nav-item').length === item_len) {
+      var navItems = $('.domain-nav .nav-item').clone();
+      $('.domain-nav .swiper-wrapper').append(navItems);
     }
-    // if ($('.domain-content .content-slide').length === 10) {
-    //     var contentSlides = $('.domain-content .content-slide').clone();
-    //     $('.domain-content').append(contentSlides);
-    // }
+    if ($('.domain-content .content-slide').length === item_len) {
+      var contentSlides = $('.domain-content .content-slide').clone();
+      $('.domain-content .swiper-wrapper').append(contentSlides);
+    }
 
     // PC에서만 기존 슬라이더 초기화
     window.domainSwiper = new Swiper('.domain-content.slider-for', {
@@ -776,25 +778,25 @@ function initDomainSlider() {
       speed: 500,
       allowTouchMove: false,
     });
-    
+
     window.domainNavSwiper = new Swiper('.domain-nav.slider-nav', {
       direction: 'vertical',
-      slidesPerView: 9,
+      slidesPerView: 'auto',
       spaceBetween: 0,
       loop: true,
       centeredSlides: true,
       speed: 500,
-      allowTouchMove: true,
+      allowTouchMove: false,
       // on: {
       //   slideChange: function() {
       //   }
       // }
     });
-    
+
     // 메인 슬라이더와 네비게이션 슬라이더 연결
-    window.domainSwiper.on('slideChange', function(swiper) {
+    window.domainSwiper.off('slideChange').on('slideChange', function(swiper) {
       // 페이징 숫자 업데이트
-      $('.domain-controls .pagination .current').text(swiper.realIndex + 1);
+      $('.domain-controls .pagination .current').text(swiper.realIndex % item_len + 1);
       // 네비게이션 슬라이더 이동
       window.domainNavSwiper.slideToLoop(swiper.realIndex);
 
@@ -804,24 +806,53 @@ function initDomainSlider() {
         $('.domain').removeClass('even-slide');
       }
     });
-    
+
+    // 네비게이션 슬라이더 페이지 이동시
+    // window.domainNavSwiper.off('slideChange').on('slideChange', function(swiper) {
+    //   // 엑티브시 높이가 변경이 되기때문에 약간 더 내려준다.
+    //   console.log(swiper.translate, swiper.activeIndex, swiper.previousIndex);
+    //
+    //   if (swiper.activeIndex < swiper.previousIndex) {
+    //     const translate = swiper.translate - 80;
+    //
+    //
+    //   }
+    //   swiper.setTranslate(swiper.translate.x, -385,5);
+    //
+    //
+    //
+    //   // const $wrapper = $(swiper.wrapperEl);
+    //   // const $active = $(swiper.slides[swiper.activeIndex]);
+    //   //
+    //   // const wrapperHeight = $wrapper.height();
+    //   // const slideHeight = $active.outerHeight(true); // margin 포함
+    //   //
+    //   // const offsetTop = $active.position().top;
+    //   //
+    //   // // 가운데 위치 계산: (wrapper 높이 / 2) - (slide 높이 / 2)
+    //   // const centerOffset = (wrapperHeight / 2) - (slideHeight / 2);
+    //   //
+    //   // const newTranslate = -offsetTop + centerOffset;
+    //   //
+    //   // swiper.setTransition(300);
+    //   // swiper.setTranslate(newTranslate);          // 위치 수동 설정
+    // });
+
     // PC 컨트롤 버튼 연결
     $('.domain-controls .prev').on('click', function() {
-      window.domainNavSwiper.slidePrev();
       window.domainSwiper.slidePrev();
     });
-    
+
     $('.domain-controls .next').on('click', function() {
-      window.domainNavSwiper.slideNext();
       window.domainSwiper.slideNext();
     });
-    
+
     // 네비게이션 아이템 클릭 이벤트
     $('.domain-nav .nav-item').on('click', function() {
-      var index = $(this).data('index');
+      var index = $(this).data('swiper-slide-index');
       window.domainSwiper.slideToLoop(index);
     });
-    
+
     $('.domain-controls .pause').on('click', function() {
       if ($(this).hasClass('play')) {
         window.domainSwiper.autoplay.start();
@@ -831,11 +862,11 @@ function initDomainSlider() {
         $(this).addClass('play');
       }
     });
-    
+
     $('.domain-controls').show();
     $('.domain').removeClass('even-slide');
   }
-  
+
   // 실제 초기화 실행
   var windowWidth = $(window).outerWidth();
 
@@ -845,7 +876,9 @@ function initDomainSlider() {
     initDesktopSlider();
   }
   // 로딩 및 셋팅 완료후 보이게 처리
-  $('.domain .container').removeClass('ready');
+  setTimeout(function(){
+    $('.domain .container').removeClass('ready');
+  }, 300);
 }
 
 // DOM 로드 완료 후 도메인 슬라이더 초기화 
@@ -1102,13 +1135,13 @@ function initInterviewSlider() {
       loop: true,
       autoplay: false,
       navigation: false,
-      breakpoints: {
+      // breakpoints: {
         // 1080 이상 2개씩 보여주기
-        1080: {
-          slidesPerView: 3,
-          spaceBetween: 0
-        },
-      }
+        // 1080: {
+        //   slidesPerView: 3,
+        //   spaceBetween: 0
+        // },
+      // }
     });
   }
 }

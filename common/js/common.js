@@ -656,9 +656,9 @@ function initMobileMainBannerToggle() {
       
       // 버튼 텍스트 변경
       if (container.hasClass('toggle-open')) {
-        $btn.text('한국전기연구원 최신성과 및 영상 닫기');
+        $btn.text('한국전기연구원 최신성과 닫기');
       } else {
-        $btn.text('한국전기연구원 최신성과 및 영상 열기');
+        $btn.text('한국전기연구원 최신성과 열기');
       }
       
       // 애니메이션 완료 후 플래그 리셋 (CSS transition 시간과 맞춤)

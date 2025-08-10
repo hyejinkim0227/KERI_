@@ -1045,6 +1045,7 @@ iframe {
   transition: color 0.3s ease, background-image 0.3s ease;
 }
 .header .util .popup_zone {
+  width: 124px;
   height: 85px;
   line-height: 85px;
   vertical-align: middle;
@@ -1058,10 +1059,12 @@ iframe {
   margin: 0 20px;
   transition: color 0.3s ease, background-image 0.3s ease;
 }
-@media screen and (max-width: 1470px) {
-  .header .util .popup_zone em {
-    display: none;
-  }
+.header .util .popup_zone em {
+  font-family: "SBAggro", "Pretendard";
+  font-weight: 300;
+  letter-spacing: -0.33px;
+  margin-left: 5px;
+  font-size: 0.8125rem;
 }
 .header .util .search_open {
   padding: 10px;
@@ -4846,7 +4849,7 @@ section .fp-tableCell {
   display: flex;
   gap: 46px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .main .main_banner .main_banner_left > div > ul li a {
   display: flex;
@@ -5172,7 +5175,9 @@ section .fp-tableCell {
     padding: 0;
   }
   .main .main_banner .main_banner_right .main_banner_right_con ul li a span:last-of-type {
-    width: 200px;
+    width: 240px;
+    font-size: 0.9375rem;
+    font-weight: 500;
   }
   .main .main_banner .main_banner_right .video-container {
     max-height: 0;
@@ -5913,6 +5918,7 @@ section .fp-tableCell {
   .main .domain .domain-controls-wrap .domain-controls .pagination {
     font-size: 0.875rem;
     color: #fff;
+    margin: 0;
   }
   .main .domain .domain-controls-wrap .domain-controls button {
     width: 15px;
@@ -6148,6 +6154,7 @@ section .fp-tableCell {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  letter-spacing: -0.25px;
 }
 .main .news .news_tab .news_tab_menu li button::after,
 .main .news .news_tab .news_tab_menu li a::after {
@@ -6976,6 +6983,7 @@ section .fp-tableCell {
   }
   .main .certification .container .support .support_search h3 {
     font-size: 1.25rem;
+    margin-left: 24px;
   }
   .main .certification .container .support .support_search h3 > span {
     display: block;
@@ -7127,8 +7135,6 @@ section .fp-tableCell {
     flex: 0 0 20%;
   }
   .main .certification .container .support .support_banner .support_list .support_item:nth-child(even) {
-    border-left: 0;
-    padding-left: 15px;
     margin-right: 0;
   }
   .main .certification .container .support .support_banner .support_list .support_item > div {
@@ -7574,7 +7580,7 @@ section .fp-tableCell {
     display: none;
   }
   .main .promo_top h3 {
-    margin-left: 0 !important;
+    margin-left: 20px !important;
     margin-bottom: 0px !important;
     text-align: left !important;
   }

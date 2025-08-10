@@ -641,7 +641,7 @@ button{
         display: flex;
         gap: 46px;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
 
         li a {
           display: flex;
@@ -1087,7 +1087,9 @@ button{
               a{
                 span{
                   &:last-of-type{
-                   width: 200px;
+                   width: 240px;
+                   font-size: $fs-15;
+                   font-weight: 500;
                   }
                 }
               }
@@ -2037,6 +2039,7 @@ button{
           .pagination {
             font-size: $fs-14;
             color: #fff;
+            margin: 0;
           }
   
           button {
@@ -2347,6 +2350,7 @@ button{
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
+            letter-spacing: -0.25px;
 
             &::after {
               content: '';
@@ -3342,6 +3346,7 @@ button{
             
             h3 {
               font-size: $fs-20;
+              margin-left: 24px;
               
               > span {
                 display: block;
@@ -3528,8 +3533,7 @@ button{
                   flex: 0 0 20%;
     
                   &:nth-child(even) {
-                    border-left: 0;
-                    padding-left: 15px;
+                    //border-left: 0;
                     margin-right: 0;
                   }
                   >div{
@@ -4074,7 +4078,7 @@ button{
         }
 
         h3 {
-          margin-left: 0 !important; 
+          margin-left: 20px !important; 
           margin-bottom: 0px !important;
           text-align: left !important;
         }

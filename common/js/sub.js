@@ -51,7 +51,10 @@ $(function(){
 
     // 인증하기 버튼 클릭 시 완료 메시지 보여주기
     $(document).on('click', '.email_check_box .btn_sm:contains("인증하기")', function(){
+        $(this).closest('.email_check').find('.email_check_box').hide();
         $(this).closest('.email_check').find('b').show();
+        // 인증이 완료되면 .email .btn_sm 버튼을 disabled 처리합니다.
+        $(this).closest('.email_check').siblings('.email').find('.btn_sm').prop('disabled', true);
     });
 
     /*/공지태그 이미지다음에 추가
@@ -328,3 +331,46 @@ function resetMemberInfoAccordion() {
   });
   
 }
+
+// 수령방법에 따른 폼 표시/숨김 기능
+function initDeliveryMethodToggle() {
+  const deliveryRadios = document.querySelectorAll('input[name="delivery_method"]');
+  const emailForm = document.getElementById('email_form');
+  const faxForm = document.getElementById('fax_form');
+  
+  if (!deliveryRadios.length || !emailForm || !faxForm) return;
+  
+  function toggleDeliveryForms() {
+    const checkedRadio = document.querySelector('input[name="delivery_method"]:checked');
+    
+    if (!checkedRadio) {
+      // 아무것도 선택되지 않은 경우 둘 다 숨김
+      emailForm.style.display = 'none';
+      faxForm.style.display = 'none';
+      return;
+    }
+    
+    const selectedValue = checkedRadio.value;
+    
+    if (selectedValue === 'email') {
+      emailForm.style.display = 'table-row';
+      faxForm.style.display = 'none';
+    } else if (selectedValue === 'fax') {
+      emailForm.style.display = 'none';
+      faxForm.style.display = 'table-row';
+    }
+  }
+  
+  // 라디오 버튼 변경 이벤트 리스너 추가
+  deliveryRadios.forEach(radio => {
+    radio.addEventListener('change', toggleDeliveryForms);
+  });
+  
+  // 페이지 로드 시 초기 상태 설정
+  toggleDeliveryForms();
+}
+
+// DOM 로드 완료 후 실행
+document.addEventListener('DOMContentLoaded', function() {
+  initDeliveryMethodToggle();
+});

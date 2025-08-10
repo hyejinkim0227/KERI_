@@ -463,16 +463,20 @@ $(function () {
   $('.header #gnb > ul > li > a').on({
     // 마우스 진입 시 헤더 높이 조절 및 검색창 비활성화
     mouseenter: function () {
-      $('.util > .search_box').removeClass('active');
-      // scrolled 클래스 보호 시작
-      startScrolledProtection();
-      resizeHeadHeight(this);
+      if (pcChk(1080)) {
+        $('.util > .search_box').removeClass('active');
+        // scrolled 클래스 보호 시작
+        startScrolledProtection();
+        resizeHeadHeight(this);
+      }
     },
     // 포커스 진입 시 헤더 높이 조절
     focusin: function () {
-      // scrolled 클래스 보호 시작
-      startScrolledProtection();
-      resizeHeadHeight(this);
+      if (pcChk(1080)) {
+        // scrolled 클래스 보호 시작
+        startScrolledProtection();
+        resizeHeadHeight(this);
+      }
     },
   });
 

@@ -188,6 +188,9 @@
         color: $color-grey6 ;
         font-weight: 400;
     }
+    @media (max-width: 1080px) {
+        font-size: $fs-15;
+    }
 }
 
 

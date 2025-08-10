@@ -1633,6 +1633,8 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 }
 .mark{ position:relative; padding-left:0; color:#2d2c2d; font-size:1rem; display:block }
 .mark::before{ content:"※ "; color:#2d2c2d; font-weight:400 }
+@media(max-width:1080px){ .mark{font-size:.9375rem }
+}
 .agree_box{ margin-bottom:60px }
 .agree_box>.scroll{ border-radius:14px; padding:40px 30px; border:1px solid #cecece; font-size:1.0625rem }
 .agree_box>.scroll p{ font-size:1.0625rem; margin-bottom:20px; line-height:28px }

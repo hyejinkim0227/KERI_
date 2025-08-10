@@ -361,7 +361,7 @@ a{
 
 // 서브 콘텐츠 타이틀
 .titlebox_A, .titlebox_B{
-    padding: 30px 60px 30px 218px; margin-bottom: 40px; border-radius: 20px; background: url(../images/sub/title_1.png) no-repeat 45px 30px / auto 126px; min-height: 186px; display: flex; flex-direction: column; justify-content: center;
+    padding: 30px 60px 30px 218px; margin-bottom: 40px; border-radius: 20px; background: url(/common/images/sub/title_1.png) no-repeat 45px 30px / auto 126px; min-height: 186px; display: flex; flex-direction: column; justify-content: center;
         
     &[data-menu="menu02"]{background: url(../images/sub/title_2.png) no-repeat 45px 30px / auto 126px;}
     &[data-menu="menu03"]{background: url(../images/sub/title_3.png) no-repeat 45px 30px / auto 126px;}
@@ -371,7 +371,7 @@ a{
 
     h4{font-size: 17px; font-weight: 600; color: #000; line-height: 1.5em;}
     h5{font-size: 17px; color: #000; font-weight: 400; line-height: 28px;
-        b{color: $blue; font-size: 17px;}
+        b{color: $color-blue; font-size: 17px;}
     }
 
 
@@ -385,13 +385,13 @@ a{
 
 .tit{
     font-size: 34px; display: inline-block; height: 34px; line-height: 1em; font-weight: 600; color: #000; line-height: 1em; margin-bottom: 30px; font-family: SBAggro; position: relative;
-    &::after{display: block; content: ""; width: 10px; height: 10px; background: $blue; border-radius: 50%; position: absolute; right: -17px; bottom: 6px; }
+    &::after{display: block; content: ""; width: 10px; height: 10px; background: $color-blue; border-radius: 50%; position: absolute; right: -17px; bottom: 6px; }
 }
 
 .titlebox_A{background-color: #f4f6f9 !important;}
 
 .titlebox_B{
-    border: 1px solid $blue; padding-top: 40px;
+    border: 1px solid $color-blue; padding-top: 40px;
 
     h5{margin-top: 10px;}
     .btn_down{border-radius: 7px; padding: 0 20px; font-size: 17px; font-weight: 400; height: 50px; line-height: 50px; border: 1px solid #000; width: 220px; background: url(../images/sub/icon_download.png) no-repeat right 20px center / auto 17px; margin: 20px 0;}

@@ -461,9 +461,44 @@
           
           <!-- 메인배너 -->
           <section class="section section1 main_banner" data-mainnavi="search" id="search">
+            <!-- AI 제안 코드: 메인 배너 배경 슬라이더 -->
+            <div class="main_banner_bg swiper">
+              <div class="swiper-wrapper">
+                <!-- AI 제안 코드: picture를 사용해 모바일 전용 이미지 제공 -->
+                <div class="swiper-slide bg_01">
+                  <picture>
+                    <source media="(max-width: 1080px)" srcset="../common/images/main/m_main_bg.png">
+                    <img src="../common/images/main/main_bg.png" alt="메인 배경1">
+                  </picture>
+                </div>
+                <div class="swiper-slide bg_02">
+                  <picture>
+                    <source media="(max-width: 1080px)" srcset="../common/images/main/m_main_bg.png">
+                    <img src="../common/images/main/main_bg.png" alt="메인 배경2">
+                  </picture>
+                </div>
+                <div class="swiper-slide bg_03">
+                  <picture>
+                    <source media="(max-width: 1080px)" srcset="../common/images/main/m_main_bg.png">
+                    <img src="../common/images/main/main_bg.png" alt="메인 배경3">
+                  </picture>
+                </div>
+              </div>
+            </div>
             <div class="main_banner_left" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600" data-aos-easing="ease">
               <div>
                 <h3>전기를 넘어, 에너지 혁신의 중심으로 <b>KERI, 전기기술의 미래를 이끌다</b></h3>
+                <!-- 메인 슬라이더 컨트롤 -->
+                <div class="main-controls-wrap">
+                  <div class="main-controls">
+                    <button type="button" class="prev"><span class="sr-only">이전</span></button>
+                    <div class="pagination">
+                      <span class="current">1</span> / <span class="total">3</span>
+                    </div>
+                    <button type="button" class="pause"><span class="sr-only">정지</span></button>
+                    <button type="button" class="next"><span class="sr-only">다음</span></button>
+                  </div>
+                </div>
                 <div class="search">
                   <form name="#" method="POST" action="#">
                     <fieldset>

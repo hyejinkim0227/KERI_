@@ -693,6 +693,56 @@ $(window).on('load', function () {
   
   // 모바일 메인 배너 토글 초기화
   initMobileMainBannerToggle();
+
+  // 메인 배너 배경 슬라이더 초기화
+  if (typeof Swiper !== 'undefined' && $('.main_banner_bg').length) {
+    if (window.mainBannerBgSwiper) {
+      try { window.mainBannerBgSwiper.destroy(true, true); } catch (e) {}
+    }
+    window.mainBannerBgSwiper = new Swiper('.main_banner_bg', {
+      slidesPerView: 1,
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false
+      },
+      allowTouchMove: false
+    });
+
+    // 메인 배너 컨트롤 버튼 연동
+    var $controls = $('.main_banner .main-controls');
+    if ($controls.length) {
+      $controls.find('.prev').off('click.mainBannerBg').on('click.mainBannerBg', function(){
+        window.mainBannerBgSwiper.slidePrev();
+      });
+      $controls.find('.next').off('click.mainBannerBg').on('click.mainBannerBg', function(){
+        window.mainBannerBgSwiper.slideNext();
+      });
+      $controls.find('.pause').off('click.mainBannerBg').on('click.mainBannerBg', function(){
+        if ($(this).hasClass('play')) {
+          window.mainBannerBgSwiper.autoplay.start();
+          $(this).removeClass('play');
+        } else {
+          window.mainBannerBgSwiper.autoplay.stop();
+          $(this).addClass('play');
+        }
+      });
+
+      // 페이징 숫자 업데이트 (총 개수/현재)
+      var total = $('.main_banner_bg .swiper-slide').not('.swiper-slide-duplicate').length;
+      var $wraps = $('.main_banner .main-controls-wrap .pagination');
+      $wraps.find('.total').text(total);
+      $wraps.find('.current').text(1);
+      window.mainBannerBgSwiper.on('slideChange', function(sw){
+        var real = (sw.realIndex % total) + 1;
+        $wraps.find('.current').text(real);
+      });
+    }
+  }
 });
 
 

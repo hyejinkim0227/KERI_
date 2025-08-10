@@ -439,10 +439,11 @@ section {
   .main_banner {
     width: calc(100% - 116px) !important;
     display: flex;
+
     align-self: start;
     justify-self: stretch;
     position: relative;
-    background: url(../images/main/main_bg.png) no-repeat center center/cover;
+   // background: url(../images/main/main_bg.png) no-repeat center center/cover;
     background-attachment: scroll, fixed;
 
 
@@ -475,10 +476,27 @@ section {
       pointer-events: none;
     }
 
+    //배경 슬라이더 레이어
+    .main_banner_bg {
+      position: absolute;
+      inset: 0;
+      z-index: -1; // AI 제안 코드: 항상 콘텐츠 뒤로 배치
+      overflow: hidden;
+
+      .swiper-wrapper, .swiper-slide { height: 100%; }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
     .main_banner_left {
       flex: 1;
       position: relative;
-      z-index: 2;
+      z-index: 1; // AI 제안 코드: 콘텐츠를 배경 위에 고정
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -496,7 +514,6 @@ section {
         font-size: $fs-34;
         font-weight: 400;
         line-height: 1.3;
-        margin-bottom: 52px;
         letter-spacing: -0.85px;
 
         b {
@@ -506,6 +523,56 @@ section {
           margin-top: 10px;
           letter-spacing: -1.5px;
 
+        }
+      }
+       // 컨트롤 버튼
+      .main-controls-wrap {
+        margin: 25px 0 40px;
+        height: 36px;
+
+        .main-controls {
+          height: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 10px;
+          z-index: 10;
+          transition: all 0.3s ease; // 부드러운 전환 효과
+
+
+          .pagination {
+            color: #fff;
+            font-size: $fs-20;
+            font-weight: 300;
+            margin: 0;
+
+            .current {
+              font-weight: 600;
+            }
+          }
+
+          button {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease; // 버튼 호버 효과
+
+            &.prev {
+              background: url(../images/main/mainbanner_prev.png) no-repeat center center;
+            }
+
+            &.next {
+              background: url(../images/main/mainbanner_next.png) no-repeat center center;
+            }
+
+            &.pause {
+              background: url(../images/main/mainbanner_stop.png) no-repeat center center;
+            }
+            &.play {
+              background: url(../images/main/domain_play.png) no-repeat center center/20px auto;
+
+            }
+          }
         }
       }
 
@@ -705,10 +772,10 @@ section {
     .main_banner_right {
       //height: 100%;
       width: 380px;
+      position: relative;
+      z-index: 1; // AI 제안 코드: 콘텐츠를 배경 위에 고정
       transition: all 0.3s ease;
       max-width: 35vw; // 화면 크기에 따라 조정
-      z-index: 2;
-      position: relative;
 
 
       .m_main_banner_right_btn {
@@ -993,7 +1060,13 @@ section {
             font-size: 36px;
           }
         }
-
+        .main-controls-wrap{
+          margin: 15px 0 30px;
+          .main-controls{
+            justify-content: center;
+          }
+        }
+       
         .search {
           margin-bottom: 30px;
 
@@ -1296,7 +1369,7 @@ section {
     }
 
     @media screen and (max-width: 1080px) {
-      background: url(../images/main/m_main_bg.png) no-repeat center/cover;
+      //background: url(../images/main/m_main_bg.png) no-repeat center/cover;
       height: auto; // 자동 높이로 변경
       min-height: fit-content;
       padding: 0 0 0;

@@ -375,11 +375,13 @@ a{
     }
 
 
-    @media (max-width: 900px) {
-        padding : 20px 30PX;
+    @media (max-width: 1080px) {
+        padding : 128px 30px 20px 30px !important; background-position: top center; 
+    
         h4{
             text-align: center; font-size: 15px; font-weight: 400;
         }
+
     }
 }
 
@@ -393,13 +395,16 @@ a{
 .titlebox_B{
     border: 1px solid $color-blue; padding-top: 40px;
 
-    h5{margin-top: 10px;}
+    h5{margin-top: 10px; }
     .btn_down{border-radius: 7px; padding: 0 20px; font-size: 17px; font-weight: 400; height: 50px; line-height: 50px; border: 1px solid #000; width: 220px; background: url(../images/sub/icon_download.png) no-repeat right 20px center / auto 17px; margin: 20px 0;}
     .caution{ 
         background: #f4f6f9; padding: 25px; border-radius: 17px;
         li{
             background: url(../images/sub/icon_bullet.png) no-repeat left center / auto 16px; padding-left: 28px; line-height: 28px; font-size: 16px; color: #da4d4f;
         }
+    }
+    @media (max-width: 1080px) {
+        h4{text-align: left;}
     }
 }
 
@@ -631,6 +636,7 @@ a{
     th{
         background: #f8f9fa; font-weight: 500; color: $color-bk; padding-left: 30px;
     }
+   
     // table 반응형
     @media (max-width: 1080px) {
         colgroup{display: none;}
@@ -640,6 +646,9 @@ a{
         th{padding: 0 0 0 10px; line-height: 40px; border-bottom: none;}
         td{padding: 10px 0; line-height: 40px;
             input[type="text"], select{width: 100%;}
+        }
+        &.h-auto{
+            th, td{height: auto;;}
         }
     }
 }

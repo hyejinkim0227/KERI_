@@ -41,6 +41,12 @@
 .btn_box button,.btn_box a{ text-align:center }
 .dot>li{ position:relative; padding-left:16px !important }
 .dot>li:before{ position:absolute; content:""; display:block; left:0px; top:10px; background-color:#b9b9b9; width:4px; height:4px; border-radius:50% }
+@media(max-width:1080px){ .dot{font-size:.9375rem }
+}
+.bar>li{ position:relative; padding-left:16px !important }
+.bar>li:before{ position:absolute; content:"-"; display:block; left:0px; width:4px; height:4px }
+@media(max-width:1080px){ .bar{font-size:.9375rem }
+}
 @font-face{ font-family:"SUIT"; font-style:normal; font-weight:100; src:url("../fonts/SUIT-Thin.woff2") format("woff2"),url("../fonts/SUIT-Thin.ttf") format("truetype"),url("../fonts/SUIT-Thin.otf") format("opentype") }
 @font-face{ font-family:"SUIT"; font-style:normal; font-weight:200; src:url("../fonts/SUIT-ExtraLight.woff2") format("woff2"),url("../fonts/SUIT-ExtraLight.woff") format("woff"),url("../fonts/SUIT-ExtraLight.ttf") format("truetype"),url("../fonts/SUIT-ExtraLight.otf") format("opentype") }
 @font-face{ font-family:"SUIT"; font-style:normal; font-weight:300; src:url("../fonts/SUIT-Light.woff2") format("woff2"),url("../fonts/SUIT-Light.woff") format("woff"),url("../fonts/SUIT-Light.ttf") format("truetype"),url("../fonts/SUIT-Light.otf") format("opentype") }
@@ -158,7 +164,7 @@ iframe{ border:none; outline:none }
 .header #gnb .dep2_wrap>div{ background:#f2f4f6 url(../images/common/lnb_bg.png) no-repeat left bottom/100% 599px; display:flex; flex-direction:column; gap:23px; width:534px; height:auto; min-height:599px; padding:43px 0 0 118px; border-radius:0 0 100px 0; z-index:999; font-family:"SBAggro","Pretendard" }
 .header #gnb .dep2_wrap>div strong{ font-size:2.5rem; font-weight:500; color:#000; line-height:.6; display:block; letter-spacing:-1px; background-position:0 0; position:relative; background-repeat:no-repeat; line-height:.9 }
 .header #gnb .dep2_wrap>div span{ color:#555; font-size:1.625rem; font-weight:300 }
-.header #gnb .dep2_wrap>ul{ display:flex; flex-wrap:wrap; width:calc(100% - 534px); gap:25px 34px; background:#fff; padding:32px 0 40px 50px; overflow-y:auto; max-height:80vh; height:auto }
+.header #gnb .dep2_wrap>ul{ display:flex; flex-wrap:wrap; width:calc(100% - 534px); gap:25px 34px; background:#fff; padding:32px 0 40px 50px; overflow-y:auto; height:auto }
 .header #gnb .dep2_wrap>ul>li{ max-width:280px; min-width:170px; flex:0 0 calc(25% - 8px) }
 .header #gnb .dep2_wrap>ul>li>a{ display:block; width:100%; text-align:center; line-height:50px; color:#000; padding:0 30px 0 16.6px; border:none; border-radius:6px; border:solid 1px #e1e3e1; font-size:1.0625rem; font-weight:600; text-align:left; background:url(../images/common/icon_lnb_arrow.png) no-repeat right 19px center/11px auto }
 .header #gnb .dep2_wrap>ul>li:not(:has(ol))>a{ background:none }
@@ -623,7 +629,7 @@ a.btn_blue{ border-radius:10px; padding:0 30px; font-size:1.125rem; font-weight:
 .titlebox_A h4,.titlebox_B h4{ font-size:17px; font-weight:600; color:#000; line-height:1.5em }
 .titlebox_A h5,.titlebox_B h5{ font-size:17px; color:#000; font-weight:400; line-height:28px }
 .titlebox_A h5 b,.titlebox_B h5 b{ color:#1f60c2; font-size:17px }
-@media(max-width:900px){ .titlebox_A,.titlebox_B{padding:20px 30PX }
+@media(max-width:1080px){ .titlebox_A,.titlebox_B{padding:128px 30px 20px 30px !important; background-position:top center }
 .titlebox_A h4,.titlebox_B h4{ text-align:center; font-size:15px; font-weight:400 }
 }
 .tit{ font-size:34px; display:inline-block; height:34px; line-height:1em; font-weight:600; color:#000; line-height:1em; margin-bottom:30px; font-family:SBAggro; position:relative }
@@ -634,6 +640,8 @@ a.btn_blue{ border-radius:10px; padding:0 30px; font-size:1.125rem; font-weight:
 .titlebox_B .btn_down{ border-radius:7px; padding:0 20px; font-size:17px; font-weight:400; height:50px; line-height:50px; border:1px solid #000; width:220px; background:url(../images/sub/icon_download.png) no-repeat right 20px center/auto 17px; margin:20px 0 }
 .titlebox_B .caution{ background:#f4f6f9; padding:25px; border-radius:17px }
 .titlebox_B .caution li{ background:url(../images/sub/icon_bullet.png) no-repeat left center/auto 16px; padding-left:28px; line-height:28px; font-size:16px; color:#da4d4f }
+@media(max-width:1080px){ .titlebox_B h4{text-align:left }
+}
 .tab_list{ margin-bottom:40px }
 .tab_list ul{ display:flex; flex-wrap:wrap; gap:10px; background:#f5f6fa; padding:6px; border-radius:12px }
 .tab_list ul li{ flex:0 0 calc((100% - 40px)/5); transition:all .4s }
@@ -726,6 +734,7 @@ a.btn_blue{ border-radius:10px; padding:0 30px; font-size:1.125rem; font-weight:
 .table th{ padding:0 0 0 10px; line-height:40px; border-bottom:none }
 .table td{ padding:10px 0; line-height:40px }
 .table td input[type=text],.table td select{ width:100% }
+.table.h-auto th,.table.h-auto td{ height:auto }
 }
 span.noti{ background-color:#2279f2; color:#fff; border:1px solid #2279f2; border-radius:15px; padding:0 15px; font-size:.9375rem; font-weight:400; line-height:30px }
 span.noti[data-color=red]{ border-color:#f43f3f !important; background-color:#fff; color:#f43f3f }
@@ -1104,7 +1113,7 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 .main .domain .domain-nav .swiper-slide.nav-item h3{ font-family:"SBAggro","Pretendard"; font-weight:300; margin:0; color:hsla(0,0%,100%,.8); font-size:1rem }
 .main .domain .domain-nav .swiper-slide.nav-item img{ display:none }
 .main .domain .domain-nav .swiper-slide.nav-item.swiper-slide-active{ padding:35px 30px; width:320px !important; height:162px !important; opacity:1; border-radius:15px; position:relative; z-index:10; background:#17469d url(../images/main/domain_arrow.png) no-repeat right bottom; justify-content:space-between; transform:scale(1); border:none }
-.main .domain .domain-nav .swiper-slide.nav-item.swiper-slide-active h3{ display:block; font-size:1.1875rem; font-weight:400; color:#fff }
+.main .domain .domain-nav .swiper-slide.nav-item.swiper-slide-active h3{ display:block; font-size:1.1875rem; font-weight:400; color:#fff; margin-bottom:10px }
 .main .domain .domain-nav .swiper-slide.nav-item.swiper-slide-active img{ display:block; width:auto; height:auto; max-width:60px; max-height:60px; object-fit:contain }
 .main .domain .domain-nav .swiper-slide.nav-item.slick-active{ transform:scale(0.95) }
 .main .domain .domain-nav .swiper-slide.nav-item.slick-active:not(.slick-center) h3{ font-size:1rem }
@@ -1622,8 +1631,8 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 @media(max-width:1080px){ .member_list{flex-direction:column }
 .member_list>li{ width:100%; justify-content:space-between }
 }
-.mark{ position:relative; padding-left:0; color:#57585e; font-size:1rem; display:block }
-.mark::before{ content:"※ "; color:#57585e; font-weight:400 }
+.mark{ position:relative; padding-left:0; color:#2d2c2d; font-size:1rem; display:block }
+.mark::before{ content:"※ "; color:#2d2c2d; font-weight:400 }
 .agree_box{ margin-bottom:60px }
 .agree_box>.scroll{ border-radius:14px; padding:40px 30px; border:1px solid #cecece; font-size:1.0625rem }
 .agree_box>.scroll p{ font-size:1.0625rem; margin-bottom:20px; line-height:28px }
@@ -1639,6 +1648,9 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 .agree_box .type_list li label{ color:#2e3345; vertical-align:-7px }
 .agree_box .type_list li label span{ color:#4b6de9 }
 .agree_box .radio{ margin-top:22px; display:flex; justify-content:flex-end; background:#f4f5f7; border-radius:14px; padding:18px 52px }
+.agree_box .radio ul{ width:200px }
+@media(max-width:1080px){ .agree_box .table th,.agree_box .table td{height:auto }
+}
 .file a{ display:block; font-size:1.0625rem; line-height:28px; color:#2d2c2d; padding-left:30px; background:url(../images/sub/icon_file3.png) no-repeat left top 6px }
 .sub_modal#modal-patent-summary{ z-index:100002 }
 .sub_modal .modal_container{ max-width:1002px; border-radius:20px; padding:0 }
@@ -1824,6 +1836,7 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 .mb30{ margin-bottom:30px }
 .mb35{ margin-bottom:35px }
 .mb40{ margin-bottom:40px }
+.mb60{ margin-bottom:60px }
 .ml0{ margin-left:0 }
 .ml4{ margin-left:4px }
 .ml5{ margin-left:5px }

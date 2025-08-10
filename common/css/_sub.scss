@@ -213,13 +213,18 @@
       }
     }
     
-    .radio{margin-top: 22px; display: flex; justify-content: flex-end; background: #f4f5f7; border-radius: 14px; padding: 18px 52px;}
+    .radio{margin-top: 22px; display: flex; justify-content: flex-end; background: #f4f5f7; border-radius: 14px; padding: 18px 52px;
+        ul{width: 200px;}
+    }
     @media (max-width: 1080px){
+        .table{
+            th,td{height: auto;}
+        }
     }
   }
 
   //신청상세 -파일
-  .file{
+  .file{ 
     a{display: block; font-size: $fs-17; line-height: 28px; color: #2d2c2d; padding-left: 30px; 
         background: url(../images/sub/icon_file3.png) no-repeat left top 6px;
 

@@ -361,7 +361,7 @@ a{
 
 // 서브 콘텐츠 타이틀
 .titlebox_A, .titlebox_B{
-    padding: 30px 60px 30px 218px; margin-bottom: 40px; border-radius: 20px; background: url(/common/images/sub/title_1.png) no-repeat 45px 30px / auto 126px; min-height: 186px; display: flex; flex-direction: column; justify-content: center;
+    padding: 30px 60px 30px 218px; margin-bottom: 40px; border-radius: 20px; background: url(../images/sub/title_1.png) no-repeat 45px 30px / auto 126px; min-height: 186px; display: flex; flex-direction: column; justify-content: center;
         
     &[data-menu="menu02"]{background: url(../images/sub/title_2.png) no-repeat 45px 30px / auto 126px;}
     &[data-menu="menu03"]{background: url(../images/sub/title_3.png) no-repeat 45px 30px / auto 126px;}

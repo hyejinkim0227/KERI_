@@ -284,7 +284,7 @@ section {
 
     // 반응형 - 태블릿
     @media screen and (max-width: 1080px) {
-      font-size: $fs-28;
+      font-size: $fs-30;
       margin-bottom: 25px;
       font-weight: 400;
 
@@ -739,6 +739,7 @@ section {
             word-break: keep-all;
             transition: all 0.3s ease;
             word-break: keep-all;
+            font-size: $fs-15;
           }
 
           // hover 효과 추가
@@ -993,7 +994,7 @@ section {
 
         .main_banner_right_con {
           &:after {
-            height: 656px;
+            //height: 656px;
           }
 
           h3 {
@@ -1144,18 +1145,19 @@ section {
           background: #2d52bd;
           height: 45px;
           font-family: $ff-suit;
-          font-size: $fs-14;
+          font-size: $fs-15;
           color: #fff;
           font-weight: 500;
           line-height: 45px;
           text-align: center;
+          font-family: SBAggro;
 
           &::after {
             content: '';
             display: block;
-            width: 6px;
-            height: 4px;
-            background: url(../images/main/m_main_banner_right_btn.png) no-repeat center /6px 4px;
+            width: 20px;
+            height: 45px;
+            background: url(../images/main/m_main_banner_right_btn.png) no-repeat center /auto 6px;
             transition: transform 0.3s ease;
           }
         }
@@ -1439,10 +1441,10 @@ section {
               gap: 15px;
 
               &::after {
-                right: 10px;
-                width: 42.5px;
-                height: 42.5px;
-                background-size: 13px auto;
+                right: 13px;
+                width: 45px;
+                height: 45px;
+                background-size: 20px auto;
               }
 
               input {
@@ -1743,6 +1745,7 @@ section {
       }
 
       .content-slide {
+        
         // flex: 1;
         height: 100% !important;
         // width: 100% !important;
@@ -1812,26 +1815,7 @@ section {
 
         }
 
-        // 짝수번째 슬라이드 (data-index가 1,3,5,7,9인 경우) 레이아웃 반전
-        &[data-index="1"],
-        &[data-index="3"],
-        &[data-index="5"],
-        &[data-index="7"],
-        &[data-index="9"] {
-          .content-slide-inner {
-            position: absolute;
-            right: 0; // 패딩만큼 오른쪽 여백
-            bottom: 0px; // 패딩만큼 하단 여백
-            transition: all 0ㄴ3s ease; // 위치 변화 시 부드러운 전환
-          }
-
-          .visual {
-            top: 0;
-            bottom: unset;
-            right: auto; //
-            transition: all 0.3s ease; // 위치 변화 시 부드러운 전환
-          }
-        }
+        // 짝수/홀수 동일 레이아웃 유지 (분기 제거)
       }
 
       // slick dots 숨기기
@@ -1934,7 +1918,7 @@ section {
       .container {height: auto !important;}
 
       .domain-controls-wrap{
-        top: 416px;
+        top: 420px;
 
         .domain-controls{
           justify-content: flex-end;
@@ -1959,6 +1943,8 @@ section {
         }
 
         .content-slide {
+          position: relative;
+          margin-top: 310px;
           opacity: 0.9;
           //transform: scale(0.9);
           transition: all 0.3s ease;
@@ -1972,45 +1958,30 @@ section {
           justify-content: flex-end;
 
           .swiper-wrapper{ align-items: top; display: flex;}
-
-          .visual {
-            position: unset;
-            right: auto;
-            bottom: auto;
-            top: auto;
-            margin-bottom: 30px;
-            vertical-align: top;
-          }
    
-
-          .content-slide-inner {
+          .content-slide-inner { 
             width: 100%;
             height: auto;
             padding: 40px;
             border-radius: 30px;
             background-color: rgba(23, 70, 157, 0.6);
+            position: static !important;
+            right: auto !important;
+            left: auto !important;
+            bottom: auto !important;
 
-
-            h3 {
-              font-size: $fs-20;
-              margin-bottom: 12.5px;
-            }
-
-            span {
-              font-size: $fs-14;
-              margin-bottom: 15px;
-              opacity: 0.8;
-              display: block;
-            }
-
-            >p {
-              font-size: $fs-16;
-              line-height: 1.5;
-              font-weight: 300;
-            }
+            h3 {font-size: $fs-20;margin-bottom: 12.5px;}
+            span {font-size: $fs-14;margin-bottom: 15px;opacity: 0.8;display: block;}
+            >p {font-size: $fs-16;line-height: 1.5;font-weight: 300;}
           }
 
           .visual {
+            position: absolute;
+            bottom: unset;
+            top: -310px;
+            left: 50%;
+            transform: translateX(-50%);
+
             text-align: center;
             background: none;
             border-radius: 0;
@@ -2024,23 +1995,47 @@ section {
               box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             }
           }
+          
+          // 모바일(≤1240px)에서 모든 인덱스 슬라이드 동일하게 본문 카드 고정
+          &[data-index] {
+            .content-slide-inner {
+              position: static !important;
+              right: auto !important;
+              left: auto !important;
+              bottom: auto !important;
+              top: auto !important;
+            }
+          }
         }
- 
-
-        /*
+        
+        // 인덱스 분기 제거: 공통 규칙만 유지
         &.even-slide .domain-controls { 
-          flex-direction: column-reverse;
-          justify-content: flex-start;
-          align-items: flex-start;
-        }*/
+           position: absolute;
+            bottom: unset;
+            top: -310px !important;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 1px solid yellowgreen;
+        }
       }
 
     }
 
-    @media (max-width: 720px) {
-      .domain-content .content-slide .visual img{height: 210px;}
-      .domain-controls-wrap{
-        top: 347px;
+    @media (max-width: 760px) {
+
+      .domain-content .content-slide { 
+        margin-top: 230px !important;  
+        .visual{ top: -230px !important; 
+          img{height: 210px;}
+        }
+        .content-slide-inner{padding: 55px 20px 25px;}
+      }
+      
+      .domain-controls-wrap{ 
+        top: 325px; right: -10px; 
+        .domain-controls button{ 
+          width: 28px; height: 28px; background-size: auto 26px; 
+        }
       }
     }
 
@@ -2302,6 +2297,7 @@ section {
 
           &.active {
             display: block;
+            background: transparent
           }
 
           ul {
@@ -2402,27 +2398,14 @@ section {
                 max-width: 100%;
               }
             }
-/*
-            @media screen and (max-width: 960px) {
-              grid-template-columns: repeat(2, 1fr);
-              gap: 20px;
-            }
-*/
+
             @media screen and (max-width: 1080px) {
               grid-template-columns: 1fr;
               gap: 15px;
             }
-/*
-            @media screen and (max-width: 480px) {
-              gap: 12px;
-
-              li a {
-                height: 150px;
-                padding: 25px 20px;
-              }
-            }*/
           }
         }
+        &::before{display: block; content: ""; background: #f7f9ff; position: absolute; top: -15px; left: 0; width: 100%; height: calc(100% + 15px); z-index: -1; border-radius:  0 50px 0 0; }
       }
     }
 
@@ -2607,18 +2590,19 @@ section {
 
  
         .news_tab_menu {
-          padding: 0 20px;
+          //padding: 0 20px;
           width: 100%;
           margin-top: 0;
+          padding-top: 0px;
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
           gap: 0;
           align-items: center;
           background: none;
           
           li {
             width: auto;
-            gap: 20px;
+            //gap: 20px;
             border-bottom: none;
             display: flex;
             
@@ -2629,8 +2613,11 @@ section {
               
               button,a {
                 height: 30px;
+                line-height: 30px;
+                vertical-align: top;
                 width: auto;
-                font-size: $fs-15;
+                font-size: $fs-16;
+                padding: 0 11px;
                
                 &::after {
                   display: none;
@@ -2640,9 +2627,10 @@ section {
 
             button, a { 
               height: 30px;
-              font-size: $fs-15;
+              font-size: $fs-16;
               font-weight: 500;
               align-items: center;
+              padding: 0 11px;
               justify-content: space-around;
               
               
@@ -2696,7 +2684,7 @@ section {
 
           .tab_panel {
             min-height: auto;
-            padding: 20px 15px 0;
+            padding: 15px 15px 0;
             order: 1;
             border-radius: 0 50px 0 0;
             height: auto;
@@ -3180,36 +3168,26 @@ section {
       }
     }
     @media screen and (max-width: 1440px){
-      .container{
-        gap: 20px;
-        padding-right: 40px;
-      }
+      .container{gap: 20px;padding-right: 40px;}
     }
 
     @media screen and (max-width: 1360px) {
-      h2{
-        text-align: center;
-      }
+      h2{text-align: center;}
       padding-bottom: 0;
 
-      &::before,&::after {
-        display: none;
-      }
+      &::before,&::after {display: none;}
 
       .container {
         flex-direction: column;
         width: 100% !important;
-        padding-right: 0px;
-        
+        padding-right: 0px;    
 
         .support {
           flex: 0 0 100%;
           padding: 0 15px;
           width: auto;
 
-          h2 {
-            margin: 10px 0 20px;
-          }
+          h2 {margin: 0 0 20px;}
 
           .support_banner {
             width: 110%;
@@ -3217,13 +3195,8 @@ section {
             border-right: none;
    
             >div{
-              h3 {
-                font-size: $fs-20;
-              }
-              
-              .control{
-                display: none;
-              }
+              h3 {font-size: $fs-20;}
+              .control{display: none;}
             }
             >div:first-child {
               width: calc(100% - 10%);
@@ -3231,15 +3204,11 @@ section {
               padding: 0 0 0 35px;
             }
 
-            >div:last-child {
-              width: 1300px;
-            }
+            >div:last-child {width: 1300px;}
          
             // jjh 수정
             .support_list {
-              &::before{
-                width: 2px;
-              }
+              &::before{width: 2px;}
               .support_item {
                 flex: 0 0 calc(23%); //@@@ 종미
                 span{ display: none; }
@@ -3255,19 +3224,16 @@ section {
             padding-left: 0;
             
             h3 {
-              font-size: $fs-20;
-              margin-left: 22px;
+              font-size: $fs-20; //margin-left: 22px;
               
               > span {
                 display: block;
                 font-size: $fs-13;
-                margin-top: 8px;
+                //margin-top: 8px;
                 font-weight: 300;
                 padding-left: 0;
               }
-              b{
-                word-break: keep-all;
-              }
+              b{word-break: keep-all;}
             }
   
             ul {
@@ -3281,13 +3247,10 @@ section {
                   span {
                     width: 80px;
                     height: 80px;
-                    border-radius: 15px;
+                    border-radius: 17px;
                   }
   
-                  b {
-                    font-size: $fs-14;
-                    font-weight: 500;
-                  }
+                  b,em {font-size: $fs-16; left: 24px; font-weight: 600; vertical-align: top;}
                 }
               }
             }
@@ -3295,7 +3258,7 @@ section {
         }
 
         .certifin {
-          margin-top: 60px;
+          margin-top: 50px;
           flex: 0 0 100%;
           padding:  0 15px;
           &:after{display: none;}
@@ -3350,6 +3313,7 @@ section {
                 height: 50px;
                 font-size: $fs-16;
                 line-height: 51px;
+                font-weight: 400;
   
               }
             }
@@ -3389,7 +3353,7 @@ section {
 
           a { width: 100% !important;
             padding: 15px 20px;
-            font-size: $fs-14;
+            font-size: $fs-16;
             border-radius: 12px;
             height: auto;
             line-height: 1.4;
@@ -3606,12 +3570,13 @@ section {
 
             b {
               display: inline-block;
-              margin: 25px 20px 14px;
-              font-size: $fs-15;
+              margin: 30px 20px 15px;
+              font-size: $fs-13;
               font-weight: 300;
+              line-height: 1em;
               color: #0b50d0;
               background-color: #ecf2fe;
-              padding: 8px 10px;
+              padding: 6px 10px;
               border-radius: 6px;
               font-family: $ff-sbaggro;
             }
@@ -3623,7 +3588,7 @@ section {
               line-height: 1.4;
               letter-spacing: -0.45px;
               margin: 0 24px 24px;
-              height: 42px;
+              height: 46px;
             }
 
             img {
@@ -3811,7 +3776,7 @@ section {
               background-position: center;
 
               &.youtube {
-                background-image: url(../images/main/icon_youtube.png);
+                background-image: url(../images/main/icon_youtube_02.png);
               }
 
               &.facebook {
@@ -3975,8 +3940,14 @@ section {
         .flex{
           .control{ display: none; }
         }
+        .interview > div a{border-radius: 30px;}
        }
        
+       .interview_wrap{
+        .flex{
+          .control{ display: none; }
+        }
+       }
 
         .publications_wrap {
           width: 100%; margin-right: 15px;
@@ -4002,12 +3973,11 @@ section {
         }
 
       }
+    
     }
 
   }
-  .footer{margin-top: 100px;}
 }
-
 
 
 // // ==========================================================================

@@ -26,6 +26,7 @@ $color-greenblue: #1fb1c2;
 
 $placeholder : #4c4e5a; //placeholder
 .link, .blue {color: $color-blue3;}
+.blue2{color: $color-blue2;}
 $bor_form : #dbdee1;
 $bor_gray : #e1e3e1;
 
@@ -235,4 +236,14 @@ $fs-60:3.75rem;// 60px
     @media (max-width: 1080px) {
         font-size: $fs-15;
     }
+}
+
+// 체크 적용
+.check{ 
+    > li{ position: relative; padding-left: 32px; margin-bottom: 20px;
+        &:before{position: absolute; content: ''; display: block;left: 0px;top: 4px;  width: 16px; height: 14px;  background: url(../images/sub/icon_check.png) no-repeat center left;}
+        &:last-of-type{margin-bottom: 0;}
+    }
+    // @media (max-width: 1080px) {
+    // }
 }

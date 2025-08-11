@@ -4,13 +4,24 @@
         border-radius: 50%;  background-color: $color-blue2; margin-left: 11px;
         vertical-align: bottom; margin-bottom: 13px;
     }
-    @media (max-width: 1080px) {font-size: $fs-24;
+    @media (max-width: 1080px) {font-size: $fs-21; margin-bottom: 20px;
         &::after{
-            width: 7px; height: 7px;
+            width: 6px; height: 6px;margin-bottom: 10px;margin-left: 5px;
         }
     }
 }
-.sub_tit_md{ font-size: $fs-24; font-weight: 500; font-family: $ff-sbaggro; margin-bottom: 29px;}
+.sub_tit_md{ font-size: $fs-24; font-weight: 500; font-family: $ff-sbaggro; margin-bottom: 29px;
+    @media (max-width: 1080px) {font-size: $fs-18; margin-bottom: 15px;
+        &::after{
+            width: 6px; height: 6px;margin-bottom: 10px;margin-left: 5px;
+        }
+    }
+}
+.sub_txt{font-size: $fs-18; line-height: 28px;
+    @media (max-width: 1080px) {font-size: $fs-15; line-height: 21px; margin-bottom: 40px !important;}
+}
+
+
 
 //연구분야 - 연구소개
 .intro_box{
@@ -234,3 +245,41 @@
     }
   }
 
+
+
+  //본인확인서비스
+  .certifin_box{ display: flex; border: 1px solid $color-blue2; border-radius: 20px; padding: 50px 0;align-items: center; justify-content: center;
+    >div{ width: 33.33%; display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: 1px dotted #c6c6cc;
+        &:last-of-type{border-right: none;}
+        img{margin-bottom: 40px; display: block;}
+        strong{font-size: $fs-23;line-height: 32px; font-family: $ff-suit; font-weight: 600; margin-bottom: 28px;}
+        p{text-align: center; margin-bottom: 50px;}
+        >a{display: block; border-radius: 7px; border: 1px solid $color-bk; padding: 0 20px; background: url(../images/sub/icon_certifin_arrow_black.png) no-repeat center right 20px;
+            width: 244px; height: 56px; line-height: 56px; font-size: $fs-17; font-family: $ff-suit; font-weight:600; color: $color-grey6;
+            color: #444; transition: all 0.3s;
+            &:hover{color: $color-wh; background: $color-blue2 url(../images/sub/icon_certifin_arrow_white.png) no-repeat center right 20px; border-color: $color-blue2;}
+        }
+    }
+    @media (max-width: 1080px) {
+        flex-direction: column; padding: 35px 25px;
+        >div{ width: 100%; border-right: none; border-bottom: 1px dotted #c6c6cc; padding: 30px 0;
+            &:first-of-type{padding-top: 5px;}
+            &:last-of-type{border-bottom: none; padding-bottom: 5px;}
+            img{width: 45px; height: auto; margin-bottom: 20px;}
+            strong{font-size: $fs-18; line-height: 28px; margin-bottom: 15px;}
+            p{font-size: $fs-15; line-height: 20px; margin-bottom: 30px;}
+            >a{width: 180px; height: 40px; line-height: 40px; font-size: $fs-14; padding: 0 15px; background-size: 7px auto; background-position: center right 15px;}
+        }
+    }
+  }
+
+
+  //조직안내
+  .department_info{ margin-bottom: 40px;
+    border-radius: 30px; background: $color-grey4; padding: 40px 45px;  background: url(../images/common/sitemap_bg_logo.png) no-repeat bottom right -45px/612px auto;
+    ul{
+        li{font-size: $fs-18; margin-bottom: 20px; font-family: $ff-suit;
+            &:last-of-type{margin-bottom: 0;}
+        }
+    }
+  }

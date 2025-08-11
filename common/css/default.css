@@ -708,8 +708,8 @@ a.btn_blue{ border-radius:10px; padding:0 30px; font-size:1.125rem; font-weight:
 .tab_thum.card ol>li ul li{ border:none; line-height:auto; padding:0; height:auto }
 .tab_thum.card ol>li ul li a{ height:auto; padding:0 }
 .tab_thum.card ol>li ul li a b{ display:block; border:none; border-radius:20px; overflow:hidden; padding:0; margin-bottom:15px }
-.tab_thum.card ol>li ul li a b img{ width:100% }
-.tab_thum.card ol>li ul li a strong{ line-height:20px; height:53px; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; text-overflow:ellipsis; white-space:normal }
+.tab_thum.card ol>li ul li a b img{ width:100%; height:200px }
+.tab_thum.card ol>li ul li a strong{ line-height:20px; height:41px; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; text-overflow:ellipsis; white-space:normal }
 .tab_thum.card ol>li ul li a .noti{ display:inline-block; font-size:.875rem; font-weight:600; line-height:28px; padding:0 15px; border-radius:15px; margin-bottom:7px }
 .tab_thum.card ol>li ul li[data-type=date]{ height:20px; line-height:20px }
 .tab_thum.card ol>li ul li>b{ display:block; font-size:.875rem; color:#888; line-height:1em; margin-top:8px; padding:0; text-align:left }
@@ -979,10 +979,10 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 .main .main_banner .main_banner_right{ width:380px; position:relative; z-index:1; transition:all .3s ease; max-width:35vw }
 .main .main_banner .main_banner_right .m_main_banner_right_btn{ display:none }
 .main .main_banner .main_banner_right .main_banner_right_con{ padding:0 40px 40px; border-radius:0 0 0 60px; overflow:hidden }
-.main .main_banner .main_banner_right .main_banner_right_con:after{ content:""; display:block; position:absolute; border-radius:0 0 0 60px; height:666px; top:-95px; left:0; width:100%; z-index:-1; background:rgba(0,0,0,.45) }
+.main .main_banner .main_banner_right .main_banner_right_con:after{ content:""; display:block; position:absolute; border-radius:0 0 0 60px; height:689px; top:-120px; left:0; width:100%; z-index:-1; background:rgba(0,0,0,.45) }
 .main .main_banner .main_banner_right .main_banner_right_con h3{ margin-top:50px; color:#fff; margin-bottom:35px }
 .main .main_banner .main_banner_right .main_banner_right_con ul li{ border-bottom:1px solid hsla(0,0%,100%,.3) }
-.main .main_banner .main_banner_right .main_banner_right_con ul li a{ display:flex; align-items:center; color:hsla(0,0%,100%,.9); padding:21px 0; overflow:hidden }
+.main .main_banner .main_banner_right .main_banner_right_con ul li a{ display:flex; align-items:center; color:hsla(0,0%,100%,.9); padding:20px 0; overflow:hidden }
 .main .main_banner .main_banner_right .main_banner_right_con ul li a span:first-of-type{ display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#17469d; border-radius:8px; font-size:15px; font-weight:700; margin-right:15px; flex-shrink:0; color:#fff }
 .main .main_banner .main_banner_right .main_banner_right_con ul li a span:last-of-type{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
 .main .main_banner .main_banner_right .main_banner_right_con ul li:first-child a{ padding-top:0 }
@@ -1285,7 +1285,7 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 .main .certification .support .support_banner .support_list .support_item:nth-child(even){ border-left:1px solid #dbdbdb; padding-left:29px; margin-right:0 }
 .main .certification .support .support_banner .support_list .support_item img{ display:block; width:246px; height:170px; border-radius:17px }
 .main .certification .support .support_banner .support_list .support_item b{ margin:26px 0 10px; color:#1a2a5c; font-size:1.0625rem; font-family:"SBAggro","Pretendard"; font-weight:500; display:block }
-.main .certification .support .support_banner .support_list .support_item>div{ height:40px; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; text-overflow:ellipsis; line-height:1.35; letter-spacing:-0.4px; margin-bottom:9px }
+.main .certification .support .support_banner .support_list .support_item>div{ height:42px; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; text-overflow:ellipsis; line-height:1.35; letter-spacing:-0.4px; margin-bottom:9px }
 .main .certification .support .support_banner .support_list .support_item span{ display:block; width:122px; font-size:.875rem; background:url(../images/main/support_icon_arrow.png) no-repeat center right 30px/20px 10px }
 .main .certification .support .support_search{ display:flex; gap:10px; flex-direction:column }
 .main .certification .support .support_search ul{ display:flex; align-items:center; justify-content:space-between }
@@ -1334,7 +1334,7 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 .main .certification .container .support .support_banner .support_list .support_item{ flex:0 0 23% }
 .main .certification .container .support .support_banner .support_list .support_item span{ display:none }
 .main .certification .container .support .support_search{ gap:20px; padding-left:0 }
-.main .certification .container .support .support_search h3{ font-size:1.25rem }
+.main .certification .container .support .support_search h3{ font-size:1.25rem; margin-left:22px }
 .main .certification .container .support .support_search h3>span{ display:block; font-size:.8125rem; margin-top:8px; font-weight:300; padding-left:0 }
 .main .certification .container .support .support_search h3 b{ word-break:keep-all }
 .main .certification .container .support .support_search ul{ justify-content:space-around; gap:20px }
@@ -1346,9 +1346,9 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 .main .certification .container .certifin h2{ margin-bottom:20px }
 .main .certification .container .certifin .certification_con{ display:flex; flex-wrap:wrap; align-items:flex-start; gap:30px; justify-content:flex-start }
 .main .certification .container .certifin .certification_con>ul{ width:100%; margin-bottom:0px }
-.main .certification .container .certifin .certification_con>div{ width:calc(50% - 15px); height:230px }
-.main .certification .container .certifin .certification_con>div.application_service{ margin-bottom:0px; background-image:none }
-.main .certification .container .certifin .certification_con>div.application_service h3{ display:block; margin-bottom:25px }
+.main .certification .container .certifin .certification_con>div{ width:calc(50% - 15px); height:auto }
+.main .certification .container .certifin .certification_con>div.application_service{ margin-bottom:0px; padding:33px 26px }
+.main .certification .container .certifin .certification_con>div.application_service h3{ display:none }
 .main .certification .container .certifin .service_cards{ height:100%; padding:35px; gap:20px; border-radius:15px }
 .main .certification .container .certifin .service_cards li a>span{ width:85px; height:85px; margin-bottom:10px; border-radius:20px }
 .main .certification .container .certifin .service_cards li a div{ flex-direction:column; align-items:center; justify-content:center; gap:10px; width:auto }
@@ -1358,27 +1358,24 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 .main .certification .container .certifin .application_service{ padding:30px }
 .main .certification .container .certifin .application_service h3{ text-align:center }
 .main .certification .container .certifin .application_service .service_buttons{ gap:10px; flex-direction:column }
-.main .certification .container .certifin .application_service .service_buttons a{ width:100% !important; height:50px; font-size:1rem; line-height:50px }
+.main .certification .container .certifin .application_service .service_buttons a{ height:50px; font-size:1rem; line-height:51px }
 .main .certification .flowing-text-bg{ display:none }
 .main .certification .certification_inquiry{ background:#eff3f7; border-radius:15px; padding:25px 27px }
-.main .certification .certification_inquiry h3{ margin-bottom:20px; text-align:center }
+.main .certification .certification_inquiry h3{ display:none }
 .main .certification .certification_inquiry h3>span{ display:none }
 .main .certification .certification_inquiry>div{ gap:10px; flex-direction:column }
 .main .certification .certification_inquiry>div a{ width:100% !important; padding:15px 20px; font-size:.875rem; border-radius:12px; height:auto; line-height:1.4 }
 .main .certification .certification_inquiry>div a:nth-child(1),.main .certification .certification_inquiry>div a:nth-child(2){ width:100% }
 .main .certification .certification_inquiry>div a:nth-child(3){ display:none }
 }
-@media screen and (max-width:760px){ .main .certification .container{gap:0 }
+@media screen and (max-width:1080px){ .main .certification .container{gap:0 }
+.main .certification .container .support .support_search ul{ gap:5px }
+.main .certification .container .support .support_search ul li a{ width:auto }
+.main .certification .container .support .support_search ul li a span{ width:65px; height:65px }
+.main .certification .container .support .support_search ul li a span img{ max-width:37px; height:auto }
+.main .certification .container .support .support_search ul li:last-child a span img{ height:33px; width:auto }
 .main .certification .container .certifin .certification_con>div{ width:100% }
-.main .certification .container .certifin .service_cards{ flex-direction:column; justify-content:flex-start }
-.main .certification .container .certifin .service_cards li{ width:100% }
-.main .certification .container .certifin .service_cards li a{ display:flex; flex-direction:row; align-items:center; gap:20px }
-.main .certification .container .certifin .service_cards li a>span{ width:100px; height:100px; border-radius:20px; margin-bottom:0; text-align:center; line-height:100px }
-.main .certification .container .certifin .service_cards li a div{ flex-direction:column; align-items:flex-start; justify-content:center; gap:10px; flex:1 }
-.main .certification .container .certifin .service_cards li a div b{ word-break:keep-all; text-align:left }
-.main .certification .container .certifin .service_cards li a div b>em{ display:inline-block }
-.main .certification .container .certifin .service_cards li a div>em{ display:block; text-align:left }
-.main .certification .container .certifin .service_cards li a div>em span{ display:inline-block }
+.main .certification .container .certifin .service_cards{ padding:30px 18px }
 }
 @keyframes flowingText{ 0%{transform:translateX(-100%) }
 100%{ transform:translateX(100%) }
@@ -1448,21 +1445,25 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 .main .promo_bottom .video_box{ position:absolute; top:-340px; right:0; height:300px; gap:10px; flex-direction:column; align-items:center; justify-content:flex-start }
 .main .promo_bottom .video_box .video_wrap{ height:200px }
 .main .promo_bottom .video_box .video_wrap iframe{ height:200px; position:static; transform:none }
-.main .promo_bottom .video_box .video_text{ width:100%; padding:0 20px; text-align:center }
+.main .promo_bottom .video_box .video_text{ width:100%; padding:0 25px }
 .main .promo_bottom .video_box .video_text b{ margin:0 0 5px; display:inline-block }
-.main .promo_bottom .video_box .video_text span{ text-align:center; font-size:1.125rem; font-weight:600; line-height:1.5; display:block }
+.main .promo_bottom .video_box .video_text span{ font-size:1.125rem; font-weight:600; line-height:1.5; display:block }
 .main .promo_bottom .video_box .video_text span em.block{ display:inline-block; vertical-align:top }
 .main .promo_bottom .sns_box,.main .promo_bottom .history_box,.main .promo_bottom .video_box{ width:calc(50% - 15px); max-width:100% }
 }
-@media screen and (max-width:720px){ .main .promo{padding-top:25px !important }
+@media screen and (max-width:1080px){ .main .promo{padding-top:25px !important }
+.main .promo .container{ padding-left:0 }
 .main .promo::before{ height:720px; border-radius:50px 0 0 0 }
 .main .promo_top{ flex-direction:column; margin:10px 0 30px; gap:14px }
-.main .promo_top .flex .control{ display:none }
+.main .promo_top .interview_wrap h3{ margin-left:24px }
+.main .promo_top .interview_wrap .flex .control{ display:none }
 .main .promo_top .publications_wrap{ width:100%; margin-right:15px }
-.main .promo_top .publications_wrap h3{ display:none }
+.main .promo_top .publications_wrap h3{ margin-left:24px }
+.main .promo_top .publications_wrap .inner{ width:calc(100% - 20px) }
+.main .promo_top .publications_wrap .inner:after{ right:-20px }
 .main .promo_bottom{ flex-direction:column; gap:30px }
 .main .promo_bottom .sns_box,.main .promo_bottom .history_box,.main .promo_bottom .video_box{ width:100% }
-.main .promo_bottom .video_box{ position:static; top:0; right:0; height:auto; gap:10px; padding-bottom:20px; padding-right:0; flex-direction:column; align-items:center; justify-content:flex-start }
+.main .promo_bottom .video_box{ position:static; top:0; right:0; height:auto; gap:23px; padding-bottom:20px; padding-right:0; flex-direction:column; align-items:center; justify-content:flex-start }
 .main .promo_bottom .video_box .video_wrap{ width:100%; height:200px }
 }
 .footer{ margin-top:100px }

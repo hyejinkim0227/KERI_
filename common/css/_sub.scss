@@ -79,8 +79,8 @@
             }
         }
         .intro_content{width: calc(100% + 30px); max-width: unset !important; margin-left: -15px; background: #f6f3f0; padding: 47px 15px;  
-            h4{font-size: $fs-24; margin-bottom: 25px;}
-            p{font-size: $fs-16;}
+            h4{font-size: $fs-24; margin-bottom: 25px; line-height: 34px;}
+            p{font-size: $fs-15; line-height: 22px;}
             .flex_col{gap: 20px;}
         }
         .goals{margin-top: 0; padding: 50px 30px; gap: 10px 8px;

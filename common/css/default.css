@@ -582,7 +582,7 @@ a.btn_blue{ border-radius:10px; padding:0 30px; font-size:1.125rem; font-weight:
 .lnb>div.flex_LR .flex>li{ position:relative; border-right:1px solid #e1e3e1 }
 .lnb>div.flex_LR .flex>li>a{ line-height:60px; height:60px; width:240px; transition:all .4s; padding:0 20px; font-size:1.0625rem; color:#000; background:url(../images/sub/icon_lnb_down.png) no-repeat right 20px center }
 .lnb>div.flex_LR .flex>li div{ position:absolute; top:60px; left:-1px; width:calc(100% + 2px); height:0; background:#fff; z-index:1; transition:all .4s; overflow:hidden; box-shadow:0 5px 10px rgba(0,0,0,.15); opacity:0 }
-.lnb>div.flex_LR .flex>li div ol{ border:1px solid #e1e3e1; padding:0 10px }
+.lnb>div.flex_LR .flex>li div ol{ border:1px solid #e1e3e1; padding:0 10px; overflow-y:scroll; max-height:300px }
 .lnb>div.flex_LR .flex>li div ol li a{ line-height:46px; height:46px; padding:0 10px; font-size:1.0625rem; font-weight:400; color:#454545; position:relative }
 .lnb>div.flex_LR .flex>li div ol li:not(:first-child){ border-top:1px solid #e1e3e1 }
 .lnb>div.flex_LR .flex>li div ol li:hover a{ color:#1f60c2 }
@@ -1477,16 +1477,16 @@ section .fp-tableCell{ display:block; padding:0 20px !important; width:100% !imp
 .main .promo_bottom .video_box .video_wrap{ width:100%; height:200px }
 }
 .main .footer{ margin-top:100px }
-.sub_tit{ font-size:2.125rem; font-weight:400; font-family:"SBAggro","Pretendard"; margin-bottom:29px }
-.sub_tit::after{ content:""; display:inline-block; width:10px; height:10px; border-radius:50%; background-color:#17469d; margin-left:11px; vertical-align:bottom; margin-bottom:13px }
+.sub_tit{ font-size:2.125rem; font-weight:400; font-family:"SBAggro","Pretendard"; margin-bottom:30px; line-height:1 }
+.sub_tit::after{ content:""; display:inline-block; width:10px; height:10px; border-radius:50%; background-color:#17469d; margin-left:11px; vertical-align:bottom; margin-bottom:7px }
 @media(max-width:1080px){ .sub_tit{font-size:1.3125rem; margin-bottom:20px }
 .sub_tit::after{ width:6px; height:6px; margin-bottom:10px; margin-left:5px }
 }
-.sub_tit_md{ font-size:1.5rem; font-weight:500; font-family:"SBAggro","Pretendard"; margin-bottom:29px }
+.sub_tit_md{ font-size:1.5rem; font-weight:500; font-family:"SBAggro","Pretendard"; margin:40px 0 24px; line-height:1 }
 @media(max-width:1080px){ .sub_tit_md{font-size:1.125rem; margin-bottom:15px }
 .sub_tit_md::after{ width:6px; height:6px; margin-bottom:10px; margin-left:5px }
 }
-.sub_txt{ font-size:1.125rem; line-height:28px }
+.sub_txt{ font-size:1.125rem; line-height:28px; margin-top:24px }
 @media(max-width:1080px){ .sub_txt{font-size:.9375rem; line-height:21px; margin-bottom:40px !important }
 }
 .intro_box .intro_visual{ position:relative; background-position:center; background-size:cover; background-repeat:no-repeat; width:100%; height:630px; border-radius:20px; color:#fff; display:flex; flex-direction:column; justify-content:flex-end; align-items:flex-end; text-align:right }

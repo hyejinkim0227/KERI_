@@ -263,7 +263,7 @@ a{
                     >a{line-height: 60px; height: 60px; width: 240px; transition: all 0.4s; padding: 0 20px; font-size: $fs-17; color: $color-bk; background: url(../images/sub/icon_lnb_down.png) no-repeat right 20px center;}
                     div{ 
                         position: absolute; top: 60px; left: -1px; width: calc(100% + 2px); height: 0; background: #fff; z-index: 1; transition: all 0.4s; overflow: hidden; box-shadow: 0 5px 10px rgba(0,0,0,0.15); opacity: 0;
-                        ol{ border: 1px solid $bor_gray; padding: 0 10px;
+                        ol{ border: 1px solid $bor_gray; padding: 0 10px; overflow-y: scroll; max-height: 300px;
                             li{
                                 a{line-height: 46px; height: 46px; padding: 0 10px; font-size: $fs-17; font-weight: 400; color: #454545; position: relative;}
                                 &:not(:first-child){border-top: 1px solid $bor_gray;}

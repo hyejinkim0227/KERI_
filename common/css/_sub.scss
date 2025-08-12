@@ -129,23 +129,24 @@
 
 // 구성원 소개
 .member_list{ display: flex; gap: 30px 50px; flex-wrap: wrap;
-    >li{width: calc(50% - 25px); background: $color-grey4; border-radius: 10px; padding: 36px 30px;display: flex; gap: 10px;
-        .info{display: flex; flex-direction: column; gap: 45px;
+    >li{width: calc(50% - 25px); background: $color-grey4; border-radius: 10px; padding: 34px 30px;display: flex; gap: 10px; height: 270px;
+        .info{display: flex; flex-direction: column; gap: 40px; width: calc(100% - 56px);
             h4{ font-size: $fs-24; font-family: $ff-sbaggro; margin-top: 20px; font-weight: 400;
                 span{font-size: $fs-16; color: $color-grey1; font-family: $ff-suit;}
             }
-            ol{ flex-wrap: wrap; display: flex; gap: 20px 70px; width: 100%; margin-bottom: 10px;
+            ol{ flex-wrap: wrap; display: flex; gap: 19px 70px; width: 100%;
                 >li{ font-size: $fs-17; font-family: $ff-sbaggro; font-weight: 300;
                 }
-                .call{ padding-left: 36px;
+                .call{ padding-left: 36px; width: 175px;
                     background: url(../images/sub/member_call_blue.png) no-repeat top left;
                 }
                 .email{ padding-left: 36px; 
                     background: url(../images/sub/member_email_blue.png) no-repeat top 2px left;
                     &:hover{text-decoration: underline; text-underline-offset: 4px;}
                 }
-                .job{ padding-left: 36px; width: 100%;
+                .job{ padding-left: 36px; width: 100%;  @include elli2; height: 44px;
                     background: url(../images/sub/member_job_blue.png) no-repeat top left;
+                  
                 }
             }
           
@@ -277,9 +278,12 @@
   //조직안내
   .department_info{ margin-bottom: 40px;
     border-radius: 30px; background: $color-grey4; padding: 40px 45px;  background: url(../images/common/sitemap_bg_logo.png) no-repeat bottom right -45px/612px auto;
-    ul{
-        li{font-size: $fs-18; margin-bottom: 20px; font-family: $ff-suit;
+    >ul{
+        >li{font-size: $fs-18; margin-bottom: 20px; font-family: $ff-suit;
             &:last-of-type{margin-bottom: 0;}
+            ol{ display: flex; flex-direction: column; gap: 5px; margin-top: 5px;
+                li{font-family: $ff-suit; font-size: $fs-18; }
+            }
         }
     }
   }

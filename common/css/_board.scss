@@ -1,13 +1,13 @@
 
 // 서브 페이지 배경
 #sub {
-    &.bg_01{background: url(../images/sub/subBg_01.png) no-repeat center top fixed;}
-    &.bg_01_02{background: url(../images/sub/subBg_01_02.png) no-repeat center top fixed;}
-    &.bg_02{background: url(../images/sub/subBg_02.png) no-repeat center top fixed;}
-    &.bg_03{background: url(../images/sub/subBg_03.png) no-repeat center top fixed;}
-    &.bg_04{background: url(../images/sub/subBg_04.png) no-repeat center top fixed;}
-    &.bg_05{background: url(../images/sub/subBg_05.png) no-repeat center top fixed;}
-    &.bg_06{background: url(../images/sub/subBg_06.png) no-repeat center top fixed;}
+    &.bg_01{background: url(../images/sub/subBg_01.png) no-repeat center top    fixed; background-size: contain;}
+    &.bg_01_02{background: url(../images/sub/subBg_01_02.png) no-repeat center top fixed; background-size: contain;}
+    &.bg_02{background: url(../images/sub/subBg_02.png) no-repeat center top fixed; background-size: contain;}
+    &.bg_03{background: url(../images/sub/subBg_03.png) no-repeat center top fixed; background-size: contain;}
+    &.bg_04{background: url(../images/sub/subBg_04.png) no-repeat center top fixed; background-size: contain;}
+    &.bg_05{background: url(../images/sub/subBg_05.png) no-repeat center top fixed; background-size: contain;}
+    &.bg_06{background: url(../images/sub/subBg_06.png) no-repeat center top fixed; background-size: contain;}
 
     .sub_content{ @include w1300;}
     .white{background: #fff;}
@@ -751,6 +751,7 @@ span.noti{
     }
   
 }
+
 // 필수입력 표시
 .point_b{
     &:before{display: inline-block; content: "*"; width: 20px; height: 44px; color: #f43f3f; line-height: 44px; text-align: center;}
@@ -980,5 +981,52 @@ span.noti{
             margin-top: 0; 
             .footer_con{ border: none;}
         }
+    }
+}
+
+
+.title_h2{
+    font-size: $fs-58; font-weight: 600; color: #222; line-height: 1.4em; margin-bottom: 50px; font-family: $ff-sbaggro;
+    span{font-size: $fs-22; font-weight: 500; color: $color-blue; line-height: 1.4em; display: block; font-family: $ff-sbaggro;}
+}
+
+//1개짜리 슬라이드
+.slide_box1{
+    .swiper-slide{ width: 100% !important;}
+    .control{
+        display: flex; align-items: center; justify-content: flex-end; margin-top: 20px;
+        .active{color: $color-blue;}
+        button{width: 86px; height: 86px; vertical-align: top; background: url(../images/sub/arrow_L.png) no-repeat left top / 86px auto;
+            &.support_btn_next{background-image: url(../images/sub/arrow_R.png);}
+        }
+        >div{margin-right: 10px;
+            span{font-size: $fs-20; font-weight: 400; color: #333; line-height: 45px; vertical-align: top; height: 60px;
+                &.active{color: $color-blue;}
+            }
+        }
+    }
+}
+
+//차세대전력망 연구 스타일
+.info_207{
+    .flex_LR{
+        >div{width: 50%;}
+    }
+
+    .sub_content{
+        >div{
+            img{width: 100%;}
+            &:last-child{padding-left: 85px;}
+        }
+    }
+    .bg_01{background: #f6f3f0; padding: 100px 0;
+        >div{
+            .flex_LR{ align-items: flex-start;}
+            .slide_box1{padding-left: 45px;}
+        }
+
+    }
+    p{font-size: $fs-19; font-weight: 400; color: #333; line-height: 34px;
+        &:not(:last-child){margin-bottom: 20px;}
     }
 }

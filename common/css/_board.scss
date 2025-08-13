@@ -1,13 +1,13 @@
 
 // 서브 페이지 배경
 #sub {
-    &.bg_01{background: url(../images/sub/subBg_01.png) no-repeat center top    fixed; background-size: contain;}
-    &.bg_01_02{background: url(../images/sub/subBg_01_02.png) no-repeat center top fixed; background-size: contain;}
-    &.bg_02{background: url(../images/sub/subBg_02.png) no-repeat center top fixed; background-size: contain;}
-    &.bg_03{background: url(../images/sub/subBg_03.png) no-repeat center top fixed; background-size: contain;}
-    &.bg_04{background: url(../images/sub/subBg_04.png) no-repeat center top fixed; background-size: contain;}
-    &.bg_05{background: url(../images/sub/subBg_05.png) no-repeat center top fixed; background-size: contain;}
-    &.bg_06{background: url(../images/sub/subBg_06.png) no-repeat center top fixed; background-size: contain;}
+    &.bg_01{background: url(../images/sub/subBg_01.png) no-repeat center top    fixed; }
+    &.bg_01_02{background: url(../images/sub/subBg_01_02.png) no-repeat center top fixed; }
+    &.bg_02{background: url(../images/sub/subBg_02.png) no-repeat center top fixed; }
+    &.bg_03{background: url(../images/sub/subBg_03.png) no-repeat center top fixed; }
+    &.bg_04{background: url(../images/sub/subBg_04.png) no-repeat center top fixed; }
+    &.bg_05{background: url(../images/sub/subBg_05.png) no-repeat center top fixed; }
+    &.bg_06{background: url(../images/sub/subBg_06.png) no-repeat center top fixed; }
 
     .sub_content{ @include w1300;}
     .white{background: #fff;}
@@ -380,7 +380,7 @@ a{
 
 
     @media (max-width: 1080px) {
-        padding : 85px 30px 20px 30px !important;background-size: 75px auto; background-position: top 15px center !important;  justify-content: center; 
+        padding : 95px 30px 20px 30px !important;background-size: 75px auto; background-position: top 15px center !important;  justify-content: center; 
     
         h4{
             text-align: center; font-size: 15px; font-weight: 400;

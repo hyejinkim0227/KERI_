@@ -81,6 +81,9 @@ textarea {
 // select
 select {
     background: #fff url(../images/sub/form_select.png) no-repeat right 20px center;
+    @media (max-width: 1080px) {
+        background-size: 10px auto; background-position: right 15px center;
+    }
 }
 select::-ms-expand {display: none;}
 
@@ -154,7 +157,7 @@ input[type=radio] {
 
 // 폼 반응형
 @media (max-width: 1080px) {
-    input[type='text'],input[type='password'],input[type='number'], select, .form-control {font-size: $fs-15; height: 40px;}
+    input[type='text'],input[type='password'],input[type='number'], select, .form-control {font-size: $fs-15; height: 40px; line-height: 40px;}
     input[type='text']::placeholder,input[type='password']::placeholder,input[type='file']::placeholder,textarea::placeholder, select::placeholder {
         color: #4c4e5a; font-weight: 400; font-size: $fs-15; 
     }
@@ -181,7 +184,7 @@ button{
     &[data-btn="blackBg"]{background: $color-bk; color :#fff; border-color: none}
 
 
-    &[data-btn="table_card"]{background: #fff; color :$color-grey1; border-color: $bor_gray; font-size:$fs-16; border-radius: 10px; border: 1px solid $bor_gray;
+    &[data-btn="table_card"]{ padding: 0 25px; background: #fff; color :$color-grey1; border-color: $bor_gray; font-size:$fs-16; border-radius: 10px; border: 1px solid $bor_gray;
         &::before{display: inline-block; content: ""; width: 40px; height: 49px; background: url(../images/sub/table_card.png) no-repeat left center; vertical-align: top;}
         &.active{
             &::before{background-image: url(../images/sub/table_list.png);}
@@ -364,11 +367,11 @@ a{
 .titlebox_A, .titlebox_B{
     padding: 30px 60px 30px 218px; margin-bottom: 40px; border-radius: 20px; background: url(../images/sub/title_1.png) no-repeat 45px 30px / auto 126px; min-height: 186px; display: flex; flex-direction: column; justify-content: center;
         
-    &[data-menu="menu02"]{background: url(../images/sub/title_2.png) no-repeat 45px 30px / auto 126px;}
-    &[data-menu="menu03"]{background: url(../images/sub/title_3.png) no-repeat 45px 30px / auto 126px;}
-    &[data-menu="menu04"]{background: url(../images/sub/title_4.png) no-repeat 45px 30px / auto 126px;}
-    &[data-menu="menu05"]{background: url(../images/sub/title_5.png) no-repeat 45px 30px / auto 126px;}
-    &[data-menu="menu06"]{background: url(../images/sub/title_6.png) no-repeat 45px 30px / auto 126px;}
+    &[data-menu="menu02"]{background-image: url(../images/sub/title_2.png)}
+    &[data-menu="menu03"]{background-image: url(../images/sub/title_3.png)}
+    &[data-menu="menu04"]{background-image: url(../images/sub/title_4.png)}
+    &[data-menu="menu05"]{background-image: url(../images/sub/title_5.png)}
+    &[data-menu="menu06"]{background-image: url(../images/sub/title_6.png)}
 
     h4{font-size: 17px; font-weight: 600; color: #000; line-height: 1.5em;}
     h5{font-size: 17px; color: #000; font-weight: 400; line-height: 28px;
@@ -377,7 +380,7 @@ a{
 
 
     @media (max-width: 1080px) {
-        padding : 128px 30px 20px 30px !important; background-position: top center; 
+        padding : 85px 30px 20px 30px !important;background-size: 75px auto; background-position: top 15px center !important;  justify-content: center; 
     
         h4{
             text-align: center; font-size: 15px; font-weight: 400;
@@ -397,15 +400,24 @@ a{
     border: 1px solid $color-blue; padding-top: 40px;
 
     h5{margin-top: 10px; }
-    .btn_down{border-radius: 7px; padding: 0 20px; font-size: 17px; font-weight: 400; height: 50px; line-height: 50px; border: 1px solid #000; width: 220px; background: url(../images/sub/icon_download.png) no-repeat right 20px center / auto 17px; margin: 20px 0;}
+    span{vertical-align: baseline;}
+    .btn_down{border-radius: 7px; padding: 0 20px; font-size: 17px; font-weight: 400; height: 50px; line-height: 50px; border: 1px solid #000; width: 220px; 
+        background: url(../images/sub/icon_download.png) no-repeat right 20px center / 16px  auto; margin: 20px 0;}
     .caution{ 
         background: #f4f6f9; padding: 25px; border-radius: 17px;
         li{
-            background: url(../images/sub/icon_bullet.png) no-repeat left center / auto 16px; padding-left: 28px; line-height: 28px; font-size: 16px; color: #da4d4f;
+            background: url(../images/sub/icon_bullet.png) no-repeat left top 3px / 17px auto; padding-left: 28px; line-height: 28px; font-size: 16px; color: #da4d4f;
         }
     }
-    @media (max-width: 1080px) {
-        h4{text-align: left;}
+    @media (max-width: 1080px) { justify-content: center; align-items: center;
+        h4,h5{text-align: center; word-break: break-all;}
+        h5{font-size: $fs-15; line-height: 24px;}
+        span{text-align: center;}
+        
+       .btn_down{ height: 45px; line-height: 45px; font-size: $fs-14; width: 213px; }
+       .caution{padding: 20px 15px;
+            li{font-size: $fs-14; line-height: 20px; background-size: 16px auto;}
+        }
     }
 }
 
@@ -415,8 +427,9 @@ a{
     ul{
         display: flex; flex-wrap: wrap; gap: 10px;
         background: #f5f6fa; padding: 6px; border-radius: 12px;
-        li{
-            flex: 0 0 calc((100% - (10px * 4)) / 5); transition: all 0.4s;
+        li{ flex: 1;
+            //flex: 0 0 calc((100% - (10px * 4)) / 5); 
+            transition: all 0.4s;
             a{
                 font-size: $fs-18;
                 font-weight: 500;
@@ -445,9 +458,18 @@ a{
 // 검색창
 .sub_content .search{
     background: #f7f7f9; padding: 25px; border-radius: 10px; gap: 8px; border: 1px solid $bor_gray; margin: 40px 0;
-    >div:first-child{
-        width: 210px;
-        select{width: 100%; line-height: 50px; height: 50px;}
+    >div:first-child{ display: flex; gap: 10px;
+        select{
+            flex: 1;
+            line-height: 50px;
+            height: 50px;
+            min-width: 120px;
+            width: 100%;
+            &:only-child{
+                width: 210px;
+                flex: unset;
+            }
+        }
     }
     .input_btn{
         width: 530px; display: flex;
@@ -455,9 +477,13 @@ a{
         button{margin-left: 4px; width: 100px; height: 50px; line-height: 50px;}
     }
     // 검색창 반응형
-    @media (max-width: 720px) {
+    @media (max-width: 1080px) {
         display: block;
-        >div:first-child{width: 100%;}
+        >div:first-child{width: 100%;
+            select{width: 100%;
+                &:only-child{width: 100%;}
+            }
+        }
         .input_btn{width: 100%; display: block;
             input{ margin: 7px 0;}
             button{width: 100%; margin: 0;}
@@ -476,7 +502,14 @@ a{
     div{
         button{margin-left: 10px;}
     }
-    h2{font-size: $fs-24; color: $color-bk; font-weight: 500; line-height: 30px; margin-bottom: 10px; font-family: SBAggro, Pretendard, sans-serif;}
+
+     h2{ font-size: $fs-24; font-weight: 500; font-family: $ff-sbaggro;  margin-bottom: 10px; line-height: 30px;
+        @media (max-width: 1080px) {font-size: $fs-18; margin-bottom: 15px;
+            &::after{
+                width: 6px; height: 6px;margin-bottom: 10px;margin-left: 5px;
+            }
+        }
+    }
 
     // 타이틀 박스 반응형
     @media screen and (max-width: 1080px) {
@@ -498,7 +531,7 @@ a{
         >li{
             ul{
                 display: flex;
-                li{
+                li{ 
                     padding: 0 15px; color: $color-grey1; line-height: 60px; border-bottom: 1px solid $bor_form; text-align: center; font-size: $fs-17; font-weight: 400; min-width: 0; 
 
                     a{
@@ -515,6 +548,7 @@ a{
                 li{font-size: $fs-18; font-weight: 600;}
             }
         }
+        label{height:60px;}
         // 높이 auto 처리 혜진추가 0810
         &.h-auto{
             >li{
@@ -528,13 +562,15 @@ a{
         }
         // table 반응형
         @media (max-width: 1080px) {
+            label{height:30px;}
             >li{
                 &.thead{display: none;}
                 ul{
                     display: flex; flex-wrap: wrap; padding: 22px 0 17px; border-bottom: 1px solid #d8d8d8;
                     li{
-                        flex: 0 0 auto; border: none; padding: 0; line-height: 1.4em; font-size: $fs-15; vertical-align: top; height: 30px; width: auto;
+                        flex: 0 0 auto; border: none; padding: 0; line-height: 30px; font-size: $fs-15; vertical-align: top; height: 30px; width: auto;
                         &[data-type="title"]{flex: 1 1 100%; height: auto;}
+                        &[data-type="number"]{display: none;}
                         a{
                             padding: 15px 0 5px;
                             strong{width: 100%; line-height: 1.4em; height: auto; @include elli_no; font-weight: 500;}
@@ -544,7 +580,8 @@ a{
                             display: none;
                             &.noti{display: block; margin-right: 5px;}
                         }
-                        >b{font-size: $fs-15; line-height: 1.4em; vertical-align: top; height: 20px; line-height: 30px; margin-right: 30px; position: relative;
+                        .noti{margin-right: 5px;}
+                        >b{font-size: $fs-15; line-height: 1.4em; vertical-align: top; height: 30px; line-height: 30px; margin-right: 30px; position: relative;
                             &::before{content: ""; display: block; width: 1px; height: 14px; background: #aaa; position: absolute; right: -17px; top: 8px;}
                         }
                     }
@@ -642,7 +679,7 @@ a{
     @media (max-width: 1080px) {
         colgroup{display: none;}
         tbody, tr, th, td {
-            display: block; width: 100%;
+            display: block; width: 100%; height: auto;
         }
         th{padding: 0 0 0 10px; line-height: 40px; border-bottom: none;}
         td{padding: 10px 0; line-height: 40px;
@@ -668,13 +705,26 @@ span.noti{
     display: flex;
     input{}
     select{margin-left: 10px;}   
-    span{display: block; width: 30px; text-align: center; line-height: 44px; color: #707070; font-weight: 300; font-size: $fs-20;}
+    span{display: block; text-align: center; width: 30px; line-height: 44px; color: #707070; font-weight: 300; font-size: $fs-20; padding: 0 5px;}
     button{ flex-shrink: 0;
         &:disabled{opacity: 0.5; background: #f5f5f5; cursor: unset;}
     }
     @media (max-width: 1100px) {
         input{width: 33% !important;}
         select{width: 34% !important;}
+        button{padding: 0 10px;}
+    }
+    @media (max-width: 1080px) {
+        button{height: 40px !important; line-height: 40px !important;}
+    }
+    @media (max-width: 493px) {
+        flex-wrap: wrap; gap: 10px 5px;
+        input{width: calc(50% - 15px) !important;}
+        span{    width: auto;padding: 0;}
+       select, button{ 
+            width: 100% !important;
+            margin-left: 0 !important;
+        }
     }
 }
 
@@ -691,13 +741,15 @@ span.noti{
 
 // 이메일 인증
 
-.email_check{ display: flex; gap: 10px; align-items: center; margin-top: 10px; flex-wrap: wrap;
+.email_check{ display: flex; gap: 10px; align-items: center; margin-top: 10px; flex-wrap: wrap; width: 100%;
  
     b{color: $color-blue2; font-size: $fs-15; font-weight: 400; line-height: 1.4em; display: block; width: 100%; display: none;}
-    .email_check_box{ display: none; 
-        >span{color: #f43f3f;}
-        
+    .email_check_box{ display: none; width: 100%;
+        input{width: 30% !important;}
+        >span{color: #f43f3f; margin-left: 10px;}
+        button{height: 40px !important; line-height: 40px !important;}
     }
+  
 }
 // 필수입력 표시
 .point_b{

@@ -785,10 +785,22 @@
         <!-- //헤더 -->
 
         <!-- sub_header -->
-        <div id="sub" class="bg_01">
+        <div id="sub" class="bg_02">
           <!-- sub_title -->
           <div class="sub_top">
-            <h2 class="title">보도자료</h2>
+            <h2 class="title">인증서발행실적</h2>
+            <div class="tabmenu">
+              <ul>
+                <li>
+                  <a href="USR-KR-TCI-03-001.html" class="active"
+                    >KOLAS 제품인증서</a
+                  >
+                </li>
+                <li>
+                  <a href="USR-KR-TCI-03-006.html">ACCREDIA 제품인증서</a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div class="white">
@@ -798,45 +810,47 @@
                 <div>
                   <ul class="flex">
                     <li>
-                      <a href="USR-KR-OPE-01-001.html">열린KERI</a>
+                      <a href="USR-KR-TCI-01-001.html">시험인증검사</a>
                       <div>
                         <ol>
                           <li><a href="USR-KR-KER-01-001.html">KERI소개</a></li>
                           <li><a href="USR-KR-RES-01-001.html">연구분야</a></li>
                           <li>
-                            <a href="USR-KR-TCI-01-001.html">시험인증검사</a>
+                            <a href="USR-KR-TEC-01-001.html">기술지원</a>
                           </li>
-                          <li><a href="USR-KR-TEC-01-001.html">기술지원</a></li>
+                          <li><a href="USR-KR-OPE-01-001.html">열린KERI</a></li>
                           <li><a href="USR-KR-INF-01-001.html">정보공개</a></li>
                         </ol>
                       </div>
                     </li>
                     <li>
-                      <a href="USR-KR-OPE-02-001.html">뉴스룸</a>
+                      <a href="USR-KR-TCI-03-001.html">제품인증</a>
+
                       <div>
                         <ol>
-                          <li><a href="USR-KR-OPE-01-001.html">공지사항</a></li>
-                          <li><a href="USR-KR-OPE-03-001.html">채용정보</a></li>
-                          <li><a href="USR-KR-OPE-04-001.html">입찰정보</a></li>
                           <li>
-                            <a href="USR-KR-OPE-05-001.html">KERI School</a>
+                            <a href="USR-KR-TCI-01-001.html"
+                              >시험부원장 인사말</a
+                            >
                           </li>
+                          <li><a href="USR-KR-TCI-02-001.html">시험인증</a></li>
+                          <li><a href="USR-KR-TCI-04-001.html">검사</a></li>
                           <li>
-                            <a href="USR-KR-OPE-06-001.html">제증명서 신청</a>
+                            <a href="USR-KR-TEC-06-001.html">고객서비스</a>
                           </li>
-                          <li>
-                            <a href="USR-KR-OPE-07-001.html">고객서비스헌장</a>
-                          </li>
-                          <li><a href="USR-KR-OPE-08-001.html">감사제보</a></li>
-                          <li><a href="USR-KR-OPE-09-001.html">신고센터</a></li>
                         </ol>
                       </div>
                     </li>
                     <li>
-                      <a href="USR-KR-OPE-02-002.html">보도자료</a>
+                      <a href="USR-KR-TCI-03-004.html">인증서발행실적</a>
                       <div>
                         <ol>
-                          <li><a href="USR-KR-OPE-02-001.html">뉴스룸</a></li>
+                          <li>
+                            <a href="USR-KR-TCI-03-001.html">제품인증서비스</a>
+                          </li>
+                          <li>
+                            <a href="USR-KR-TCI-03-008.html">제품인증 신청</a>
+                          </li>
                         </ol>
                       </div>
                     </li>
@@ -879,7 +893,9 @@
                         </button>
                       </div>
                     </li>
-                    <!--li data-type="file"><a href="#"><span class="hidden">첨부파일</span></a></li @@@ 0803 종미수정 -->
+                    <li data-type="file">
+                      <a href="#"><span class="hidden">첨부파일</span></a>
+                    </li>
                     <li data-type="print">
                       <a href="#"><span class="hidden">프린트하기</span></a>
                     </li>
@@ -890,26 +906,22 @@
 
             <!-- sub_content -->
             <div class="sub_content">
-
               <!-- search 검색 -->
               <div class="search flex_C">
-                <div class="flex">
-                  <select name="select">
-                    <option value="10">10</option>
-                    <option value="20">25</option>
-                    <option value="20">100</option>
-                  </select>
-                  <select name="select">
-                    <option value="">구분</option>
-                    <option value="1">연구성과</option>
-                    <option value="2">시험성과</option>
-                    <option value="3">일반</option>
-                  </select>
-                  <select name="select">
-                    <option value="">전체</option>
-                    <option value="1">제목</option>
-                    <option value="2">작성자</option>
-                    <option value="2">내용</option>
+                <div>
+                  <select id="findItem" name="skey">
+                    <option value="issued_by">Issued by</option>
+                    <option value="ref_creti_no">Ref. Certificate No</option>
+                    <option value="p_category">Product Category</option>
+                    <option value="mt_ref">Model / Type Ref.</option>
+                    <option value="rpc">
+                      Ratings &amp; principal characteristics
+                    </option>
+                    <option value="appli">Applicants</option>
+                    <option value="manuf">Manufacturer</option>
+                    <option value="trade_m">Trademark(if any)</option>
+                    <option value="s_used">Standard used</option>
+                    <option value="type_c">Type of Certificate</option>
                   </select>
                 </div>
                 <div class="input_btn flex_nF">
@@ -927,6 +939,9 @@
               <!-- 타이틀박스 type 2 -->
               <div class="titlebox flex_LR">
                 <h5>총 <b class="blue">2,357</b>건 <b>1/236 페이지</b></h5>
+                <button type="button" data-btn="table_card" id="card">
+                  썸네일형으로 보기
+                </button>
               </div>
 
               <!-- table 형태A -->
@@ -934,40 +949,28 @@
                 <ol>
                   <li class="thead">
                     <ul>
-                      <li class="w70"><label><input type="checkbox" name="" value=""></label></li>
-                      <li class="w100">번호</li>
-                      <li class="w130">구분</li>
-                      <li class="auto">제목</li>
-                      <li class="w100">작성자</li>
-                      <li class="w150">등록일</li>
-                      <li class="w100">조회수</li>
-                      <li class="w100">첨부</li>
+                      <li class="w150">Certificate no.</li>
+                      <li class="auto">Product</li>
+                      <li class="w300">Applicants</li>
+                      <li class="w150">Certificate</li>
                     </ul>
                   </li>
                   <li>
                     <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span class="noti">공지</span></li>
-                      <li data-type="none">
-                        <span data-color="red" class="noti">연구성과</span>
-                      </li>
+                      <li data-type="none"><b>24KP00002</b></li>
                       <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
+                        <a href="USR-KR-TCI-03-005.html">
                           <b
                             ><img
                               src="/common/images/sub/thum_01.png"
                               alt="썸네일"
                           /></b>
-                          <span data-color="red" class="noti">연구성과</span>
                           <strong
-                            >1.한국전기연구원 방문고객관리시스템 도입
-                            안내</strong
-                          >
+                            >AC metal-enclosed switchgear and controlgear
+                          </strong>
                         </a>
                       </li>
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
+                      <li data-type="none"><b>에이치디현대일렉트릭 주식회사</b></li>
                       <li data-type="none">
                         <a href="#" class="file_icon"
                           ><span class="hidden">첨부파일</span></a
@@ -977,331 +980,20 @@
                   </li>
                   <li>
                     <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span>127</span></li>
-                      <li data-type="none">
-                        <span data-color="orange" class="noti">시험성과</span>
-                      </li>
+                      <li data-type="none"><b>24KP00002</b></li>
                       <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
-                          <b
-                            ><img
-                              src="/common/images/sub/thum_02.png"
-                              alt="썸네일"
-                          /></b>
-                          <span data-color="orange" class="noti">시험성과</span>
-                          <strong
-                            >2.[사업 연장공고] 2025년 경남 창원 강소특구
-                            이노테크 기업육성</strong
-                          >
-                        </a>
-                      </li>
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
-                      <li data-type="none">
-                        <a href="#" class="file_icon"
-                          ><span class="hidden">첨부파일</span></a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span>126</span></li>
-                      <li data-type="none">
-                        <span data-color="blue" class="noti">일반</span>
-                      </li>
-                      <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
-                          <b
-                            ><img
-                              src="/common/images/sub/thum_03.png"
-                              alt="썸네일"
-                          /></b>
-                          <span data-color="blue" class="noti">일반</span>
-                          <strong
-                            >3.[시험성과]2025년도 한국전기연구원
-                            기술상용화지원사업 공고</strong
-                          >
-                        </a>
-                      </li>
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
-                      <li data-type="none">
-                        <a href="#" class="file_icon"
-                          ><span class="hidden">첨부파일</span></a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span>125</span></li>
-                      <li data-type="none">
-                        <span data-color="orange" class="noti">시험성과</span>
-                      </li>
-                      <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
-                          <b
-                            ><img
-                              src="/common/images/sub/thum_04.png"
-                              alt="썸네일"
-                          /></b>
-                          <span data-color="orange" class="noti">시험성과</span>
-                          <strong
-                            >4.전기특성시험실 변압기시험장/변성기시험장 공사에
-                            따른 시험서비스(일부) 중지 안내(안산분원)</strong
-                          >
-                        </a>
-                      </li>
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
-                      <li data-type="none">
-                        <a href="#" class="file_icon"
-                          ><span class="hidden">첨부파일</span></a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span>124</span></li>
-                      <li data-type="none">
-                        <span data-color="red" class="noti">연구성과</span>
-                      </li>
-                      <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
-                          <b
-                            ><img
-                              src="/common/images/sub/thum_05.png"
-                              alt="썸네일"
-                          /></b>
-                          <span data-color="red" class="noti">연구성과</span>
-                          <strong
-                            >5.한국전기연구원 방문고객관리시스템 도입
-                            안내</strong
-                          >
-                        </a>
-                      </li>
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
-                      <li data-type="none">
-                        <a href="#" class="file_icon"
-                          ><span class="hidden">첨부파일</span></a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span>123</span></li>
-                      <li data-type="none">
-                        <span data-color="orange" class="noti">시험성과</span>
-                      </li>
-                      <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
-                          <b
-                            ><img
-                              src="/common/images/sub/thum_02.png"
-                              alt="썸네일"
-                          /></b>
-                          <span data-color="orange" class="noti">시험성과</span>
-                          <strong
-                            >6.2025년 경남 창원 강소연구개발특구 이노테크 발굴
-                            및 창업지원사업 KERITOR 6기 모집 공고</strong
-                          >
-                        </a>
-                      </li>
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
-                      <li data-type="none">
-                        <a href="#" class="file_icon"
-                          ><span class="hidden">첨부파일</span></a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span>122</span></li>
-                      <li data-type="none">
-                        <span data-color="blue" class="noti">일반</span>
-                      </li>
-                      <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
-                          <b
-                            ><img
-                              src="/common/images/sub/thum_03.png"
-                              alt="썸네일"
-                          /></b>
-                          <span data-color="blue" class="noti">일반</span>
-                          <strong>7.2025년도 제2차 공개경쟁 채용 공고</strong>
-                        </a>
-                      </li>
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
-                      <li data-type="none">
-                        <a href="#" class="file_icon"
-                          ><span class="hidden">첨부파일</span></a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span>121</span></li>
-                      <li data-type="none">
-                        <span data-color="red" class="noti">연구성과</span>
-                      </li>
-                      <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
-                          <b
-                            ><img
-                              src="/common/images/sub/thum_04.png"
-                              alt="썸네일"
-                          /></b>
-                          <span data-color="red" class="noti">연구성과</span>
-                          <strong
-                            >8.제13회 부산 국제의료기기전시회(KIMES BUSAN 2025)
-                            참가기업 모집공고</strong
-                          >
-                        </a>
-                      </li>
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
-                      <li data-type="none">
-                        <a href="#" class="file_icon"
-                          ><span class="hidden">첨부파일</span></a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span>120</span></li>
-                      <li data-type="none">
-                        <span data-color="red" class="noti">시험성과</span>
-                      </li>
-                      <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
+                        <a href="USR-KR-TCI-03-005.html">
                           <b
                             ><img
                               src="/common/images/sub/thum_01.png"
                               alt="썸네일"
                           /></b>
-                          <span data-color="red" class="noti">연구성과</span>
                           <strong
-                            >의료기기 기업지원 STAR 프로그램 신청 안내</strong
-                          >
+                            >AC metal-enclosed switchgear and controlgear
+                          </strong>
                         </a>
                       </li>
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
-                      <li data-type="none">
-                        <a href="#" class="file_icon"
-                          ><span class="hidden">첨부파일</span></a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span>119</span></li>
-                      <li data-type="none">
-                        <span data-color="blue" class="noti">일반</span>
-                      </li>
-                      <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
-                          <b
-                            ><img
-                              src="/common/images/sub/thum_01.png"
-                              alt="썸네일"
-                          /></b>
-                          <span data-color="blue" class="noti">일반</span>
-                          <strong
-                            >2025년도 제5차 별정직 공개경쟁 채용 공고</strong
-                          >
-                        </a>
-                      </li> 
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
-                      <li data-type="none">
-                        <a href="#" class="file_icon"
-                          ><span class="hidden">첨부파일</span></a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span>118</span></li>
-                      <li data-type="none">
-                        <span data-color="red" class="noti">연구성과</span>
-                      </li>
-                      <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
-                          <b
-                            ><img
-                              src="/common/images/sub/thum_01.png"
-                              alt="썸네일"
-                          /></b>
-                          <span data-color="red" class="noti">연구성과</span>
-                          <strong
-                            >한국전기연구원 방문고객관리시스템 도입 안내</strong
-                          >
-                        </a>
-                      </li>
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
-                      <li data-type="none">
-                        <a href="#" class="file_icon"
-                          ><span class="hidden">첨부파일</span></a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><label><input type="checkbox" name="time" value=""></label></li>
-                      <li data-type="number"><span>117</span></li>
-                      <li data-type="none">
-                        <span data-color="red" class="noti">연구성과</span>
-                      </li>
-                      <li data-type="title">
-                        <a href="USR-KR-OPE-02-003.html">
-                          <b
-                            ><img
-                              src="/common/images/sub/thum_01.png"
-                              alt="썸네일"
-                          /></b>
-                          <span data-color="red" class="noti">연구성과</span>
-                          <strong
-                            >한국전기연구원 방문고객관리시스템 도입 안내</strong
-                          >
-                        </a>
-                      </li>
-                      <li data-type="author"><b>홍길동</b></li>
-                      <li data-type="date"><b>2025-07-25</b></li>
-                      <li data-type="none"><b>12,586</b></li>
+                      <li data-type="none"><b>에이치디현대일렉트릭 주식회사</b></li>
                       <li data-type="none">
                         <a href="#" class="file_icon"
                           ><span class="hidden">첨부파일</span></a
@@ -1312,7 +1004,7 @@
                 </ol>
               </div>
 
-              <!-- paginations-->
+              <!-- pagination     s-->
               <div class="flex_nF">
                 <div class="flex_C">
                   <div class="pagination">
@@ -1342,11 +1034,11 @@
                     >
                   </div>
                 </div>
-                <div class="btn_box m0 flex_R">
-                  <a href="#"><button type="button" data-btn="line">엑셀다운로드</button></a>
-                  <a href="write.html"><button type="button" data-btn="blue">등록</button></a>
-                  <a href="write.html"><button type="button" data-btn="blueBg">삭제</button></a>
-                </div>
+                <!-- <div class="btn_box m0">
+                  <a href="write.html"
+                    ><button type="button" data-btn="blue">등록</button></a
+                  >
+                </div> -->
               </div>
             </div>
           </div>
@@ -1358,13 +1050,13 @@
             <li>
               <a href="#none">
                 <strong>담당부서</strong>
-                <span>대외협력실</span>
+                <span>시험운영기획실</span>
               </a>
             </li>
             <li>
               <a href="#none">
                 <strong>문의</strong>
-                <span>055-280-1074</span>
+                <span>055-280-1111</span>
               </a>
             </li>
           </ul>
@@ -1493,7 +1185,7 @@
                   title="입찰공고 페이지로 이동합니다."
                   >입찰공고</a
                 >
-                <a href="#">일반</a>
+                <a href="#">채용공고</a>
                 <div class="copyright">
                   CopyrightⓒKorea Electrotechnology Research Institute
                 </div>

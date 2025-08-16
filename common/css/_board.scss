@@ -880,7 +880,7 @@ span.noti{
             font-size: $fs-16; font-weight: 400; color: $color-bk; line-height: 20px; position: relative; display: flex; align-items: center;
 
             &:before{content: ""; display: i; width: 22px; height: 22px; line-height: 22px; background: url(../images/sub/icon_file2.png) no-repeat center / auto 22px; margin-right: 5px;}
-            span{font-size: $fs-15; font-weight: 400; color: #707070; line-height: 20px;}
+            span{font-size: $fs-15; font-weight: 400; color: #707070; line-height: 20px; margin-left: 5px;}
         }
         &:not(:last-child){margin-bottom: 10px;}
         div{

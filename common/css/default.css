@@ -4411,6 +4411,7 @@ span.noti[data-color=orange] {
   font-weight: 400;
   color: #707070;
   line-height: 20px;
+  margin-left: 5px;
 }
 .detail_file dd:not(:last-child) {
   margin-bottom: 10px;

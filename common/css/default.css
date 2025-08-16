@@ -3140,6 +3140,9 @@ a.btn_blue {
   border-right: 1px solid #e1e3e1;
 }
 .lnb > div.flex_LR .flex > li > a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 60px;
   height: 60px;
   width: 240px;
@@ -3148,6 +3151,7 @@ a.btn_blue {
   font-size: 1.0625rem;
   color: #000;
   background: url(../images/sub/icon_lnb_down.png) no-repeat right 20px center;
+  padding-right: 32px;
 }
 .lnb > div.flex_LR .flex > li div {
   position: absolute;

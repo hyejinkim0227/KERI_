@@ -319,7 +319,7 @@ section {
 
     // 반응형 - 태블릿
     @media screen and (max-width: 1080px) {
-      font-size: $fs-22;
+      font-size: $fs-24 !important; margin-bottom: 20px !important;
 
       >span {
         font-size: 13px;
@@ -943,7 +943,7 @@ section {
           form {
             .search_input {
               button {
-                padding-left: 20px;
+                //padding-left: 20px;
               }
 
               &:after {
@@ -998,11 +998,11 @@ section {
           }
 
           h3 {
-            padding-left: 20px;
+            //padding-left: 20px;
           }
 
           ul {
-            padding: 0 10px;
+            //padding: 0 10px;
 
             li {
               a {
@@ -1022,7 +1022,7 @@ section {
 
         .main_banner_right_con {
           h3 {
-            padding-left: 20px;
+            //padding-left: 20px;
           }
 
           ul {
@@ -1074,8 +1074,12 @@ section {
           margin: 15px 0 30px;
           .main-controls{
             justify-content: center;
+
+            .pagination .current, .pagination .total,.pagination {font-size: $fs-15; font-weight: 500; line-height: 25px; height: 25px; vertical-align: top;}
           }
         }
+
+         
        
         .search {
           margin-bottom: 30px;
@@ -1165,7 +1169,8 @@ section {
         .main_banner_right_con {
           &::after{display: none;}
           h3{
-            display: none;
+            //display: none;
+            //padding-left: 200px;
           }
           ul{padding: 0;
             li{
@@ -2033,8 +2038,12 @@ section {
       
       .domain-controls-wrap{ 
         top: 325px; right: -10px; 
-        .domain-controls button{ 
-          width: 28px; height: 28px; background-size: auto 26px; 
+        .domain-controls {
+          height: 24px;
+          button{ 
+            width: 24px; height: 24px; background-size: auto 22px; 
+          }
+          .pagination{font-size: $fs-15; font-weight: 500; line-height: 24px; height: 24px; vertical-align: top;}
         }
       }
     }
@@ -2184,7 +2193,7 @@ section {
       .news_tab_menu {
         width: 25%;
         flex-shrink: 0;
-        padding-top: 50px;
+        margin-top: 50px;
         // /padding-right: 55px;
         background: #f7f9ff;
 
@@ -2390,7 +2399,7 @@ section {
             }
 
             // 반응형 처리
-            @media screen and (max-width: 1342px) {
+            @media screen and (max-width: 1350px) {
               grid-template-columns: repeat(2, 1fr);
               gap: 15px 20px;
 
@@ -2405,32 +2414,35 @@ section {
             }
           }
         }
-        &::before{display: block; content: ""; background: #f7f9ff; position: absolute; top: -15px; left: 0; width: 100%; height: calc(100% + 15px); z-index: -1; border-radius:  0 50px 0 0; }
+        &::before{display: block; content: ""; background: #f7f9ff; position: absolute; top: 0px; left: 0; width: 100%; height: calc(100% + 15px); z-index: -1; border-radius:  0 50px 0 0; }
       }
     }
 
-    .news_bottom {
+    .news_bottom {  border: 1px solid red;
       position: relative;
       left: 31.8%;
       //margin-left: -334px;
-      padding: 310px 10px 10px 75px;
+      //padding: 310px 10px 10px 75px;
+      padding-top: 310px;
       border-radius: 0 0 0 100px;
       height: 500px;
       margin-top: -310px;
       z-index: 1;
-      width: 1300px;
-      min-width: 100%; // 최소 너비 보장
+      width: 68.2%;
+      //min-width: 100%; // 최소 너비 보장
       display: flex;
       align-items: center;
+      justify-content: flex-start;
       background: #0d1d5b url(../images/main/news_bg.png) no-repeat right center / cover;
 
-      .container {
+      .container { border: 1px solid yellow;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         width: 100%;
         gap: 40px;
-        max-width: 860px;
+        max-width: 942px;
+        padding-left: 65px;
         margin: unset;  transition: width 0.3s ease;
 
         a {
@@ -2515,10 +2527,10 @@ section {
             justify-content: center;
             gap: 40px;
             padding: 0;
-            max-width: none;
+            max-width: 90%;
   
             a {
-              width: 100px;
+              width: 120px;
               height: 100px;
               padding: 20px 10px;
               font-size: $fs-16;
@@ -2546,14 +2558,14 @@ section {
 
     @media screen and (max-width: 1470px) {
       .news_bottom {
-        width: 1200px;
-        padding-left: 50px;
+        //width: 1200px;
+        //padding-left: 50px;
 
         .container {
-          gap: 20px;
+          gap: 30px;
 
           a {
-            padding: 10px 20px;
+            padding: 20px 20px 0;
           }
         }
       }
@@ -2779,6 +2791,8 @@ section {
           }
         }
       }
+
+      .news_tab .news_tab_content::before{ top: -15px;}
     }
   }
 
@@ -3866,7 +3880,7 @@ section {
     @media screen and (max-width: 1460px) {
       padding-top: 60px; margin-top: 60px;
       .container {
-        padding: 0 0 0 20px; width: calc(100% - 20px) !important;
+        padding: 0 0 0 20px; width: calc(100% - 30px) !important;
       }
 
       &_top {
@@ -3958,6 +3972,8 @@ section {
           }
         
         }
+
+        .interview:not(.slick-initialized){padding-top: 0 !important;}
       }
 
       &_bottom {
@@ -3973,7 +3989,7 @@ section {
         }
 
       }
-    
+      
     }
 
   }

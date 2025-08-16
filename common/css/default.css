@@ -4924,7 +4924,8 @@ section .fp-tableCell {
 }
 @media screen and (max-width: 1080px) {
   .main h3 {
-    font-size: 1.375rem;
+    font-size: 1.5rem !important;
+    margin-bottom: 20px !important;
   }
   .main h3 > span {
     font-size: 13px;
@@ -5433,9 +5434,6 @@ section .fp-tableCell {
   .main .main_banner .main_banner_left h3 b {
     font-size: 2.875rem;
   }
-  .main .main_banner .main_banner_left .search form .search_input button {
-    padding-left: 20px;
-  }
   .main .main_banner .main_banner_left .search form .search_input:after {
     right: 250px;
     transition: all 0.3s ease;
@@ -5465,12 +5463,6 @@ section .fp-tableCell {
   .main .main_banner .main_banner_right {
     width: 320px;
   }
-  .main .main_banner .main_banner_right .main_banner_right_con h3 {
-    padding-left: 20px;
-  }
-  .main .main_banner .main_banner_right .main_banner_right_con ul {
-    padding: 0 10px;
-  }
   .main .main_banner .main_banner_right .main_banner_right_con ul li a span:last-of-type {
     width: 210px;
   }
@@ -5478,9 +5470,6 @@ section .fp-tableCell {
 @media screen and (max-width: 1200px) {
   .main .main_banner .main_banner_right {
     width: 280px;
-  }
-  .main .main_banner .main_banner_right .main_banner_right_con h3 {
-    padding-left: 20px;
   }
   .main .main_banner .main_banner_right .main_banner_right_con ul li a span:last-of-type {
     width: 180px;
@@ -5516,6 +5505,13 @@ section .fp-tableCell {
   }
   .main .main_banner .main_banner_left .main-controls-wrap .main-controls {
     justify-content: center;
+  }
+  .main .main_banner .main_banner_left .main-controls-wrap .main-controls .pagination .current, .main .main_banner .main_banner_left .main-controls-wrap .main-controls .pagination .total, .main .main_banner .main_banner_left .main-controls-wrap .main-controls .pagination {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 25px;
+    height: 25px;
+    vertical-align: top;
   }
   .main .main_banner .main_banner_left .search {
     margin-bottom: 30px;
@@ -5584,9 +5580,6 @@ section .fp-tableCell {
     transition: transform 0.3s ease;
   }
   .main .main_banner .main_banner_right .main_banner_right_con::after {
-    display: none;
-  }
-  .main .main_banner .main_banner_right .main_banner_right_con h3 {
     display: none;
   }
   .main .main_banner .main_banner_right .main_banner_right_con ul {
@@ -6352,10 +6345,20 @@ section .fp-tableCell {
     top: 325px;
     right: -10px;
   }
+  .main .domain .domain-controls-wrap .domain-controls {
+    height: 24px;
+  }
   .main .domain .domain-controls-wrap .domain-controls button {
-    width: 28px;
-    height: 28px;
-    background-size: auto 26px;
+    width: 24px;
+    height: 24px;
+    background-size: auto 22px;
+  }
+  .main .domain .domain-controls-wrap .domain-controls .pagination {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 24px;
+    height: 24px;
+    vertical-align: top;
   }
 }
 .main .news {
@@ -6368,7 +6371,7 @@ section .fp-tableCell {
   display: block;
   position: absolute;
   left: 0;
-  top: 230px;
+  top: 236px;
   z-index: -1;
   width: 50%;
   border-radius: 100px 0 0 0;
@@ -6415,7 +6418,7 @@ section .fp-tableCell {
 .main .news .news_tab .news_tab_menu {
   width: 25%;
   flex-shrink: 0;
-  padding-top: 50px;
+  margin-top: 50px;
   background: #f7f9ff;
 }
 .main .news .news_tab .news_tab_menu li {
@@ -6588,7 +6591,7 @@ section .fp-tableCell {
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 1342px) {
+@media screen and (max-width: 1350px) {
   .main .news .news_tab .news_tab_content .tab_panel .news_slider {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px 20px;
@@ -6608,7 +6611,7 @@ section .fp-tableCell {
   content: "";
   background: #f7f9ff;
   position: absolute;
-  top: -15px;
+  top: 0px;
   left: 0;
   width: 100%;
   height: calc(100% + 15px);
@@ -6616,26 +6619,29 @@ section .fp-tableCell {
   border-radius: 0 50px 0 0;
 }
 .main .news .news_bottom {
+  border: 1px solid red;
   position: relative;
   left: 31.8%;
-  padding: 310px 10px 10px 75px;
+  padding-top: 310px;
   border-radius: 0 0 0 100px;
   height: 500px;
   margin-top: -310px;
   z-index: 1;
-  width: 1300px;
-  min-width: 100%;
+  width: 68.2%;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   background: #0d1d5b url(../images/main/news_bg.png) no-repeat right center/cover;
 }
 .main .news .news_bottom .container {
+  border: 1px solid yellow;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
   gap: 40px;
-  max-width: 860px;
+  max-width: 942px;
+  padding-left: 65px;
   margin: unset;
   transition: width 0.3s ease;
 }
@@ -6711,10 +6717,10 @@ section .fp-tableCell {
     justify-content: center;
     gap: 40px;
     padding: 0;
-    max-width: none;
+    max-width: 90%;
   }
   .main .news .news_bottom .container a {
-    width: 100px;
+    width: 120px;
     height: 100px;
     padding: 20px 10px;
     font-size: 1rem;
@@ -6735,15 +6741,11 @@ section .fp-tableCell {
   }
 }
 @media screen and (max-width: 1470px) {
-  .main .news .news_bottom {
-    width: 1200px;
-    padding-left: 50px;
-  }
   .main .news .news_bottom .container {
-    gap: 20px;
+    gap: 30px;
   }
   .main .news .news_bottom .container a {
-    padding: 10px 20px;
+    padding: 20px 20px 0;
   }
 }
 @media screen and (max-width: 1080px) {
@@ -6923,6 +6925,9 @@ section .fp-tableCell {
   }
   .main .news .news_bottom .container a::after {
     display: none;
+  }
+  .main .news .news_tab .news_tab_content::before {
+    top: -15px;
   }
 }
 .main .certification {
@@ -7824,7 +7829,7 @@ section .fp-tableCell {
   }
   .main .promo .container {
     padding: 0 0 0 20px;
-    width: calc(100% - 20px) !important;
+    width: calc(100% - 30px) !important;
   }
   .main .promo_top {
     flex-direction: column;
@@ -7934,6 +7939,9 @@ section .fp-tableCell {
   }
   .main .promo_top .publications_wrap .inner:after {
     right: -20px;
+  }
+  .main .promo_top .interview:not(.slick-initialized) {
+    padding-top: 0 !important;
   }
   .main .promo_bottom {
     flex-direction: column;

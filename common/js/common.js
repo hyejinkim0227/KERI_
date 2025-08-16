@@ -1352,9 +1352,9 @@ function initNewsSlider() {
 
     // 반응형에 따른 itemsPerPage 설정
     var itemsPerPage;
-    if (window.innerWidth >= 1285) {
+    if (window.innerWidth >= 1351) {
       // 1920px~1281px: 3개씩 2줄 = 6개
-      itemsPerPage = 6;
+      itemsPerPage = 6
     } else if (window.innerWidth >= 901) {
       // 1280px~900px: 2개씩 2줄 = 4개
       itemsPerPage = 4;

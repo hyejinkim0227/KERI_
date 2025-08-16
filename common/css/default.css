@@ -3169,6 +3169,9 @@ a.btn_blue {
   max-height: 300px;
 }
 .lnb > div.flex_LR .flex > li div ol li a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 46px;
   height: 46px;
   padding: 0 10px;

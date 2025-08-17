@@ -1254,6 +1254,7 @@ textarea {
     letter-spacing: -1.5px;
     background-size: 18px;
     padding-left: 25px;
+    margin-right: 0;
   }
 }
 @media screen and (max-width: 1340px) {

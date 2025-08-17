@@ -1023,7 +1023,7 @@ $(document).ready(function() {
     const $targetSection = $(anchor);
     
     if ($targetSection.length) {
-      let offset = 100;
+      let offset = 85;
       if ($targetSection.is('#search')) {
         offset = 0;
       }

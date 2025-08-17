@@ -978,6 +978,8 @@
                   <colgroup>
                     <col width="20%" />
                     <col width="auto" />
+                    <col width="20%" />
+                    <col width="auto" />
                   </colgroup>
                   <tbody>
                     <tr>
@@ -1005,7 +1007,7 @@
                         <input
                           type="text"
                           name="name"
-                          value="1990.01.01"
+                          value="1990-01-01"
                           readonly="readonly"
                         />
                       </td>
@@ -1023,7 +1025,7 @@
                             <option value="daum.net">daum.net</option>
                             <option value="gmail.com">gmail.com</option>
                             <option value="nate.com">nate.com</option>
-                            <option value="yahoo.com">yahoo.com</option>
+                            <option value="kakao.com">kakao.com</option>
                             <option value="hanmail.net">hanmail.net</option>
                           </select>
                           <button
@@ -1055,7 +1057,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <th><label for="phone" class="point">연락처</label></th>
+                      <th><label for="phone">연락처</label></th>
                       <td colspan="3">
                         <div class="phone flex">
                           <select name="phone_1">
@@ -1207,13 +1209,24 @@
                       </td>
                     </tr>
                     <tr>
-                      <th><label class="point">파일첨부</label></th>
+                      <th><label>파일첨부</label></th>
                       <td colspan="3">
                         <div class="file_box">
                           <div>
                             <span class="fileName"
-                              >이곳에 파일을 올려놓거나 파일선택 버튼을
-                              눌러주세요</span
+                              ></span
+                            >
+                            <input type="file" name="file" />
+                            <b>파일첨부</b>
+                          </div>
+                          <button type="button" data-btn="gray" class="btn_sm">
+                            삭제
+                          </button>
+                        </div>
+                        <div class="file_box mt10">
+                          <div>
+                            <span class="fileName"
+                              ></span
                             >
                             <input type="file" name="file" />
                             <b>파일첨부</b>

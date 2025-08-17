@@ -89,7 +89,7 @@
                 span{ color: $color-grey3; font-size: $fs-16;}
             }
         }
-        .intro_content{width: calc(100% + 30px); max-width: unset !important; margin-left: -15px; background: #f6f3f0; padding: 47px 15px;  
+        .intro_content{width: calc(100% + 60px); max-width: unset !important; margin-left: -30px; background: #f6f3f0; padding: 47px 30px;  
             h4{font-size: $fs-24; margin-bottom: 25px; line-height: 34px;}
             p{font-size: $fs-15; line-height: 22px;}
             .flex_col{gap: 20px;}
@@ -106,7 +106,7 @@
                 }
             }
         }
-        .area{ margin-top: 50px;
+        .area{ margin-top: 50px; padding: 0;
             .flex{
                 &.swiper-wrapper{
                     li{width: 220px;
@@ -143,6 +143,7 @@
                 .email{ padding-left: 36px; 
                     background: url(../images/sub/member_email_blue.png) no-repeat top 2px left;
                     &:hover{text-decoration: underline; text-underline-offset: 4px;}
+                    a{background: url(../images/sub/member_email_outlink.png) no-repeat top 1px right; padding-right: 27px;}
                 }
                 .job{ padding-left: 36px; width: 100%;  @include elli2; height: 44px;
                     background: url(../images/sub/member_job_blue.png) no-repeat top left;
@@ -167,7 +168,7 @@
                     li{color: $color-wh;}
                     .call{background-image: url(../images/sub/member_call.png);}
                     .email{background-image: url(../images/sub/member_email.png);
-                     
+                     a{background-image: url(../images/sub/member_email_outlink_white.png);}
                     }
                     .job{background-image: url(../images/sub/member_job.png);}
                    
@@ -188,7 +189,9 @@
                     ol{flex-direction: column; gap: 15px;
                         >li{font-size: $fs-15;background-size: 16px auto !important;
                             padding-left: 25px !important;}
-                        .job{height: 22px; line-height: 22px; @include elli;}
+                         
+                       // .job{height: 22px; line-height: 22px; @include elli;}
+
                     }
                 }
                 .flex_col{
@@ -208,11 +211,13 @@
     color: $color-grey6 ;
     font-size: $fs-16;
     display: block;
+    line-height: 24px; padding-left: 20px;
     
     &::before {
         content: '※ ';
         color: $color-grey6 ;
         font-weight: 400;
+        position: absolute; left: 0; top: 0;
     }
     @media (max-width: 1080px) {
         font-size: $fs-15;

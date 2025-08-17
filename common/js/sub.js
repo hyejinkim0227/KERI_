@@ -351,13 +351,15 @@ function initDeliveryMethodToggle() {
     }
     
     const selectedValue = checkedRadio.value;
-    
-    if (selectedValue === 'email') {
-      emailForm.style.display = 'table-row';
+    const isSmallScreen = window.innerWidth <= 1080;
+
+   if (selectedValue === 'email') {
+    emailForm.style.display = isSmallScreen ? 'block' : 'table-row';
       faxForm.style.display = 'none';
     } else if (selectedValue === 'fax') {
       emailForm.style.display = 'none';
-      faxForm.style.display = 'table-row';
+      // 1080 이하일 때는 block, 그 이상은 table-row
+      faxForm.style.display = isSmallScreen ? 'block' : 'table-row';
     }
   }
   

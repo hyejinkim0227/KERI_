@@ -3374,9 +3374,10 @@ a.btn_blue {
   }
   .lnb > div.flex_LR .flex > li.active > a {
     background: url(../images/sub/lnb_arrow.png) no-repeat right 7px center/auto 15px;
+    transition: none;
   }
-  .lnb > div.flex_LR .flex > li.active > a:last-child > a {
-    background: none;
+  .lnb > div.flex_LR .flex > li:last-child.active > a {
+    background: none !important;
     padding-right: 0;
   }
   .lnb > div.flex_LR .etc ul {

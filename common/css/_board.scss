@@ -359,15 +359,19 @@ a{
                         >a{ height: 50px; line-height: 50px;
                             width: auto; transition: all 0.4s; padding-left: 0; 
                             background: url(../images/sub/lnb_arrow.png) no-repeat right 7px center / auto 10px; padding-right: 25px; //@@@ 0803 종미수정
-                
+            
                             width: auto;
                         }
                         &:first-child{border-left: 0;}
                         &:hover div{display: none;}
-                        &:last-child > a{background: none; padding-right: 0;}
-                        &.active > a{background: url(../images/sub/lnb_arrow.png) no-repeat right 7px center / auto 15px;
-                            &:last-child > a{background: none; padding-right: 0;}
+                        &.active > a{background: url(../images/sub/lnb_arrow.png) no-repeat right 7px center / auto 15px; transition:none;  
                         }
+                        &:last-child{
+                            > a{background: none; padding-right: 0;}
+                            &.active{
+                                > a{background: none !important; padding-right: 0;}
+                            }
+                        } 
                     }
                 }
                 .etc{

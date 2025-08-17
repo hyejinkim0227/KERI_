@@ -916,8 +916,7 @@ textarea {
   display: block;
 }
 .header #gnb .dep2_wrap {
-  overflow-y: scroll;
-  max-height: 80vh;
+  max-height: calc(100vh - 85px);
   position: absolute;
   left: 0;
   display: flex;
@@ -938,6 +937,7 @@ textarea {
   height: 100%;
   background: #fff;
   content: "";
+  pointer-events: none;
 }
 .header #gnb .dep2_wrap > ul > li > a {
   position: relative;
@@ -978,6 +978,7 @@ textarea {
   border-radius: 0 0 100px 0;
   z-index: 999;
   font-family: "SBAggro", "Pretendard";
+  flex: 0 0 534px;
 }
 .header #gnb .dep2_wrap > div strong {
   font-size: 2.5rem;
@@ -999,16 +1000,22 @@ textarea {
 .header #gnb .dep2_wrap > ul {
   display: flex;
   flex-wrap: wrap;
-  width: calc(100% - 534px);
+  width: auto;
+  flex: 1 1 auto;
   gap: 25px 34px;
   background: #fff;
-  padding: 32px 0 40px 50px;
+  padding: 32px 0 20px 50px;
+  height: 82vh;
+  max-height: calc(100% - 32px);
+  min-height: 0;
   overflow-y: auto;
-  height: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable both-edges;
+  padding-bottom: max(40px, env(safe-area-inset-bottom));
 }
 .header #gnb .dep2_wrap > ul > li {
   max-width: 280px;
-  min-width: 170px;
+  min-width: 180px;
   flex: 0 0 calc(25% - 8px);
 }
 .header #gnb .dep2_wrap > ul > li > a {
@@ -1254,7 +1261,6 @@ textarea {
     letter-spacing: -1.5px;
     background-size: 18px;
     padding-left: 25px;
-    margin-right: 0;
   }
 }
 @media screen and (max-width: 1340px) {

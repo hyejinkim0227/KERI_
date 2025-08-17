@@ -265,8 +265,10 @@
       }
     }
     .dep2_wrap {
-      overflow-y: scroll;
-      max-height: 80vh;
+      //overflow-y: scroll;
+     // max-height: 80vh;
+     max-height: calc(100vh - #{$header-height});
+   // overflow: hidden; // 자식 스크롤용
       position: absolute;
       left: 0;
       display: flex;
@@ -279,6 +281,7 @@
       border-top: 1px solid #ddd;
       transition: visibility 0.15s ease;
       &::before{
+
         position: absolute;
         left: 0;
         bottom: 0;
@@ -286,6 +289,8 @@
         height: 100%;
         background: #fff;
         content: "";
+        
+        pointer-events: none; // 스크롤/클릭 방해 금지
       }
    
       >ul{
@@ -337,6 +342,8 @@
         border-radius: 0 0 100px 0;
         z-index: 999;
         font-family: $ff-sbaggro;
+        flex: 0 0 534px; 
+
         strong {
           font-size: $fs-40;
           font-weight: 500;
@@ -358,18 +365,24 @@
       > ul {
         display: flex;
         flex-wrap: wrap;
-        width: calc(100% - 534px);
+        //width: calc(100% - 534px);
+        width: auto;                 // ← 고정폭 대신 남은 공간 쓰기
+        flex: 1 1 auto;
         gap: 25px 34px;
         background: #fff;
-        padding: 32px 0 40px 50px;
+        padding: 32px 0 20px 50px;
+        height: 82vh;                          // 화면 높이의 80%만 사용(원하면 max-height로 바꿔도 됨)
+        max-height: calc(100% - 32px);         // 부모 높이(=top~bottom)도 넘지 않도록 세이프가드
+        min-height: 0;                          // flex 자식이 줄 수 있게
         overflow-y: auto;
-       // max-height: 80vh;
-        height: auto;
+        -webkit-overflow-scrolling: touch;      // iOS 관성 스크롤
+        scrollbar-gutter: stable both-edges;    // 스크롤바 생겨도 내용 안 흔들림
+        padding-bottom: max(40px, env(safe-area-inset-bottom));
 
         
         > li {
           max-width: 280px;
-          min-width: 170px;
+          min-width: 180px;
           flex: 0 0 calc(25% - 8px);
           > a {
             display: block;

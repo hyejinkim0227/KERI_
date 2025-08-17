@@ -142,11 +142,15 @@ input[type=radio] {
 
     }
     button{width: 100px; background: #fff !important; color: $color-bk !important; }
-    // @media (max-width: 1080px) {    flex-wrap: wrap;
-    //     >div{width: 100%; height: 200px; flex-wrap: wrap; line-height: auto;
-    //         span{width: 100%;}
-    //     }
-    // }
+    @media (max-width: 1080px) {    flex-wrap: wrap;
+        >div{height: 88px; line-height: unset;  width: 100%;  flex: none;
+            
+            span{width: 100%; height: 40px; line-height: 40px;}
+          b{ width: calc(50% - 5px);top: unset; bottom: 0;left: 0; margin-left: 0; height: 40px; line-height: 40px;}  
+        }  
+        >button{width: calc(50% - 5px); position: absolute; right: 0; bottom: 0; height: 40px !important; line-height: 40px !important;}
+    }
+
 }
 
 // file 리스트
@@ -464,7 +468,7 @@ a{
     @media (max-width: 1080px) { justify-content: center; align-items: center;
         h4,h5{text-align: center; word-break: break-all;}
         h5{font-size: $fs-15; line-height: 24px;}
-        span{text-align: center;}
+       // span{text-align: center;}
         
        .btn_down{ height: 45px; line-height: 45px; font-size: $fs-14; width: 213px; }
        .caution{padding: 20px 15px;
@@ -660,7 +664,8 @@ a{
 	
 	// 카드 형태 스타일 추가
     &.card{
-        border-bottom: 1px solid $bor_gray; padding-bottom: 30px; margin-bottom: 10px;
+        //border-bottom: 1px solid $bor_gray; 
+        padding-bottom: 30px; margin-bottom: 10px;
 
         .thead, ul li[data-type="number"], ul li[data-type="none"]{display: none;}
         ol{
@@ -929,6 +934,7 @@ span.noti{
     &[data-color="blue"]{border-color: #1f60c2 !important; background-color: #fff; color: #1f60c2;}
     &[data-color="green"]{border-color: #1fb1c2 !important; background-color: #fff; color: #1fb1c2;}
     &[data-color="orange"]{border-color: #ff8839 !important; background-color: #fff; color: #ff8839;}
+    &[data-color="grey"]{border-color: #92939a !important; background-color: #fff; color: #92939a;} //혜진추가
 }
 
 // 이메일
@@ -1103,7 +1109,7 @@ span.noti{
                 li:not(:first-child)::before{left: -10px;
                 }
                 li{
-                    &.eye{display: none;}
+                    &.eye, &.no{display: none;}
                 }
             }
                 .detail_file{margin-top: 30px;}

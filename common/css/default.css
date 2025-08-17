@@ -2879,6 +2879,39 @@ input[type=radio]:checked::after {
   background: #fff !important;
   color: #000 !important;
 }
+@media (max-width: 1080px) {
+  .file_box {
+    flex-wrap: wrap;
+  }
+  .file_box > div {
+    height: 88px;
+    line-height: unset;
+    width: 100%;
+    flex: none;
+  }
+  .file_box > div span {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+  }
+  .file_box > div b {
+    width: calc(50% - 5px);
+    top: unset;
+    bottom: 0;
+    left: 0;
+    margin-left: 0;
+    height: 40px;
+    line-height: 40px;
+  }
+  .file_box > button {
+    width: calc(50% - 5px);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 40px !important;
+    line-height: 40px !important;
+  }
+}
 
 .file_list {
   margin-top: 20px;
@@ -3368,13 +3401,13 @@ a.btn_blue {
   .lnb > div.flex_LR .flex > li:hover div {
     display: none;
   }
-  .lnb > div.flex_LR .flex > li:last-child > a {
-    background: none;
-    padding-right: 0;
-  }
   .lnb > div.flex_LR .flex > li.active > a {
     background: url(../images/sub/lnb_arrow.png) no-repeat right 7px center/auto 15px;
     transition: none;
+  }
+  .lnb > div.flex_LR .flex > li:last-child > a {
+    background: none;
+    padding-right: 0;
   }
   .lnb > div.flex_LR .flex > li:last-child.active > a {
     background: none !important;
@@ -3542,9 +3575,6 @@ a.btn_blue {
   .titlebox_B h5 {
     font-size: 0.9375rem;
     line-height: 24px;
-  }
-  .titlebox_B span {
-    text-align: center;
   }
   .titlebox_B .btn_down {
     height: 45px;
@@ -3887,7 +3917,6 @@ a.btn_blue {
   }
 }
 .tab_thum.card {
-  border-bottom: 1px solid #e1e3e1;
   padding-bottom: 30px;
   margin-bottom: 10px;
 }
@@ -4228,6 +4257,11 @@ span.noti[data-color=orange] {
   border-color: #ff8839 !important;
   background-color: #fff;
   color: #ff8839;
+}
+span.noti[data-color=grey] {
+  border-color: #92939a !important;
+  background-color: #fff;
+  color: #92939a;
 }
 
 .email {
@@ -4594,7 +4628,7 @@ span.noti[data-color=orange] {
   .board_detail .info ul li:not(:first-child)::before {
     left: -10px;
   }
-  .board_detail .info ul li.eye {
+  .board_detail .info ul li.eye, .board_detail .info ul li.no {
     display: none;
   }
   .board_detail .info .detail_file {
@@ -8769,17 +8803,35 @@ section .fp-tableCell {
 .agree_box .radio {
   margin-top: 22px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   background: #f4f5f7;
   border-radius: 14px;
   padding: 18px 52px;
 }
 .agree_box .radio ul {
-  width: 200px;
+  width: 300px;
+  justify-content: flex-end;
 }
 @media (max-width: 1080px) {
   .agree_box .table th, .agree_box .table td {
     height: auto;
+  }
+  .agree_box .radio {
+    padding: 18px 25px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .agree_box .radio p {
+    font-size: 1.0625rem;
+    margin-bottom: 10px;
+  }
+  .agree_box .radio ul {
+    width: 100%;
+  }
+  .agree_box .radio ul li {
+    margin-right: 0 !important;
+    width: 50%;
   }
 }
 

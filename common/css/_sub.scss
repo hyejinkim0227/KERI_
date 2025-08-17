@@ -134,7 +134,7 @@
             h4{ font-size: $fs-24; font-family: $ff-sbaggro; margin-top: 20px; font-weight: 400;
                 span{font-size: $fs-16; color: $color-grey1; font-family: $ff-suit;}
             }
-            ol{ flex-wrap: wrap; display: flex; gap: 19px 70px; width: 100%;
+            ol{ flex-wrap: wrap; display: flex; gap: 8px 70px; width: 100%;
                 >li{ font-size: $fs-17; font-family: $ff-sbaggro; font-weight: 300;
                 }
                 .call{ padding-left: 36px; width: 175px;
@@ -180,11 +180,11 @@
         }
     }    
 
-    @media (max-width: 1080px) {flex-direction: column;
-            >li{width: 100%; justify-content: space-between; height: 208px; padding: 20px 20px 15px;
+    @media (max-width: 1080px) {flex-direction: column; gap: 15px;
+            >li{width: 100%; justify-content: space-between; height: auto; padding: 20px 25px 15px;
                 .info{gap: 17px;
-                    h4{margin-top: 0; font-size: $fs-19; 
-                        span{font-size: $fs-14;}
+                    h4{margin-top: 0; font-size: $fs-20; 
+                        span{font-size: $fs-16; margin-bottom: 3px; font-weight: 600;}
                     }
                     ol{flex-direction: column; gap: 15px;
                         >li{font-size: $fs-15;background-size: 16px auto !important;

@@ -3128,7 +3128,7 @@ a.btn_blue {
   .sub_top .tabmenu ul li a {
     font-size: 0.9375rem;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 16px 10px;
+    padding: 10px 10px;
     border-width: 2px;
   }
   .sub_top .tabmenu ul li a.active {
@@ -3713,8 +3713,8 @@ a.btn_blue {
   .titlebox.flex_LR {
     display: block;
   }
-  .titlebox.flex_LR button[data-type=table_card] {
-    width: 100%;
+  .titlebox.flex_LR button {
+    width: 100% !important;
     margin: 5px 0 15px;
   }
 }
@@ -4211,7 +4211,7 @@ span.noti[data-color=blue] {
   background-color: #fff;
   color: #1f60c2;
 }
-span.noti[data-color=greenblue] {
+span.noti[data-color=green] {
   border-color: #1fb1c2 !important;
   background-color: #fff;
   color: #1fb1c2;
@@ -7820,7 +7820,7 @@ section .fp-tableCell {
   height: 345px;
   width: 290px;
   background-color: #fff;
-  border-radius: 40px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.1);
 }
@@ -8549,7 +8549,7 @@ section .fp-tableCell {
 .member_list > li .info ol {
   flex-wrap: wrap;
   display: flex;
-  gap: 19px 70px;
+  gap: 8px 70px;
   width: 100%;
 }
 .member_list > li .info ol > li {
@@ -8636,22 +8636,25 @@ section .fp-tableCell {
 @media (max-width: 1080px) {
   .member_list {
     flex-direction: column;
+    gap: 15px;
   }
   .member_list > li {
     width: 100%;
     justify-content: space-between;
-    height: 208px;
-    padding: 20px 20px 15px;
+    height: auto;
+    padding: 20px 25px 15px;
   }
   .member_list > li .info {
     gap: 17px;
   }
   .member_list > li .info h4 {
     margin-top: 0;
-    font-size: 1.1875rem;
+    font-size: 1.25rem;
   }
   .member_list > li .info h4 span {
-    font-size: 0.875rem;
+    font-size: 1rem;
+    margin-bottom: 3px;
+    font-weight: 600;
   }
   .member_list > li .info ol {
     flex-direction: column;
@@ -9283,7 +9286,7 @@ section .fp-tableCell {
   padding: 10px 15px;
   font-size: 1rem;
   height: 58px;
-  line-height: 43px;
+  line-height: 40px;
   text-align: center;
 }
 .sub_modal .accordion_box .accordion_content .btn_all:after {
@@ -9369,6 +9372,10 @@ section .fp-tableCell {
   .sub_modal .member_info .member_info_right {
     width: 100%;
   }
+  .sub_modal .accordion_box .accordion_content .btn_all {
+    height: 50px;
+    line-height: 28px;
+  }
 }
 @media (max-width: 720px) {
   .sub_modal .accordion_box .accordion_content ol > li {
@@ -9377,6 +9384,9 @@ section .fp-tableCell {
   }
   .sub_modal .accordion_box .accordion_content ol > li span {
     margin-left: 0;
+  }
+  .sub_modal .accordion_box .accordion_content .PatentInfo li ul {
+    gap: 8px 56px;
   }
 }
 

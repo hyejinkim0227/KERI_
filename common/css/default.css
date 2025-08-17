@@ -916,6 +916,8 @@ textarea {
   display: block;
 }
 .header #gnb .dep2_wrap {
+  overflow-y: scroll;
+  max-height: 80vh;
   position: absolute;
   left: 0;
   display: flex;

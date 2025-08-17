@@ -139,6 +139,8 @@ function snsPositon() {
 function resizeHeadHeight(target) {
   //pc화면에서 gnb모션
   if (pcChk(1080)) {
+    //  GNB가 열릴 때 body 스크롤을 막습니다.
+    bodyScroll('off');
     // dep2_wrap이 열릴 때 현재 scrolled 상태 확인
     var wasScrolled = $('.header').hasClass('scrolled');
     // 스크롤 위치도 확인하여 더 정확한 판단
@@ -176,6 +178,8 @@ function resizeHeadHeight(target) {
 function gnbReset() {
   //gnb 초기화
   if (pcChk(1080)) {
+    // AI 제안 코드: GNB가 닫힐 때 body 스크롤을 허용합니다.
+    bodyScroll('on');
     // dep1>li에 active가 있는지 확인 (제거하기 전에)
     var hasActiveGnbItem = $('.header #gnb > ul > li.active').length > 0;
     // 현재 scrolled 상태도 확인
@@ -583,6 +587,8 @@ $(window).on('resize', function () {
   
   // 통합된 리사이즈 핸들러
   debounceResize('main', function() {
+    // AI 제안 코드: 리사이즈 시 GNB가 닫히므로 스크롤을 다시 활성화합니다.
+    bodyScroll('on');
     // 기본 리사이즈 처리
     var isDepMenuOpen = $('.header #gnb .dep2_wrap').is(':visible');
     var isHeaderActive = $('.header').hasClass('active');

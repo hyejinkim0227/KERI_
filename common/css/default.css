@@ -4298,7 +4298,7 @@ a.btn_sm {
     font-weight: 500;
     padding: 0px 0 5px;
   }
-  .tableB table tbody tr td[data-type=month], .tableB table tbody tr td[data-type=cycle], .tableB table tbody tr td[data-type=contact] {
+  .tableB table tbody tr td[data-type=month], .tableB table tbody tr td[data-type=cycle], .tableB table tbody tr td[data-type=contact], .tableB table tbody tr td[data-type=con] {
     position: relative;
     display: inline-block;
     width: -moz-fit-content;
@@ -4306,7 +4306,7 @@ a.btn_sm {
     padding-bottom: 17px;
     margin-right: 30px;
   }
-  .tableB table tbody tr td[data-type=month]::before, .tableB table tbody tr td[data-type=cycle]::before, .tableB table tbody tr td[data-type=contact]::before {
+  .tableB table tbody tr td[data-type=month]::before, .tableB table tbody tr td[data-type=cycle]::before, .tableB table tbody tr td[data-type=contact]::before, .tableB table tbody tr td[data-type=con]::before {
     content: "";
     display: block;
     width: 1px;
@@ -4316,7 +4316,7 @@ a.btn_sm {
     right: -17px;
     top: 8px;
   }
-  .tableB table tbody tr td[data-type=contact]::before {
+  .tableB table tbody tr td[data-type=contact]::before, .tableB table tbody tr td[data-type=con]::before {
     display: none;
   }
 }
@@ -5274,11 +5274,13 @@ span.noti[data-color=grey] {
 #sub .results {
   margin-top: 98px;
 }
+#sub .results .sub_tit {
+  margin-bottom: 60px;
+}
 #sub .results .support_banner {
-  display: flex;
-  gap: 0;
   width: 2000px;
   justify-content: flex-start;
+  position: relative;
 }
 #sub .results .support_banner .support_list.swiper {
   margin-left: 0;
@@ -5289,6 +5291,9 @@ span.noti[data-color=grey] {
 #sub .results .support_banner .support_list .swiper-wrapper > a {
   width: 360px !important;
   margin-right: 80px;
+  transition: all 0.4s;
+  margin-top: 0;
+  position: relative;
 }
 #sub .results .support_banner .support_list .swiper-wrapper > a figure {
   width: 360px;
@@ -5310,13 +5315,214 @@ span.noti[data-color=grey] {
   line-height: 1.4em;
 }
 #sub .results .support_banner .support_list .swiper-wrapper > a figcaption span {
-  font-size: 14px;
-  font-weight: 400;
-  color: #222;
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
   line-height: 1.4em;
+  padding: 35px 25px;
+  border-radius: 20px;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+#sub .results .support_banner .support_list .swiper-wrapper > a figcaption:before {
+  display: block;
+  content: "";
+  background: linear-gradient(145deg, #1fb1c2, #1f60c2);
+  border-radius: 20px;
+  opacity: 0.8;
+  z-index: 0;
+  width: 360px;
+  height: 250px;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 #sub .results .support_banner .support_list .swiper-wrapper > a:nth-child(even) {
   margin-top: 60px;
+  transition: all 0.4s;
+  margin-top: 60px;
+}
+#sub .results .support_banner .support_list .swiper-wrapper > a:hover figcaption span, #sub .results .support_banner .support_list .swiper-wrapper > a:hover figcaption:before {
+  display: block;
+}
+#sub .results .support_banner .control {
+  border: 3px solid #000;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 400px;
+  top: -70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sub .results .support_banner .control div {
+  display: none;
+}
+#sub .results .support_banner .control button {
+  width: 50px;
+  height: 50px;
+  background: url(../images/sub/result_L.png) no-repeat center center;
+}
+#sub .results .support_banner .control button.support_btn_next {
+  background-image: url(../images/sub/result_R.png);
+}
+#sub .results .support_banner .bar {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #e5e5e5;
+  margin-top: 80px;
+  width: 1300px;
+  position: relative;
+}
+#sub .results .support_banner .bar span {
+  width: 25%;
+  height: 6px;
+  background: #1f60c2;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.4s;
+}
+
+.device_info {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}
+.device_info .device_info_top {
+  display: flex;
+  gap: 60px;
+}
+.device_info .device_info_top .device_info_img {
+  width: 460px;
+  border-radius: 22px;
+  overflow: hidden;
+}
+.device_info .device_info_top .device_info_img img {
+  width: 100%;
+  border-radius: 22px;
+}
+.device_info .device_info_top div:last-of-type {
+  width: calc(100% - 510px);
+}
+.device_info .device_info_top div:last-of-type .table {
+  margin-bottom: 40px;
+}
+.device_info .device_info_top div:last-of-type .table + div {
+  display: flex;
+  gap: 37px;
+  padding: 0 30px;
+  width: 100%;
+  height: 56px;
+  align-items: center;
+  background: #f4f6f9;
+  border-radius: 10px;
+}
+.device_info .device_info_top div:last-of-type .table + div b {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  flex-shrink: 0;
+}
+.device_info .device_info_top div:last-of-type .table + div ul {
+  display: flex;
+  gap: 50px;
+}
+.device_info .device_info_top div:last-of-type .table + div ul li {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+  flex-shrink: 0;
+  background: url(../images/sub/member_blue.png) no-repeat left center/auto 16px;
+  padding-left: 30px;
+}
+.device_info .device_info_top div:last-of-type .table + div ul li:nth-child(2) {
+  background-image: url(../images/sub/member_call_blue.png);
+}
+.device_info .device_info_top div:last-of-type .table + div ul li:nth-child(3) {
+  background-image: url(../images/sub/member_email_blue.png);
+}
+.device_info .device_info_bottom {
+  display: flex;
+  gap: 40px;
+}
+.device_info .device_info_bottom div {
+  width: 50%;
+  background: #f4f6f9;
+  border-radius: 10px;
+  padding: 30px;
+}
+.device_info .device_info_bottom div b {
+  margin-bottom: 20px;
+  font-size: 1.375rem;
+  line-height: 32px;
+  font-weight: 400;
+  font-family: "SBAggro", "Pretendard";
+}
+.device_info .device_info_bottom div ul li {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+  line-height: 24px;
+}
+.device_info .device_info_bottom div ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+@media (max-width: 1280px) {
+  .device_info .device_info_top .device_info_img {
+    width: 400px;
+  }
+  .device_info .device_info_top div:last-of-type {
+    width: calc(100% - 400px);
+  }
+  .device_info .device_info_top div:last-of-type .table + div {
+    gap: 20px;
+  }
+  .device_info .device_info_top div:last-of-type .table + div ul {
+    gap: 10px;
+    width: calc(100% - 40px);
+    justify-content: space-between;
+  }
+}
+@media (max-width: 1080px) {
+  .device_info .device_info_top {
+    flex-direction: column;
+  }
+  .device_info .device_info_top .device_info_img {
+    width: 100%;
+  }
+  .device_info .device_info_top div:last-of-type {
+    width: 100%;
+  }
+  .device_info .device_info_top div:last-of-type .table + div {
+    gap: 37px;
+  }
+  .device_info .device_info_top div:last-of-type .table + div ul {
+    gap: 10px;
+    width: calc(100% - 20px);
+    justify-content: flex-start;
+    gap: 30px;
+  }
+  .device_info .device_info_bottom {
+    flex-direction: column;
+  }
+  .device_info .device_info_bottom div {
+    width: 100%;
+  }
 }
 
 @keyframes slideInFromRight {

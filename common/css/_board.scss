@@ -940,7 +940,7 @@ a{
                 &[data-type="title"]{
                     a{strong{font-size: $fs-18;font-weight: 500; padding: 0px 0 5px;}}
                 }
-                &[data-type="month"], &[data-type="cycle"], &[data-type="contact"] { position: relative;
+                &[data-type="month"], &[data-type="cycle"], &[data-type="contact"], &[data-type="con"] { position: relative;
                     display: inline-block;
                     width: fit-content;
                     padding-bottom: 17px;
@@ -958,7 +958,7 @@ a{
                         top: 8px;
                       }
                     }
-                    &[data-type="contact"] {
+                    &[data-type="contact"], &[data-type="con"] {
                         &::before{display: none;}
                     }
                 }
@@ -1477,6 +1477,80 @@ span.noti{
 
         .bar{height: 6px; overflow: hidden; border-radius: 5px; background: #e5e5e5; margin-top: 80px; width: 1300px; position: relative;
             span{width: 25%; height: 6px; background: $color-blue; border-radius: 5px; position: absolute; left: 0; top: 0; transition: all 0.4s;}
+        }
+    }
+}
+
+
+
+//보유기기안내
+
+.device_info{ display: flex; gap: 40px; flex-direction: column;
+    .device_info_top{ display: flex; gap: 60px; 
+        .device_info_img{width: 460px; border-radius: 22px; overflow: hidden;
+            img{width: 100%;border-radius: 22px; }
+        }
+        div{ 
+            &:last-of-type{ width: calc(100% - 510px);
+                .table{ margin-bottom: 40px;  
+                    &+div{ display: flex; gap: 37px; padding: 0 30px; width: 100%; height: 56px; align-items: center;
+                        background: #f4f6f9; border-radius: 10px;
+                        b{font-size: $fs-16; font-weight: 600; color: #000; flex-shrink: 0;}
+                        ul{ display: flex; gap: 50px; 
+                            li{ font-size: $fs-16; font-weight: 400; color: #000;     flex-shrink: 0;
+                                background: url(../images/sub/member_blue.png) no-repeat left center / auto 16px; padding-left: 30px;
+                                &:nth-child(2){background-image: url(../images/sub/member_call_blue.png);}
+                                &:nth-child(3){background-image: url(../images/sub/member_email_blue.png);}
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    .device_info_bottom{ display: flex; gap: 40px;
+        div{ width: 50%;
+            b{margin-bottom: 20px; font-size: $fs-22; line-height: 32px; font-weight: 400; font-family: $ff-sbaggro;}
+            background: #f4f6f9; border-radius: 10px; padding: 30px;
+            ul{
+                li{font-size: $fs-16; font-weight: 400; color: #000; line-height: 24px;
+                    &:not(:last-child){margin-bottom: 10px;}
+                }
+            }
+        }
+    }
+    @media (max-width: 1280px) {
+        .device_info_top{
+            .device_info_img{width: 400px;}
+            div{
+                &:last-of-type{  width: calc(100% - 400px);
+                     .table{
+                        &+div{ gap: 20px;
+                         ul{ gap: 10px; width: calc(100% - 40px); justify-content: space-between;}
+                        }
+                    }
+                }
+               
+            }
+        }
+    }
+    @media (max-width: 1080px) {
+        .device_info_top{
+            flex-direction: column;
+            .device_info_img{width: 100%;}
+            div{
+                &:last-of-type{ width: 100%;
+                    .table{
+                        &+div{ gap: 37px;
+                            ul{ gap: 10px; width: calc(100% - 20px); justify-content: flex-start; gap: 30px;}
+                        }
+                    }
+                }
+            }
+        }
+        .device_info_bottom{flex-direction: column;
+            div{width: 100%;}
         }
     }
 }

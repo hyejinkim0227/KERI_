@@ -1476,8 +1476,9 @@ span.noti{
             }
         }
 
-        .bar{height: 6px; overflow: hidden; border-radius: 5px; background: #e5e5e5; margin-top: 80px; width: 1300px; position: relative;
-            span{width: 25%; height: 6px; background: $color-blue; border-radius: 5px; position: absolute; left: 0; top: 0; transition: all 0.4s;}
-        }
+
+    }
+    .bar{height: 6px; overflow: hidden; border-radius: 5px; background: #e5e5e5; margin-top: 80px; width: calc(100wh); position: relative;
+        span{width: 25%; height: 6px; background: $color-blue; border-radius: 5px; position: absolute; left: 0; top: 0; transition: all 0.4s;}
     }
 }

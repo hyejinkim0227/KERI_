@@ -410,16 +410,20 @@ $(document).ready(function() {
       navigation: {
         nextEl: '.support_banner .support_list2 .support_btn_next',
         prevEl: '.support_banner .support_list2 .support_btn_prev',
-      },
+      }
     });
 
     // 슬라이드 변경 이벤트
     window.supportSwiper2.off('slideChange').on('slideChange', function(swiper) {
-      $('.support_list2.control .active').text(swiper.realIndex + 1);
+      const cur_num = swiper.realIndex % contentSlides.length + 1;
+      $('.support_list2.control .active').text(cur_num);
+
+      // bar 게이지 설정
+      const bar_guage = 100 / contentSlides.length * cur_num;
+      $('.support_list2.bar span').css({width: bar_guage + '%'});
       
       // 현재 활성화된 슬라이드 인덱스 % 2 값과 동일한 인덱스는 down 클래스 없음.
       const $slides = $('.support_list2 .swiper-slide');
-      console.log($slides);
       const num = swiper.activeIndex % 2;
       
       $slides.each(function(index) {

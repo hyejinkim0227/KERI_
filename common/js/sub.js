@@ -376,3 +376,62 @@ function initDeliveryMethodToggle() {
 document.addEventListener('DOMContentLoaded', function() {
   initDeliveryMethodToggle();
 });
+
+// 일반 공통 슬라이더
+$(document).ready(function() {
+  if (!window.supportSwiper1) {
+    window.supportSwiper1 = new Swiper('.support_list1.swiper', {
+      slidesPerView: 'auto',
+      speed: 600,
+      loop: true,
+      allowTouchMove: false,
+      navigation: {
+        nextEl: '.support_banner .support_list1 .support_btn_next',
+        prevEl: '.support_banner .support_list1 .support_btn_prev',
+      },
+    });
+
+    // 슬라이드 변경 이벤트
+    window.supportSwiper1.off('slideChange').on('slideChange', function(swiper) {
+      $('.support_list1.control .active').text(swiper.realIndex + 1);
+    });
+  }
+
+  if (!window.supportSwiper2) {
+    // 스와이퍼 개수가 모자르는경우가 존재하여 두배로 복사
+    var contentSlides = $('.support_list2 .swiper-slide').clone();
+    $('.support_list2 .swiper-wrapper').append(contentSlides);
+
+    window.supportSwiper2 = new Swiper('.support_list2.swiper', {
+      slidesPerView: 'auto',
+      speed: 600,
+      loop: true,
+      allowTouchMove: false,
+      navigation: {
+        nextEl: '.support_banner .support_list2 .support_btn_next',
+        prevEl: '.support_banner .support_list2 .support_btn_prev',
+      },
+    });
+
+    // 슬라이드 변경 이벤트
+    window.supportSwiper2.off('slideChange').on('slideChange', function(swiper) {
+      $('.support_list2.control .active').text(swiper.realIndex + 1);
+      
+      // 현재 활성화된 슬라이드 인덱스 % 2 값과 동일한 인덱스는 down 클래스 없음.
+      const $slides = $('.support_list2 .swiper-slide');
+      console.log($slides);
+      const num = swiper.activeIndex % 2;
+      
+      $slides.each(function(index) {
+        const $slide = $(this);
+
+        // 다른 값인경우
+        if (index % 2 !== num) {
+          $slide.addClass('down');
+        } else {
+          $slide.removeClass('down');
+        }
+      });
+    });
+  }
+});

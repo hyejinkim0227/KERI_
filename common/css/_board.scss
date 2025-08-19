@@ -1461,7 +1461,8 @@ span.noti{
                         }
                         &:before{display: block; content: ""; background: linear-gradient(145deg, #1fb1c2, #1f60c2);   border-radius: 20px; opacity: 0.8; z-index: 0; width: 360px; height: 250px; z-index: 1; display: none; position: absolute; left: 0; top: 0;}
                     }
-                    &:nth-child(even){margin-top: 60px; transition: all 0.4s; margin-top: 60px;}
+                    //&:nth-child(even){margin-top: 60px; transition: all 0.4s; margin-top: 60px;}
+                    &.down{margin-top: 60px; transition: all 0.4s; margin-top: 60px;}
                     &:hover figcaption span, &:hover figcaption:before{display: block;}
                 }
             }

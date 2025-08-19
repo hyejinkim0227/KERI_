@@ -4964,10 +4964,17 @@ span.noti[data-color=grey] {
 .info_207 .flex_LR > div {
   width: 50%;
 }
-.info_207 .sub_content > div img {
+.info_207 .sub_content:first-child > div figure {
+  overflow: hidden;
+  border-radius: 40px;
+}
+.info_207 .sub_content:first-child > div figure img {
   width: 100%;
 }
-.info_207 .sub_content > div:last-child {
+.info_207 .sub_content:first-child > div img {
+  width: 100%;
+}
+.info_207 .sub_content:first-child > div:last-child {
   padding-left: 85px;
 }
 .info_207 .bg_207 {
@@ -4982,6 +4989,10 @@ span.noti[data-color=grey] {
 }
 .info_207 .bg_207 > div .slide_box1 {
   padding-left: 40px;
+}
+.info_207 .bg_207 > div .slide_box1 .support_list {
+  border-radius: 40px;
+  overflow: hidden;
 }
 .info_207 .goals_207 {
   background: #dceefb;
@@ -5165,6 +5176,54 @@ span.noti[data-color=grey] {
     line-height: 19px;
     margin-bottom: 0;
   }
+}
+
+#sub .results {
+  margin-top: 98px;
+}
+#sub .results .support_banner {
+  display: flex;
+  gap: 0;
+  width: 2000px;
+  justify-content: flex-start;
+}
+#sub .results .support_banner .support_list.swiper {
+  margin-left: 0;
+}
+#sub .results .support_banner .support_list .swiper-wrapper {
+  display: flex;
+}
+#sub .results .support_banner .support_list .swiper-wrapper > a {
+  width: 360px !important;
+  margin-right: 80px;
+}
+#sub .results .support_banner .support_list .swiper-wrapper > a figure {
+  width: 360px;
+  height: 250px;
+  overflow: hidden;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+#sub .results .support_banner .support_list .swiper-wrapper > a figure img {
+  width: 360px;
+  height: 250px;
+}
+#sub .results .support_banner .support_list .swiper-wrapper > a figcaption b {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  line-height: 1.4em;
+}
+#sub .results .support_banner .support_list .swiper-wrapper > a figcaption span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #222;
+  line-height: 1.4em;
+}
+#sub .results .support_banner .support_list .swiper-wrapper > a:nth-child(even) {
+  margin-top: 60px;
 }
 
 @keyframes slideInFromRight {

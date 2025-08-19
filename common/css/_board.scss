@@ -1274,8 +1274,11 @@ span.noti{
         >div{width: 50%;}
     }
 
-    .sub_content{
+    .sub_content:first-child{
         >div{
+            figure{overflow: hidden; border-radius: 40px;
+                img{width: 100%;}
+            }
             img{width: 100%;}
             &:last-child{padding-left: 85px;}
         }
@@ -1285,7 +1288,10 @@ span.noti{
         &.wfull{margin-top: 100px;}
         >div{
             &.flex_LR{ align-items: flex-start;}
-            .slide_box1{padding-left: 40px;}
+            .slide_box1{padding-left: 40px;
+                .support_list {border-radius: 40px; overflow: hidden;}
+                
+            }
         }
     }
 
@@ -1389,4 +1395,27 @@ span.noti{
         }
     }
 
+}
+
+#sub .results{ margin-top: 98px;
+    .support_banner{display: flex; gap: 0; width: 2000px; justify-content: flex-start;
+        .support_list{
+            &.swiper{margin-left: 0;}
+            .swiper-wrapper{
+                display: flex;
+                >a{
+                    width: 360px !important;  margin-right: 80px; 
+                    figure{ 
+                        width: 360px; height: 250px; overflow: hidden; display: block; border-radius: 20px; box-shadow: 10px 10px 20px rgba(0,0,0,0.15); margin-bottom: 20px;
+                        img{width: 360px; height: 250px;}
+                    }
+                    figcaption{
+                        b{font-size: 18px; font-weight: 600; color: #000; line-height: 1.4em;}
+                        span{font-size: 14px; font-weight: 400; color: $color-grey1; line-height: 1.4em;}
+                    }
+                    &:nth-child(even){margin-top: 60px;}
+                }
+            }
+        }
+    }
 }

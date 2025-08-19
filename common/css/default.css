@@ -5083,7 +5083,7 @@ span.noti[data-color=grey] {
 .info_207 .bg_207 > div .slide_box1 {
   padding-left: 40px;
 }
-.info_207 .bg_207 > div .slide_box1 .support_list {
+.info_207 .bg_207 > div .slide_box1 .support_list1 {
   border-radius: 40px;
   overflow: hidden;
 }
@@ -5287,20 +5287,20 @@ span.noti[data-color=grey] {
   justify-content: flex-start;
   position: relative;
 }
-#sub .results .support_banner .support_list.swiper {
+#sub .results .support_banner .support_list2.swiper {
   margin-left: 0;
 }
-#sub .results .support_banner .support_list .swiper-wrapper {
+#sub .results .support_banner .support_list2 .swiper-wrapper {
   display: flex;
 }
-#sub .results .support_banner .support_list .swiper-wrapper > a {
+#sub .results .support_banner .support_list2 .swiper-wrapper > a {
   width: 360px !important;
   margin-right: 80px;
   transition: all 0.4s;
   margin-top: 0;
   position: relative;
 }
-#sub .results .support_banner .support_list .swiper-wrapper > a figure {
+#sub .results .support_banner .support_list2 .swiper-wrapper > a figure {
   width: 360px;
   height: 250px;
   overflow: hidden;
@@ -5309,17 +5309,17 @@ span.noti[data-color=grey] {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
   margin-bottom: 20px;
 }
-#sub .results .support_banner .support_list .swiper-wrapper > a figure img {
+#sub .results .support_banner .support_list2 .swiper-wrapper > a figure img {
   width: 360px;
   height: 250px;
 }
-#sub .results .support_banner .support_list .swiper-wrapper > a figcaption b {
+#sub .results .support_banner .support_list2 .swiper-wrapper > a figcaption b {
   font-size: 18px;
   font-weight: 600;
   color: #000;
   line-height: 1.4em;
 }
-#sub .results .support_banner .support_list .swiper-wrapper > a figcaption span {
+#sub .results .support_banner .support_list2 .swiper-wrapper > a figcaption span {
   font-size: 17px;
   font-weight: 500;
   color: #fff;
@@ -5337,7 +5337,7 @@ span.noti[data-color=grey] {
   width: 100%;
   z-index: 2;
 }
-#sub .results .support_banner .support_list .swiper-wrapper > a figcaption:before {
+#sub .results .support_banner .support_list2 .swiper-wrapper > a figcaption:before {
   display: block;
   content: "";
   background: linear-gradient(145deg, #1fb1c2, #1f60c2);
@@ -5352,12 +5352,12 @@ span.noti[data-color=grey] {
   left: 0;
   top: 0;
 }
-#sub .results .support_banner .support_list .swiper-wrapper > a:nth-child(even) {
+#sub .results .support_banner .support_list2 .swiper-wrapper > a:nth-child(even) {
   margin-top: 60px;
   transition: all 0.4s;
   margin-top: 60px;
 }
-#sub .results .support_banner .support_list .swiper-wrapper > a:hover figcaption span, #sub .results .support_banner .support_list .swiper-wrapper > a:hover figcaption:before {
+#sub .results .support_banner .support_list2 .swiper-wrapper > a:hover figcaption span, #sub .results .support_banner .support_list2 .swiper-wrapper > a:hover figcaption:before {
   display: block;
 }
 #sub .results .support_banner .control {

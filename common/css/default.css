@@ -5217,20 +5217,25 @@ span.noti[data-color=grey] {
   }
   .info_207 .sub_content > div:last-child {
     padding-left: 0;
-    margin-top: 30px;
+    margin-top: 20px;
+  }
+  .info_207 .sub_content:first-child > div:last-child {
+    padding-left: 0;
   }
   .info_207 .bg_207 {
     padding: 30px 0;
   }
   .info_207 .bg_207.wfull {
-    margin-top: 15px;
+    margin-top: 20px;
   }
   .info_207 .bg_207.wfull > div > div:first-of-type {
     order: 2;
+    padding-left: 0;
   }
   .info_207 .bg_207.wfull > div > div:last-of-type {
     order: 1;
     margin-bottom: 10px;
+    padding-left: 0;
   }
   .info_207 .bg_207.wfull > div > div:last-of-type .control {
     margin-top: 15px;

@@ -3655,6 +3655,7 @@ a.btn_sm {
 }
 
 .sub_content .search {
+  flex-wrap: wrap;
   background: #f7f7f9;
   padding: 25px;
   border-radius: 10px;
@@ -3662,20 +3663,15 @@ a.btn_sm {
   border: 1px solid #e1e3e1;
   margin: 40px 0;
 }
-.sub_content .search > div:first-child {
+.sub_content .search > div {
   display: flex;
   gap: 10px;
 }
-.sub_content .search > div:first-child select {
+.sub_content .search > div select {
   flex: 1;
   line-height: 50px;
   height: 50px;
-  min-width: 120px;
-  width: 100%;
-}
-.sub_content .search > div:first-child select:only-child {
   width: 210px;
-  flex: unset;
 }
 .sub_content .search .input_btn {
   width: 530px;
@@ -3716,6 +3712,19 @@ a.btn_sm {
   .sub_content .search .input_btn button {
     width: 100%;
     margin: 0;
+  }
+}
+.sub_content .search .check_list {
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  display: flex;
+  width: 100%;
+  gap: 0 20px;
+  justify-content: center;
+}
+@media (max-width: 1080px) {
+  .sub_content .search .check_list {
+    justify-content: flex-start;
   }
 }
 
@@ -4008,7 +4017,6 @@ a.btn_sm {
 .tab_thum.card ol {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 55px 40px;
   margin-top: 20px;
 }
@@ -5510,10 +5518,12 @@ span.noti[data-color=grey] {
   }
   .device_info .device_info_top div:last-of-type .table + div {
     gap: 37px;
+    height: auto;
+    min-height: 56px;
   }
   .device_info .device_info_top div:last-of-type .table + div ul {
     gap: 10px;
-    width: calc(100% - 20px);
+    width: calc(100% - 44px);
     justify-content: flex-start;
     gap: 30px;
   }
@@ -5523,6 +5533,43 @@ span.noti[data-color=grey] {
   .device_info .device_info_bottom div {
     width: 100%;
   }
+}
+@media (max-width: 650px) {
+  .device_info .device_info_top div:last-of-type .table + div {
+    gap: 5px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 15px 30px;
+  }
+  .device_info .device_info_top div:last-of-type .table + div ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .device_info .device_info_top div:last-of-type .table + div ul li {
+    width: 100%;
+  }
+}
+
+.sub-video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+.sub-video-container .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.sub-video-container .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 @keyframes slideInFromRight {

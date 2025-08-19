@@ -439,3 +439,40 @@ $(document).ready(function() {
     });
   }
 });
+
+// 기술지원 아코디언 기능
+$(document).ready(function() {
+  const colTitles = document.querySelectorAll(".col-title");
+
+  function accordionClick() {
+    const current_col = this.parentElement;
+    const is_active = current_col.classList.contains("active");
+
+    current_col.parentElement.querySelectorAll(".col").forEach((col) => {
+      col.classList.remove("active");
+    });
+
+    if (!is_active) {
+      current_col.classList.add("active");
+    }
+  }
+
+  function handleAccordion() {
+    if (window.innerWidth <= 1080) {
+      colTitles.forEach((title) => {
+        title.addEventListener("click", accordionClick);
+      });
+    } else {
+      colTitles.forEach((title) => {
+        title.removeEventListener("click", accordionClick);
+        title.parentElement.classList.remove("active");
+      });
+    }
+  }
+
+  // 초기 로드 시 실행
+  handleAccordion();
+
+  // 화면 크기 변경 시 실행
+  window.addEventListener("resize", handleAccordion);
+});

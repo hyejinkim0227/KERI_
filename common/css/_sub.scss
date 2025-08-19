@@ -351,8 +351,6 @@
         background: #f9fafb; z-index:-1; border-bottom: 1px solid #000000; border-top: 1px solid #000000;
       }
 
-
-
 .cols {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -360,7 +358,7 @@
 
 .col {
   border: 1px solid #000000;
-  background: #fff;
+
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -411,7 +409,7 @@
   margin: 0;
   padding: 10px;
   max-height: 280px;
-  overflow-y: auto;
+  overflow-y: auto;  background: #fff;
 
   li { margin: 2px 0; }
 
@@ -474,17 +472,23 @@
             }
             .col-title{height: 50px; font-size: $fs-16; position: relative; padding-right: 20px;
                 &:after{content: ''; position: absolute; right: 10px; top: 0; display: block; background: url(../images/sub/icon_lnb_down.png) no-repeat center/11px auto; 
-                    width: 50px; height: 50px;}
+                    width: 50px; height: 50px; transition: transform 0.3s ease;}
             }
         
 
         .cols { grid-template-columns: 1fr; gap: 0;  border-bottom: 1px solid #000000;}
         .col { border-radius: 0; border: 0; border-top: 1px solid #000;
-            &.active .list {
-              display: block;
+            &.active {
+              .list {
+                display: block;
+              }
+              .col-title:after {
+                transform: rotate(180deg);
+              }
             }
             &:focus-within{border-right:unset;border-color:#000000;
-                .col-title{background: none; color: #000000; border-top: 0;}
+                .col-title{background: none; color: #000000; border-top: 0;
+                }
             }
             &:last-of-type{border-right:0;}
         }
@@ -505,4 +509,53 @@
     
     // }
 
+}
+
+
+//  기술소개자료 상세 페이지
+.investigator{
+    position: relative; min-height: 400px; // 최소 높이 설정
+    padding: 60px 0; // 상하 패딩 추가
+    &::before{content: '';  display: block; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100vw; height: 100%;
+        background: url(../images/sub/TEC_bg.png) no-repeat center/cover; z-index: 0;}
+   
+    >div{ max-width: 1360px; margin: 0 auto; display: flex; position: relative; z-index: 1; padding: 0;
+        align-items: center;
+        img{width: 270px; height: auto; margin-right: 85px;}
+        h3{color: $color-wh; font-size: $fs-44; font-family: $ff-sbaggro; font-weight: 500; line-height: 54px; 
+            margin-bottom: 25px;}
+        b{font-size: 40px; font-family: $ff-suit;  color: #ffb763; 
+            display: flex; align-items: center; gap: 20px;
+            span{font-weight: 700; color: $color-wh; letter-spacing: 3px;}
+        }
+        >.flex_col{ gap: 10px; margin-left: auto;
+            a{width: 230px; border: 2px solid #fff; color: #fff; border-radius: 8px; height: 62px; line-height: 62px; padding: 0 20px; font-size: $fs-19; font-family: $ff-suit;
+                 background: url(../images/sub/TEC_arrow.png) no-repeat center right 20px;}
+        }
+    }
+    @media (max-width: 1080px) {
+        >div{  flex-direction: column;
+            img{  width: 240px;margin-right: 0; margin-bottom: 20px;}
+                h3{line-height: 1.4em; margin-bottom: 10px; font-size: $fs-34; text-align: center;}
+                b{ font-size: $fs-30;justify-content: center;}
+                >.flex_col{margin: 20px auto 0; flex-direction: unset;
+                a{    height: 50px; width: 160px;
+                    line-height: 49px;
+                    font-size: 16px;
+                    background-size: 6px auto;
+                    padding: 0 12px;
+                    background-position: center right 10px;}
+                }
+
+        }
+    }
+
+}
+
+.grey_box{ background: #f4f6f9; border-radius: 10px; padding: 32px 30px;
+    b{font-size: $fs-20; font-family: $ff-suit; font-weight: 600; margin-bottom: 10px; line-height: 28px;}
+    ul{
+        li{font-size: $fs-17; line-height: 28px;
+        }
+    }
 }

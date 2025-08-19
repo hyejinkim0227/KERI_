@@ -5181,11 +5181,13 @@ span.noti[data-color=grey] {
 #sub .results {
   margin-top: 98px;
 }
+#sub .results .sub_tit {
+  margin-bottom: 60px;
+}
 #sub .results .support_banner {
-  display: flex;
-  gap: 0;
   width: 2000px;
   justify-content: flex-start;
+  position: relative;
 }
 #sub .results .support_banner .support_list.swiper {
   margin-left: 0;
@@ -5196,6 +5198,9 @@ span.noti[data-color=grey] {
 #sub .results .support_banner .support_list .swiper-wrapper > a {
   width: 360px !important;
   margin-right: 80px;
+  transition: all 0.4s;
+  margin-top: 0;
+  position: relative;
 }
 #sub .results .support_banner .support_list .swiper-wrapper > a figure {
   width: 360px;
@@ -5217,13 +5222,87 @@ span.noti[data-color=grey] {
   line-height: 1.4em;
 }
 #sub .results .support_banner .support_list .swiper-wrapper > a figcaption span {
-  font-size: 14px;
-  font-weight: 400;
-  color: #222;
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
   line-height: 1.4em;
+  padding: 35px 25px;
+  border-radius: 20px;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+#sub .results .support_banner .support_list .swiper-wrapper > a figcaption:before {
+  display: block;
+  content: "";
+  background: linear-gradient(145deg, #1fb1c2, #1f60c2);
+  border-radius: 20px;
+  opacity: 0.8;
+  z-index: 0;
+  width: 360px;
+  height: 250px;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 #sub .results .support_banner .support_list .swiper-wrapper > a:nth-child(even) {
   margin-top: 60px;
+  transition: all 0.4s;
+  margin-top: 60px;
+}
+#sub .results .support_banner .support_list .swiper-wrapper > a:hover figcaption span, #sub .results .support_banner .support_list .swiper-wrapper > a:hover figcaption:before {
+  display: block;
+}
+#sub .results .support_banner .control {
+  border: 3px solid #000;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 400px;
+  top: -70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sub .results .support_banner .control div {
+  display: none;
+}
+#sub .results .support_banner .control button {
+  width: 50px;
+  height: 50px;
+  background: url(../images/sub/result_L.png) no-repeat center center;
+}
+#sub .results .support_banner .control button.support_btn_next {
+  background-image: url(../images/sub/result_R.png);
+}
+#sub .results .support_banner .bar {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #e5e5e5;
+  margin-top: 80px;
+  width: 1300px;
+  position: relative;
+}
+#sub .results .support_banner .bar span {
+  width: 25%;
+  height: 6px;
+  background: #1f60c2;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.4s;
 }
 
 @keyframes slideInFromRight {

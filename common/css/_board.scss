@@ -1332,7 +1332,7 @@ span.noti{
         >div{
             &.flex_LR{ align-items: flex-start;}
             .slide_box1{padding-left: 40px;
-                .support_list {border-radius: 40px; overflow: hidden;}
+                .support_list1 {border-radius: 40px; overflow: hidden;}
                 
             }
         }
@@ -1444,7 +1444,7 @@ span.noti{
     .sub_tit{margin-bottom: 60px;}
     .support_banner{ 
         width: 2000px; justify-content: flex-start; position: relative;
-        .support_list{
+        .support_list2{
             &.swiper{margin-left: 0;}
             .swiper-wrapper{
                 display: flex;

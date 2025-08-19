@@ -5372,7 +5372,7 @@ span.noti[data-color=grey] {
   justify-content: center;
   align-items: center;
 }
-#sub .results .support_banner .control div {
+#sub .results .support_banner .control > div {
   display: none;
 }
 #sub .results .support_banner .control button {

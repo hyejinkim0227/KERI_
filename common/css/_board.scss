@@ -1468,7 +1468,7 @@ span.noti{
         }
 
         .control{border: 3px solid #000; border-radius: 50%; width: 100px; height: 100px; position: absolute; left: 400px; top: -70px; display: flex; justify-content: center; align-items: center;
-            div{display: none;}
+            >div{display: none;}
             button{
                 width: 50px; height: 50px; background: url(../images/sub/result_L.png) no-repeat center center;
                 &.support_btn_next{background-image: url(../images/sub/result_R.png);}

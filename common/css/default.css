@@ -3825,7 +3825,7 @@ a.btn_blue {
   .tab_thum ol > li ul {
     display: flex;
     flex-wrap: wrap;
-    padding: 22px 0 17px;
+    padding: 17px 0 17px;
     border-bottom: 1px solid #d8d8d8;
   }
   .tab_thum ol > li ul li {
@@ -4591,16 +4591,19 @@ span.noti[data-color=grey] {
   color: #000;
   line-height: 1.4em;
   margin-bottom: 10px;
-  display: flex;
-  align-items: center;
+  padding-left: 25px;
+  position: relative;
 }
 .board_detail .contents h4::before {
-  display: inline-block;
+  display: block;
   content: "";
   width: 16px;
   height: 16px;
   border: 1px solid #aaa;
   margin-right: 10px;
+  position: absolute;
+  left: 0;
+  top: 3px;
 }
 .board_detail .contents .detail_file {
   margin-top: 40px;
@@ -4878,6 +4881,9 @@ span.noti[data-color=grey] {
   .sub_footer ul li a strong, .sub_footer ul li a span {
     font-size: 0.9375rem;
   }
+  .sub_footer ul li a strong {
+    width: 56px;
+  }
   .sub_footer ul li a spna {
     font-weight: 400;
   }
@@ -4947,7 +4953,7 @@ span.noti[data-color=grey] {
   font-size: 1.25rem;
   font-weight: 400;
   color: #333;
-  line-height: 45px;
+  line-height: 47px;
   vertical-align: top;
   height: 60px;
 }
@@ -4964,24 +4970,201 @@ span.noti[data-color=grey] {
 .info_207 .sub_content > div:last-child {
   padding-left: 85px;
 }
-.info_207 .bg_01 {
+.info_207 .bg_207 {
   background: #f6f3f0;
   padding: 100px 0;
 }
-.info_207 .bg_01 > div .flex_LR {
+.info_207 .bg_207.wfull {
+  margin-top: 100px;
+}
+.info_207 .bg_207 > div.flex_LR {
   align-items: flex-start;
 }
-.info_207 .bg_01 > div .slide_box1 {
-  padding-left: 45px;
+.info_207 .bg_207 > div .slide_box1 {
+  padding-left: 40px;
+}
+.info_207 .goals_207 {
+  background: #dceefb;
+}
+.info_207 .goals_207.flex_LR {
+  align-items: flex-start;
+  position: relative;
+}
+.info_207 .goals_207.flex_LR .intro_box .goals {
+  margin: 0;
+  width: auto;
+  counter-reset: goals-counter;
+  background: transparent;
+}
+.info_207 .goals_207.flex_LR .intro_box .goals li {
+  padding: 20px 25px;
+}
+.info_207 .goals_207.flex_LR .intro_box .goals li:not(:first-child) {
+  counter-increment: goals-counter;
+}
+.info_207 .goals_207.flex_LR .intro_box .goals li:not(:first-child)::before {
+  display: block;
+  content: "";
+  width: 32px;
+  height: 32px;
+  background: #1f60c2;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.info_207 .goals_207.flex_LR .intro_box .goals li:not(:first-child)::before {
+  content: counter(goals-counter, decimal-leading-zero);
+}
+.info_207 .goals_207.flex_LR .intro_box .goals li b {
+  width: auto;
+}
+.info_207 .goals_207.flex_LR .intro_box .goals li b span {
+  display: block;
+}
+.info_207 .goals_207.flex_LR .intro_box:last-child .goals {
+  position: relative;
+  z-index: 1;
+}
+.info_207 .goals_207.flex_LR .intro_box:last-child .goals li:first-of-type {
+  background-color: #1fb1c2;
+  background-image: url(../images/sub/icon_goals_2.png);
+}
+.info_207 .goals_207.flex_LR::before {
+  display: inline-block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background: #e2f3f6;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
 }
 .info_207 p {
-  font-size: 1.1875rem;
+  font-size: 1.125rem;
   font-weight: 400;
   color: #333;
-  line-height: 34px;
+  line-height: 32px;
 }
 .info_207 p:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+}
+@media (max-width: 1600px) {
+  .info_207 .goals_207.flex_LR .intro_box .goals {
+    padding: 70px 60px;
+    gap: 25px;
+  }
+  .info_207 .goals_207.flex_LR .intro_box .goals li {
+    width: calc((100% - 25px) / 2);
+    padding: 20px 15px;
+  }
+}
+@media (max-width: 1350px) {
+  .info_207 .bg_207 > div .slide_box1 {
+    padding-left: 40px;
+  }
+  .info_207 .sub_content > div:last-child {
+    padding-left: 50px;
+  }
+}
+@media (max-width: 1200px) {
+  .info_207 .title_h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+  .info_207 .goals_207.flex_LR {
+    flex-direction: column;
+  }
+  .info_207 .goals_207.flex_LR .intro_box {
+    width: 100%;
+  }
+  .info_207 .goals_207.flex_LR .intro_box:last-child {
+    background: #e2f3f6;
+  }
+  .info_207 .goals_207.flex_LR::before {
+    display: none;
+  }
+}
+@media (max-width: 1080px) {
+  .info_207 .title_h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .info_207 .title_h2 span {
+    font-size: 16px;
+  }
+  .info_207 p {
+    line-height: 23px;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  .info_207 .sub_content.flex_LR {
+    flex-direction: column;
+  }
+  .info_207 .sub_content.flex_LR > div {
+    width: 100%;
+  }
+  .info_207 .sub_content > div {
+    padding-left: 0;
+  }
+  .info_207 .sub_content > div:last-child {
+    padding-left: 0;
+    margin-top: 30px;
+  }
+  .info_207 .bg_207 {
+    padding: 30px 0;
+  }
+  .info_207 .bg_207.wfull {
+    margin-top: 15px;
+  }
+  .info_207 .bg_207.wfull > div > div:first-of-type {
+    order: 2;
+  }
+  .info_207 .bg_207.wfull > div > div:last-of-type {
+    order: 1;
+    margin-bottom: 10px;
+  }
+  .info_207 .bg_207.wfull > div > div:last-of-type .control {
+    margin-top: 15px;
+  }
+  .info_207 .bg_207.wfull > div > div:last-of-type .control button {
+    background-size: 60px auto;
+    width: 60px;
+    height: 60px;
+  }
+  .info_207 .bg_207.wfull > div > div:last-of-type .control > div span {
+    height: 60px;
+    line-height: 53px;
+    font-size: 16px;
+  }
+  .info_207 p:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .info_207 .goals_207.flex_LR .intro_box .goals {
+    padding: 50px 15px;
+    gap: 10px;
+  }
+  .info_207 .goals_207.flex_LR .intro_box .goals li {
+    width: calc(50% - 5px);
+    padding: 15px;
+  }
+  .info_207 .goals_207.flex_LR .intro_box .goals li b {
+    font-size: 20px;
+  }
+  .info_207 .goals_207.flex_LR .intro_box .goals li b span {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 20px;
+  }
+  .info_207 .goals_207.flex_LR .intro_box .goals li p {
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 0;
+  }
 }
 
 @keyframes slideInFromRight {
@@ -8523,6 +8706,7 @@ section .fp-tableCell {
   }
   .intro_box .goals li p {
     font-size: 0.875rem;
+    line-height: 20px;
   }
   .intro_box .goals li:first-of-type {
     background-size: 40px auto;

@@ -254,7 +254,7 @@ a{
         opacity: 1;                  /* 전체 투명도(필요 시 0.5~0.8 등으로 조절) */
         mix-blend-mode: normal;      /* 포토샵 ‘표준’과 동일 */
       }
-    h2.title { @include w1300; font: 500 56px SBAggro, Pretendard; padding-top: 160px; color: #fff; text-align: center; height: 340px;}
+    h2.title { @include w1300; font: 500 56px SBAggro, Pretendard; padding-top: 145px; color: #fff; text-align: center; height: 340px;}
     // 서브 상단 영역 반응형
     @media (max-width: 1080px) { display: flex;flex-direction: column; justify-content: center;align-items: center; 
         h2.title{
@@ -262,7 +262,7 @@ a{
         }
     }
     // 탭메뉴
-    .tabmenu{  width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.15); margin-top: -4px;
+    .tabmenu{  width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.15); margin-top: -4px; position: absolute; left: 0; bottom: 0;
         ul{@include w1300;display: flex;
             li{ flex: 1; text-align: center;
                 a{ color: $color-wh2; opacity: 0.5; font-size: $fs-18; padding: 20px 10px;

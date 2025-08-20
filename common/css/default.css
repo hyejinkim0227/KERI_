@@ -3137,7 +3137,7 @@ a.btn_sm {
   padding: 0 30px;
   margin: 0 auto;
   font: 500 56px SBAggro, Pretendard;
-  padding-top: 160px;
+  padding-top: 145px;
   color: #fff;
   text-align: center;
   height: 340px;
@@ -3165,6 +3165,9 @@ a.btn_sm {
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   margin-top: -4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 .sub_top .tabmenu ul {
   max-width: 1360px;

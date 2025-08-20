@@ -30,11 +30,11 @@ $(function(){
 
         if(btn_text == '썸네일형으로 보기'){
             $(this).text('리스트형으로 보기');
-            $(this).addClass('active').parent().next().addClass('card');
+            $(this).addClass('active').parents('.titlebox').next().addClass('card');
             table_card(); // 클래스 제거 실행
         } else {
             $(this).text('썸네일형으로 보기');
-            $(this).removeClass('active').parent().next().removeClass('card');
+            $(this).removeClass('active').parents('.titlebox').next().removeClass('card');
             window.classesRemoved = false; // 다시 table_list 가능하게
             table_list(); // 클래스 다시 적용
         }

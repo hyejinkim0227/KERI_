@@ -261,6 +261,28 @@ $(document).on('click', '.btn_summary', function(e) {
   return false;
 });
 
+// data-type="title" 클릭 시 기술요약 모달 열기
+$(document).on('click', 'td[data-type="title"] a', function(e) {
+  e.preventDefault(); // 기본 이벤트 방지
+  e.stopPropagation(); // 이벤트 전파 방지
+  
+  const $modal = $('#modal-patent-summary');
+  
+  // 기존 모달 시스템과 동일하게 스크롤 방지 및 모달 표시
+  if (typeof preventBodyScroll === 'function') {
+    preventBodyScroll();
+  }
+  
+  if ($modal.length > 0) {
+    $modal.addClass('show');
+    console.log('모달에 show 클래스 추가됨');
+  } else {
+    console.error('모달 요소를 찾을 수 없습니다');
+  }
+  
+  return false;
+});
+
 // modal-member-info 모달이 닫힐 때 아코디언 리셋
 $(document).on('click', '#modal-member-info .btn_modal_close', function() {
   // 모달이 닫힌 후 아코디언 리셋 (모달 애니메이션 후 실행)
@@ -475,4 +497,41 @@ $(document).ready(function() {
 
   // 화면 크기 변경 시 실행
   window.addEventListener("resize", handleAccordion);
+
+
+  // TRL stage_circle 클릭 이벤트
+  $('.trl_stages .stage_circle').on('click', function() {
+    // 모든 stage_circle에서 active 클래스 제거
+    $('.trl_stages .stage_circle').removeClass('active');
+    
+    // 클릭된 요소에만 active 클래스 추가
+    $(this).addClass('active');
+    
+    // TRL 단계 텍스트 추출 (예: "TRL 01" -> "01")
+    var trlText = $(this).text().replace(/\s+/g, ''); // 공백 제거
+    var trlNumber = trlText.replace('TLR', '').replace('TRL', ''); // TLR 또는 TRL 제거
+    var trlNum = parseInt(trlNumber);
+    
+    // 모든 카테고리에서 active 클래스 제거
+    $('.trl_categories .category_item').removeClass('active');
+    
+    // TRL 단계에 따라 해당 카테고리에 active 클래스 추가
+    if (trlNum >= 1 && trlNum <= 2) {
+      // 기초연구단계 (첫 번째 카테고리)
+      $('.trl_categories .category_item').eq(0).addClass('active');
+    } else if (trlNum >= 3 && trlNum <= 4) {
+      // 실행단계 (두 번째 카테고리)  
+      $('.trl_categories .category_item').eq(1).addClass('active');
+    } else if (trlNum >= 5 && trlNum <= 6) {
+      // 시작품단계 (세 번째 카테고리)
+      $('.trl_categories .category_item').eq(2).addClass('active');
+    } else if (trlNum >= 7 && trlNum <= 8) {
+      // 실용화단계 (네 번째 카테고리)
+      $('.trl_categories .category_item').eq(3).addClass('active');
+    } else if (trlNum === 9) {
+      // 사업화 (다섯 번째 카테고리)
+      $('.trl_categories .category_item').eq(4).addClass('active');
+    }
+  });
 });
+

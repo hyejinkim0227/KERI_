@@ -559,3 +559,173 @@
         }
     }
 }
+//기술완성도(TRL)
+.trl_box {
+  border-radius: 16px;
+  padding-top: 32px;
+  overflow-x: auto; // 가로 스크롤 추가
+
+  .trl_flow {  padding-top: 12px;
+        .trl_header {
+            margin-bottom: 40px;  padding-left:18px;
+            display: grid;
+            grid-template-columns: repeat(11, 1fr); // trl1 ~ trl9 9등분
+            min-width: 1300px; // 최소 너비 설정으로 위치 고정
+            position: relative;
+
+      .trl_categories {
+        display: contents; 
+        .category_item {
+            grid-row: 1; // 맨 위줄
+            justify-self: center;
+            align-self: end; // 아래쪽 정렬
+            position: relative;
+            top: -20px; // 살짝 위로 띄우기
+            width: 200px;
+            height: 75px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e0dfe2; border-radius: 12px; padding: 10px 0;
+          
+            &.active{
+                border-color: #1f60c2; background: #f8fbff;
+                &::after{
+                    background-image: url(../images/sub/icon_trl_arrow_blue.png);
+                }
+                span{color: #1f60c2;}
+            }
+            &[data-trl="1"] { grid-column: 1; }  /* trl1~2 사이 */
+            &[data-trl="2"] { grid-column: 4; }  /* trl3~4 사이 */
+            &[data-trl="3"] { grid-column: 7; }  /* trl5~6 사이 */
+            &[data-trl="4"] { grid-column: 10;    margin-right: 15px; }  /* trl7~8 사이 */
+            &[data-trl="5"] { grid-column: 11; }  /* trl9 위 */
+          // 말풍선 꼬리
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -9px; // 말풍선 박스 위쪽으로 이동
+            left: 50%;
+            transform: translateX(-50%);
+            background: url(../images/sub/icon_trl_arrow.png) no-repeat center/18px auto;
+            z-index: 2;
+            width: 18px;
+            height: 10px;
+          }
+          
+          .category_icon {
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 3;
+          }
+          
+          span {
+            font-size: $fs-17;
+            font-weight: 700;
+            color: #333;
+            white-space: nowrap;
+            line-height: 20px;
+            font-family: $ff-suit;
+          }
+      
+        }
+      }
+    }
+    
+    .trl_stages {
+      margin-bottom: 40px;max-width: 1230px;
+     justify-content: space-between;
+      display: grid;
+        grid-template-columns: repeat(9, 1fr); // trl1 ~ trl9 9등분
+        min-width: 1200px; // 최소 너비 설정으로 위치 고정
+        position: relative;
+
+      .stage_item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-right: 65px;
+        &:last-child{
+            margin-right: 0;
+        }
+        &:nth-last-child(2){
+            margin-right:   30px;
+        }
+        .stage_circle {
+          width: 84px;
+          height: 84px;
+          border-radius: 50%;
+          background: #f4f6f9;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          font-weight: 600;
+          color: #000;
+          text-align: center;
+          line-height: 1.2;
+          
+          &.active {
+            background: #214687;
+            color: white;
+          }
+        }
+        
+        .arrow {
+            position: absolute;
+            left: 50%;
+            top: -30px;
+            width: 0;
+            height: 0;
+            border-left: 6px solid #454545;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            &::after{
+                content: '';
+                display: block;
+                width:150px;
+                height: 1px;
+                background: #454545;
+                position: absolute;
+                top: 50%;
+                left: 0;
+            }
+           
+        }
+        &:nth-last-child(2){
+            .arrow{
+                &::after{
+                  width: 110px;
+                }
+            }
+        }
+        &:last-child{
+            .arrow{
+                &::after{
+                    display: none;
+                }
+            }
+        }
+        
+      }
+    }
+  }
+  
+
+&+ul{ display: flex; gap: 10px; flex-direction: column; margin-top: 10px;
+    >li{ display: flex; gap: 18px; align-items: flex-start;    
+        b{color: #1f60c2; width: 74px; height: 34px; line-height: 34px;  font-size: $fs-17; border-radius: 5px; background: #d1e1ff; flex-shrink: 0;
+        font-family: $ff-suit; font-weight: 500;   display: block;text-align: center;}
+        span{font-size: $fs-17; line-height: 28px; }
+            &:last-child{
+                b{color: #6d6d6d; background: #f1f1f2;}
+            }
+    }
+}
+}
+

@@ -1,5 +1,9 @@
 @charset "UTF-8";
-.link, .blue {
+.link {
+  color: #1f60c2;
+}
+
+.blue {
   color: #1d5fe8;
 }
 
@@ -214,6 +218,27 @@
 }
 @media (max-width: 1080px) {
   .dot {
+    font-size: 0.9375rem;
+  }
+}
+
+.dot_blue > li {
+  position: relative;
+  padding-left: 16px !important;
+}
+.dot_blue > li:before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 0px;
+  top: 10px;
+  background-color: #17469d;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+@media (max-width: 1080px) {
+  .dot_blue {
     font-size: 0.9375rem;
   }
 }
@@ -9979,6 +10004,199 @@ section .fp-tableCell {
 .grey_box ul li {
   font-size: 1.0625rem;
   line-height: 28px;
+}
+
+.trl_box {
+  border-radius: 16px;
+  padding-top: 32px;
+  overflow-x: auto;
+}
+.trl_box .trl_flow {
+  padding-top: 12px;
+}
+.trl_box .trl_flow .trl_header {
+  margin-bottom: 40px;
+  padding-left: 18px;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  min-width: 1300px;
+  position: relative;
+}
+.trl_box .trl_flow .trl_header .trl_categories {
+  display: contents;
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item {
+  grid-row: 1;
+  justify-self: center;
+  align-self: end;
+  position: relative;
+  top: -20px;
+  width: 200px;
+  height: 75px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e0dfe2;
+  border-radius: 12px;
+  padding: 10px 0;
+  /* trl1~2 사이 */
+  /* trl3~4 사이 */
+  /* trl5~6 사이 */
+  /* trl7~8 사이 */
+  /* trl9 위 */
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item.active {
+  border-color: #1f60c2;
+  background: #f8fbff;
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item.active::after {
+  background-image: url(../images/sub/icon_trl_arrow_blue.png);
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item.active span {
+  color: #1f60c2;
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item[data-trl="1"] {
+  grid-column: 1;
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item[data-trl="2"] {
+  grid-column: 4;
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item[data-trl="3"] {
+  grid-column: 7;
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item[data-trl="4"] {
+  grid-column: 10;
+  margin-right: 15px;
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item[data-trl="5"] {
+  grid-column: 11;
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item::after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url(../images/sub/icon_trl_arrow.png) no-repeat center/18px auto;
+  z-index: 2;
+  width: 18px;
+  height: 10px;
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item .category_icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+.trl_box .trl_flow .trl_header .trl_categories .category_item span {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #333;
+  white-space: nowrap;
+  line-height: 20px;
+  font-family: "SUIT", "Pretendard";
+}
+.trl_box .trl_flow .trl_stages {
+  margin-bottom: 40px;
+  max-width: 1230px;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  min-width: 1200px;
+  position: relative;
+}
+.trl_box .trl_flow .trl_stages .stage_item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 65px;
+}
+.trl_box .trl_flow .trl_stages .stage_item:last-child {
+  margin-right: 0;
+}
+.trl_box .trl_flow .trl_stages .stage_item:nth-last-child(2) {
+  margin-right: 30px;
+}
+.trl_box .trl_flow .trl_stages .stage_item .stage_circle {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: #f4f6f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+  line-height: 1.2;
+}
+.trl_box .trl_flow .trl_stages .stage_item .stage_circle.active {
+  background: #214687;
+  color: white;
+}
+.trl_box .trl_flow .trl_stages .stage_item .arrow {
+  position: absolute;
+  left: 50%;
+  top: -30px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid #454545;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+.trl_box .trl_flow .trl_stages .stage_item .arrow::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 1px;
+  background: #454545;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+.trl_box .trl_flow .trl_stages .stage_item:nth-last-child(2) .arrow::after {
+  width: 110px;
+}
+.trl_box .trl_flow .trl_stages .stage_item:last-child .arrow::after {
+  display: none;
+}
+.trl_box + ul {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.trl_box + ul > li {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.trl_box + ul > li b {
+  color: #1f60c2;
+  width: 74px;
+  height: 34px;
+  line-height: 34px;
+  font-size: 1.0625rem;
+  border-radius: 5px;
+  background: #d1e1ff;
+  flex-shrink: 0;
+  font-family: "SUIT", "Pretendard";
+  font-weight: 500;
+  display: block;
+  text-align: center;
+}
+.trl_box + ul > li span {
+  font-size: 1.0625rem;
+  line-height: 28px;
+}
+.trl_box + ul > li:last-child b {
+  color: #6d6d6d;
+  background: #f1f1f2;
 }
 
 .sub_modal#modal-patent-summary {

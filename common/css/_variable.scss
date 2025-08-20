@@ -25,7 +25,8 @@ $color-greenblue: #1fb1c2;
 
 
 $placeholder : #4c4e5a; //placeholder
-.link, .blue {color: $color-blue3;}
+.link{color: $color-blue;} 
+.blue {color: $color-blue3;}
 .blue2{color: $color-blue2;}
 $bor_form : #dbdee1;
 $bor_gray : #e1e3e1;
@@ -238,6 +239,14 @@ $w720 : 720px;
 .dot{ 
     > li{ position: relative; padding-left: 16px !important;
         &:before{position: absolute; content: ''; display: block;left: 0px; top: 10px; background-color: #b9b9b9; width: 4px; height: 4px; border-radius: 50%; }
+    }
+    @media (max-width: 1080px) {
+        font-size: $fs-15;
+    }
+}
+.dot_blue{ 
+    > li{ position: relative; padding-left: 16px !important;
+        &:before{position: absolute; content: ''; display: block;left: 0px; top: 10px; background-color: #17469d; width: 4px; height: 4px; border-radius: 50%; }
     }
     @media (max-width: 1080px) {
         font-size: $fs-15;

@@ -515,10 +515,11 @@ a{
 }
 
 // 검색창
-.sub_content 
-.search{ flex-wrap: wrap;
+
+.search{ 
     background: #f7f7f9; padding: 25px; border-radius: 10px; gap: 8px; border: 1px solid $bor_gray; margin: 40px 0;
-    >div{ display: flex; gap: 10px;
+    >div{ display: flex; gap: 10px; align-items: center;
+        label{ color: #4c4e5a;  margin-right: 17px;}
         select{ 
             flex: 1;
             line-height: 50px;
@@ -530,6 +531,17 @@ a{
         width: 530px; display: flex;
         input{display: block; width: 100%; height: 50px; line-height: 50px;}
         button{margin-left: 4px; width: 100px; height: 50px; line-height: 50px;}
+    }
+    &.type2{flex-wrap: wrap;}
+    &.type3{
+        >div{margin-right: 17px;
+            select{width: 180px !important;}
+          
+            &:nth-of-type(3), &:nth-of-type(4){
+                margin-right: 0;
+            }
+        }
+     
     }
     // 검색창 반응형
     @media (max-width: 1080px) {
@@ -543,6 +555,11 @@ a{
             input{ margin: 7px 0;}
             button{width: 100%; margin: 0;}
         }
+        &.type3{
+            >div{margin-right: 0; margin-bottom: 10px;
+                &:last-of-type{margin-bottom: 0;}
+            }
+        }
     }
     .check_list{  flex-wrap: wrap;
         margin-bottom: 10px; display: flex; width: 100%;  gap: 0 20px; justify-content: center;
@@ -553,6 +570,7 @@ a{
 
         }
     }
+   
 }
 
 // 타이틀 박스

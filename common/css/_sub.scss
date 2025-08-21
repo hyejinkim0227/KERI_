@@ -66,10 +66,10 @@
         
     }
     .area{ @include w1300; margin-top: 98px;
-        .flex{justify-content: space-between;
-            li{ width: 360px;
-                a{ display: flex; flex-direction: column; gap: 35px;
-                     img{ transition: all 0.3s; width: 360px;}
+        .flex{justify-content: space-between; gap: 50px; flex-wrap: wrap; justify-content: flex-start;
+            li{ width: 400px;
+                a{ display: flex; flex-direction: column; gap: 15px; border-radius: 20px; overflow: hidden;
+                     img{ transition: all 0.3s; width: 100%;}
                      b{font-size: $fs-22; font-weight: 700;}
                      &:hover{
                         img{ border-radius: 20px;

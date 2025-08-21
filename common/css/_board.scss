@@ -15,7 +15,7 @@
             padding: 0 15px;
         }
     }
-    .white{background: #fff;}
+    .white{background: #fff; padding-bottom: 100px;}
 }
 
 
@@ -578,12 +578,13 @@ a{
     // 타이틀 박스 반응형
     @media screen and (max-width: 1080px) {
         &.flex_LR{
-            display: block;
-            button{width: 100% !important; margin :5px 0 15px;}
+            display: block; margin-bottom: 20px;
+            button{width: 100% !important; margin-top: 7px; margin-left: 0; height: 42px; line-height: 40px; font-size: $fs-15; border-radius: 7px;
+                &::before{height: 40px; background-size: auto 24px;}
+            }
         }
     }
 }
-
 
 //table_card,list
 .tab_thum{
@@ -599,10 +600,16 @@ a{
 
                    
                     a{
-                        text-align: left;
+                        text-align: left; display: flex; align-items: center;
+
                         &.file_icon{ background: url(../images/sub/icon_file.png) no-repeat center; height: 60px;}
                         b{display: none;}
-                        strong{line-height: 60px; height: 60px; font-size: $fs-18; font-weight: 600; color: $color-grey1; @include elli; text-align: left; min-width: 0; display: block;}
+                        strong{
+                            line-height: 60px; height: 60px; font-size: $fs-18; font-weight: 600; color: $color-grey1; @include elli; text-align: left; min-width: 0; display: block;
+                        }
+                        >div{
+                            figure,span[data-color]{display: none;}
+                        }
                         .noti{display: none;}
                     }
                     >b{font-size: $fs-17; line-height: 60px; height: 60px;}
@@ -628,15 +635,16 @@ a{
                         &[data-type="none2"]{display: none;}
                       
                         a{
-                            padding: 0px 0 5px;
-                            strong{width: 100%; line-height: 1.4em; height: auto; @include elli_no; font-weight: 500; margin-top: 5px;}
+                            padding: 0px 0 5px; flex-direction: column; justify-content: center; align-items: flex-start;
+                            strong{width: 100%; line-height: 1.4em; height: auto; @include elli_no; font-weight: 500; margin-bottom: 0;}
                             &.file_icon{height: 30px; line-height: 30px; width: 20px;}
+                            >div{
+                                display: flex; align-items: center; justify-content: flex-start; margin-bottom: 8px; width: 100%;
+                                span[data-color],.noti,span[data-status]{display: block; height: 28px; line-height: 28px; width: auto; padding: 0 15px; margin-right: 5px;}
+                            }
                         }
-                        &:first-child span{
-                            display: none;
-                            &.noti{display: block; margin-right: 5px;}
-                        }
-                        .noti{margin-right: 5px; line-height: 26px;    margin-bottom: 10px;}
+                        &:first-child span,&:nth-child(2) span{display: none;}
+                        
                         >b{font-size: $fs-15; line-height: 1.4em; vertical-align: top; height: 30px; line-height: 30px; margin-right: 30px; position: relative;
                             &::before{content: ""; display: block; width: 1px; height: 14px; background: #aaa; position: absolute; right: -17px; top: 8px;}
                             &.be-none{
@@ -717,11 +725,11 @@ a{
 	// 카드 형태 스타일 추가
     &.card{
         //border-bottom: 1px solid $bor_gray; 
-        padding-bottom: 30px; margin-bottom: 10px;
+        padding-bottom: 30px; margin-bottom: 10px; border-bottom: 1px solid #ddd;
 
         .thead, ul li[data-type="number"], ul li[data-type="none"]{display: none !important;}
         ol{
-           display: flex; flex-wrap: wrap;  gap: 55px 40px; margin-top: 20px;
+           display: flex; flex-wrap: wrap;  gap: 55px 40px; margin-top: 25px;
             >li{
                 width: calc(25% - 30px); 
                 &:nth-child(4n+2){margin-left: 0;}
@@ -730,15 +738,23 @@ a{
                     li{
                         border: none; line-height: auto; padding: 0; height: auto;
                         a{  
-                            height: auto; padding: 0;
+                            height: auto; padding: 0; flex-direction: column; 
+                            >div{
+                                display: flex; align-items: flex-start; flex-wrap: wrap; margin-bottom: 15px;
+                                figure,span[data-color]{display: block;}
+                                figure{ width: 100%; overflow: hidden; border-radius: 10px; margin-bottom: 20px;
+                                    img{width: 100%; object-fit: cover;}
+                                }
+                                span{height: 30px; line-height: 30px; margin-right: 5px;}
+                            }
                             b{display: block; border: none; border-radius: 20px; overflow: hidden; padding: 0; margin-bottom: 5px;
                                 img{width: 100%; height: 200px;}
                             }
-                            strong{display: block !important; line-height: 20px; height: 41px; @include elli2; white-space: normal;}
-                            .noti{display: inline-block; font-size: $fs-14; font-weight: 600; line-height: 28px; padding: 0 15px; border-radius: 15px; margin-bottom: 7px;}
+                            strong{display: block !important; line-height: 1.4em; max-height: 50px; @include elli2; white-space: normal;}
+                            .noti{display: inline-block; font-size: $fs-14; font-weight: 600; line-height: 28px; padding: 0 15px; border-radius: 15px;}
                         }
                         &[data-type="date"]{height: 20px; line-height: 20px;}
-                        >b{display: block; font-size:$fs-14; color: #888; line-height: 1em; margin-top: 8px; padding: 0; text-align: left;}
+                        >b{display: block; font-size:$fs-14; color: #888; line-height: 1em; margin-top: 10px; padding: 0; text-align: left;}
                     }
                 }
                 //&:not(:nth-child(4n+2)){margin-left: 40px;
@@ -765,6 +781,7 @@ a{
             }
         }
         @media (max-width: 1080px) {
+            border-bottom: none; padding-bottom: 0; margin-bottom: 0;
             ol {
                 gap: 40px 25px;
                 > li { width: calc((100% - 25px) / 2); 
@@ -773,8 +790,12 @@ a{
                             >b{margin-right: 0;
                                 &::before{display: none;}
                             }
+                            a > div{margin-bottom: 12px;
+                                figure{margin-bottom: 15px;}
+                            } 
                         }
                     }
+                    &:last-child{margin-bottom: 0;}
                 }
               }
         }
@@ -782,8 +803,8 @@ a{
             ol {
                 gap: 0;
                 > li { 
-                    width: 100%; border-bottom: 1px solid $bor_gray; padding-bottom: 15px; margin-bottom: 30px;
-                    strong{height: auto !important;}
+                    width: 100%; border-bottom: 1px solid $bor_gray; padding-bottom: 15px; margin-bottom: 25px;
+                    strong{height: auto !important; line-height: 1.4em;}
                 }
               }
         }
@@ -985,6 +1006,12 @@ span.noti{
     &[data-color="orange"]{border-color: #ff8839 !important; background-color: #fff; color: #ff8839;}
     &[data-color="grey"]{border-color: #92939a !important; background-color: #fff; color: #92939a;} //혜진추가
 }
+span[data-status]{
+    display: inline-block; height: 32px; background: #000; color: #fff; border-radius: 30px; font-size: $fs-15; font-weight: 400; line-height: 32px; border: 1px solid #000; width: 80px; text-align: center; margin-right: 12px;
+    &[data-status="order2"]{background: #424242; border-color: #424242; color: #fff;}//접수중
+    &[data-status="order3"]{background: #c0c0c0; border-color: #c0c0c0; color: #fff;}//접수마감 
+    &[data-status="order1"]{background: #fff; border-color: #a6a6a6; color: #747474;}//접수전
+}
 
 // 이메일
 .email{
@@ -1121,15 +1148,18 @@ span.noti{
 .board_detail{
     border-top: 2px solid $color-bk; border-bottom: 1px solid #b2b2b2; padding-bottom: 40px;
     .info{
-        padding: 35px 20px 25px; border-bottom: 1px solid #e9e9e9;
+        padding: 38px 20px 30px; border-bottom: 1px solid #e9e9e9;
         h2 {
-            b{font-size: $fs-28; font-weight: 600; color: #1d1d1d; line-height: 1.4em; vertical-align: top; margin-left: 3px;}
-            span{margin-right: 5px;}
+            display: flex; align-items: center; justify-content: flex-start;
+            b{font-size: $fs-26; font-weight: 600; color: #1d1d1d; line-height: 30px;}
+            span{margin-right: 7px;
+                &[data-status]{margin-right: 15px;}
+            }
         }
-        ul{ margin-top: 25px;
+        ul{ margin-top: 23px;
             display: flex; gap: 0 40px;
             li{
-                font-size: $fs-16; font-weight: 400; color: #1d1d1d; line-height: 1.4em;position: relative;
+                font-size: $fs-16; font-weight: 400; color: #1d1d1d; line-height: 1.4em; position: relative;
                 &.eye{background: url(../images/sub/icon_eye.png) no-repeat left center / auto 12px; padding-left: 24px;}
                 &:not(:first-child)::before{
                     content: ""; display: block; width: 1px; height: 14px; background: #e5e5e5; 
@@ -1138,7 +1168,7 @@ span.noti{
         }
     }
     .contents{
-        padding: 30px 20px 0;
+        padding: 40px 20px 0;
         h2{font-size:$fs-24; font-weight: 600; color: $color-bk; line-height: 1.4em; margin-bottom: 30px;}
         p{font-size: $fs-17; font-weight: 300; color: $color-bk; line-height: 1.8em;}
         h4{font-size: $fs-17; font-weight: 500; color: $color-bk; line-height: 1.4em; margin-bottom: 10px; padding-left: 25px; position: relative;
@@ -1153,7 +1183,10 @@ span.noti{
         padding-bottom: 30px;
         .info{
             padding: 20px 0;
-            h2 b{font-size: $fs-21; color: $color-grey1; display: block; margin: 0 0 8px;}
+            h2{
+                flex-wrap: wrap;
+                b{font-size: $fs-22; color: $color-grey1; display: block; margin: 8px 0; width: 100%;}
+            } 
             ul{gap: 0 20px; margin-top: 5px;
                 li:not(:first-child)::before{left: -10px;
                 }
@@ -1165,6 +1198,7 @@ span.noti{
         }
         .contents{
             padding: 30px 0 0;
+            p{line-height: 1.5em;}
         }
     }
 }
@@ -1182,7 +1216,7 @@ span.noti{
 .detail_file{
     dt{font-size: $fs-20; font-weight: 500; color: $color-bk; line-height: 1.4em; margin-bottom: 15px;}
     dd{
-        background: #f7f7f9; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; padding: 10px 10px 10px 20px;
+        background: #f7f7f9; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; padding: 13px 10px 13px 20px;
 
         >a{
             font-size: $fs-16; font-weight: 400; color: $color-bk; line-height: 20px; position: relative; 
@@ -1206,9 +1240,9 @@ span.noti{
         dt{font-size: $fs-17; font-weight: 600; margin-bottom: 10px;}
         dd{
             flex-direction: column; align-items: flex-start;
-            div{ margin-left: 31px;}
-            a{width: 100%; 
-                font-size: $fs-15; line-height: 1.4em; margin-bottom: 10px; align-items: flex-start;
+            div{ margin-left: 7px;}
+            >a{width: 100%; 
+                font-size: $fs-15; line-height: 1.4em; margin-bottom: 8px; align-items: flex-start;
                 &:before{background-size: auto 18px; margin-right: 10px;}
     
             }
@@ -1243,7 +1277,7 @@ span.noti{
 
 //sub_footer
 .sub_footer{ 
-    background: #dceefb; margin-top: 100px; position: relative; overflow: hidden;
+    background: #dceefb; position: relative; overflow: hidden;
     ul{
         display: flex; justify-content: space-between; width: 1360px; margin: 0 auto; padding: 0 30px;
         li{
@@ -1587,3 +1621,29 @@ span.noti{
         iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;}
     }
 }
+
+
+//홍보성과_보도자료
+.issue_list{
+    border-top: 2px solid #1d1d1d;
+    li{
+        border-bottom: 1px solid #b2b2b2;
+        a{ 
+            display: flex; gap: 30px; align-items: center; padding: 30px 10px;    
+            figure{width: 300px; height: 210px; overflow: hidden; border-radius: 20px;
+                img{width: 100%; height: 100%; object-fit: cover;}
+            }
+            dl{flex: 1;
+                dt{font-size: $fs-20; font-weight: 600; color: #000; line-height: 1.4em; margin-bottom: 10px;}
+                dd{font-size: $fs-17; font-weight: 400; color: #676767; line-height: 24px; margin-bottom: 10px;
+                    &:last-child{display: flex; gap: 10px; align-items: center;
+                        span{font-size: $fs-15; font-weight: 300; color: #1d1d1d; line-height: 1em;}
+                    }
+                }
+            }
+        }
+        &:hover{background: #f6f8fb;}
+    }
+}
+
+//홍보성과_연관컨텐츠

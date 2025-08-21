@@ -3885,9 +3885,6 @@ a.btn_sm {
     flex: 1 1 100%;
     height: auto;
   }
-  .tab_thum ol > li ul li[data-type=number] {
-    display: none;
-  }
   .tab_thum ol > li ul li[data-type=none2] {
     display: none;
   }
@@ -3905,6 +3902,7 @@ a.btn_sm {
     text-overflow: unset;
     white-space: normal;
     font-weight: 500;
+    margin-top: 5px;
   }
   .tab_thum ol > li ul li a.file_icon {
     height: 30px;
@@ -4074,7 +4072,7 @@ a.btn_sm {
   border-radius: 20px;
   overflow: hidden;
   padding: 0;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 .tab_thum.card ol > li ul li a b img {
   width: 100%;

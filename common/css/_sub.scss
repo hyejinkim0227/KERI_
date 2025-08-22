@@ -757,116 +757,148 @@
 //원장 인사말
 
 .director_wrap{ 
-    .director{ position: relative; min-height: 499px; // 최소 높이 설정
-        &::before{content: '';  display: block; position: absolute; top: 50px; left: 0; transform: translateX(-20%); width: 100vw; height: 499px;
-            background: #f1f3f7 url(../images/sub/director_logo.png) no-repeat bottom right -41px; z-index: 0;}
-        &:after{content: '';  display: block; position: absolute; top: -13px; left: calc(50vw + 10px); 
-            width: 307px; height: 562px; background: url(../images/sub/img_director.png) no-repeat center; z-index: 1;}
-        >div{ position: relative;    padding-top: 120px; max-width: 700px;    height: 549px;
+    .director{ position: relative; min-height: 499px;  margin-top: 110px;
+        background: #f1f3f7 url(../images/sub/director_logo.png) no-repeat bottom right -41px; z-index: 0;
+         &::before{content: '';  background-color: #f1f3f7; display: block; position: absolute; 
+            top: 0px; left: 0; transform: translateX(-37%); width: 50vw; height: 499px; z-index: -1;
+          }
+        
+        >div{ width: 100%; position: relative; padding-top: 70px; max-width: 700px;
             strong{ background: url(../images/sub/director.png) no-repeat top left/51px auto; padding-top: 46px;
-                font-size: $fs-38;  line-height: 50px; font-weight: 500; margin-bottom: 35px;
+                font-size: $fs-38;  line-height: 50px; font-weight: 500; margin-bottom: 35px; word-break: keep-all;
                 span{ vertical-align: baseline;}
             }
             p{line-height: 30px;}
+           
         }
-        >b{ margin-top: 50px; font-size: $fs-34; font-weight: 600;}
-        >.sign{ font-family: $ff-suit; font-size: $fs-22; font-weight: 700; padding-right: 105px; margin-top: 50px;
-            background: url(../images/sub/director_sign.png) no-repeat top 1px right/86px auto; line-height: 40px;
+        img{content: '';  display: block; position: absolute; top: -64px; right: 100px;
+            width: 307px; height: 562px; z-index: 1;
+            box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.1);
+        }
 
-        }
-        p{color: #363636;}
-    }
-    @media (max-width: 1390px){
-        .director{ 
-            &::before{ background-size: 500px auto;  height: 420px;}
-            &::after{ background-size: 260px auto; width: 294px; height: 480px; top: -9px;}
-            >div{ padding-top: 90px;height: 470px;
-                p{height: auto; max-width: 560px; line-height: 28px; font-size: $fs-15;}
-                strong{font-size: 32px; margin-bottom: 24px; line-height: 1.4; background-size: 40px;}
+         &.deputy{ min-height: 418px;  
+            background-image: url(../images/sub/director_logo_02.png); height: 418px; 
+            background-size: 652px auto;
+            &::before{height: 418px;}
+            >div{
+                padding-top: 50px;
             }
+            img{max-width: 298px;
+                width: 100%;
+                height: auto;
+                top: -20px;
+               }
+        }
+       
+    }
+    >b{ margin-top: 50px; font-size: $fs-34; font-weight: 600;}
+    >.sign{ font-family: $ff-suit; font-size: $fs-22; font-weight: 700; margin-top: 50px;
+     img{ padding-left: 10px; }
+    }
+    p{color: #363636;}
+
+
+    @media (max-width: 1280px){
+        .director{ 
+
+            >div{ padding-top: 90px;height: 470px;  
+                p{height: auto; line-height: 28px; font-size: $fs-15;}
+                strong{font-size: 32px; margin-bottom: 24px; line-height: 1.4; background-size: 40px;}
+             
+            }
+       
         }
     }
 
     // 1080px 이하 - 태블릿
     @media (max-width: 1080px){
+        p{   font-size: $fs-15; line-height: 24px;}
         .director{ 
-            min-height: auto;
-            &::before{ 
-                top: 30px;
-                left: 48%;
-                transform: translateX(-50%);
-                width: 100%;
-                height: 400px;
-                background: #f1f3f7 url(../images/sub/director_logo.png) no-repeat center bottom;
-                background-size: 350px auto;
-                background-position: bottom right -20px;
-            }
-            &::after{ 
-                top: 80px;
-                left: 84%;
-                transform: translateX(-50%);
-                width: 200px;
-                height: 350px;
-                background: url(../images/sub/img_director.png) no-repeat center;
-                background-size: contain;
-            }
+            min-height: auto; width: calc(100% + 15px); margin-left: -15px;   
+            background-size: 500px auto;
+            &::before{display: none;}
             >div{ 
-                padding-top: 380px;
-                height: auto;
+               // height: auto;
                 max-width: 100%;
-                padding: 38px 30px 0;
-                
+                padding: 38px 15px 0;
+              
                 strong{ 
                     background-size: 40px auto;
                     padding-top: 50px;
                     font-size: $fs-28; 
                     line-height: 1.3; 
                     margin-bottom: 30px;
-
                 }
                 
                 p{
                     max-width: 70%;
                     line-height: 1.7; 
                     font-size: $fs-15;
-                    margin-bottom: 25px;
                     text-align: left;
                     height: 240px;
                 }
+              
             }
-            
-            >b{ 
-                font-size: $fs-24; 
-                display: block;
+            img{    
+                top: 119px;
+                left: 84%;
+                transform: translateX(-50%);
+                width: auto;
+                height: 350px;
             }
-            
-            >.sign{ 
-                font-size: $fs-18;
-                margin-top: 40px;
-                text-align: left;
-                line-height: 1.5;
-                background-size: 70px auto;
-                padding-right: 90px;
+          
+            &.deputy{ background-size: 500px auto; height: 500px;
+                >div{ 
+                    strong{  max-width: 54%;}
+                    p{height: auto; max-width: 60%;}
+                }
+                img{left: 80%;}
+               
             }
+           
+        }
+        >b{ 
+            font-size: $fs-24; 
+            display: block;
+        }
+        
+        >.sign{ 
+            font-size: $fs-18;
+            margin-top: 40px;
+            text-align: left;
+            line-height: 1.5;
+            background-size: 70px auto;
         }
     }
-
-    @media (max-width: 600px){
+    @media (max-width: 752px){
         .director{
+            &.deputy{
+                >div{    padding-top: 100px;
+                    strong{  max-width: 60%;}
+                    p{width: 100%; max-width: 100%;}
+                }
+                img{ max-width: 200px; top:-35px;}
+            }
+          
+
+        }
+    }
+    @media (max-width: 600px){
+      
+        .director{  background-size: 300px auto; background-position: bottom right;
             &::before{
                 height: 500px;
                 left: 46%;
             }
-            &::after{
-                width: 150px;
-                height: 310px;
-                top: 237px;
+          
+            img{
+                width: auto;
+                height: 250px;
+                top: 220px;
                 left: 82%;
             }
-            >div{    padding: 38px 0px 0;
-                p{height: 313px;max-width: 66%; 
-                }
-
+            &.deputy{ height: 550px; 
+                // img{max-width: 180px; }
             }
         }
     }
@@ -875,15 +907,25 @@
             &::before{
                 height: 580px;
             }
-            &::after{
-                width: 119px;
-                height: 214px;
-                top: 400px;
-                left: 85%;
-            }
-            >div{
+         
+            >div{        height: auto;
                 strong{  width: 280px;}
-                p{  height: 357px; max-width: 70%;}
+                p{  height: 357px;}
+          
+            }
+            img{
+                width: auto;
+                height: 220x;
+                top: 334px;
+                left: 84%;
+            }
+            &.deputy{
+                img{width: 150px;}
+                background-size: 300px;
+                background-position: bottom;
+                >div{
+                    strong{  width: 100%; max-width: 100%;}
+                }
             }
         }
     }

@@ -234,6 +234,13 @@ a{
 	    border-radius: 10px; padding: 0 30px !important;
     }
     &.btn_sm{height: 40px; line-height: 40px; font-size: $fs-15; border-radius: 10px;}
+
+    
+
+        &[data-btn="download"]{background: #fff url(../images/sub/icon_download.png) no-repeat right 12px center;font-size:$fs-15; font-weight: 400; color: $color-bk; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;}
+        &[data-btn="preview"]{background: #fff url(../images/sub/icon_view.png) no-repeat right 12px center;font-size:$fs-15; font-weight: 400; color: $color-bk; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;}
+        
+
 }
 
 // 서브 상단 영역
@@ -1264,12 +1271,12 @@ span[data-status]{
         &:not(:last-child){margin-bottom: 10px;}
         div{
             display: flex; gap: 0 6px; align-items: center; width: 240px; justify-content: right;
-            a{font-size:$fs-15; font-weight: 400; color: $color-bk; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;
+            // a{font-size:$fs-15; font-weight: 400; color: $color-bk; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;
 
-                &[data-btn="download"]{background: #fff url(../images/sub/icon_download.png) no-repeat right 12px center;}
-                &[data-btn="preview"]{background: #fff url(../images/sub/icon_view.png) no-repeat right 12px center;}
+            //     &[data-btn="download"]{background: #fff url(../images/sub/icon_download.png) no-repeat right 12px center;}
+            //     &[data-btn="preview"]{background: #fff url(../images/sub/icon_view.png) no-repeat right 12px center;}
                 
-            }
+            // }
         }
     }
     // 상세 파일 반응형

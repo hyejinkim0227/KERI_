@@ -4,7 +4,8 @@
         border-radius: 50%;  background-color: $color-blue2; margin-left: 11px;
         vertical-align: bottom; margin-bottom: 7px;
     }
-    @media (max-width: 1080px) {font-size: $fs-21; margin-bottom: 20px;
+    @media (max-width: 1080px) {
+        font-size: $fs-24; margin-bottom: 20px;
         &::after{
             width: 6px; height: 6px;margin-bottom: 3px;margin-left: 5px;
         }
@@ -66,17 +67,19 @@
         
     }
     .area{ @include w1300; margin-top: 98px;
-        .flex{justify-content: space-between; gap: 50px; flex-wrap: wrap; justify-content: flex-start;
-            li{ width: 400px;
-                a{ display: flex; flex-direction: column; gap: 15px; border-radius: 20px; overflow: hidden;
-                     img{ transition: all 0.3s; width: 100%;}
-                     b{font-size: $fs-22; font-weight: 700;}
-                     &:hover{
+        .flex{justify-content: space-between; gap: 40px; flex-wrap: wrap; justify-content: flex-start;
+            li{ flex: 0 0 calc(33.333% - 27px);
+                a{ display: flex; flex-direction: column; gap: 15px;
+                    figure{border-radius: 20px; overflow: hidden;
+                        img{ transition: all 0.3s; width: 100%;}
+                    }
+                    b{font-size: $fs-22; font-weight: 700;}
+                    &:hover{
                         img{ border-radius: 20px;
                             box-shadow: 5.7px 8.2px 18px 0 rgba(0, 0, 0, 0.3);
                         }
                      }
-                 }
+                }
             }
         }
     }
@@ -107,6 +110,15 @@
             }
         }
         .area{ margin-top: 50px; padding: 0;
+            .flex{gap: 20px;
+                li{flex: 0 0 calc(50% - 10px); margin: 0 !important;
+                    a{
+                        gap: 10px;
+                        b{font-size: $fs-16; font-weight: 500;}
+                    }
+                }
+            }
+            /*
             .flex{
                 &.swiper-wrapper{
                     li{width: 220px;
@@ -122,6 +134,7 @@
                     }
                 }
             }
+                */
         }
     }
  

@@ -12,10 +12,14 @@
 
     .sub_content{ @include w1300;
         @media (max-width: 1080px) {
-            padding: 0 15px;
+            padding: 0 15px; //margin-top: 50px;
         }
     }
     .white{background: #fff; padding-bottom: 100px;}
+
+    @media (max-width: 1080px) {
+        .white{padding-bottom: 50px;}   
+    }
 }
 
 
@@ -1026,6 +1030,9 @@ span[data-color]{
     &[data-color="noti"]{
         background-color: #2279f2; color: #fff; border: 1px solid #2279f2; border-radius: 15px; padding: 0 15px; font-size: $fs-15; font-weight: 400; line-height: 30px;
     }
+    &[data-color="pdf"]{
+        background-color: #fff; border: none; border-radius: 0; height: 32px; padding: 0 15px; background: url(../images/sub/icon_file_red.png) no-repeat center;
+    }
 }
 // noti 스타일
 span.noti{
@@ -1344,7 +1351,9 @@ span[data-status]{
         }
         &:before{display: none;}
     }
-    @media (max-width: 1080px) {margin-top: 45px;}
+    @media (max-width: 1080px) {
+        //margin-top: 45px;
+    }
 }
 
 // footer 반응형
@@ -1512,27 +1521,36 @@ span[data-status]{
 #sub .results{ margin-top: 98px;
     .sub_tit{margin-bottom: 60px;}
     .support_banner{ 
-        width: 2000px; justify-content: flex-start; position: relative; height: 410px;
+        width: 2000px; justify-content: flex-start; position: relative; height: 450px;
         .support_list2{
             &.swiper{margin-left: 0;}
             .swiper-wrapper{
                 display: flex;
                 >a{
-                    width: 360px !important;  margin-right: 80px;  transition: all 0.4s; margin-top: 0; position: relative;
+                    width: 360px !important;  margin-right: 80px;  transition: all 0.4s; margin-top: 0; 
                     figure{ 
-                        width: 360px; height: 250px; overflow: hidden; display: block; border-radius: 20px; box-shadow: 10px 10px 20px rgba(0,0,0,0.15); margin-bottom: 20px;
-                        img{width: 360px; height: 250px;}
-                    }
-                    figcaption{
-                        b{font-size: 18px; font-weight: 600; color: #000; line-height: 1.4em;}
-                        span{
-                            font-size: 17px; font-weight: 500; color: #fff; line-height: 1.4em; padding: 35px 25px; border-radius: 20px; display: none; position: absolute; left: 0; top: 0; width: 100%; position: absolute; left: 0; top: 0; width: 100%; z-index: 2;
+                        width: 100%; overflow: hidden; display: block; border-radius: 20px; box-shadow: 10px 10px 20px rgba(0,0,0,0.15); margin-bottom: 20px; position: relative;
+
+                        img{width: 100%;}
+                        
+                        .up{
+                            display: none; font-size: 17px; font-weight: 500; color: #fff; line-height: 1.4em; padding: 35px 25px; border-radius: 20px; display: none; position: absolute; left: 0; top: 0; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 3;
                         }
-                        &:before{display: block; content: ""; background: linear-gradient(145deg, #1fb1c2, #1f60c2);   border-radius: 20px; opacity: 0.8; z-index: 0; width: 360px; height: 250px; z-index: 1; display: none; position: absolute; left: 0; top: 0;}
+                        &:before{
+                            content: ""; background: linear-gradient(145deg, #1fb1c2, #1f60c2); border-radius: 20px; opacity: 0; width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 1; transition: all 0.3s ease;
+                        }
+                        
+                        &:hover:before{
+                            opacity: 0.8;
+                        }
+                        &:hover .up{display: block;}
                     }
+                    
+                    >b{font-size: 18px; font-weight: 600; color: #000; line-height: 1.4em;}
+ 
                     //&:nth-child(even){margin-top: 60px; transition: all 0.4s; margin-top: 60px;}
-                    &.down{margin-top: 60px; transition: all 0.4s; margin-top: 60px;}
-                    &:hover figcaption span, &:hover figcaption:before{display: block;}
+                    &.down{margin-top: 60px; transition: all 0.3s; margin-top: 60px;}
+                    &:hover .up, &:hover:before{display: block;}
                 }
             }
         }
@@ -1547,8 +1565,26 @@ span[data-status]{
 
 
     }
-    .bar{height: 6px; overflow: hidden; border-radius: 5px; background: #e5e5e5; margin-top: 80px; width: calc(100wh); position: relative;
+    .bar{height: 6px; overflow: hidden; border-radius: 5px; background: #e5e5e5; width: calc(100wh); position: relative;
         span{width: 25%; height: 6px; background: $color-blue; border-radius: 5px; position: absolute; left: 0; top: 0; transition: all 0.4s;}
+    }
+
+    @media (max-width: 1080px) {
+        margin-top: 50px;
+        .support_banner{
+            height: auto;
+            .support_list2 .swiper-wrapper >a{width: 280px !important; margin-right: 20px;}
+            .support_list2 .swiper-wrapper {
+                >a{margin-top: 0px; 
+                    figure{box-shadow: 5px 5px 10px rgba(0,0,0,0.15); margin-bottom: 13px;}
+                    &.down{margin-top: 0px;}
+                    >b{font-size: 15px; line-height: 20px; font-weight: 400;}    
+                }
+            }
+            .control{display: none;}
+        }
+        .sub_tit{margin-bottom: 20px;}
+        .bar{margin-top: 20px; display: none;}
     }
 }
 
@@ -1664,16 +1700,92 @@ span[data-status]{
                 img{width: 100%; height: 100%; object-fit: cover;}
             }
             dl{flex: 1;
-                dt{font-size: $fs-20; font-weight: 600; color: #000; line-height: 1.4em; margin-bottom: 10px;}
-                dd{font-size: $fs-17; font-weight: 400; color: #676767; line-height: 24px; margin-bottom: 10px;
-                    &:last-child{display: flex; gap: 10px; align-items: center;
-                        span{font-size: $fs-15; font-weight: 300; color: #1d1d1d; line-height: 1em;}
+                dt{font-size: $fs-20; font-weight: 600; color: #000; line-height: 1.4em; margin-bottom: 15px;}
+                dd{font-size: $fs-17; font-weight: 400; color: #676767; line-height: 24px; margin-bottom: 15px; display: flex; align-items: center; gap: 7px;
+                    &:last-child{display: flex; gap: 10px; align-items: center; margin-bottom: 0;
+                        span{font-size: $fs-15; font-weight: 300; color: #1d1d1d; line-height: 1em;
+                            &.view{background: url(../images/sub/icon_eye.png) no-repeat left center / auto 15px; padding-left: 28px; position: relative; margin-left: 33px;
+                                &:before{display: block; content: ""; width: 1px; height: 14px; background: #d8d8d8; position: absolute; left: -20px; top: 0px;}
+                            }
+                        }
                     }
                 }
             }
         }
         &:hover{background: #f6f8fb;}
     }
+    @media (max-width: 850px) {
+        li{
+            a{flex-direction: column; padding: 30px 0; gap: 15px;
+                figure{width: 100%; height: auto;}
+                dl{
+                    dt,dd{margin-bottom: 12px;}
+                }
+            }
+        }
+    }
 }
 
+
 //홍보성과_연관컨텐츠
+.content_slide{
+    border-top: 2px solid #1d1d1d; padding-top: 40px; position: relative;
+    .support_banner{
+        .support_list4{
+            .swiper-wrapper{
+                display: flex; gap: 70px; align-items: center;
+                .support_item{
+                    width: 386px;
+                    >div{
+                        width: 100%; height: auto; overflow: hidden; border-radius: 20px; box-shadow: 10px 10px 20px rgba(0,0,0,0.15);
+                        img{width: 100%; height: auto; object-fit: cover;}
+                    }
+                    >span{font-size: $fs-20; font-weight: 500; color: #222; line-height: 27px; margin :25px 0 15px;}
+                    b{font-size: $fs-16; font-weight: 400; color: #1d1d1d; line-height: 1.4em;
+                        span{font-size: $fs-15; font-weight: 400; color: #1d1d1d; line-height: 1.4em; margin-right: 20px; padding-left: 28px; background: url(../images/sub/icon_youtu.png) no-repeat left center / auto 20px; position: relative;
+                            &:before{display: block; content: ""; width: 1px; height: 14px; background: #d8d8d8; position: absolute; right: -11px; top: 3px;}
+                        }
+                    }
+                }
+            }
+
+            &.control{
+                position: absolute; right: 0; top: -80px; display: flex; align-items: center; gap: 10px;
+
+                >div{
+                    display: flex; align-items: center; gap: 10px;
+                    span{font-size: $fs-16; font-weight: 400; color: #000; line-height: 60px; height: 70px;
+                        &.active{color: $color-blue;}
+                    }
+                }
+                button{    
+                    width: 70px; height: 70px; vertical-align: top; background: url(../images/sub/arrow_L.png) no-repeat left top / cover;
+                    &.support_btn_next{background-image: url(../images/sub/arrow_R.png);}
+                }
+            }
+        }
+    }
+    @media (max-width: 850px) { 
+        padding-top: 30px;
+        .support_banner{
+            .support_list4{
+                width: calc(100% + 15px);
+                .swiper-wrapper{gap: 20px;
+                    .support_item{width: 280px;
+                        >span{font-size: 17px; line-height: 22px; margin: 15px 0 10px;}
+                        b{font-size: 15px; line-height: 20px; font-weight: 400;}
+                    }
+                }
+                &.control{display: none;}
+            }
+        }
+    }
+}
+
+.sub5013{
+    @media (max-width: 850px) {
+        .sub_tit{
+            &.mt110{margin-top: 60px;}
+        }
+    }
+}

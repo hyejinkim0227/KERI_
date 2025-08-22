@@ -5531,6 +5531,7 @@ span[data-status][data-status=order1] {
 }
 #sub .results .support_banner .support_list2 .swiper-wrapper > a figure {
   width: 100%;
+  height: 240px;
   overflow: hidden;
   display: block;
   border-radius: 20px;

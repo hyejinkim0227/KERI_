@@ -773,7 +773,7 @@
         }
         img{content: '';  display: block; position: absolute; top: -64px; right: 100px;
             width: 307px; height: 562px; z-index: 1;
-            box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.1);
+           
         }
 
          &.deputy{ min-height: 418px;  
@@ -783,7 +783,7 @@
             >div{
                 padding-top: 50px;
             }
-            img{max-width: 298px;
+            img{max-width: 298px; box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.1);
                 width: 100%;
                 height: auto;
                 top: -20px;

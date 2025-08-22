@@ -271,7 +271,11 @@ $w720 : 720px;
         &:before{position: absolute; content: ''; display: block;left: 0px;top: 4px;  width: 16px; height: 14px;  background: url(../images/sub/icon_check.png) no-repeat center left;}
         &:last-of-type{margin-bottom: 0;}
     }
-    // @media (max-width: 1080px) {
-    // }
+     @media (max-width: 1080px) {
+        >li{
+            padding-left: 25px;
+            &::before{ background-size: auto 11px;}
+        }
+     }
 }
 

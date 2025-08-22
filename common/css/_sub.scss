@@ -302,15 +302,25 @@
 
   //조직안내
   .department_info{ margin-bottom: 40px;
-    border-radius: 30px; background: $color-grey4; padding: 40px 45px;  background: url(../images/common/sitemap_bg_logo.png) no-repeat bottom right -45px/612px auto;
+    border-radius: 30px; background: $color-grey4; padding: 40px 45px;  background: #f8f8f8 url(../images/common/sitemap_bg_logo.png) no-repeat bottom right -45px / 612px auto;
     >ul{
-        >li{font-size: $fs-18; margin-bottom: 20px; font-family: $ff-suit;
+        >li{font-size: $fs-18; margin-bottom: 25px; font-family: $ff-suit;
             &:last-of-type{margin-bottom: 0;}
             ol{ display: flex; flex-direction: column; gap: 5px; margin-top: 5px;
                 li{font-family: $ff-suit; font-size: $fs-18; }
             }
         }
     }
+
+    @media (max-width: 1080px) {
+        background-size: 300px auto; padding: 25px 20px; 
+        >ul >li{margin-bottom: 15px;}
+    }
+
+    @media (max-width: 760px) {
+        background-size: 200px auto; background-position: bottom right;
+    }
+
   }
 
 

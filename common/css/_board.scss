@@ -1740,7 +1740,7 @@ span[data-status]{
     .support_banner{
         .support_list4{
             .swiper-wrapper{
-                display: flex; gap: 70px; align-items: center;
+                display: flex; /*gap: 70px;*/ align-items: center;
                 .support_item{
                     width: 386px;
                     >div{
@@ -1777,7 +1777,8 @@ span[data-status]{
         .support_banner{
             .support_list4{
                 width: calc(100% + 15px);
-                .swiper-wrapper{gap: 20px;
+                .swiper-wrapper{
+                    //gap: 20px;
                     .support_item{width: 280px;
                         >span{font-size: 17px; line-height: 22px; margin: 15px 0 10px;}
                         b{font-size: 15px; line-height: 20px; font-weight: 400;}

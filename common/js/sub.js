@@ -401,64 +401,151 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 일반 공통 슬라이더
 $(document).ready(function() {
-  if (!window.supportSwiper1) {
-    window.supportSwiper1 = new Swiper('.support_list1.swiper', {
+  const swiperSelector1 = '.support_list1.swiper';
+  const controlSelector1 = '.support_list1.control';
+  // 슬라이드 개수 조회 1개 초과인경우만 슬라이드 처리
+  const item_size1 = $(`${swiperSelector1} .swiper-slide`).length;
+
+  // 스와이프 생성
+  if (item_size1 > 1 && !window.supportSwiper1) {
+    window.supportSwiper1 = new Swiper(swiperSelector1, {
       slidesPerView: 'auto',
       speed: 600,
       loop: true,
       allowTouchMove: false,
       navigation: {
-        nextEl: '.support_banner .support_list1 .support_btn_next',
-        prevEl: '.support_banner .support_list1 .support_btn_prev',
+        nextEl: `${controlSelector1} .support_btn_next`,
+        prevEl: `${controlSelector1} .support_btn_prev`,
       },
-    });
-
-    // 슬라이드 변경 이벤트
-    window.supportSwiper1.off('slideChange').on('slideChange', function(swiper) {
-      $('.support_list1.control .active').text(swiper.realIndex + 1);
-    });
-  }
-
-  if (!window.supportSwiper2) {
-    // 스와이퍼 개수가 모자르는경우가 존재하여 두배로 복사
-    var contentSlides = $('.support_list2 .swiper-slide').clone();
-    $('.support_list2 .swiper-wrapper').append(contentSlides);
-
-    window.supportSwiper2 = new Swiper('.support_list2.swiper', {
-      slidesPerView: 'auto',
-      speed: 600,
-      loop: true,
-      allowTouchMove: false,
-      navigation: {
-        nextEl: '.support_banner .support_list2 .support_btn_next',
-        prevEl: '.support_banner .support_list2 .support_btn_prev',
+      on: {
+        // 초기화 완료후
+        init: function (swiper) {
+          // 슬라이드 총 개수 셋팅
+          $(`${controlSelector1} .tot`).text(' / ' + swiper.slides.length);
+        },
       }
     });
 
     // 슬라이드 변경 이벤트
-    window.supportSwiper2.off('slideChange').on('slideChange', function(swiper) {
-      const cur_num = swiper.realIndex % contentSlides.length + 1;
-      $('.support_list2.control .active').text(cur_num);
-
-      // bar 게이지 설정
-      const bar_guage = 100 / contentSlides.length * cur_num;
-      $('.support_list2.bar span').css({width: bar_guage + '%'});
-      
-      // 현재 활성화된 슬라이드 인덱스 % 2 값과 동일한 인덱스는 down 클래스 없음.
-      const $slides = $('.support_list2 .swiper-slide');
-      const num = swiper.activeIndex % 2;
-      
-      $slides.each(function(index) {
-        const $slide = $(this);
-
-        // 다른 값인경우
-        if (index % 2 !== num) {
-          $slide.addClass('down');
-        } else {
-          $slide.removeClass('down');
-        }
-      });
+    window.supportSwiper1.off('slideChange').on('slideChange', function(swiper) {
+      $(`${controlSelector1} .active`).text(swiper.realIndex + 1);
     });
+  }
+  // 네비게이션 숨김
+  else {
+    $(controlSelector1).addClass('hidden');
+  }
+
+  const swiperSelector2 = '.support_list2.swiper';
+  const controlSelector2 = '.support_list2.control';
+  // 슬라이드 개수 조회
+  const item_size2 = $(`${swiperSelector2} .swiper-slide`).length;
+  if (!window.supportSwiper2) {
+    // 기본옵션
+    let s_option = {
+      slidesPerView: 'auto',
+      speed: 600,
+      loop: true,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: `${controlSelector2} .support_btn_next`,
+        prevEl: `${controlSelector2} .support_btn_prev`,
+      }
+    };
+
+    // 1개이하인경우는 스와이프 설정안함
+    if (item_size2 <= 1) {
+      s_option.loop = false;
+      s_option.allowTouchMove = false;
+
+      window.supportSwiper2 = new Swiper(swiperSelector2, s_option);
+    }
+    else {
+      // 스와이퍼 개수가 모자르는경우가 존재하여 두배로 복사
+      var contentSlides = $(`${swiperSelector2} .swiper-slide`).clone();
+      $(`${swiperSelector2} .swiper-wrapper`).append(contentSlides);
+
+      window.supportSwiper2 = new Swiper(swiperSelector2, s_option);
+
+      // 슬라이드 변경 이벤트
+      window.supportSwiper2.off('slideChange').on('slideChange', function(swiper) {
+        const cur_num = swiper.realIndex % contentSlides.length + 1;
+        $(`${controlSelector2} .active`).text(cur_num);
+
+        // bar 게이지 설정
+        const bar_guage = 100 / contentSlides.length * cur_num;
+        $('.support_list2.bar span').css({width: bar_guage + '%'});
+
+        // 현재 활성화된 슬라이드 인덱스 % 2 값과 동일한 인덱스는 down 클래스 없음.
+        const $slides = $(`${swiperSelector2} .swiper-slide`);
+        const num = swiper.activeIndex % 2;
+
+        $slides.each(function(index) {
+          const $slide = $(this);
+
+          // 다른 값인경우
+          if (index % 2 !== num) {
+            $slide.addClass('down');
+          } else {
+            $slide.removeClass('down');
+          }
+        });
+      });
+    }
+  }
+
+  const swiperSelector4 = '.support_list4.swiper';
+  const controlSelector4 = '.support_list4.control';
+  // 슬라이드 개수 조회 1개 초과인경우만 슬라이드 처리
+  const item_size4 = $(`${swiperSelector4} .swiper-slide`).length;
+
+  // 스와이프 생성
+  if (!window.support_list4) {
+    // 기본옵션
+    let s_option = {
+      slidesPerView: 'auto',
+      speed: 600,
+      loop: true,
+      spaceBetween: 20,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: `${controlSelector4} .support_btn_next`,
+        prevEl: `${controlSelector4} .support_btn_prev`,
+      },
+      on: {
+        // 초기화 완료후
+        init: function (swiper) {
+          // 슬라이드 총 개수 셋팅
+          $(`${controlSelector4} .tot`).text(' / ' + item_size4);
+        },
+      },
+      breakpoints: {
+        1081: {
+          spaceBetween: 70,
+        }
+      }
+    };
+
+    // 1개이하인경우는 스와이프 설정안함
+    if (item_size4 <= 1) {
+      s_option.loop = false;
+      s_option.allowTouchMove = false;
+
+      window.support_list4 = new Swiper(swiperSelector4, s_option);
+      // $(controlSelector4).addClass('hidden');
+    } else {
+      // 스와이퍼 개수가 모자르는경우가 존재하여 두배로 복사
+      const contentSlides = $(`${swiperSelector4} .swiper-slide`).clone();
+      $(`${swiperSelector4} .swiper-wrapper`).append(contentSlides);
+
+      window.support_list4 = new Swiper(swiperSelector4, s_option);
+
+      // 슬라이드 변경 이벤트
+      window.support_list4.off('slideChange').on('slideChange', function(swiper) {
+        const cur_num = swiper.realIndex % contentSlides.length + 1;
+        $(`${controlSelector4} .active`).text(cur_num);
+      });
+    }
   }
 });
 

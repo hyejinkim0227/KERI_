@@ -279,6 +279,14 @@
 .check > li:last-of-type {
   margin-bottom: 0;
 }
+@media (max-width: 1080px) {
+  .check > li {
+    padding-left: 25px;
+  }
+  .check > li::before {
+    background-size: auto 11px;
+  }
+}
 
 /* SUIT 폰트 - 여러 굵기 (공공기관 호환성 최적화) */
 @font-face {
@@ -9761,11 +9769,11 @@ section .fp-tableCell {
   border-radius: 30px;
   background: #f8f8f8;
   padding: 40px 45px;
-  background: url(../images/common/sitemap_bg_logo.png) no-repeat bottom right -45px/612px auto;
+  background: #f8f8f8 url(../images/common/sitemap_bg_logo.png) no-repeat bottom right -45px/612px auto;
 }
 .department_info > ul > li {
   font-size: 1.125rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-family: "SUIT", "Pretendard";
 }
 .department_info > ul > li:last-of-type {
@@ -9780,6 +9788,21 @@ section .fp-tableCell {
 .department_info > ul > li ol li {
   font-family: "SUIT", "Pretendard";
   font-size: 1.125rem;
+}
+@media (max-width: 1080px) {
+  .department_info {
+    background-size: 300px auto;
+    padding: 25px 20px;
+  }
+  .department_info > ul > li {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 760px) {
+  .department_info {
+    background-size: 200px auto;
+    background-position: bottom right;
+  }
 }
 
 .apply {

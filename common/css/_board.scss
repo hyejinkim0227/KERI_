@@ -236,9 +236,9 @@ a{
     &.btn_sm{height: 40px; line-height: 40px; font-size: $fs-15; border-radius: 10px;}
 
     
-
-        &[data-btn="download"]{background: #fff url(../images/sub/icon_download.png) no-repeat right 12px center;font-size:$fs-15; font-weight: 400; color: $color-bk; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;}
-        &[data-btn="preview"]{background: #fff url(../images/sub/icon_view.png) no-repeat right 12px center;font-size:$fs-15; font-weight: 400; color: $color-bk; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;}
+    &[data-btn="download2"]{background: #fff url(../images/sub/icon_download.png) no-repeat right 16px center; max-width: 160px; font-size:$fs-16; font-weight: 400; color: $color-bk;  padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 42px; line-height: 42px;}
+    &[data-btn="download"]{background: #fff url(../images/sub/icon_download.png) no-repeat right 12px center;font-size:$fs-15; font-weight: 400; color: $color-bk; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;}
+    &[data-btn="preview"]{background: #fff url(../images/sub/icon_view.png) no-repeat right 12px center;font-size:$fs-15; font-weight: 400; color: $color-bk; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;}
         
 
 }
@@ -442,6 +442,7 @@ a{
     &[data-menu="menu04"]{background-image: url(../images/sub/title_4.png)}
     &[data-menu="menu05"]{background-image: url(../images/sub/title_5.png)}
     &[data-menu="menu06"]{background-image: url(../images/sub/title_6.png)}
+    &[data-menu="menu07"]{background-image: url(../images/sub/title_7.png)}
 
     h4{font-size: 17px; font-weight: 600; color: #000; line-height: 1.5em;}
     h5{font-size: 17px; color: #000; font-weight: 400; line-height: 28px;
@@ -473,24 +474,28 @@ a{
     span{vertical-align: baseline;}
     .btn_down{border-radius: 7px; padding: 0 20px; font-size: 17px; font-weight: 400; height: 50px; line-height: 50px; border: 1px solid #000; width: 220px; 
         background: url(../images/sub/icon_download.png) no-repeat right 20px center / 16px  auto;}
-    .caution{ 
-        background: #f4f6f9; padding: 25px; border-radius: 17px;
-        li{
-            background: url(../images/sub/icon_bullet.png) no-repeat left top 3px / 17px auto; padding-left: 28px; line-height: 28px; font-size: 16px; color: #da4d4f;
-        }
-    }
+  
     @media (max-width: 1080px) { justify-content: center; align-items: center;
         h4,h5{text-align: center; word-break: break-all;}
         h5{font-size: $fs-15; line-height: 24px;}
        // span{text-align: center;}
         
        .btn_down{ height: 45px; line-height: 45px; font-size: $fs-14; width: 213px; }
-       .caution{padding: 20px 15px;
+     
+    }
+}
+
+.caution{ //0824 공통 사용으로 titlebox에서 뺌
+    background: #f4f6f9; padding: 25px; border-radius: 17px;
+    li{
+        background: url(../images/sub/icon_bullet.png) no-repeat left top 3px / 17px auto; padding-left: 28px; line-height: 28px; font-size: 16px; color: #da4d4f;
+    }
+    @media (max-width: 1080px) {
+        .caution{padding: 20px 15px;
             li{font-size: $fs-14; line-height: 20px; background-size: 16px auto;}
         }
     }
 }
-
 // 탭 리스트
 .tab_list{
     margin-bottom: 40px;
@@ -904,8 +909,10 @@ a{
         }
       
       
-        // 반응형 (1080px 이하)
+      // 반응형 (1080px 이하)
         @media (max-width: 1080px) {
+            .auto{ margin: unset !important;} 
+            .pt0{padding-top: 0 !important;}
           border-top: 0;
           margin-top: 0;
           border-bottom: 1px solid #d9d9d9;

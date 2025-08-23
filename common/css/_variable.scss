@@ -25,7 +25,8 @@ $color-greenblue: #1fb1c2;
 
 
 $placeholder : #4c4e5a; //placeholder
-.link{color: $color-blue;} 
+.black{color: #000 !important;}
+.link, .blue1{color: $color-blue !important;} 
 .blue {color: $color-blue3;}
 .blue2{color: $color-blue2;}
 $bor_form : #dbdee1;
@@ -259,7 +260,7 @@ $w720 : 720px;
 
 //블릿 적용
 .bar{ 
-    > li{ position: relative; padding-left: 16px !important; 
+    > li{ position: relative; padding-left: 26px !important; 
         &:before{position: absolute; content: '-'; display: block;left: 0px;  width: 4px; height: 4px; }
     }
     @media (max-width: 1080px) {

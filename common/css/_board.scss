@@ -1257,14 +1257,15 @@ span[data-status]{
 // 리스트 넘버링
 .list_num{
     counter-reset: num-counter; padding-left: 20px; 
-     li{
+     >li{
          font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; counter-increment: num-counter;margin-bottom: 10px;
          &::before{content: counter(num-counter) ". ";  display: inline-block; width: 20px;}
+         p{font-size: $fs-17; font-weight: 400; color: $color-bk; line-height: 1.4em;}
      }
  }
  .list_num2{
     counter-reset: num-counter;
-     li{
+     >li{
          font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; counter-increment: num-counter; margin-bottom: 10px;
          &::before{content: "①";  display: inline-block; width: 20px; color: $color-blue;}
          
@@ -1862,9 +1863,12 @@ span[data-status]{
     &.active{
         h5{background-image: url(../images/sub/accordion_close.png); border-bottom: 1px solid #dfdfdf;}
         >div{ transition: all 0.3s; opacity: 1; height: auto; padding: 40px 30px; 
-            table{
+            .table{
                 th,td{text-align: center; padding: 18px 10px; 
                     &.left{text-align: left;}
+                }
+                &.borR{
+                    tr td:not(:last-child){border-right: 1px solid #dfdfdf;}
                 }
             }
         }

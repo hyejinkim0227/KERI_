@@ -5027,7 +5027,7 @@ span[data-status][data-status=order1] {
   counter-reset: num-counter;
   padding-left: 20px;
 }
-.list_num li {
+.list_num > li {
   font-size: 1.0625rem;
   font-weight: 400;
   color: #333;
@@ -5035,16 +5035,22 @@ span[data-status][data-status=order1] {
   counter-increment: num-counter;
   margin-bottom: 10px;
 }
-.list_num li::before {
+.list_num > li::before {
   content: counter(num-counter) ". ";
   display: inline-block;
   width: 20px;
+}
+.list_num > li p {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.4em;
 }
 
 .list_num2 {
   counter-reset: num-counter;
 }
-.list_num2 li {
+.list_num2 > li {
   font-size: 1.0625rem;
   font-weight: 400;
   color: #333;
@@ -5052,37 +5058,37 @@ span[data-status][data-status=order1] {
   counter-increment: num-counter;
   margin-bottom: 10px;
 }
-.list_num2 li::before {
+.list_num2 > li::before {
   content: "①";
   display: inline-block;
   width: 20px;
   color: #1f60c2;
 }
-.list_num2 li:nth-child(2)::before {
+.list_num2 > li:nth-child(2)::before {
   content: "②";
 }
-.list_num2 li:nth-child(3)::before {
+.list_num2 > li:nth-child(3)::before {
   content: "③";
 }
-.list_num2 li:nth-child(4)::before {
+.list_num2 > li:nth-child(4)::before {
   content: "④";
 }
-.list_num2 li:nth-child(5)::before {
+.list_num2 > li:nth-child(5)::before {
   content: "⑤";
 }
-.list_num2 li:nth-child(6)::before {
+.list_num2 > li:nth-child(6)::before {
   content: "⑥";
 }
-.list_num2 li:nth-child(7)::before {
+.list_num2 > li:nth-child(7)::before {
   content: "⑦";
 }
-.list_num2 li:nth-child(8)::before {
+.list_num2 > li:nth-child(8)::before {
   content: "⑧";
 }
-.list_num2 li:nth-child(9)::before {
+.list_num2 > li:nth-child(9)::before {
   content: "⑨";
 }
-.list_num2 li:nth-child(10)::before {
+.list_num2 > li:nth-child(10)::before {
   content: "⑩";
 }
 
@@ -6260,12 +6266,15 @@ span[data-status][data-status=order1] {
   height: auto;
   padding: 40px 30px;
 }
-.accordion.active > div table th, .accordion.active > div table td {
+.accordion.active > div .table th, .accordion.active > div .table td {
   text-align: center;
   padding: 18px 10px;
 }
-.accordion.active > div table th.left, .accordion.active > div table td.left {
+.accordion.active > div .table th.left, .accordion.active > div .table td.left {
   text-align: left;
+}
+.accordion.active > div .table.borR tr td:not(:last-child) {
+  border-right: 1px solid #dfdfdf;
 }
 
 @keyframes slideInFromRight {

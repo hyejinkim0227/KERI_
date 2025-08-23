@@ -1490,4 +1490,9 @@ $(document).ready(function() {
     }, 100);
     
   });
+
+    //아코디인 기능
+    $('.accordion').on('click', function() {
+      $(this).toggleClass('active');
+    });
 });

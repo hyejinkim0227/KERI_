@@ -114,10 +114,10 @@
             }
         }
         .area{ margin-top: 50px; padding: 0;
-            .flex{gap: 20px;
+            .flex{gap: 10px;
                 li{flex: 0 0 calc(50% - 10px); margin: 0 !important;
                     a{
-                        gap: 10px;
+                        gap: 7px;
                         b{font-size: $fs-16; font-weight: 500;}
                     }
                 }

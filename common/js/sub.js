@@ -453,12 +453,14 @@ $(document).ready(function() {
       }
     };
 
-    // 1개이하인경우는 스와이프 설정안함
-    if (item_size2 <= 1) {
+    // 2개이하인경우는 스와이프 설정안함
+    if (item_size2 <= 2) {
       s_option.loop = false;
-      s_option.allowTouchMove = false;
+      s_option.allowTouchMove = true;
 
       window.supportSwiper2 = new Swiper(swiperSelector2, s_option);
+      $(controlSelector2).css('display', 'none');
+      $('.support_list2.bar').css('display', 'none');
     }
     else {
       // 스와이퍼 개수가 모자르는경우가 존재하여 두배로 복사
@@ -526,10 +528,10 @@ $(document).ready(function() {
       }
     };
 
-    // 1개이하인경우는 스와이프 설정안함
-    if (item_size4 <= 1) {
+    // 2개이하인경우는 스와이프 설정안함
+    if (item_size4 <= 2) {
       s_option.loop = false;
-      s_option.allowTouchMove = false;
+      s_option.allowTouchMove = true;
 
       window.support_list4 = new Swiper(swiperSelector4, s_option);
       // $(controlSelector4).addClass('hidden');

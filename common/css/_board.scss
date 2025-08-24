@@ -856,6 +856,9 @@ a{
     &.borR{
         tr td:not(:last-child),tr th:not(:last-child){border-right: 1px solid #dfdfdf;}
     }
+    &.center{
+        th, td{text-align: center;}
+    }
    
     // table 반응형
     @media (max-width: 1080px) {
@@ -1850,7 +1853,7 @@ span[data-status]{
 
 //개인정보 처리방침
 .label_list{
-    display: flex; flex-wrap: wrap; gap: 20px 35px;
+    display: flex; flex-wrap: wrap; gap: 20px 35px; margin-bottom: 50px;
     li{
         display: flex; flex-direction: column; justify-content: center; gap: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-radius: 10px; padding: 40px 20px; width: calc((100% - 70px) / 3); border: 1px solid #ddd;
         &:hover{background: #f8f8f8;}
@@ -1861,7 +1864,7 @@ span[data-status]{
 }
 
 .Privacy_policy{
-    margin-top: 50px;
+    //margin-top: 50px;
     dt{
         display: flex; align-items: center; gap: 20px; font-size: $fs-24; font-family: $ff-sbaggro; font-weight: 400; color: #000; line-height: 60px; margin-bottom: 5px;
         figure{ 

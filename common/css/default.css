@@ -111,6 +111,10 @@
   margin: 10px 0;
 }
 
+.mtb20 {
+  margin: 20px 0;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -4343,6 +4347,9 @@ a[data-btn=preview] {
 .table.borR tr td:not(:last-child), .table.borR tr th:not(:last-child) {
   border-right: 1px solid #dfdfdf;
 }
+.table.center th, .table.center td {
+  text-align: center;
+}
 @media (max-width: 1080px) {
   .table colgroup {
     display: none;
@@ -6194,6 +6201,7 @@ span[data-status][data-status=order1] {
   display: flex;
   flex-wrap: wrap;
   gap: 20px 35px;
+  margin-bottom: 50px;
 }
 .label_list li {
   display: flex;
@@ -6227,9 +6235,6 @@ span[data-status][data-status=order1] {
   text-align: center;
 }
 
-.Privacy_policy {
-  margin-top: 50px;
-}
 .Privacy_policy dt {
   display: flex;
   align-items: center;

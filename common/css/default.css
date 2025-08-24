@@ -107,6 +107,14 @@
   margin-top: 40px;
 }
 
+.mtb10 {
+  margin: 10px 0;
+}
+
+.mtb20 {
+  margin: 20px 0;
+}
+
 .gap10 {
   gap: 10px;
 }
@@ -129,14 +137,6 @@
 
 .gap50 {
   gap: 50px;
-}
-
-.mtb10 {
-  margin: 10px 0;
-}
-
-.mtb20 {
-  margin: 20px 0;
 }
 
 .flex {
@@ -4372,6 +4372,7 @@ a[data-btn=arrow] {
   font-size: 1.0625rem;
   font-weight: 400;
   vertical-align: middle;
+  list-style: none;
 }
 .table th {
   background: #f8f9fa;
@@ -4426,8 +4427,9 @@ a[data-btn=arrow] {
   font-size: 1.0625rem;
   font-weight: 400;
   vertical-align: middle;
+  line-height: 1.4em;
 }
-.tableB table thead th {
+.tableB table th {
   background-color: #f8f9fa;
   font-weight: 500;
   color: #000;
@@ -4435,10 +4437,10 @@ a[data-btn=arrow] {
   border-bottom: 1px solid #d9d9d9;
   border-right: 1px solid #d9d9d9;
 }
-.tableB table thead th label {
+.tableB table th label {
   cursor: unset;
 }
-.tableB table thead th:last-of-type {
+.tableB table th:last-of-type {
   border-right: 0;
 }
 .tableB table tbody tr td {
@@ -4472,9 +4474,6 @@ a[data-btn=arrow] {
     padding-top: 0 !important;
   }
   .tableB table colgroup {
-    display: none;
-  }
-  .tableB table > thead {
     display: none;
   }
   .tableB table > tbody,
@@ -4522,8 +4521,7 @@ a[data-btn=arrow] {
     text-align: left;
     float: none;
   }
-  .tableB table th,
-  .tableB table td {
+  .tableB table th, .tableB table td {
     border-right: 0;
   }
   .tableB table tbody tr td {
@@ -4574,12 +4572,9 @@ a[data-btn=arrow] {
     border-bottom: 1px solid #d9d9d9;
   }
   .tableB.type2 table colgroup {
-    display: table-column-group;
+    display: none;
   }
-  .tableB.type2 table > thead {
-    display: table-header-group;
-  }
-  .tableB.type2 table > thead th {
+  .tableB.type2 table th {
     display: table-cell;
     background-color: #f8f9fa;
     font-weight: 500;
@@ -4588,10 +4583,10 @@ a[data-btn=arrow] {
     border-bottom: 1px solid #d9d9d9;
     border-right: 1px solid #d9d9d9;
     text-align: center;
-    height: 50px;
+    height: auto;
     font-size: 14px;
   }
-  .tableB.type2 table > thead th:last-of-type {
+  .tableB.type2 table th:last-of-type {
     border-right: 0;
   }
   .tableB.type2 table > tbody,
@@ -4614,6 +4609,7 @@ a[data-btn=arrow] {
     padding: 10px 8px;
     float: none;
     width: auto;
+    line-height: 1.4em;
   }
   .tableB.type2 table > tbody > tr > td:last-of-type {
     border-right: 0;
@@ -4645,58 +4641,6 @@ a[data-btn=arrow] {
     border-left: 1px solid #d9d9d9;
     width: 80px;
     min-width: 80px;
-  }
-}
-
-.tableC {
-  border-top: 2px solid #222;
-}
-.tableC th, .tableC td {
-  height: 60px;
-  padding: 10px 20px;
-  color: #222;
-  border-bottom: 1px solid #dbdee1;
-  text-align: center;
-  font-size: 1.0625rem;
-  font-weight: 400;
-  vertical-align: middle;
-}
-.tableC th:not(:last-child), .tableC td:not(:last-child) {
-  border-right: 1px solid #dbdee1;
-}
-.tableC th {
-  background: #f8f9fa;
-  font-weight: 500;
-  color: #000;
-  padding-left: 30px;
-}
-.tableC th label {
-  cursor: unset;
-}
-.tableC .left {
-  text-align: left;
-}
-@media (max-width: 1080px) {
-  .tableC colgroup, .tableC thead {
-    display: none;
-  }
-  .tableC th, .tableC td {
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 10px 0;
-  }
-  .tableC th:not(:last-child), .tableC td:not(:last-child) {
-    border-right: none;
-  }
-  .tableC th {
-    padding: 0 0 0 10px;
-    line-height: 40px;
-    border-bottom: none;
-  }
-  .tableC td {
-    padding: 10px;
-    line-height: 40px;
   }
 }
 
@@ -5233,6 +5177,17 @@ span[data-status][data-status=order1] {
   color: #000;
   line-height: 1.4em;
 }
+@media (max-width: 1080px) {
+  .list_num > li {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+  .list_num p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
 
 .list_num2 {
   counter-reset: num-counter;
@@ -5278,6 +5233,17 @@ span[data-status][data-status=order1] {
 .list_num2 > li:nth-child(10)::before {
   content: "⑭";
 }
+@media (max-width: 1080px) {
+  .list_num2 > li {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+  .list_num2 p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
 
 .list_han {
   padding-left: 20px;
@@ -5299,6 +5265,17 @@ span[data-status][data-status=order1] {
   font-weight: 400;
   color: #000;
   line-height: 1.4em;
+}
+@media (max-width: 1080px) {
+  .list_han > li {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+  .list_han p {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 
 .list_dash {
@@ -5324,6 +5301,17 @@ span[data-status][data-status=order1] {
 }
 .list_dash > li a {
   display: inline-block;
+}
+@media (max-width: 1080px) {
+  .list_dash > li {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+  .list_dash p {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 
 .detail_file dt {
@@ -5972,6 +5960,8 @@ span[data-status][data-status=order1] {
   #sub .results .support_banner .support_list2 .swiper-wrapper > a figure {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
     margin-bottom: 13px;
+    height: 186px;
+    width: 100%;
   }
   #sub .results .support_banner .support_list2 .swiper-wrapper > a.down {
     margin-top: 0px;
@@ -6407,6 +6397,22 @@ span[data-status][data-status=order1] {
   display: block;
   text-align: center;
 }
+@media (max-width: 1080px) {
+  .label_list {
+    gap: 15px;
+  }
+  .label_list li {
+    width: calc((100% - 15px) / 2);
+    padding: 20px 10px;
+  }
+  .label_list li span {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .label_list li img {
+    height: 50px;
+  }
+}
 
 .Privacy_policy dt {
   display: flex;
@@ -6416,7 +6422,7 @@ span[data-status][data-status=order1] {
   font-family: "SBAggro", "Pretendard";
   font-weight: 400;
   color: #000;
-  line-height: 60px;
+  line-height: 1.3em;
   margin-bottom: 5px;
 }
 .Privacy_policy dt figure {
@@ -6468,12 +6474,39 @@ span[data-status][data-status=order1] {
 .Privacy_policy dd .list_han li, .Privacy_policy dd .list_dash li {
   margin-bottom: 0px;
 }
+.Privacy_policy dd .list_dash, .Privacy_policy dd .list_num, .Privacy_policy dd .list_han {
+  padding-left: 0;
+}
 .Privacy_policy dd .table th, .Privacy_policy dd .table td {
   text-align: center;
   padding: 18px 10px;
 }
 .Privacy_policy dd .table th.left, .Privacy_policy dd .table td.left {
   text-align: left;
+}
+@media (max-width: 1080px) {
+  .Privacy_policy dt {
+    font-size: 20px;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .Privacy_policy dt figure {
+    gap: 7px;
+  }
+  .Privacy_policy dt figure img {
+    height: 36px;
+  }
+  .Privacy_policy dt:not(:first-child) {
+    margin-top: 30px;
+  }
+  .Privacy_policy dd .btn_box a[data-btn=download] {
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    padding: 0 40px 0 15px;
+  }
 }
 
 .accordion {
@@ -6507,6 +6540,19 @@ span[data-status][data-status=order1] {
   opacity: 1;
   height: auto;
   padding: 40px 30px;
+}
+@media (max-width: 1080px) {
+  .accordion {
+    margin: 10px 0 !important;
+  }
+  .accordion h5 {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 15px 20px;
+  }
+  .accordion.active > div {
+    padding: 20px;
+  }
 }
 
 @keyframes slideInFromRight {

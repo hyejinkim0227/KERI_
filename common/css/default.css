@@ -5066,37 +5066,37 @@ span[data-status][data-status=order1] {
   margin-bottom: 10px;
 }
 .list_num2 > li::before {
-  content: "①";
+  content: "⑤";
   display: inline-block;
   width: 20px;
   color: #1f60c2;
 }
 .list_num2 > li:nth-child(2)::before {
-  content: "②";
-}
-.list_num2 > li:nth-child(3)::before {
-  content: "③";
-}
-.list_num2 > li:nth-child(4)::before {
-  content: "④";
-}
-.list_num2 > li:nth-child(5)::before {
-  content: "⑤";
-}
-.list_num2 > li:nth-child(6)::before {
   content: "⑥";
 }
-.list_num2 > li:nth-child(7)::before {
+.list_num2 > li:nth-child(3)::before {
   content: "⑦";
 }
-.list_num2 > li:nth-child(8)::before {
+.list_num2 > li:nth-child(4)::before {
   content: "⑧";
 }
-.list_num2 > li:nth-child(9)::before {
+.list_num2 > li:nth-child(5)::before {
   content: "⑨";
 }
-.list_num2 > li:nth-child(10)::before {
+.list_num2 > li:nth-child(6)::before {
   content: "⑩";
+}
+.list_num2 > li:nth-child(7)::before {
+  content: "⑪";
+}
+.list_num2 > li:nth-child(8)::before {
+  content: "⑫";
+}
+.list_num2 > li:nth-child(9)::before {
+  content: "⑬";
+}
+.list_num2 > li:nth-child(10)::before {
+  content: "⑭";
 }
 
 .list_han {

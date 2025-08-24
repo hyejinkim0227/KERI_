@@ -272,7 +272,7 @@ a{
     // 서브 상단 영역 반응형
     @media (max-width: 1080px) { display: flex;flex-direction: column; justify-content: center;align-items: center; 
         h2.title{
-            font-size:$fs-28; height: 240px; line-height: 300px; padding-top: 0;
+            font-size:$fs-28; height: 260px; line-height: 220px; padding-top: 0;
         }
     }
     // 탭메뉴
@@ -451,15 +451,18 @@ a{
     h5{font-size: 17px; color: #000; font-weight: 400; line-height: 28px;
         b{color: $color-blue; font-size: 17px;}
     }
+    p.blue{font-size: 17px; color: $color-blue; font-weight: 400; line-height: 1.4em;}
+    p.mark{font-size: 16px; color: #57585e; font-weight: 400; line-height: 1.4em; margin-top: -12px;}
 
 
     @media (max-width: 1080px) {
-        padding : 95px 30px 20px 30px !important;background-size: 75px auto; background-position: top 15px center !important;  justify-content: center; 
+        padding : 95px 20px 20px 20px !important;background-size: 75px auto; background-position: top 15px center !important;  justify-content: center; 
     
         h4{
             text-align: center; font-size: 15px; font-weight: 400;
         }
-
+        p.blue{font-size: 15px;}
+        p.mark{font-size: 14px;}
     }
 }
 
@@ -484,7 +487,6 @@ a{
        // span{text-align: center;}
         
        .btn_down{ height: 45px; line-height: 45px; font-size: $fs-14; width: 213px; }
-     
     }
 }
 
@@ -494,9 +496,8 @@ a{
         background: url(../images/sub/icon_bullet.png) no-repeat left top 3px / 17px auto; padding-left: 28px; line-height: 28px; font-size: 16px; color: #da4d4f;
     }
     @media (max-width: 1080px) {
-        .caution{padding: 20px 15px;
-            li{font-size: $fs-14; line-height: 20px; background-size: 16px auto;}
-        }
+        padding: 20px 15px;
+        li{font-size: $fs-14; line-height: 20px; background-size: 16px auto; margin-top: 5px;}
     }
 }
 // 탭 리스트
@@ -1076,7 +1077,7 @@ a{
                     border: 0;
                     border-right: 1px solid #d9d9d9;
                     border-bottom: 1px solid $bor_form;
-                    font-size: 13px;
+                    font-size: 15px;
                     height: auto;
                     padding: 10px 8px;
                     float: none;
@@ -1366,18 +1367,9 @@ span[data-status]{
  .list_num2{
     counter-reset: num-counter;
      >li{
-         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; counter-increment: num-counter; margin-bottom: 10px;
-         &::before{content: "⑤";  display: inline-block; width: 20px; color: $color-blue;}
-         
-         &:nth-child(2)::before{content: "⑥";}
-         &:nth-child(3)::before{content: "⑦";}
-         &:nth-child(4)::before{content: "⑧";}
-         &:nth-child(5)::before{content: "⑨";}
-         &:nth-child(6)::before{content: "⑩";}
-         &:nth-child(7)::before{content: "⑪";}
-         &:nth-child(8)::before{content: "⑫";}
-         &:nth-child(9)::before{content: "⑬";}
-         &:nth-child(10)::before{content: "⑭";}
+         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; counter-increment: num-counter; margin-bottom: 10px; 
+         &::before{content: counter(num-counter);  display: inline-block; width: 16px; color: $color-blue; border:1px solid $color-blue; border-radius: 50%; text-align: center; line-height: 14px; font-size: 10px; font-weight: 400; vertical-align: middle; margin-right: 5px;}
+         b{font-weight: 600; color: $color-bk;}
      }
      @media (max-width: 1080px) {
         >li{ font-size: 16px; line-height: 20px; margin-bottom: 5px;}
@@ -1990,7 +1982,7 @@ span[data-status]{
     }
     dd{
         ul{
-            li{font-size: $fs-16; font-weight: 400; color: #000; line-height: 24px; margin-bottom: 4px;
+            li{font-size: $fs-16; font-weight: 400; color: #000; margin-bottom: 4px;
                 &:last-child{margin-bottom: 0;}
             }
         }
@@ -1999,7 +1991,9 @@ span[data-status]{
             display: flex; gap: 10px; justify-content: flex-start; align-items: center; margin: 10px 0;
             a[data-btn="download"]{display: inline-block; min-width: 220px; height: 53px; line-height: 53px; border: 1px solid #000; font-size: $fs-17; color: #000; padding: 0 60px 0 30px; box-sizing: border-box; text-align: left;}
         }
-        .list_han li,.list_dash li{margin-bottom: 0px;}
+        .list_han li,.list_dash li{
+            //margin-bottom: 0px;
+        }
         .list_dash,.list_num,.list_han{padding-left: 0;}
         .table{
             th,td{text-align: center; padding: 18px 10px; 
@@ -2041,4 +2035,60 @@ span[data-status]{
         h5{font-size: 16px; line-height: 20px; padding: 15px 20px;}
         &.active>div{padding: 20px;}
     }
+}
+
+//데이터 개방
+.apply{
+    &.data{ 
+        margin-top: 40px; justify-content: center;
+        a{ 
+            span{background-image: url(../images/sub/icon_data.png) !important;}
+        }
+    }
+
+    @media (max-width: 1080px) { margin-top: 20px;}
+}
+
+//신고센터
+.report_list{
+    display: flex; gap: 20px;
+    li{
+        background: #f4f6f9; border-radius: 20px; padding: 84px 45px 50px; width: calc((100% - 60px) / 4); transition: all 0.3s;
+        figure{ 
+            display: flex; align-items: center; gap: 25px; flex-direction: column; margin-bottom: 25px;
+            img{max-width: 100%; width: auto; height: 74px;}
+            figcaption{font-size: $fs-21; font-family: $ff-sbaggro; font-weight: 400; color: #000; line-height: 1.4em; text-align: center;}
+        }
+        a{
+            display: block; background: $color-blue; color: #000; font-size: $fs-18; font-weight: 500; line-height: 54px; border-radius: 9px; margin-top: 10px; background: #fff url(../images/sub/arrow_B.png) no-repeat right 20px center; border: 1px solid #c9cbcf; padding: 0 50px 0 20px;
+        }
+
+        &:first-child{
+            a{background: $color-blue url(../images/sub/arrow_W.png) no-repeat right 20px center; color: #fff; border-color: $color-blue;}
+        }
+    }
+
+    @media (max-width: 1350px) {
+        li{padding: 60px 30px 30px;
+            figure img{height: 60px;}
+            a{line-height: 45px;}
+        }
+    }
+
+    @media (max-width: 1080px) {
+        flex-wrap: wrap;
+        li{
+            width: calc((100% - 20px) / 2); padding: 30px 20px 20px;
+            figure{
+                gap: 12px; margin-bottom: 12px;
+                img{height: 45px;}
+            }
+            a{line-height: 40px; margin-top: 5px; font-size: 16px;}
+        }
+    }
+
+    @media (max-width: 530px) {
+        li{width: 100%; padding-top: 20px;}
+    }
+
 }

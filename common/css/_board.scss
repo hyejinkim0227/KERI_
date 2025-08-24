@@ -200,6 +200,9 @@ button{
     &[data-btn="line"]{background: #fff; color :$color-bk; border-color: $color-bk;}
     &[data-btn="gray"]{background: #717171; color :#fff; border-color: #717171;}
     &[data-btn="blackBg"]{background: $color-bk; color :#fff; border-color: none}
+    &[data-btn="iconsearch"]{background: $color-bk url(../images/sub/icon_searchbox_search.png) no-repeat left 17px center / 20px auto; color :#fff; border-color: none; padding-left:40px; height: 44px; line-height: 44px; width: 100px; font-size: $fs-17;}
+    &[data-btn="iconreset"]{background: #6d6d73 url(../images/sub/icon_searchbox_reset.png) no-repeat left 17px center / 20px auto; 
+         font-size: $fs-17; width: 100px; color :#fff; padding-left: 42px;    padding-right: 20px; height: 44px; line-height: 44px; }
 
 
     &[data-btn="table_card"]{ padding: 0 25px; background: #fff; color :$color-grey1; border-color: $bor_gray; font-size:$fs-16; border-radius: 10px; border: 1px solid $bor_gray;
@@ -552,14 +555,23 @@ a{
         button{margin-left: 4px; width: 100px; height: 50px; line-height: 50px;}
     }
     &.type2{flex-wrap: wrap;}
-    &.type3{
-        >div{margin-right: 17px;
-            select{width: 180px !important;}
+    &.type3{display: flex; gap: 10px 20px;
+        // >div{margin-right: 17px;
+        //     select{width: 180px !important;}
           
-            &:nth-of-type(3), &:nth-of-type(4){
-                margin-right: 0;
+        //     &:nth-of-type(3), &:nth-of-type(4){
+        //         margin-right: 0;
+        //     }
+        // }
+     
+        div{ display: flex;
+            label{ flex-shrink: 0; margin-right: 25px; }
+            select{width: 180px !important;
+                &[data-size="small"]{height: 44px; line-height: 44px;}
             }
         }
+        .wfull{width: 100% !important;}
+
      
     }
     // 검색창 반응형
@@ -574,9 +586,27 @@ a{
             input{ margin: 7px 0;}
             button{width: 100%; margin: 0;}
         }
-        &.type3{
-            >div{margin-right: 0; margin-bottom: 10px;
-                &:last-of-type{margin-bottom: 0;}
+        &.type3{ flex-direction: column;
+            input,select{height: 50px !important; line-height: 50px !important;}
+            div{
+                width: 100%;
+                label{    min-width: 50px; margin-right: 10px;}
+            }
+            .input_btn{flex-direction: column;
+                input{width: 100%; margin: 0;}
+            }
+            .flex_LR{
+                flex-direction: column;
+                input{width: 100%; margin: 0;}
+                
+            }
+            .inp_wrap{
+                &.date{ flex-direction: unset;
+                    width: 100%;
+                    input{
+                        width: 100%;
+                    }
+                }
             }
         }
     }
@@ -639,6 +669,7 @@ a{
                     a{
                         text-align: left; display: flex; align-items: center;
 
+                        &.pdf_link{ background: url(../images/sub/icon_pdf_link.png) no-repeat center; height: 60px;}
                         &.file_icon{ background: url(../images/sub/icon_file.png) no-repeat center; height: 60px;}
                         b{display: none;}
                         strong{
@@ -1170,6 +1201,9 @@ span[data-color]{
     &[data-color="green"]{border-color: #1fb1c2 !important; background-color: #fff; color: #1fb1c2;}
     &[data-color="orange"]{border-color: #ff8839 !important; background-color: #fff; color: #ff8839;}
     &[data-color="grey"]{border-color: #92939a !important; background-color: #fff; color: #92939a;} //혜진추가
+    &[data-color="purple"]{border-color: #b660e2 !important; background-color: #fff; color: #b660e2;} //혜진추가
+    &[data-color="black"]{border-color: #000 !important; background-color: #fff; color: #000;} //혜진추가
+
     &[data-color="noti"]{
         background-color: #2279f2; color: #fff; border: 1px solid #2279f2; border-radius: 15px; padding: 0 15px; font-size: $fs-15; font-weight: 400; line-height: 30px;
     }
@@ -2026,4 +2060,95 @@ span[data-status]{
         >div{ transition: all 0.3s; opacity: 1; height: auto; padding: 40px 30px; }
     }
     
+}
+
+// 날짜 범위 선택 inp_wrap date 스타일
+.inp_wrap {
+    &.date {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        
+        .label {
+            font-size: $fs-14;
+            font-weight: 500;
+            color: $color-grey3;
+            white-space: nowrap;
+        }
+        
+        .inp {
+            position: relative;
+            
+            input { 
+                padding: 8px 12px;
+                border: 1px solid $bor_form;
+                border-radius: 4px;
+                font-size: $fs-14;
+                width: 180px;
+                cursor: pointer;  
+                background: url(../images/sub/icon_calenda.png) no-repeat right 10px center / 16px 16px;
+                background-color: $color-wh;
+                padding-right: 30px !important;
+                
+                &::placeholder {
+                    color: $placeholder;
+                }
+                
+                &:focus {
+                    outline: none;
+                    border-color: $color-blue;
+                    box-shadow: 0 0 0 2px rgba(31, 96, 194, 0.1);
+                }
+                
+                &.hasDatepicker {
+                    cursor: pointer;
+                }
+                
+                &[readonly] {
+                    cursor: pointer;
+                    background-color: $color-wh;
+                    color: $color-grey3;
+                    
+                    &:hover {
+                        border-color: $color-blue;
+                    }
+                }
+            }
+        }
+        
+        .behind {
+            font-weight: 500;
+            color: $color-grey2;
+            font-size: $fs-14;
+            margin: 0 5px;
+        }
+        
+        @media (max-width: 1080px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            
+            .label {
+                font-size: $fs-13;
+            }
+            
+            .inp input {
+                width: 100px;
+                font-size: $fs-13;
+                padding: 6px 10px;
+            }
+            
+            .behind {
+              line-height: 50px;
+              margin: 0;
+            }
+        }
+        
+        @media (max-width: 720px) {
+            .inp input {
+                width: 90px;
+                font-size: $fs-12;
+            }
+        }
+    }
 }

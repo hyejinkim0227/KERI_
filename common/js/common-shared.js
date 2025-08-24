@@ -156,4 +156,66 @@ function openSitemapEn() {
  */
 function closeSitemapEn() {
   closeSitemap();
-} 
+}
+
+/**
+ * jQuery UI Datepicker 초기화 (datepicker-ko.js 설정 사용)
+ */
+$(function () {
+    var now = new Date();
+    
+    // 단일 날짜 선택기 초기화
+    if ($('#demo-mobile-picker-input').length) {
+        $('#demo-mobile-picker-input').datepicker();
+    }
+
+    // 날짜 범위 선택기 초기화 (시작일)
+    if ($('#dp1650004383255').length) {
+        $('#dp1650004383255').datepicker({
+            onSelect: function(selectedDate) {
+                // 종료일의 최소 날짜를 시작일로 설정
+                $('#dp1650004383256').datepicker('option', 'minDate', selectedDate);
+            }
+        });
+    }
+
+    // 날짜 범위 선택기 초기화 (종료일)
+    if ($('#dp1650004383256').length) {
+        $('#dp1650004383256').datepicker({
+            onSelect: function(selectedDate) {
+                // 시작일의 최대 날짜를 종료일로 설정
+                $('#dp1650004383255').datepicker('option', 'maxDate', selectedDate);
+            }
+        });
+    }
+
+    // 버튼으로 열리는 datepicker
+    if ($('#demo-mobile-picker-button').length) {
+        $('#demo-mobile-picker-button').datepicker({
+            showOn: 'button',
+            buttonText: '날짜 선택'
+        });
+        
+        // 기본값 설정
+        $('#demo-mobile-picker-button').datepicker('setDate', now);
+    }
+
+    // 항상 보이는 inline datepicker
+    if ($('#demo-mobile-picker-inline').length) {
+        $('#demo-mobile-picker-inline').datepicker({
+            defaultDate: now,
+            inline: true
+        });
+    }
+
+    // 모달로 열리는 datepicker
+    if ($('#demo-mobile-picker-mobiscroll').length) {
+        $('#demo-mobile-picker-mobiscroll').datepicker();
+    }
+
+    // 버튼 클릭 이벤트
+    $('#show-mobile-date-picker').click(function() {
+        $('#demo-mobile-picker-button').datepicker('show');
+        return false;
+    });
+}); 

@@ -1038,6 +1038,27 @@ a{
    
 }
 
+.tableC{
+    border-top: 2px solid $color-grey1;
+    th, td{height: 60px; padding: 10px 20px; color: $color-grey1; border-bottom: 1px solid $bor_form; text-align: center; font-size: $fs-17; font-weight: 400; vertical-align: middle; 
+        &:not(:last-child){border-right: 1px solid $bor_form;}
+    }
+    th{
+        background: #f8f9fa; font-weight: 500; color: $color-bk; padding-left: 30px;
+        label{cursor: unset;}
+    }
+    .left{text-align: left;}
+
+    @media (max-width: 1080px) {
+        colgroup,thead{display: none;}
+        th, td{display: block; width: 100%; height: auto; padding: 10px 0;
+            &:not(:last-child){border-right: none;}
+        }
+        th{padding: 0 0 0 10px; line-height: 40px; border-bottom: none;}
+        td{padding: 10px; line-height: 40px;}
+    }
+}
+
 
 // data-color 스타일q
 span[data-color]{

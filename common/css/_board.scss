@@ -1685,7 +1685,7 @@ span[data-status]{
     .support_banner{ 
         width: 2000px; justify-content: flex-start; position: relative; height: 450px;
         .support_list2{
-            &.swiper{margin-left: 0;}
+            &.swiper{width: calc(100vw); margin-left: 0;}
             .swiper-wrapper{
                 display: flex;
                 >a{

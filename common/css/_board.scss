@@ -856,6 +856,12 @@ a{
         background: #f8f9fa; font-weight: 500; color: $color-bk; padding-left: 30px;
         label{cursor: unset;}
     }
+    &.borR{
+        tr td:not(:last-child),tr th:not(:last-child){border-right: 1px solid #dfdfdf;}
+    }
+    &.center{
+        th, td{text-align: center;}
+    }
    
     // table 반응형
     @media (max-width: 1080px) {
@@ -1134,6 +1140,27 @@ a{
  
 }
 
+.tableC{
+    border-top: 2px solid $color-grey1;
+    th, td{height: 60px; padding: 10px 20px; color: $color-grey1; border-bottom: 1px solid $bor_form; text-align: center; font-size: $fs-17; font-weight: 400; vertical-align: middle; 
+        &:not(:last-child){border-right: 1px solid $bor_form;}
+    }
+    th{
+        background: #f8f9fa; font-weight: 500; color: $color-bk; padding-left: 30px;
+        label{cursor: unset;}
+    }
+    .left{text-align: left;}
+
+    @media (max-width: 1080px) {
+        colgroup,thead{display: none;}
+        th, td{display: block; width: 100%; height: auto; padding: 10px 0;
+            &:not(:last-child){border-right: none;}
+        }
+        th{padding: 0 0 0 10px; line-height: 40px; border-bottom: none;}
+        td{padding: 10px; line-height: 40px;}
+    }
+}
+
 
 // data-color 스타일q
 span[data-color]{
@@ -1369,18 +1396,44 @@ span[data-status]{
     counter-reset: num-counter;
      >li{
          font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; counter-increment: num-counter; margin-bottom: 10px;
-         &::before{content: "①";  display: inline-block; width: 20px; color: $color-blue;}
+         &::before{content: "⑤";  display: inline-block; width: 20px; color: $color-blue;}
          
-         &:nth-child(2)::before{content: "②";}
-         &:nth-child(3)::before{content: "③";}
-         &:nth-child(4)::before{content: "④";}
-         &:nth-child(5)::before{content: "⑤";}
-         &:nth-child(6)::before{content: "⑥";}
-         &:nth-child(7)::before{content: "⑦";}
-         &:nth-child(8)::before{content: "⑧";}
-         &:nth-child(9)::before{content: "⑨";}
-         &:nth-child(10)::before{content: "⑩";}
+         &:nth-child(2)::before{content: "⑥";}
+         &:nth-child(3)::before{content: "⑦";}
+         &:nth-child(4)::before{content: "⑧";}
+         &:nth-child(5)::before{content: "⑨";}
+         &:nth-child(6)::before{content: "⑩";}
+         &:nth-child(7)::before{content: "⑪";}
+         &:nth-child(8)::before{content: "⑫";}
+         &:nth-child(9)::before{content: "⑬";}
+         &:nth-child(10)::before{content: "⑭";}
      }
+ }
+ .list_han{
+    padding-left: 20px; 
+     >li{
+         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; margin-bottom: 10px;
+         &::before{
+             content: attr(data-index) ". ";  
+             display: inline-block; 
+             width: 20px;
+         }
+         p{font-size: $fs-17; font-weight: 400; color: $color-bk; line-height: 1.4em;}
+     }
+ }
+ .list_dash{
+    padding-left: 20px; 
+     >li{
+         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; margin-bottom: 10px;
+         &::before{
+             content:"- ";  
+             display: inline-block; 
+             width: 15px;
+         }
+         p{font-size: $fs-17; font-weight: 400; color: $color-bk; line-height: 1.4em;}
+         a{display: inline-block;}
+     }
+
  }
 
 // 상세 파일
@@ -1923,7 +1976,7 @@ span[data-status]{
 
 //개인정보 처리방침
 .label_list{
-    display: flex; flex-wrap: wrap; gap: 20px 35px;
+    display: flex; flex-wrap: wrap; gap: 20px 35px; margin-bottom: 50px;
     li{
         display: flex; flex-direction: column; justify-content: center; gap: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-radius: 10px; padding: 40px 20px; width: calc((100% - 70px) / 3); border: 1px solid #ddd;
         &:hover{background: #f8f8f8;}
@@ -1934,7 +1987,7 @@ span[data-status]{
 }
 
 .Privacy_policy{
-    margin-top: 50px;
+    //margin-top: 50px;
     dt{
         display: flex; align-items: center; gap: 20px; font-size: $fs-24; font-family: $ff-sbaggro; font-weight: 400; color: #000; line-height: 60px; margin-bottom: 5px;
         figure{ 
@@ -1954,6 +2007,12 @@ span[data-status]{
             display: flex; gap: 10px; justify-content: flex-start; align-items: center; margin: 10px 0;
             a[data-btn="download"]{display: inline-block; min-width: 220px; height: 53px; line-height: 53px; border: 1px solid #000; font-size: $fs-17; color: #000; padding: 0 60px 0 30px; box-sizing: border-box; text-align: left;}
         }
+        .list_han li,.list_dash li{margin-bottom: 0px;}
+        .table{
+            th,td{text-align: center; padding: 18px 10px; 
+                &.left{text-align: left;}
+            }
+        }
     }
 }
 .accordion{
@@ -1964,15 +2023,7 @@ span[data-status]{
     >div{transition: all 0.3s; opacity: 0; height: 0;box-sizing: border-box; padding: 0;}
     &.active{
         h5{background-image: url(../images/sub/accordion_close.png); border-bottom: 1px solid #dfdfdf;}
-        >div{ transition: all 0.3s; opacity: 1; height: auto; padding: 40px 30px; 
-            .table{
-                th,td{text-align: center; padding: 18px 10px; 
-                    &.left{text-align: left;}
-                }
-                &.borR{
-                    tr td:not(:last-child){border-right: 1px solid #dfdfdf;}
-                }
-            }
-        }
+        >div{ transition: all 0.3s; opacity: 1; height: auto; padding: 40px 30px; }
     }
+    
 }

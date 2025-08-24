@@ -1,4 +1,5 @@
-.sub_tit{ font-size: $fs-34;; font-weight:400; font-family: $ff-sbaggro; margin-bottom: 30px; line-height: 1;
+.sub_tit{ font-size: $fs-34;; font-weight:400;  margin: 60px 0 30px;
+    font-family: $ff-sbaggro;  line-height: 1;
     &::after {
         content: ''; display: inline-block;  width: 10px; height: 10px;
         border-radius: 50%;  background-color: $color-blue2; margin-left: 11px;
@@ -22,10 +23,9 @@
     @media (max-width: 1080px) {font-size: $fs-15; line-height: 21px; margin-bottom: 40px !important;}
 }
 .sub_tit_sm{
-    font-size: $fs-22; font-weight: 500; font-family: $ff-sbaggro;
+    font-size: $fs-22; font-weight: 400; font-family: $ff-sbaggro;
     margin: 40px 0 20px; line-height: 1;
 }
-
 
 
 //연구분야 - 연구소개
@@ -2910,7 +2910,98 @@
             }
         }
     }
-    
+    &.type2{
+        ul {
+            height: 220px;
+            
+            li {     width: calc(25% - 30px);
+                
+                // 1번 - 왼쪽 위
+                &:nth-child(1) {
+                    top: 0;
+                    left: 0;
+                }
+                
+                // 2번 - 1/4 지점
+                &:nth-child(2) {
+                    top: 0;
+                    left: 37%;
+                    transform: translateX(-50%);
+                }
+                
+                // 3번 - 2/4 지점 (중앙)
+                &:nth-child(3) {
+                    top: 0;
+                    left: 63%;
+                    transform: translateX(-50%);
+                }
+                
+                // 4번 - 오른쪽 위
+                &:nth-child(4) {
+                    top: 0;
+                    right: 0;
+                }
+                
+                // 5번 - 오른쪽 아래
+                &:nth-child(5) {
+                    bottom: 0;
+                    right: 0;
+                    left: unset;
+                    transform: unset;
+                }
+                
+                // 6번 - 2/4 지점 (중앙) 아래
+                &:nth-child(6) {
+                    bottom: 0;
+                    left: 52%;
+                    transform: unset;
+                }
+                
+                // 7번 - 1/4 지점 아래
+                &:nth-child(7) {
+                    bottom: 0;
+                    left: 26%;
+                    transform: unset;
+                }
+                
+                // 화살표 연결선 재정의
+                &:not(:last-child)::after {
+                    content: '';
+                    position: absolute;
+                    z-index: 5;
+                    width: 11px;
+                    height: 19px;
+                    background: url(../images/sub/process_arrow.png) no-repeat center center / contain;
+                }
+                
+                // 1→2, 2→3, 3→4 화살표 (가로 오른쪽)
+                &:nth-child(1)::after,
+                &:nth-child(2)::after,
+                &:nth-child(3)::after {
+                    right: -30px;
+                    left: unset;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                
+                // 4→5 화살표 (아래로)
+                &:nth-child(4)::after {
+                    left: 50%;
+                    bottom: -30px;
+                    top: unset;
+                    transform: translateX(-50%) rotate(90deg);
+                }
+                
+                // 5→6, 6→7 화살표 (왼쪽으로)
+                &:nth-child(5)::after,
+                &:nth-child(6)::after {
+                    left: -30px;
+                    top: 43%;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
     @media (max-width: 1200px) {
         ul{
             li{
@@ -2985,19 +3076,62 @@
                     order: 5;
                     width: calc(50% - 10px);
                     left: -10px;
+                }
 
+            }
+        }
+         // type2 반응형 (1080px 이하) - 12, 43, 56, 7 배치
+         &.type2 {
+            ul { height: auto;
+                li {   width: 100%;
+                    position: relative !important;
+                    transform: none !important;
+                    top: unset !important;
+                    left: unset !important;
+                    right: unset !important;
+                    bottom: unset !important;
+                    
+                    &:after{
+                        left: 50% !important;
+                        right: unset !important;
+                        top: unset !important;
+                        bottom: -21px !important;
+                        transform: rotate(90deg) !important;
+                    }
+                    &:nth-child(1) { order: 1; 
+                    }
+                    &:nth-child(2) { order: 2; 
+
+                    }
+                    &:nth-child(3) { order: 3; 
+
+                    }
+                    &:nth-child(4) { 
+                        order: 4;   
+                    }
+                 
+                    &:nth-child(5) { order: 5; 
+                        &::after{
+                            transform: unset;
+                            left: unset;
+                            right: -3%;
+                        }
+                    }
+                    &:nth-child(6) { order: 6;
+                     }
+                    &:nth-child(7) { 
+                        order: 7;
+                    }
+                    
+              
                 
                 }
-                
-                
             }
         }
     }
     
     // 반응형 - 660px 이하 (세로 나열)
     @media (max-width: 660px) {
-
-        
         ul {
             display: flex;
             flex-direction: column;
@@ -3035,6 +3169,127 @@
                 
             }
         }
+        
+      
     }
-    
+}
+
+//교육절차-지원리스트
+.pro-list{
+    display: flex; gap: 35px; position: relative; z-index: 1;
+    &::after{
+        content: ''; display: block; position: absolute; top: 50%; right: 0;
+        height: 1px; width: 100%; background: #b2b5b8; z-index: -1;
+
+    }
+    li{width: calc(25% - 17.5px); height: 100px; background: #fff;
+        display: flex; align-items: center; justify-content: center;
+        border: 1px solid #b2b5b8; border-radius: 20px;
+        padding: 20px;  gap: 10px; position: relative;
+        span{ width: 50px; height: 50px; font-size: 19px;
+            font-family: $ff-suit; font-weight: 500;color: #fff;
+            line-height: 50px; text-align: center; border-radius: 50%;
+            &[data-type="step1"]{
+                background: #1f60c2;
+            }
+            &[data-type="step2"]{
+                background: #2a4ba6;
+            }
+            &[data-type="step3"]{
+                background: #11368b;
+            }
+            &[data-type="step4"]{   
+                background: #1b2546;
+            }
+        }
+        &::after{
+            content: ''; display: block; position: absolute; top: 50%; right: -25px; width: 9px; height: 13px;
+            transform: translateY(-50%); background: url(../images/sub/icon_edu_arrow.png) no-repeat center center / contain;
+            z-index: 1;
+        }
+        &:last-of-type{
+            &::after{display: none;}
+        }
+    }
+    @media (max-width: 1080px) { flex-direction: column;
+        &::after{
+            display: none;
+        }
+        li{width: 100%; 
+        
+            &:after{
+                transform: translateY(-50%) rotate(90deg);
+                right: 49.5%;
+                top: unset;
+                bottom: -30px;
+            }
+        }
+    }
+}
+.edu_faq{ display: flex; flex-direction: column; gap: 30px; margin-top: 30px;
+    li{ width: 100%; border: 1px solid #d9d9d9; border-radius: 12px;
+        b{ background: #f4f6f9; border-radius: 12px 12px 0 0; height: 60px;
+            line-height: 60px; padding: 15px 20px; width: 100%;     gap: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px; font-weight: 400; font-family: $ff-sbaggro;
+        }
+        p{ background: #fff; border-radius: 0 0 12px 12px; width: 100%;
+             padding: 30px; font-size: 17px; line-height: 28px; text-align: center;
+            }
+    }
+    @media (max-width: 1080px) {
+        li{
+            b{    align-items: flex-start;
+                font-size: 15px;
+                line-height: 1.4;
+           
+                height: auto;
+                
+            }
+            p{
+                font-size: 14px;
+                line-height: 18px;
+                padding: 20px;
+            }
+        }       
+    }
+}
+
+.procedures{ display: flex; flex-wrap: wrap; gap: 40px 20px; 
+    li{ padding: 40px 30px 40px 160px; display: flex; flex-direction: column; 
+        width: calc(50% - 10px); height: 170px; position: relative;    justify-content: center;
+        display: flex;  gap: 10px; border: 1px solid #dedede; border-radius: 20px;
+       
+        background: url(../images/sub/icon_procedures_01.png) no-repeat center left 30px/ 100px auto;
+        &[icon-type="2"]{
+          background-image: url(../images/sub/icon_procedures_02.png);
+        }
+        &[icon-type="3"]{
+            background-image: url(../images/sub/icon_procedures_03.png);
+        }
+        &[icon-type="4"]{
+            background-image: url(../images/sub/icon_procedures_04.png);
+        }
+        &[icon-type="5"]{
+            background-image: url(../images/sub/icon_procedures_05.png);
+        }
+        span{ position: absolute; top: -20px; left: 30px;  background: #17469d; text-align: center;
+        border-radius: 6px; width: 36px; height: 36px; line-height: 36px; color: #fff;
+         font-size:14px; font-weight: 500;
+       }
+        b{font-size:22px; line-height: 30px; font-weight: 500;}
+        p{font-size:16px; line-height: 28px; color: #444;}
+    }
+    @media (max-width: 1080px) {
+        li{background-size: 70px auto;  padding: 30px 20px 30px 120px;
+            
+            b{font-size:20px; line-height: 26px;}
+            p{font-size:15px; line-height: 24px;}
+        }
+    }
+    @media (max-width: 750px) {
+        li{width: 100%;
+            
+        }
+    }
 }

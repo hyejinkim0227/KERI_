@@ -5905,6 +5905,7 @@ span[data-status][data-status=order1] {
   height: 450px;
 }
 #sub .results .support_banner .support_list2.swiper {
+  width: 100vw;
   margin-left: 0;
 }
 #sub .results .support_banner .support_list2 .swiper-wrapper {
@@ -6630,6 +6631,85 @@ span[data-status][data-status=order1] {
   }
 }
 
+.inp_wrap.date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.inp_wrap.date .label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+}
+.inp_wrap.date .inp {
+  position: relative;
+}
+.inp_wrap.date .inp input {
+  padding: 8px 12px;
+  border: 1px solid #dbdee1;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  width: 180px;
+  cursor: pointer;
+  background: url(../images/sub/icon_calenda.png) no-repeat right 10px center/16px 16px;
+  background-color: #fff;
+  padding-right: 30px !important;
+}
+.inp_wrap.date .inp input::-moz-placeholder {
+  color: #4c4e5a;
+}
+.inp_wrap.date .inp input::placeholder {
+  color: #4c4e5a;
+}
+.inp_wrap.date .inp input:focus {
+  outline: none;
+  border-color: #1f60c2;
+  box-shadow: 0 0 0 2px rgba(31, 96, 194, 0.1);
+}
+.inp_wrap.date .inp input.hasDatepicker {
+  cursor: pointer;
+}
+.inp_wrap.date .inp input[readonly] {
+  cursor: pointer;
+  background-color: #fff;
+  color: #333;
+}
+.inp_wrap.date .inp input[readonly]:hover {
+  border-color: #1f60c2;
+}
+.inp_wrap.date .behind {
+  font-weight: 500;
+  color: #666;
+  font-size: 0.875rem;
+  margin: 0 5px;
+}
+@media (max-width: 1080px) {
+  .inp_wrap.date {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .inp_wrap.date .label {
+    font-size: 0.8125rem;
+  }
+  .inp_wrap.date .inp input {
+    width: 100px;
+    font-size: 0.8125rem;
+    padding: 6px 10px;
+  }
+  .inp_wrap.date .behind {
+    line-height: 50px;
+    margin: 0;
+  }
+}
+@media (max-width: 720px) {
+  .inp_wrap.date .inp input {
+    width: 90px;
+    font-size: 0.75rem;
+  }
+}
+
 .apply.data {
   margin-top: 40px;
   justify-content: center;
@@ -6728,85 +6808,6 @@ span[data-status][data-status=order1] {
   .report_list li {
     width: 100%;
     padding-top: 20px;
-  }
-}
-
-.inp_wrap.date {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.inp_wrap.date .label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #333;
-  white-space: nowrap;
-}
-.inp_wrap.date .inp {
-  position: relative;
-}
-.inp_wrap.date .inp input {
-  padding: 8px 12px;
-  border: 1px solid #dbdee1;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  width: 180px;
-  cursor: pointer;
-  background: url(../images/sub/icon_calenda.png) no-repeat right 10px center/16px 16px;
-  background-color: #fff;
-  padding-right: 30px !important;
-}
-.inp_wrap.date .inp input::-moz-placeholder {
-  color: #4c4e5a;
-}
-.inp_wrap.date .inp input::placeholder {
-  color: #4c4e5a;
-}
-.inp_wrap.date .inp input:focus {
-  outline: none;
-  border-color: #1f60c2;
-  box-shadow: 0 0 0 2px rgba(31, 96, 194, 0.1);
-}
-.inp_wrap.date .inp input.hasDatepicker {
-  cursor: pointer;
-}
-.inp_wrap.date .inp input[readonly] {
-  cursor: pointer;
-  background-color: #fff;
-  color: #333;
-}
-.inp_wrap.date .inp input[readonly]:hover {
-  border-color: #1f60c2;
-}
-.inp_wrap.date .behind {
-  font-weight: 500;
-  color: #666;
-  font-size: 0.875rem;
-  margin: 0 5px;
-}
-@media (max-width: 1080px) {
-  .inp_wrap.date {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  .inp_wrap.date .label {
-    font-size: 0.8125rem;
-  }
-  .inp_wrap.date .inp input {
-    width: 100px;
-    font-size: 0.8125rem;
-    padding: 6px 10px;
-  }
-  .inp_wrap.date .behind {
-    line-height: 50px;
-    margin: 0;
-  }
-}
-@media (max-width: 720px) {
-  .inp_wrap.date .inp input {
-    width: 90px;
-    font-size: 0.75rem;
   }
 }
 
@@ -14251,6 +14252,59 @@ section .fp-tableCell {
   }
 }
 
+.childcare_center_img {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.childcare_center_img img {
+  width: calc(50% - 15px) !important;
+  max-width: unset !important;
+}
+
+.childcare_center {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.childcare_center li {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  width: calc(33% - 15px);
+  padding: 30px 34px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  gap: 10px;
+}
+.childcare_center li b {
+  font-size: 19px;
+  font-family: "SBAggro", "Pretendard";
+  color: #17469d;
+}
+.childcare_center li span {
+  margin-left: auto;
+  font-size: 17px;
+  line-height: 30px;
+}
+@media (max-width: 1080px) {
+  .childcare_center {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .childcare_center li {
+    width: 100%;
+  }
+}
+
+.dormitory .support_banner a {
+  height: 320px !important;
+}
+.dormitory .support_banner a > div img {
+  height: 280px !important;
+}
+
 .sub_modal#modal-patent-summary {
   z-index: 100002;
 }
@@ -14676,11 +14730,11 @@ section .fp-tableCell {
 }
 
 .left {
-  text-align: left;
+  text-align: left !important;
 }
 
 .right {
-  text-align: right;
+  text-align: right !important;
 }
 
 .center {

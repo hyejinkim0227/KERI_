@@ -1,6 +1,6 @@
 
-.left{text-align:left;}
-.right{text-align:right;}
+.left{text-align:left !important; }
+.right{text-align:right !important;}
 .center{text-align:center !important;}
 .m_hide{
     @media (max-width: 1080px) {display: none;}

@@ -3315,3 +3315,36 @@
         }
     }
 }
+
+
+//복리후생
+.childcare_center_img{
+    display: flex; flex-wrap: wrap; gap: 20px;
+    img{width: calc(50% - 15px) !important; max-width: unset !important;}
+}
+.childcare_center{  margin-top: 35px;
+    display: flex; justify-content: space-between; align-items: center;
+    li{ height: 120px; display: flex; flex-direction: column;
+        width: calc(33% - 15px); padding: 30px 34px;
+        background: #f8f9fa; border-radius: 12px; gap: 10px;
+        b{font-size: 19px; font-family: $ff-sbaggro; color: #17469d;}
+        span{ margin-left: auto;
+            font-size: 17px; line-height: 30px;
+        }
+    }
+    @media (max-width: 1080px) { flex-direction: column; gap: 20px;
+        li{width: 100%;}
+    }
+}
+//기숙사 슬라이드
+.dormitory{
+    .support_banner{
+        a{height: 320px !important;
+            >div{ 
+                img{
+                height: 280px !important;
+                }
+            }
+        }
+    }
+}

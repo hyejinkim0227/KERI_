@@ -496,14 +496,100 @@ $(document).ready(function() {
     }
   }
 
-  const swiperSelector4 = '.support_list4.swiper';
-  const controlSelector4 = '.support_list4.control';
-  // 슬라이드 개수 조회 1개 초과인경우만 슬라이드 처리
+  // 기숙사 슬라이드 1
+  const swiperSelector4_1 = '.dormitory-swiper1';
+  const controlSelector4_1 = '.dormitory-control1';
+  const item_size4_1 = $(`${swiperSelector4_1} .swiper-slide`).length;
+
+  if (!window.support_list4_1 && $(swiperSelector4_1).length > 0) {
+    let s_option_1 = {
+      slidesPerView: 'auto',
+      speed: 600,
+      loop: true,
+      spaceBetween: 20,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: `${controlSelector4_1} .support_btn_next`,
+        prevEl: `${controlSelector4_1} .support_btn_prev`,
+      },
+      on: {
+        init: function (swiper) {
+          $(`${controlSelector4_1} .tot`).text(' / ' + item_size4_1);
+        },
+      },
+      breakpoints: {
+        1081: {
+          spaceBetween: 70,
+        }
+      }
+    };
+
+    if (item_size4_1 <= 2) {
+      s_option_1.loop = false;
+      s_option_1.allowTouchMove = true;
+      window.support_list4_1 = new Swiper(swiperSelector4_1, s_option_1);
+    } else {
+      const contentSlides_1 = $(`${swiperSelector4_1} .swiper-slide`).clone();
+      $(`${swiperSelector4_1} .swiper-wrapper`).append(contentSlides_1);
+      window.support_list4_1 = new Swiper(swiperSelector4_1, s_option_1);
+
+      window.support_list4_1.off('slideChange').on('slideChange', function(swiper) {
+        const cur_num = swiper.realIndex % contentSlides_1.length + 1;
+        $(`${controlSelector4_1} .active`).text(cur_num);
+      });
+    }
+  }
+
+  // 기숙사 슬라이드 2
+  const swiperSelector4_2 = '.dormitory-swiper2';
+  const controlSelector4_2 = '.dormitory-control2';
+  const item_size4_2 = $(`${swiperSelector4_2} .swiper-slide`).length;
+
+  if (!window.support_list4_2 && $(swiperSelector4_2).length > 0) {
+    let s_option_2 = {
+      slidesPerView: 'auto',
+      speed: 600,
+      loop: true,
+      spaceBetween: 20,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: `${controlSelector4_2} .support_btn_next`,
+        prevEl: `${controlSelector4_2} .support_btn_prev`,
+      },
+      on: {
+        init: function (swiper) {
+          $(`${controlSelector4_2} .tot`).text(' / ' + item_size4_2);
+        },
+      },
+      breakpoints: {
+        1081: {
+          spaceBetween: 70,
+        }
+      }
+    };
+
+    if (item_size4_2 <= 2) {
+      s_option_2.loop = false;
+      s_option_2.allowTouchMove = true;
+      window.support_list4_2 = new Swiper(swiperSelector4_2, s_option_2);
+    } else {
+      const contentSlides_2 = $(`${swiperSelector4_2} .swiper-slide`).clone();
+      $(`${swiperSelector4_2} .swiper-wrapper`).append(contentSlides_2);
+      window.support_list4_2 = new Swiper(swiperSelector4_2, s_option_2);
+
+      window.support_list4_2.off('slideChange').on('slideChange', function(swiper) {
+        const cur_num = swiper.realIndex % contentSlides_2.length + 1;
+        $(`${controlSelector4_2} .active`).text(cur_num);
+      });
+    }
+  }
+
+  // 기존 코드 (다른 페이지에서 사용하는 경우를 위해 유지)
+  const swiperSelector4 = '.support_list4.swiper:not(.dormitory-swiper1):not(.dormitory-swiper2)';
+  const controlSelector4 = '.support_list4.control:not(.dormitory-control1):not(.dormitory-control2)';
   const item_size4 = $(`${swiperSelector4} .swiper-slide`).length;
 
-  // 스와이프 생성
-  if (!window.support_list4) {
-    // 기본옵션
+  if (!window.support_list4 && $(swiperSelector4).length > 0) {
     let s_option = {
       slidesPerView: 'auto',
       speed: 600,
@@ -515,9 +601,7 @@ $(document).ready(function() {
         prevEl: `${controlSelector4} .support_btn_prev`,
       },
       on: {
-        // 초기화 완료후
         init: function (swiper) {
-          // 슬라이드 총 개수 셋팅
           $(`${controlSelector4} .tot`).text(' / ' + item_size4);
         },
       },
@@ -528,21 +612,15 @@ $(document).ready(function() {
       }
     };
 
-    // 2개이하인경우는 스와이프 설정안함
     if (item_size4 <= 2) {
       s_option.loop = false;
       s_option.allowTouchMove = true;
-
       window.support_list4 = new Swiper(swiperSelector4, s_option);
-      // $(controlSelector4).addClass('hidden');
     } else {
-      // 스와이퍼 개수가 모자르는경우가 존재하여 두배로 복사
       const contentSlides = $(`${swiperSelector4} .swiper-slide`).clone();
       $(`${swiperSelector4} .swiper-wrapper`).append(contentSlides);
-
       window.support_list4 = new Swiper(swiperSelector4, s_option);
 
-      // 슬라이드 변경 이벤트
       window.support_list4.off('slideChange').on('slideChange', function(swiper) {
         const cur_num = swiper.realIndex % contentSlides.length + 1;
         $(`${controlSelector4} .active`).text(cur_num);

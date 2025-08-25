@@ -3178,7 +3178,7 @@ a.btn_blue {
   color: #fff;
 }
 a.btn_blue.report {
-  width: 200px;
+  width: 250px;
   padding: 0 60px 0 30px;
   background: #1f60c2 url(../images/sub/member_email_outlink_white.png) no-repeat right 30px center/auto 16px;
 }

@@ -739,5 +739,20 @@ $(document).ready(function() {
     $btn.attr('aria-expanded', 'false');
     $btn.attr('title', questionText + ' (닫힘)');
   });
+
+  // 시험품목 탭 기능
+  $('.test_tab_btn').on('click', function() {
+    const targetTab = $(this).data('tab');
+    
+    // 모든 탭 버튼에서 active 클래스 제거
+    $('.test_tab_btn').removeClass('active');
+    // 클릭한 탭 버튼에 active 클래스 추가
+    $(this).addClass('active');
+    
+    // 모든 탭 컨텐츠 숨기기
+    $('.test_tab_content').removeClass('active');
+    // 선택된 탭 컨텐츠만 보이기
+    $('#' + targetTab).addClass('active');
+  });
 });
 

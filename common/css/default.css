@@ -14582,6 +14582,160 @@ section .fp-tableCell {
   }
 }
 
+.test_category {
+  margin-top: 30px;
+}
+
+.test_tab_nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+.test_tab_btn {
+  padding: 0 10px;
+  border: 1px solid #afbed9;
+  border-radius: 10px;
+  background: #e7ecf5;
+  font-family: "SUIT", "Pretendard";
+  font-size: 18px;
+  font-weight: 500;
+  color: #7793bd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  height: 58px;
+  line-height: 58px;
+  width: 155px;
+  letter-spacing: -0.3px;
+}
+.test_tab_btn:hover {
+  border-color: #1f60c2;
+  color: #fff;
+  background: #1f60c2;
+}
+.test_tab_btn.active {
+  border-color: #1f60c2;
+  color: #fff;
+  background: #1f60c2;
+}
+
+.test_tab_contents {
+  position: relative;
+}
+
+.test_tab_content {
+  display: none;
+}
+.test_tab_content.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.test_content_wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.test_image {
+  flex-shrink: 0;
+  width: 600px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 27px rgba(0, 33, 181, 0.11);
+}
+.test_image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.test_info {
+  flex: 1;
+}
+.test_info h5 {
+  font-size: 24px;
+  font-family: "SBAggro", "Pretendard";
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.test_info .test_desc {
+  font-size: 18px;
+  line-height: 24px;
+  color: #333;
+}
+
+.test_details {
+  padding: 30px 26px;
+  border-radius: 12px;
+  border: 1px solid #afbed9;
+  margin-top: 40px;
+}
+.test_details h6 {
+  font-size: 22px;
+  font-family: "SBAggro", "Pretendard";
+  margin-bottom: 20px;
+  color: #1f60c2;
+}
+.test_details ul {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.test_details ul li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 18px;
+  color: #393939;
+  font-family: "SUIT", "Pretendard";
+  line-height: 1.5;
+}
+.test_details ul li::before {
+  background: #393939;
+}
+
+@media (max-width: 1080px) {
+  .test_tab_nav {
+    justify-content: flex-start;
+    gap: 6px;
+  }
+  .test_tab_btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  .test_content_wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .test_image {
+    width: 100%;
+    height: 180px;
+  }
+  .test_info h5 {
+    font-size: 20px;
+  }
+  .test_info .test_desc {
+    font-size: 15px;
+  }
+  .test_details ul {
+    grid-template-columns: 1fr;
+  }
+}
 .sub_modal#modal-patent-summary {
   z-index: 100002;
 }

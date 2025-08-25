@@ -3260,7 +3260,7 @@ a[data-btn=arrow] {
   /* 윗부분 160px은 완전 투명 → 그 다음 320px 구간에서 서서히 진해짐 → 그 아래는 유지 */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 160px, rgba(0, 0, 0, 0.4) 320px, rgba(0, 0, 0, 0.6) 100%);
   opacity: 1; /* 전체 투명도(필요 시 0.5~0.8 등으로 조절) */
-  mix-blend-mode: normal; /* 포토샵 ‘표준’과 동일 */
+  mix-blend-mode: normal; /* 포토샵 ‘표준'과 동일 */
 }
 .sub_top h2.title {
   max-width: 1360px;
@@ -4542,6 +4542,7 @@ a[data-btn=arrow] {
 }
 .tableB table tbody tr td:last-of-type {
   border-right: 0;
+  border-left: 1px solid #d9d9d9;
 }
 .tableB table tbody tr td .block {
   display: inline-block;
@@ -4708,6 +4709,7 @@ a[data-btn=arrow] {
   }
   .tableB.type2 table > tbody > tr > td:last-of-type {
     border-right: 0;
+    border-left: 1px solid #d9d9d9;
   }
   .tableB.type2 table > tbody > tr > td.left {
     text-align: left;
@@ -6831,6 +6833,63 @@ span[data-status][data-status=order1] {
     width: 100%;
     padding-top: 20px;
   }
+}
+
+.h190 {
+  height: 190px !important;
+}
+
+.apply_list {
+  display: flex;
+  gap: 40px;
+}
+.apply_list li {
+  width: calc((100% - 40px) / 2);
+  padding: 20px;
+  background: #f4f6f9;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 60px;
+}
+.apply_list li > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.4em;
+}
+.apply_list li > div strong {
+  font-size: 1.25rem;
+  font-family: "SBAggro", "Pretendard";
+  font-weight: 500;
+  color: #000;
+  line-height: 1.4em;
+}
+.apply_list li figure img {
+  height: 53px;
+  width: auto;
+  max-width: none;
+}
+
+.content_list {
+  margin-top: 50px;
+}
+.content_list li .sub_tit_md {
+  margin-bottom: 18px;
+}
+.content_list li .bar li {
+  color: #434343;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 28px;
+}
+.content_list li .tableB.type2 table > tbody > tr > td {
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 @keyframes slideInFromRight {

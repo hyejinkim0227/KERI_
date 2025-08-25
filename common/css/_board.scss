@@ -1,4 +1,3 @@
-
 // 서브 페이지 배경
 #sub {  //신종테스트00
 
@@ -272,7 +271,7 @@ a{
           rgba(0,0,0,0.6) 100%       /* 아래쪽은 유지되는 어둠 정도 */
         );
         opacity: 1;                  /* 전체 투명도(필요 시 0.5~0.8 등으로 조절) */
-        mix-blend-mode: normal;      /* 포토샵 ‘표준’과 동일 */
+        mix-blend-mode: normal;      /* 포토샵 ‘표준'과 동일 */
       }
     h2.title { @include w1300; font: 500 56px SBAggro, Pretendard; padding-top: 145px; color: #fff; text-align: center; height: 340px;}
     // 서브 상단 영역 반응형
@@ -942,7 +941,7 @@ a{
                 text-align: left;
               }
               &:last-of-type {
-                border-right: 0;
+                border-right: 0; border-left: 1px solid #d9d9d9;
               }
            
               .block{display: inline-block; margin-left: 5px;}
@@ -1120,7 +1119,7 @@ a{
                     line-height: 1.4em;
                     
                     &:last-of-type {
-                        border-right: 0;
+                        border-right: 0; border-left: 1px solid #d9d9d9;
                     }
                     
                     &.left {
@@ -2227,4 +2226,34 @@ span[data-status]{
         li{width: 100%; padding-top: 20px;}
     }
 
+}
+
+.h190{height: 190px !important;}
+
+
+//KERI 자율 안전신고제
+.apply_list{
+    display: flex; gap: 40px;
+    li{
+        width: calc((100% - 40px) / 2); padding: 20px; background: #f4f6f9; border-radius: 20px; 
+        display: flex; align-items: center; gap: 40px; padding : 40px 60px;
+        >div{
+            display: flex; flex-direction: column; gap: 10px;
+            strong{font-size: $fs-20; font-family: $ff-sbaggro; font-weight: 500; color: #000; line-height: 1.4em;}
+            font-size: $fs-17; font-weight: 400; color: #000; line-height: 1.4em;
+        }
+        figure{
+            img{height: 53px; width: auto; max-width: none;}
+        }
+    }
+
+}
+
+.content_list{
+    margin-top: 50px;
+    li{
+        .sub_tit_md{margin-bottom: 18px;}
+        .bar li{color:#434343; font-size: $fs-17; font-weight: 400; line-height: 28px;}
+        .tableB.type2 table > tbody > tr > td{word-break: break-all; overflow-wrap: anywhere;}
+    }
 }

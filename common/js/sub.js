@@ -700,5 +700,44 @@ $(document).ready(function() {
       $('.trl_categories .category_item').eq(4).addClass('active');
     }
   });
+
+  // FAQ 아코디언 기능 혜진 추가 @@@_0825
+  $('.faq_question').on('click', function() {
+    const $currentItem = $(this).closest('.faq_item');
+    const $answer = $currentItem.find('.faq_answer');
+    const isActive = $currentItem.hasClass('active');
+    const $currentButton = $(this);
+    const questionText = $currentButton.find('.faq_q_text').text();
+    
+    // 모든 FAQ 항목의 active 클래스 제거 및 슬라이드 업
+    $('.faq_item').removeClass('active');
+    $('.faq_answer').slideUp(300);
+    
+    // 모든 버튼의 접근성 속성을 닫힌 상태로 업데이트
+    $('.faq_question').each(function() {
+      const $btn = $(this);
+      const btnQuestionText = $btn.find('.faq_q_text').text();
+      $btn.attr('aria-expanded', 'false');
+      $btn.attr('title', btnQuestionText + ' (닫힘)');
+    });
+    
+    // 클릭한 항목이 열려있지 않았다면 열기
+    if (!isActive) {
+      $currentItem.addClass('active');
+      $answer.slideDown(300);
+      
+      // 현재 버튼의 접근성 속성을 열린 상태로 업데이트
+      $currentButton.attr('aria-expanded', 'true');
+      $currentButton.attr('title', questionText + ' (열림)');
+    }
+  });
+  
+  // 초기화: 모든 FAQ 버튼에 접근성 속성 설정
+  $('.faq_question').each(function() {
+    const $btn = $(this);
+    const questionText = $btn.find('.faq_q_text').text();
+    $btn.attr('aria-expanded', 'false');
+    $btn.attr('title', questionText + ' (닫힘)');
+  });
 });
 

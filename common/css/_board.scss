@@ -957,8 +957,8 @@ a{
           margin-top: 0;
           border-bottom: 1px solid #d9d9d9;
       
-          colgroup {display: none;}
-          > thead {}
+          colgroup { display: none;}
+          > thead { display: none}
           > tbody,
           > tbody > tr {
             display: block;
@@ -1071,8 +1071,9 @@ a{
                 border-bottom: 1px solid #d9d9d9;
                 
                 colgroup {
-                    display: none;
+                    display: table-column-group;
                 }
+                thead{display: table-header-group;}
                 
                 th {
                     display: table-cell;

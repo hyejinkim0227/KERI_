@@ -3712,8 +3712,7 @@ font-family: $ff-suit;
   }
 
   .test_tab_btn {
-    padding: 10px 16px;
-    font-size: 13px;
+ width: calc(50% - 4px);
   }
 
   .test_content_wrapper {

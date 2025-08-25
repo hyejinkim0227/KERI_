@@ -14715,8 +14715,7 @@ section .fp-tableCell {
     gap: 6px;
   }
   .test_tab_btn {
-    padding: 10px 16px;
-    font-size: 13px;
+    width: calc(50% - 4px);
   }
   .test_content_wrapper {
     flex-direction: column;

@@ -4561,6 +4561,9 @@ a[data-btn=arrow] {
   .tableB table colgroup {
     display: none;
   }
+  .tableB table > thead {
+    display: none;
+  }
   .tableB table > tbody,
   .tableB table > tbody > tr {
     display: block;
@@ -4657,7 +4660,10 @@ a[data-btn=arrow] {
     border-bottom: 1px solid #d9d9d9;
   }
   .tableB.type2 table colgroup {
-    display: none;
+    display: table-column-group;
+  }
+  .tableB.type2 table thead {
+    display: table-header-group;
   }
   .tableB.type2 table th {
     display: table-cell;

@@ -3192,7 +3192,8 @@ a.btn_sm {
 }
 a[data-btn=download2] {
   background: #fff url(../images/sub/icon_download.png) no-repeat right 16px center;
-  max-width: 160px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   font-size: 1rem;
   font-weight: 400;
   color: #000;
@@ -14446,6 +14447,138 @@ section .fp-tableCell {
   }
   .faq_list .faq_a_text p {
     font-size: 14px;
+  }
+}
+
+.imgbox {
+  padding: 40px;
+  border: 1px solid #d6d6d6;
+  border-radius: 20px;
+}
+.imgbox.type2 {
+  padding: 20px;
+  width: 243px;
+  height: 243px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgbox img {
+  margin: 0 auto;
+}
+.imgbox .character_info {
+  max-width: 780px;
+}
+.imgbox .character_info h5 {
+  font-size: 34px;
+  font-family: "SBAggro", "Pretendard";
+  line-height: 32px;
+  margin-bottom: 20px;
+}
+.imgbox .character_info ol {
+  display: flex;
+  gap: 50px;
+}
+.imgbox .character_info ol li {
+  font-size: 17px;
+}
+.imgbox .character_info ol li b {
+  font-size: 16px;
+  color: #1f60c2;
+  background: #dceefb;
+  border-radius: 6px;
+  height: 36px;
+  line-height: 36px;
+  width: 80px;
+  text-align: center;
+  margin-right: 15px;
+}
+.imgbox .character_info_text {
+  background: #f4f6f9;
+  padding: 30px 40px;
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #222222;
+  border-radius: 0 0 20px 20px;
+}
+.imgbox .character_info_text span {
+  display: block;
+  color: #17469d;
+  font-size: 19px;
+  line-height: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+@media (max-width: 1080px) {
+  .imgbox {
+    flex-direction: column;
+  }
+  .imgbox.type2 {
+    flex-wrap: wrap;
+  }
+  .imgbox .character_info {
+    width: 100%;
+    max-width: unset;
+  }
+}
+
+.imgbox_wrap {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 1080px) {
+  .imgbox_wrap {
+    flex-direction: column;
+  }
+}
+
+.insta_box {
+  background: #f4f6f9;
+  border-radius: 20px;
+  display: flex;
+  padding: 40px 60px;
+  gap: 60px;
+  margin-top: 60px;
+  align-items: center;
+}
+.insta_box .text_wrap {
+  display: flex;
+  flex-direction: column;
+}
+.insta_box .text_wrap strong {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 32px;
+  background: url(../images/sub/icon_insta.png) no-repeat left center/auto 38px;
+  padding-left: 60px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+.insta_box .text_wrap p {
+  font-size: 16px;
+  line-height: 26px;
+  color: #222222;
+  margin-top: 10px;
+}
+.insta_box > a {
+  margin-left: auto;
+  margin-top: auto;
+}
+@media (max-width: 1080px) {
+  .insta_box {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  .insta_box .text_wrap {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .insta_box > a {
+    margin-left: 0;
   }
 }
 

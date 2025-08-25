@@ -3506,3 +3506,69 @@
   }
 }
 }
+
+//  캐릭터 소개
+.imgbox{ padding: 40px;
+    &.type2{padding: 20px; 
+        width: 243px; height: 243px;display: flex; align-items: center; justify-content: center;
+    }
+    border: 1px solid #d6d6d6; border-radius: 20px;
+    img{margin: 0 auto;}
+    .character_info{ max-width: 780px;
+        h5{ font-size: 34px; font-family: $ff-sbaggro;  line-height: 32px; margin-bottom: 20px;}
+        ol{ display: flex; gap: 50px; 
+            li{ font-size: 17px;
+                b{font-size: 16px;  color: #1f60c2; background: #dceefb;
+                    border-radius: 6px; height: 36px; line-height: 36px; 
+                    width: 80px; text-align: center;
+                    margin-right: 15px;
+                }
+            }
+          
+        }
+    }
+    .character_info_text{ background: #f4f6f9;padding: 30px 40px; margin-top: 30px;
+        font-size: 16px; line-height: 26px;  color: #222222; border-radius: 0 0 20px 20px; 
+        span{display: block; color: #17469d; font-size: 19px;
+            line-height: 25px; font-weight: 500;
+            margin-bottom: 10px;
+        }
+    }
+    @media (max-width: 1080px) {flex-direction: column;
+        &.type2{flex-wrap: wrap; } 
+        .character_info{
+            width: 100%; max-width: unset;
+        }
+    }
+}
+// 캐릭터 인스타그램 박스
+.imgbox_wrap{
+    display: flex;  gap: 20px; 
+
+    @media (max-width: 1080px) {
+        flex-direction: column;
+    }
+}
+.insta_box{ background: #f4f6f9; border-radius: 20px; display: flex;
+    padding: 40px 60px;  gap: 60px; margin-top: 60px; align-items: center;
+
+    .text_wrap{ display: flex; flex-direction: column;
+        strong{font-size: 32px; font-weight: 500; line-height: 32px;
+            background: url(../images/sub/icon_insta.png) no-repeat left center/auto 38px;
+            padding-left: 60px; margin-bottom: 25px; line-height: 1.5;
+        }
+        p{font-size: 16px; line-height: 26px; color: #222222;
+            margin-top: 10px;
+        }
+    }
+    >a{margin-left: auto; margin-top: auto;}
+    @media (max-width: 1080px) {
+        flex-direction: column; gap: 20px;
+        align-items: center; justify-content: center;
+        .text_wrap{
+            align-items: center;  text-align: center; justify-content: center;
+        }
+        >a{margin-left: 0;}
+
+    }
+}

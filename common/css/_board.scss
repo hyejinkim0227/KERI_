@@ -232,6 +232,9 @@ button{
 a{
     &.btn_blue{
 	    border-radius: 10px; padding: 0 30px; font-size: $fs-18; font-weight: 400; height: 50px; line-height: 50px; background: $color-blue; color :#fff;
+        &.report{
+            width: 200px; padding: 0 60px 0 30px; background: #1f60c2 url(../images/sub/member_email_outlink_white.png) no-repeat right 30px center / auto 16px;
+        }
     }
     &.btn_line{background: #fff; color :$color-bk; border: 1px solid $color-bk;
 	    border-radius: 10px; padding: 0 30px !important;
@@ -455,7 +458,7 @@ a{
         b{color: $color-blue; font-size: 17px;}
     }
     p.blue{font-size: 17px; color: $color-blue; font-weight: 400; line-height: 1.4em;}
-    p.mark{font-size: 16px; color: #57585e; font-weight: 400; line-height: 1.4em; margin-top: -12px;}
+    p.mark{font-size: 16px; color: #57585e; font-weight: 400; line-height: 1.4em;}
 
 
     @media (max-width: 1080px) {
@@ -496,7 +499,7 @@ a{
 .caution{ //0824 공통 사용으로 titlebox에서 뺌
     background: #f4f6f9; padding: 25px; border-radius: 17px;
     li{
-        background: url(../images/sub/icon_bullet.png) no-repeat left top 3px / 17px auto; padding-left: 28px; line-height: 28px; font-size: 16px; color: #da4d4f;
+        background: url(../images/sub/icon_bullet.png) no-repeat left top 5px / 17px auto; padding-left: 28px; line-height: 28px; font-size: 16px; color: #da4d4f;
     }
     @media (max-width: 1080px) {
         padding: 20px 15px;
@@ -2191,6 +2194,13 @@ span[data-status]{
 
         &:first-child{
             a{background: $color-blue url(../images/sub/arrow_W.png) no-repeat right 20px center; color: #fff; border-color: $color-blue;}
+        }
+    }
+
+    &.logo{
+        li{width: calc((100% - 40px)/3);
+            img{width: auto; height: 40px;}
+            figcaption{ background: url(../images/sub/icon_pdf_link.png) no-repeat right center / auto 16px; padding-right: 35px;}
         }
     }
 

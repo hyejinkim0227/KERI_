@@ -3177,6 +3177,11 @@ a.btn_blue {
   background: #1f60c2;
   color: #fff;
 }
+a.btn_blue.report {
+  width: 200px;
+  padding: 0 60px 0 30px;
+  background: #1f60c2 url(../images/sub/member_email_outlink_white.png) no-repeat right 30px center/auto 16px;
+}
 a.btn_line {
   background: #fff;
   color: #000;
@@ -3667,7 +3672,6 @@ a[data-btn=arrow] {
   color: #57585e;
   font-weight: 400;
   line-height: 1.4em;
-  margin-top: -12px;
 }
 @media (max-width: 1080px) {
   .titlebox_A, .titlebox_B {
@@ -3766,7 +3770,7 @@ a[data-btn=arrow] {
   border-radius: 17px;
 }
 .caution li {
-  background: url(../images/sub/icon_bullet.png) no-repeat left top 3px/17px auto;
+  background: url(../images/sub/icon_bullet.png) no-repeat left top 5px/17px auto;
   padding-left: 28px;
   line-height: 28px;
   font-size: 16px;
@@ -6778,6 +6782,17 @@ span[data-status][data-status=order1] {
   background: #1f60c2 url(../images/sub/arrow_W.png) no-repeat right 20px center;
   color: #fff;
   border-color: #1f60c2;
+}
+.report_list.logo li {
+  width: calc((100% - 40px) / 3);
+}
+.report_list.logo li img {
+  width: auto;
+  height: 40px;
+}
+.report_list.logo li figcaption {
+  background: url(../images/sub/icon_pdf_link.png) no-repeat right center/auto 16px;
+  padding-right: 35px;
 }
 @media (max-width: 1350px) {
   .report_list li {

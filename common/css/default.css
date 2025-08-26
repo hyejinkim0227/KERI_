@@ -5160,6 +5160,7 @@ span[data-status][data-status=order1] {
 .pagination ul li a.next_last {
   background: url(../../common/images/sub/next_last.png) no-repeat center;
   border: 1px solid #dbdee1;
+  margin: 0 6px;
 }
 .pagination ul li.active a {
   color: #1f60c2;
@@ -7007,6 +7008,9 @@ span[data-status][data-status=order1] {
   margin-bottom: 15px;
   color: #000;
 }
+.error_page dl dd .br {
+  display: block;
+}
 .error_page dl dd a {
   margin-top: 40px;
   width: 270px;
@@ -7018,9 +7022,9 @@ span[data-status][data-status=order1] {
 }
 @media (max-width: 1100px) {
   .error_page {
-    background-size: auto 160px;
-    background-position: center top;
-    padding: 180px 0 0;
+    background-size: auto 180px;
+    background-position: center 20px;
+    padding: 230px 0 0;
     height: auto;
     width: 100%;
   }
@@ -7040,6 +7044,9 @@ span[data-status][data-status=order1] {
   .error_page dl dd strong {
     margin-bottom: 10px;
     text-align: center;
+  }
+  .error_page dl dd .br {
+    display: inline-block;
   }
   .error_page dl dd a {
     text-align: center;

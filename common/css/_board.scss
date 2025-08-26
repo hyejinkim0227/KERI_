@@ -1417,49 +1417,58 @@ span[data-status]{
 
 // 리스트 넘버링
 .list_num{
-    counter-reset: num-counter; padding-left: 20px; 
+    counter-reset: num-counter;
      >li{
-         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; counter-increment: num-counter;margin-bottom: 10px;
+         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; counter-increment: num-counter;margin-bottom: 5px;
          &::before{content: counter(num-counter) ". ";  display: inline-block; width: 20px;}
          p{font-size: $fs-17; font-weight: 400; color: $color-bk; line-height: 1.4em;}
      }
      @media (max-width: 1080px) {
-        >li{ font-size: 16px; line-height: 20px; margin-bottom: 5px;}
+        >li{ font-size: 16px; line-height: 20px; margin-bottom: 3px;}
         p{font-size: 16px; line-height: 20px;}
      }
  }
  .list_num2{
     counter-reset: num-counter;
      >li{
-         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; counter-increment: num-counter; margin-bottom: 10px; 
-         &::before{content: counter(num-counter);  display: inline-block; width: 16px; color: $color-blue; border:1px solid $color-blue; border-radius: 50%; text-align: center; line-height: 14px; font-size: 10px; font-weight: 400; vertical-align: middle; margin-right: 5px;}
+         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; counter-increment: num-counter; margin-bottom: 5px; position: relative; padding-left: 20px;
+         &::before{
+            content: counter(num-counter);  display: inline-block; width: 16px; height: 16px; color: $color-blue; border:1px solid $color-blue; border-radius: 50%; text-align: center; line-height: 15px; font-size: 11px; font-weight: 400; vertical-align: middle;
+            position: absolute; left: 0; top: 3px;
+        }
          b{font-weight: 600; color: $color-bk;}
      }
      @media (max-width: 1080px) {
-        >li{ font-size: 16px; line-height: 20px; margin-bottom: 5px;}
+        >li{ font-size: 16px; line-height: 20px; margin-bottom: 3px;}
         p{font-size: 16px; line-height: 20px;}
      }
  }
+ @counter-style kr-hangul-alpha {
+     system: alphabetic;
+     symbols: "가." "나." "다." "라." "마." "바." "사." "아." "자." "차." "카." "타." "파." "하.";
+     suffix: ". ";
+ }
  .list_han{
-    padding-left: 20px; 
+     counter-reset: han;
      >li{
-         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; margin-bottom: 10px;
+         counter-increment: han;
+         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; margin-bottom: 5px;
          &::before{
-             content: attr(data-index) ". ";  
+             content: counter(han, kr-hangul-alpha);
              display: inline-block; 
              width: 20px;
          }
          p{font-size: $fs-17; font-weight: 400; color: $color-bk; line-height: 1.4em;}
      }
      @media (max-width: 1080px) {
-        >li{ font-size: 16px; line-height: 20px; margin-bottom: 5px;}
+        >li{ font-size: 16px; line-height: 20px; margin-bottom: 3px;}
         p{font-size: 16px; line-height: 20px;}
      }
  }
  .list_dash{
     padding-left: 20px; 
      >li{
-         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; margin-bottom: 10px;
+         font-size: $fs-17; font-weight: 400; color: #333; line-height: 1.4em; margin-bottom: 5px;
          &::before{
              content:"- ";  
              display: inline-block; 
@@ -1469,11 +1478,10 @@ span[data-status]{
          a{display: inline-block;}
      }
      @media (max-width: 1080px) {
-        >li{ font-size: 16px; line-height: 20px; margin-bottom: 5px;}
+        >li{ font-size: 16px; line-height: 20px; margin-bottom: 3px;}
         p{font-size: 16px; line-height: 20px;}
      }
-
- }
+}
 
 // 상세 파일
 .detail_file{

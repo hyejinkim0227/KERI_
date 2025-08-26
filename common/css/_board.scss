@@ -457,7 +457,9 @@ a{
         b{color: $color-blue; font-size: 17px;}
     }
     p.blue{font-size: 17px; color: $color-blue; font-weight: 400; line-height: 1.4em;}
-    p.mark{font-size: 16px; color: #57585e; font-weight: 400; line-height: 1.4em;}
+    p.mark{font-size: 16px; color: #57585e; font-weight: 400; line-height: 1.4em;
+        &.blue{color: $color-blue;}
+    }
 
 
     @media (max-width: 1080px) {
@@ -2346,3 +2348,45 @@ span[data-status]{
         }
     }
 }
+
+//채용안내 프로세스
+.process{
+    display: flex; align-items: stretch; background: #f4f6f9; border-radius: 20px; padding: 50px 40px; transition: all 0.3s;
+    >li{
+        display: flex; width: calc((100% - 125px) / 4); flex: 1;
+        counter-increment: step;
+        &:not(:last-child){padding-right: 45px; background: url(../images/sub/process_arr.png) no-repeat  right 20px center;}
+
+        >div{
+            display: flex; flex-direction: column; height: 100%; padding: 20px 80px 20px 20px; border: 1px solid #cdd3db; border-radius: 14px; background: #fff; position: relative; flex: 1; transition: all 0.3s;
+            strong{font-size: $fs-18; font-family: $ff-sbaggro; font-weight: 500; color: #424242; line-height: 1.4em;}
+
+            b{display: block; width: 45px; height: 45px; line-height: 50px; background: $color-blue; border-radius: 12px; position: absolute; right: 20px; top: 20px; color: #fff; font-size: $fs-18; font-weight: 500; font-family: $ff-sbaggro; text-align: center;}
+
+            ul li{font-size: $fs-16; font-weight: 400; color: #444; line-height: 1.4em;}
+        }
+    }
+    @media (max-width: 1300px) {
+        padding: 30px; transition: all 0.3s;
+        >li{
+            >div{
+                padding: 20px; transition: all 0.3s;
+                b{position: static; margin: 0 auto 20px;}
+            }
+        }
+    }
+    @media (max-width: 1080px) {
+        flex-direction: column;
+        >li{
+            width: 100%;
+            >div{
+                padding: 15px 66px 15px 15px;
+                b{position: absolute; right: 15px; top: 15px; width: 36px; height: 36px; line-height: 40px; font-size: 14px; border-radius: 8px;}
+            }
+            &:not(:last-child){padding: 0 0 40px; background: url(../images/sub/process_arr2.png) no-repeat center bottom 15px;}
+        }
+    }
+}
+
+.red{color: red; vertical-align: top;}
+.W100{width: 100% !important;}

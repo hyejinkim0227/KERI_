@@ -3682,6 +3682,9 @@ a[data-btn=arrow] {
   font-weight: 400;
   line-height: 1.4em;
 }
+.titlebox_A p.mark.blue, .titlebox_B p.mark.blue {
+  color: #1f60c2;
+}
 @media (max-width: 1080px) {
   .titlebox_A, .titlebox_B {
     padding: 95px 20px 20px 20px !important;
@@ -7074,6 +7077,114 @@ span[data-status][data-status=order1] {
     margin: 30px auto 0;
     width: 200px;
   }
+}
+
+.process {
+  display: flex;
+  align-items: stretch;
+  background: #f4f6f9;
+  border-radius: 20px;
+  padding: 50px 40px;
+  transition: all 0.3s;
+}
+.process > li {
+  display: flex;
+  width: calc((100% - 125px) / 4);
+  flex: 1;
+  counter-increment: step;
+}
+.process > li:not(:last-child) {
+  padding-right: 45px;
+  background: url(../images/sub/process_arr.png) no-repeat right 20px center;
+}
+.process > li > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px 80px 20px 20px;
+  border: 1px solid #cdd3db;
+  border-radius: 14px;
+  background: #fff;
+  position: relative;
+  flex: 1;
+  transition: all 0.3s;
+}
+.process > li > div strong {
+  font-size: 1.125rem;
+  font-family: "SBAggro", "Pretendard";
+  font-weight: 500;
+  color: #424242;
+  line-height: 1.4em;
+}
+.process > li > div b {
+  display: block;
+  width: 45px;
+  height: 45px;
+  line-height: 50px;
+  background: #1f60c2;
+  border-radius: 12px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-family: "SBAggro", "Pretendard";
+  text-align: center;
+}
+.process > li > div ul li {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #444;
+  line-height: 1.4em;
+}
+@media (max-width: 1300px) {
+  .process {
+    padding: 30px;
+    transition: all 0.3s;
+  }
+  .process > li > div {
+    padding: 20px;
+    transition: all 0.3s;
+  }
+  .process > li > div b {
+    position: static;
+    margin: 0 auto 20px;
+  }
+}
+@media (max-width: 1080px) {
+  .process {
+    flex-direction: column;
+  }
+  .process > li {
+    width: 100%;
+  }
+  .process > li > div {
+    padding: 15px 66px 15px 15px;
+  }
+  .process > li > div b {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 36px;
+    height: 36px;
+    line-height: 40px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  .process > li:not(:last-child) {
+    padding: 0 0 40px;
+    background: url(../images/sub/process_arr2.png) no-repeat center bottom 15px;
+  }
+}
+
+.red {
+  color: red;
+  vertical-align: top;
+}
+
+.W100 {
+  width: 100% !important;
 }
 
 @keyframes slideInFromRight {

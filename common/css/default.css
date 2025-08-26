@@ -3202,7 +3202,7 @@ a[data-btn=download2] {
   font-size: 1rem;
   font-weight: 400;
   color: #000;
-  padding: 0 37px 0 15px;
+  padding: 0 40px 0 15px;
   border-radius: 5px;
   border: 1px solid #474747;
   height: 42px;
@@ -3237,7 +3237,7 @@ a[data-btn=arrow] {
   font-size: 1.0625rem;
   font-weight: 400;
   padding-left: 20px;
-  padding-right: 36px;
+  padding-right: 40px;
   border-radius: 7px;
   height: 54px;
   line-height: 54px;
@@ -14210,12 +14210,17 @@ section .fp-tableCell {
   flex-wrap: wrap;
   gap: 40px 20px;
 }
+.procedures.type2 li {
+  max-height: 170px;
+}
 .procedures li {
-  padding: 40px 30px 40px 160px;
+  padding: 34px 30px 34px 160px;
   display: flex;
   flex-direction: column;
   width: calc(50% - 10px);
-  height: 170px;
+  min-height: 170px;
+  max-height: 300px;
+  height: auto;
   position: relative;
   justify-content: center;
   display: flex;
@@ -14235,6 +14240,39 @@ section .fp-tableCell {
 }
 .procedures li[icon-type="5"] {
   background-image: url(../images/sub/icon_procedures_05.png);
+}
+.procedures li[icon-type="6"] {
+  background-image: url(../images/sub/icon_procedures_06.png);
+}
+.procedures li[icon-type="7"] {
+  background-image: url(../images/sub/icon_procedures_07.png);
+}
+.procedures li[icon-type="8"] {
+  background-image: url(../images/sub/icon_procedures_08.png);
+}
+.procedures li[icon-type="9"] {
+  background-image: url(../images/sub/icon_procedures_09.png);
+}
+.procedures li[icon-type="10"] {
+  background-image: url(../images/sub/icon_procedures_10.png);
+}
+.procedures li[icon-type="11"] {
+  background-image: url(../images/sub/icon_procedures_11.png);
+}
+.procedures li[icon-type="12"] {
+  background-image: url(../images/sub/icon_procedures_12.png);
+}
+.procedures li[icon-type="13"] {
+  background-image: url(../images/sub/icon_procedures_13.png);
+}
+.procedures li[icon-type="14"] {
+  background-image: url(../images/sub/icon_procedures_14.png);
+}
+.procedures li[icon-type="15"] {
+  background-image: url(../images/sub/icon_procedures_15.png);
+}
+.procedures li[icon-type="16"] {
+  background-image: url(../images/sub/icon_procedures_16.png);
 }
 .procedures li span {
   position: absolute;
@@ -14259,11 +14297,13 @@ section .fp-tableCell {
   font-size: 16px;
   line-height: 28px;
   color: #444;
+  letter-spacing: -0.3px;
 }
 @media (max-width: 1080px) {
   .procedures li {
     background-size: 70px auto;
     padding: 30px 20px 30px 120px;
+    width: 100%;
   }
   .procedures li b {
     font-size: 20px;
@@ -14272,11 +14312,6 @@ section .fp-tableCell {
   .procedures li p {
     font-size: 15px;
     line-height: 24px;
-  }
-}
-@media (max-width: 750px) {
-  .procedures li {
-    width: 100%;
   }
 }
 
@@ -15361,6 +15396,12 @@ section .fp-tableCell {
   }
 }
 
+@media (max-width: 1080px) {
+  .m_block {
+    display: block;
+  }
+}
+
 .wAuto {
   width: auto;
 }
@@ -15451,7 +15492,7 @@ section .fp-tableCell {
 }
 
 .w220 {
-  width: 220px;
+  width: 220px !important;
 }
 
 .w230 {

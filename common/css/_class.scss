@@ -5,6 +5,9 @@
 .m_hide{
     @media (max-width: 1080px) {display: none;}
 }
+.m_block{
+    @media (max-width: 1080px) {display: block;}
+}
 .wAuto {width: auto;}
 .wfull {width: 100%; max-width: 100% !important;}
 .w30 {width: 30px;}
@@ -27,7 +30,7 @@
 .w190 {width: 190px;}
 .w200 {width: 200px;}
 .w210 {width: 210px;}
-.w220 {width: 220px;}
+.w220 {width: 220px !important;}
 .w230 {width: 230px;}
 .w240 {width: 240px;}
 .w250 {width: 250px;}

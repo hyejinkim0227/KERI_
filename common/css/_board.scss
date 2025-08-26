@@ -242,11 +242,11 @@ a{
     &.btn_sm{height: 40px; line-height: 40px; font-size: $fs-15; border-radius: 10px;}
 
     
-    &[data-btn="download2"]{background: #fff url(../images/sub/icon_download.png) no-repeat right 16px center; max-width: fit-content; font-size:$fs-16; font-weight: 400; color: $color-bk;  padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 42px; line-height: 42px;}
+    &[data-btn="download2"]{background: #fff url(../images/sub/icon_download.png) no-repeat right 16px center; max-width: fit-content; font-size:$fs-16; font-weight: 400; color: $color-bk;  padding: 0 40px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 42px; line-height: 42px;}
     &[data-btn="download"]{background: #fff url(../images/sub/icon_download.png) no-repeat right 12px center;font-size:$fs-15; font-weight: 400; color: $color-bk; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;}
     &[data-btn="preview"]{background: #fff url(../images/sub/icon_view.png) no-repeat right 12px center;font-size:$fs-15; font-weight: 400; color: $color-bk; line-height: 36px; padding: 0 37px 0 15px; border-radius: 5px; border: 1px solid #474747; height: 36px; line-height: 36px;}
     &[data-btn="arrow"]{background: #17469d url(../images/sub/btn_arrow.png) no-repeat right 20px center/12px auto;font-size:$fs-17;  
-        font-weight: 400; padding-left: 20px; padding-right: 36px;border-radius: 7px; height: 54px; line-height: 54px;     min-width: 220px;  color: #fff !important;
+        font-weight: 400; padding-left: 20px; padding-right: 40px;border-radius: 7px; height: 54px; line-height: 54px;     min-width: 220px;  color: #fff !important;
         width: fit-content; }
     
 

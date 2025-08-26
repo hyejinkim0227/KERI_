@@ -3278,8 +3278,11 @@
 }
 
 .procedures{ display: flex; flex-wrap: wrap; gap: 40px 20px; 
-    li{ padding: 40px 30px 40px 160px; display: flex; flex-direction: column; 
-        width: calc(50% - 10px); height: 170px; position: relative;    justify-content: center;
+    &.type2{ 
+        li{max-height: 170px;}
+    }
+    li{ padding: 34px 30px 34px 160px; display: flex; flex-direction: column; 
+        width: calc(50% - 10px); min-height: 170px; max-height: 300px;height: auto; position: relative; justify-content: center;
         display: flex;  gap: 10px; border: 1px solid #dedede; border-radius: 20px;
        
         background: url(../images/sub/icon_procedures_01.png) no-repeat center left 30px/ 100px auto;
@@ -3295,23 +3298,52 @@
         &[icon-type="5"]{
             background-image: url(../images/sub/icon_procedures_05.png);
         }
+        &[icon-type="6"]{ //시험인증검사
+            background-image: url(../images/sub/icon_procedures_06.png);
+        }
+        &[icon-type="7"]{
+            background-image: url(../images/sub/icon_procedures_07.png);
+        }
+        &[icon-type="8"]{
+            background-image: url(../images/sub/icon_procedures_08.png);
+        }
+        &[icon-type="9"]{
+            background-image: url(../images/sub/icon_procedures_09.png);
+        }
+
+        &[icon-type="10"]{
+            background-image: url(../images/sub/icon_procedures_10.png);
+        }
+        &[icon-type="11"]{
+            background-image: url(../images/sub/icon_procedures_11.png);
+        }
+        &[icon-type="12"]{
+            background-image: url(../images/sub/icon_procedures_12.png);
+        }
+        &[icon-type="13"]{
+            background-image: url(../images/sub/icon_procedures_13.png);
+        }
+        &[icon-type="14"]{
+            background-image: url(../images/sub/icon_procedures_14.png);
+        }
+        &[icon-type="15"]{
+            background-image: url(../images/sub/icon_procedures_15.png);
+        }
+        &[icon-type="16"]{
+            background-image: url(../images/sub/icon_procedures_16.png);
+        }
         span{ position: absolute; top: -20px; left: 30px;  background: #17469d; text-align: center;
         border-radius: 6px; width: 36px; height: 36px; line-height: 36px; color: #fff;
          font-size:14px; font-weight: 500;
        }
         b{font-size:22px; line-height: 30px; font-weight: 500;}
-        p{font-size:16px; line-height: 28px; color: #444;}
+        p{font-size:16px; line-height: 28px; color: #444; letter-spacing: -0.3px;}
     }
     @media (max-width: 1080px) {
-        li{background-size: 70px auto;  padding: 30px 20px 30px 120px;
+        li{background-size: 70px auto;  padding: 30px 20px 30px 120px;width: 100%;
             
             b{font-size:20px; line-height: 26px;}
             p{font-size:15px; line-height: 24px;}
-        }
-    }
-    @media (max-width: 750px) {
-        li{width: 100%;
-            
         }
     }
 }

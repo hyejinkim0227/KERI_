@@ -2236,7 +2236,9 @@ span[data-status]{
     &.logo{
         li{width: calc((100% - 40px)/3);
             img{width: auto; height: 40px;}
-            figcaption{ background: url(../images/sub/icon_pdf_link.png) no-repeat right center / auto 16px; padding-right: 35px;}
+            figcaption{ background: url(../images/sub/icon_pdf_link.png) no-repeat right center / auto 16px; padding-right: 35px;
+                &.no{background: none; padding-right: 0;}
+            }
         }
         @media (max-width: 900px) {
             li{width: 100%; padding-top: 20px;
@@ -2288,6 +2290,21 @@ span[data-status]{
             img{height: 53px; width: auto; max-width: none;}
         }
     }
+
+    &.link{
+        li{
+            padding: 0; border-radius: 20px; background: #f4f6f9;
+            a{ width: 100%; height: 100%;
+                display: block; background: url(../images/sub/icon_apply_arrow.png) no-repeat center right 48px; border: 1px solid #c9cbcf; padding: 0 50px 0 20px; border:none;
+                figure{
+                    display: flex; align-items: center; gap: 20px; padding: 50px 0;
+                    img{height: 53px; width: auto; max-width: none;}
+                    figcaption{font-size: $fs-21; font-weight: 500; font-family: $ff-sbaggro; color: #000; line-height: 1.4em; text-align: left;}
+                }
+            }
+        }
+    }
+
     @media (max-width: 1080px) {
         gap: 20px;
         li{width: 100%; padding: 20px; gap: 20px; flex-direction: column; 
@@ -2388,7 +2405,7 @@ span[data-status]{
     }
 }
 
-.red{color: red; vertical-align: top;}
+.red{color: #f43f3f; vertical-align: top;}
 .W100{width: 100% !important;}
 .btn_blue{
     &.arrow{
@@ -2404,4 +2421,26 @@ span[data-what]{
     border-radius: 15px; border: 2px solid #3193de; height: 30px; line-height: 27px; font-size: $fs-15; font-weight: 600; display: inline-block; width: 74px;  text-align: center; margin-bottom: 10px;
     &[data-what="blue"]{color: #3193de; border-color: #3193de;}
     &[data-what="green"]{color: #1fb1c2; border-color: #1fb1c2;}
+}
+.dot{
+    &.wide{
+        >li{
+            &:not(:last-child){margin-bottom: 20px;}
+        }
+    }
+}
+
+.box_gray{
+    display: flex; gap: 30px; align-items: stretch; margin-top: 20px;
+    li{
+        display: flex; flex-direction: column; background: #f4f6f9; border-radius: 20px; padding: 35px; flex: 1 1 0; height: auto;
+
+        strong{font-size: $fs-20; font-family: $ff-sbaggro; font-weight: 500; color: #000; line-height: 1.4em; margin-bottom: 10px; display: block; text-align: center;}
+        font-size: $fs-16; font-weight: 400; color: #424242; line-height: 1.4em; text-align: center;
+    }
+}
+.radio{
+    &.center{
+        ul{margin: auto;}
+    }
 }

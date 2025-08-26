@@ -6867,6 +6867,10 @@ span[data-status][data-status=order1] {
   background: url(../images/sub/icon_pdf_link.png) no-repeat right center/auto 16px;
   padding-right: 35px;
 }
+.report_list.logo li figcaption.no {
+  background: none;
+  padding-right: 0;
+}
 @media (max-width: 900px) {
   .report_list.logo li {
     width: 100%;
@@ -6953,6 +6957,39 @@ span[data-status][data-status=order1] {
   height: 53px;
   width: auto;
   max-width: none;
+}
+.apply_list.link li {
+  padding: 0;
+  border-radius: 20px;
+  background: #f4f6f9;
+}
+.apply_list.link li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: url(../images/sub/icon_apply_arrow.png) no-repeat center right 48px;
+  border: 1px solid #c9cbcf;
+  padding: 0 50px 0 20px;
+  border: none;
+}
+.apply_list.link li a figure {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 0;
+}
+.apply_list.link li a figure img {
+  height: 53px;
+  width: auto;
+  max-width: none;
+}
+.apply_list.link li a figure figcaption {
+  font-size: 1.3125rem;
+  font-weight: 500;
+  font-family: "SBAggro", "Pretendard";
+  color: #000;
+  line-height: 1.4em;
+  text-align: left;
 }
 @media (max-width: 1080px) {
   .apply_list {
@@ -7179,7 +7216,7 @@ span[data-status][data-status=order1] {
 }
 
 .red {
-  color: red;
+  color: #f43f3f;
   vertical-align: top;
 }
 
@@ -7221,6 +7258,45 @@ span[data-what][data-what=blue] {
 span[data-what][data-what=green] {
   color: #1fb1c2;
   border-color: #1fb1c2;
+}
+
+.dot.wide > li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.box_gray {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  margin-top: 20px;
+}
+.box_gray li {
+  display: flex;
+  flex-direction: column;
+  background: #f4f6f9;
+  border-radius: 20px;
+  padding: 35px;
+  flex: 1 1 0;
+  height: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #424242;
+  line-height: 1.4em;
+  text-align: center;
+}
+.box_gray li strong {
+  font-size: 1.25rem;
+  font-family: "SBAggro", "Pretendard";
+  font-weight: 500;
+  color: #000;
+  line-height: 1.4em;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+
+.radio.center ul {
+  margin: auto;
 }
 
 @keyframes slideInFromRight {

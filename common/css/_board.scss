@@ -2390,3 +2390,18 @@ span[data-status]{
 
 .red{color: red; vertical-align: top;}
 .W100{width: 100% !important;}
+.btn_blue{
+    &.arrow{
+        display: inline-block; background-image: url(../../common/images/sub/icon_arrow.png); background-position: right 30px center; background-repeat: no-repeat; padding: 0 90px 0 30px;
+    }
+
+    @media (max-width: 1080px) { 
+        &.arrow{height: 40px; line-height: 40px; font-size: 16px; }
+    }
+}
+
+span[data-what]{
+    border-radius: 15px; border: 2px solid #3193de; height: 30px; line-height: 27px; font-size: $fs-15; font-weight: 600; display: inline-block; width: 74px;  text-align: center; margin-bottom: 10px;
+    &[data-what="blue"]{color: #3193de; border-color: #3193de;}
+    &[data-what="green"]{color: #1fb1c2; border-color: #1fb1c2;}
+}

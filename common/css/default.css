@@ -3645,6 +3645,9 @@ a[data-btn=arrow] {
 .titlebox_A[data-menu=menu07], .titlebox_B[data-menu=menu07] {
   background-image: url(../images/sub/title_7.png);
 }
+.titlebox_A[data-menu=menu08], .titlebox_B[data-menu=menu08] {
+  background-image: url(../images/sub/title_8.png);
+}
 .titlebox_A h4, .titlebox_B h4 {
   font-size: 17px;
   font-weight: 600;
@@ -3775,6 +3778,16 @@ a[data-btn=arrow] {
   line-height: 28px;
   font-size: 16px;
   color: #da4d4f;
+}
+.caution[data-type=gray] {
+  background: #f4f6f9;
+}
+.caution[data-type=gray] li {
+  color: #454545;
+  background: url(../images/sub/icon_caption_gray.png) no-repeat left top 5px/17px auto;
+  padding-left: 28px;
+  line-height: 28px;
+  font-size: 16px;
 }
 @media (max-width: 1080px) {
   .caution {

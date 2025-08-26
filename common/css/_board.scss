@@ -452,6 +452,7 @@ a{
     &[data-menu="menu05"]{background-image: url(../images/sub/title_5.png)}
     &[data-menu="menu06"]{background-image: url(../images/sub/title_6.png)}
     &[data-menu="menu07"]{background-image: url(../images/sub/title_7.png)}
+    &[data-menu="menu08"]{background-image: url(../images/sub/title_8.png)}
 
     h4{font-size: 17px; font-weight: 600; color: #000; line-height: 1.5em;}
     h5{font-size: 17px; color: #000; font-weight: 400; line-height: 28px;
@@ -500,6 +501,12 @@ a{
     background: #f4f6f9; padding: 25px; border-radius: 17px;
     li{
         background: url(../images/sub/icon_bullet.png) no-repeat left top 5px / 17px auto; padding-left: 28px; line-height: 28px; font-size: 16px; color: #da4d4f;
+    }
+    &[data-type="gray"]{
+        background: #f4f6f9;
+        li{ color: #454545;
+            background: url(../images/sub/icon_caption_gray.png) no-repeat left top 5px / 17px auto; padding-left: 28px; line-height: 28px; font-size: 16px; 
+        }
     }
     @media (max-width: 1080px) {
         padding: 20px 15px;

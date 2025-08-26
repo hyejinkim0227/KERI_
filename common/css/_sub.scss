@@ -3854,3 +3854,161 @@ justify-content: space-between;
       
     }
 }
+
+//제품인증서비스 아코디언
+.icon_accordion{
+    margin-bottom: 40px;
+    
+   > ul {
+        display: flex; flex-direction: column; gap: 20px;
+        >li {
+            background: #f0f8ff;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            position: relative;
+            
+            &.active {
+                box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.35);
+                background: #fff;
+                border: 1px solid #1f60c2;
+                .acc_btn{
+                  border-radius: 14px 14px 0 0;
+                  strong{
+                    color: #1f60c2;
+                  }
+               
+                  &::after{
+                    background: url(../images/sub/icon_acco_arrow_up.png) no-repeat center center / contain;
+                  }
+                }
+              
+            }
+        }
+    }
+    
+    
+    
+    .acc_btn {
+        align-items: center;
+        width: 100%;
+        display: flex;
+        padding:  0 55px;
+        background: none;
+        text-align: left;
+        cursor: pointer;
+        height: 100px;
+        transition: all 0.3s ease;
+        border-radius: 14px;
+        color: #000;
+        position: relative;
+        background: #f4f6f9 url(../images/sub/img_acco_logo.png) no-repeat bottom 0 right 110px/ 212px auto;
+        
+
+        &::after{
+            content: ''; display: block; position: absolute; top: 38%; right: 35px;
+            width: 24px; height: 26px; background: url(../images/sub/icon_acco_arrow_down.png) no-repeat center center / contain;
+         
+          }
+        
+        strong {
+            font-family: $ff-sbaggro;
+            padding-left: 45px;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 59px;
+         
+            &[icon-type="1"]{
+                background: url(../images/sub/icon_acco_01.png) no-repeat left center/ 26px auto;
+            }
+            &[icon-type="2"]{
+                background: url(../images/sub/icon_acco_02.png) no-repeat left center/ 27px auto;
+            }
+            &[icon-type="3"]{
+                background: url(../images/sub/icon_acco_03.png) no-repeat left center/ 27px auto;
+            }
+            &[icon-type="4"]{
+                background: url(../images/sub/icon_acco_04.png) no-repeat left center/ 22px auto;
+            }
+            &[icon-type="5"]{
+                background: url(../images/sub/icon_acco_05.png) no-repeat left center/ 27px auto;   
+            }
+            &[icon-type="6"]{
+                background: url(../images/sub/icon_acco_06.png) no-repeat left center/ 26px auto;
+            }
+            &[icon-type="7"]{
+                background: url(../images/sub/icon_acco_07.png) no-repeat left center/ 26px auto;
+            }
+
+        }
+   
+    }
+    
+    .acc_content {
+        display: none;
+        border-radius: 0 0 14px 14px;
+        padding: 25px 60px;
+      
+   
+    }
+    
+    >li.active {
+        .acc_btn {
+            strong {
+                color: #1f60c2;
+              
+            }
+        }
+
+    }
+    
+    @media (max-width: 1080px) {
+        margin-bottom: 30px;
+        
+        >ul {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        
+        .acc_btn {
+            padding: 16px;
+            gap: 12px;
+            height: 60px;
+      
+            background-size: 150px;
+            background-position: bottom right 53px;
+            &::after{
+                right: 16px;
+                width: 16px; height: 16px;
+            }
+            strong {
+                font-size: 16px;
+                background-size: 20px auto !important;
+            }
+        }
+        
+        .acc_content {
+            padding: 20px 15px;
+            &.show {
+                padding: 16px 0;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.regulation_list{ display: flex; flex-wrap: wrap; gap: 10px 16px;
+    li{ border-radius: 7px; padding: 10px 35px 10px 15px; display: flex; align-items: center; 
+        width: calc(20% - 13px);
+         font-size: 15px;  min-height: 58px; background:   #f4f4f7  url(../images/sub/icon_pdf.png) no-repeat center right 15px/ 18px auto;
+         b{font-weight: 600;}
+         span{letter-spacing: -1.3px;}
+    }
+    @media (max-width: 1080px) {
+        li{ width: calc(50% - 9px);
+        }
+    }
+}

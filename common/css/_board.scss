@@ -530,8 +530,17 @@ a{
     }
     &.type2{
         ul{
-            li{
+            li{ 
                 flex: 0 0 calc((100% - (10px * 3)) / 4);
+                
+            }
+        }
+    }
+    &.type3{
+        ul{
+            li{ 
+                flex: 0 0 calc((100% - (10px * 2)) / 3);
+                
             }
         }
     }
@@ -544,10 +553,11 @@ a{
                 &.active a{border-radius: 0;}
             }
         }
-        &.type2{
+        &.type2, &.type3{
             ul{
                 li{
                     flex: 0 0 calc(100% / 2);
+                    a{font-size: $fs-15;}
                 }
             }
         }

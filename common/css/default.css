@@ -3819,6 +3819,9 @@ a[data-btn=arrow] {
 .tab_list.type2 ul li {
   flex: 0 0 calc((100% - 30px) / 4);
 }
+.tab_list.type3 ul li {
+  flex: 0 0 calc((100% - 20px) / 3);
+}
 @media (max-width: 1080px) {
   .tab_list ul {
     background: none;
@@ -3838,8 +3841,11 @@ a[data-btn=arrow] {
   .tab_list ul li.active a {
     border-radius: 0;
   }
-  .tab_list.type2 ul li {
+  .tab_list.type2 ul li, .tab_list.type3 ul li {
     flex: 0 0 50%;
+  }
+  .tab_list.type2 ul li a, .tab_list.type3 ul li a {
+    font-size: 0.9375rem;
   }
 }
 
@@ -14951,6 +14957,157 @@ section .fp-tableCell {
     padding: 0 20px 0 10px !important;
     background-size: 5px auto;
     background-position: right 10px top 16px;
+  }
+}
+
+.icon_accordion {
+  margin-bottom: 40px;
+}
+.icon_accordion > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.icon_accordion > ul > li {
+  background: #f0f8ff;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.icon_accordion > ul > li.active {
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.35);
+  background: #fff;
+  border: 1px solid #1f60c2;
+}
+.icon_accordion > ul > li.active .acc_btn {
+  border-radius: 14px 14px 0 0;
+}
+.icon_accordion > ul > li.active .acc_btn strong {
+  color: #1f60c2;
+}
+.icon_accordion > ul > li.active .acc_btn::after {
+  background: url(../images/sub/icon_acco_arrow_up.png) no-repeat center center/contain;
+}
+.icon_accordion .acc_btn {
+  align-items: center;
+  width: 100%;
+  display: flex;
+  padding: 0 55px;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  height: 100px;
+  transition: all 0.3s ease;
+  border-radius: 14px;
+  color: #000;
+  position: relative;
+  background: #f4f6f9 url(../images/sub/img_acco_logo.png) no-repeat bottom 0 right 110px/212px auto;
+}
+.icon_accordion .acc_btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 38%;
+  right: 35px;
+  width: 24px;
+  height: 26px;
+  background: url(../images/sub/icon_acco_arrow_down.png) no-repeat center center/contain;
+}
+.icon_accordion .acc_btn strong {
+  font-family: "SBAggro", "Pretendard";
+  padding-left: 45px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 59px;
+}
+.icon_accordion .acc_btn strong[icon-type="1"] {
+  background: url(../images/sub/icon_acco_01.png) no-repeat left center/26px auto;
+}
+.icon_accordion .acc_btn strong[icon-type="2"] {
+  background: url(../images/sub/icon_acco_02.png) no-repeat left center/27px auto;
+}
+.icon_accordion .acc_btn strong[icon-type="3"] {
+  background: url(../images/sub/icon_acco_03.png) no-repeat left center/27px auto;
+}
+.icon_accordion .acc_btn strong[icon-type="4"] {
+  background: url(../images/sub/icon_acco_04.png) no-repeat left center/22px auto;
+}
+.icon_accordion .acc_btn strong[icon-type="5"] {
+  background: url(../images/sub/icon_acco_05.png) no-repeat left center/27px auto;
+}
+.icon_accordion .acc_btn strong[icon-type="6"] {
+  background: url(../images/sub/icon_acco_06.png) no-repeat left center/26px auto;
+}
+.icon_accordion .acc_btn strong[icon-type="7"] {
+  background: url(../images/sub/icon_acco_07.png) no-repeat left center/26px auto;
+}
+.icon_accordion .acc_content {
+  display: none;
+  border-radius: 0 0 14px 14px;
+  padding: 25px 60px;
+}
+.icon_accordion > li.active .acc_btn strong {
+  color: #1f60c2;
+}
+@media (max-width: 1080px) {
+  .icon_accordion {
+    margin-bottom: 30px;
+  }
+  .icon_accordion > ul {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .icon_accordion .acc_btn {
+    padding: 16px;
+    gap: 12px;
+    height: 60px;
+    background-size: 150px;
+    background-position: bottom right 53px;
+  }
+  .icon_accordion .acc_btn::after {
+    right: 16px;
+    width: 16px;
+    height: 16px;
+  }
+  .icon_accordion .acc_btn strong {
+    font-size: 16px;
+    background-size: 20px auto !important;
+  }
+  .icon_accordion .acc_content {
+    padding: 20px 15px;
+  }
+  .icon_accordion .acc_content.show {
+    padding: 16px 0;
+  }
+  .icon_accordion .acc_content p {
+    font-size: 14px;
+  }
+}
+
+.regulation_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+.regulation_list li {
+  border-radius: 7px;
+  padding: 10px 35px 10px 15px;
+  display: flex;
+  align-items: center;
+  width: calc(20% - 13px);
+  font-size: 15px;
+  min-height: 58px;
+  background: #f4f4f7 url(../images/sub/icon_pdf.png) no-repeat center right 15px/18px auto;
+}
+.regulation_list li b {
+  font-weight: 600;
+}
+.regulation_list li span {
+  letter-spacing: -1.3px;
+}
+@media (max-width: 1080px) {
+  .regulation_list li {
+    width: calc(50% - 9px);
   }
 }
 

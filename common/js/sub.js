@@ -754,5 +754,45 @@ $(document).ready(function() {
     // 선택된 탭 컨텐츠만 보이기
     $('#' + targetTab).addClass('active');
   });
+  
+  // icon_accordion 아코디언 기능 (FAQ와 동일한 로직)
+  $('.icon_accordion .acc_btn').on('click', function() {
+    const $currentItem = $(this).closest('li');
+    const $content = $currentItem.find('.acc_content');
+    const isActive = $currentItem.hasClass('active');
+    const $currentButton = $(this);
+    const buttonText = $currentButton.find('strong').text();
+    
+    // 모든 아코디언 항목의 active 클래스 제거 및 슬라이드 업
+    $('.icon_accordion li').removeClass('active');
+    $('.icon_accordion .acc_content').slideUp(300);
+    
+    // 모든 버튼의 접근성 속성을 닫힌 상태로 업데이트
+    $('.icon_accordion .acc_btn').each(function() {
+      const $btn = $(this);
+      const btnText = $btn.find('strong').text();
+      $btn.attr('title', btnText + ' (닫힘)');
+    });
+    
+    // 클릭한 항목이 열려있지 않았다면 열기
+    if (!isActive) {
+      $currentItem.addClass('active');
+      $content.slideDown(500, 'swing');
+      
+      // 현재 버튼의 접근성 속성을 열린 상태로 업데이트
+      $currentButton.attr('title', buttonText + ' (열림)');
+    }
+  });
+  
+  // 초기화: 모든 icon_accordion 버튼에 접근성 속성 설정 및 첫 번째 항목 열기
+  $('.icon_accordion .acc_btn').each(function() {
+    const $btn = $(this);
+    const btnText = $btn.find('strong').text();
+    const isActive = $btn.closest('li').hasClass('active');
+    $btn.attr('title', btnText + (isActive ? ' (열림)' : ' (닫힘)'));
+  });
+  
+  // 첫 번째 항목의 content를 보이도록 설정
+  $('.icon_accordion li:first-child.active .acc_content').show();
 });
 

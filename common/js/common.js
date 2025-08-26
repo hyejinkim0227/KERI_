@@ -1495,4 +1495,55 @@ $(document).ready(function() {
     $('.accordion').on('click', function() {
       $(this).toggleClass('active');
     });
+
+
+    // 모바일(<=1080px)에서만 thead th 텍스트를 tbody th 라벨로 설정 (1회 적용)
+    window.addEventListener('resize', () => {
+      const width = window.innerWidth;
+      if (width >= 1080) th_val();
+    });
+
+    th_val();
+    function th_val(){
+      $('.tableB.type3 thead th').each(function(i) {
+        var th = $(this).text();
+        console.log(th);
+        $(this).closest('table').find('tbody tr td:nth-child(' + (i+1) + ')').attr('data-th', th+" : ");
+      });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    if (window.matchMedia('(max-width: 1080px)').matches) {
+      alert('123');
+      $('.tableB.type3').each(function() {
+        var $wrapper = $(this);
+        var $table = $wrapper.is('table') ? $wrapper : $wrapper.find('table').first();
+        if ($table.length === 0) return;
+        var headerTexts = [];
+        $table.find('thead th').each(function(i) {
+          headerTexts[i] = $.trim($(this).text());
+        });
+        if (!headerTexts.length) return;
+        $table.find('tbody tr').each(function() {
+          $(this).children('th').each(function(colIndex) {
+            $(this).attr('data-th', headerTexts[colIndex] || '');
+          });
+        });
+      });
+    }*/
 });

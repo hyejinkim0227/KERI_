@@ -268,11 +268,11 @@ $w720 : 720px;
 
 //블릿 적용
 .bar{ 
-    > li{ position: relative; padding-left: 26px !important; 
+    > li{ position: relative; padding-left: 26px !important; line-height: 1.4em;
         &:before{position: absolute; content: '-'; display: block;left: 0px;  width: 4px; height: 4px; }
     }
     @media (max-width: 1080px) {
-        font-size: $fs-15;
+        font-size: $fs-15; 
     }
 }
 

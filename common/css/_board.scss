@@ -638,7 +638,7 @@ a{
     }
 
      h2{ font-size: $fs-24; font-weight: 500; font-family: $ff-sbaggro;  margin-bottom: 10px; line-height: 30px;
-        @media (max-width: 1080px) {font-size: $fs-18; margin-bottom: 15px;
+        @media (max-width: 1080px) {font-size: $fs-20; margin-bottom: 0px;
             &::after{
                 width: 6px; height: 6px;margin-bottom: 10px;margin-left: 5px;
             }
@@ -917,17 +917,16 @@ a{
 .tableB {
     table{
         border-top: 2px solid $color-grey1;
-        th, td{text-align: center; height: 60px; padding: 10px 20px; color: $color-grey1; border-bottom: 1px solid $bor_form; 
+        th, td{
+            text-align: center; height: 60px; padding: 10px 20px; color: $color-grey1; border-bottom: 1px solid $bor_form; 
              font-size: $fs-17; font-weight: 400; vertical-align: middle; line-height: 1.4em;}
     
         th {
-        background-color: #f8f9fa; font-weight: 500; color: $color-bk; padding-left: 30px;
-        border-bottom: 1px solid #d9d9d9;
-        border-right: 1px solid #d9d9d9;
-        label{cursor: unset;}
-        &:last-of-type {
-            border-right: 0;
-        }
+            background-color: #f8f9fa; font-weight: 500; color: $color-bk; padding-left: 30px;
+            border-bottom: 1px solid #d9d9d9;
+            border-right: 1px solid #d9d9d9;
+            label{cursor: unset;}
+            &:last-of-type {border-right: 0;}
         }
         
         tbody {
@@ -937,11 +936,9 @@ a{
               border-left: 0;
               border-right: 1px solid #d9d9d9;
 
-              &.left {
-                text-align: left;
-              }
+              &.left {text-align: left;}
               &:last-of-type {
-                border-right: 0; border-left: 1px solid #d9d9d9;
+                border-right: 0; //border-left: 1px solid #d9d9d9;
               }
            
               .block{display: inline-block; margin-left: 5px;}
@@ -1071,6 +1068,7 @@ a{
                 border-top: 2px solid $color-grey1;
                 margin-top: 0;
                 border-bottom: 1px solid #d9d9d9;
+                table-layout: auto;
                 
                 colgroup {
                     display: table-column-group;
@@ -1137,14 +1135,16 @@ a{
                     text-align: center;
                     border-right: 1px solid #d9d9d9;
                     float: none;
-                    
-                    div {
+                    /* @@@ 0826 공통으로 적용됨부부인데
+                    >div {
                         display: inline;
                         float: none;
                         padding-left: 0;
                         text-align: inherit;
                         width: auto;
+                        a:not(:first-child){margin-top: 7px;}
                     }
+                    */
                     
                     &:before {
                         display: none;
@@ -1156,6 +1156,23 @@ a{
                     border-left: 1px solid #d9d9d9;
                     width: 80px;
                     min-width: 80px;
+                }
+            }
+        }
+    }
+    &.type3{
+        @media (max-width: 1080px) {
+            table{
+                border-top: 0;
+                tbody{
+                    tr{
+                        td{ 
+                            display: flex; justify-content: flex-start; align-items: center; padding: 0; line-height: 1.4em;
+                            &:before{display: inline-block !important; content: attr(data-th); width: auto; height: 20px; text-align: left; font-weight: 500; font-size: $fs-15; line-height: 1.4em; margin-right: 10px; color: #000}
+                            &:first-child{padding-top: 15px;}
+                            &:last-child{padding-bottom: 10px;}
+                        }
+                    }
                 }
             }
         }
@@ -1455,7 +1472,7 @@ span[data-status]{
         background: #f7f7f9; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; padding: 13px 10px 13px 20px;
 
         >a{
-            font-size: $fs-16; font-weight: 400; color: $color-bk; line-height: 20px; position: relative; 
+            font-size: $fs-16; font-weight: 400; color: $color-bk; line-height: 20px; position: relative; text-align: left;
  padding-left: 30px;
             &:before{content: ""; display: block; position: absolute; top: 9px; left: 0; transform: translateY(-50%); width: 22px; height: 22px; line-height: 22px; background: url(../images/sub/icon_file2.png) no-repeat center / auto 22px; margin-right: 5px;}
             span{font-size: $fs-15; font-weight: 400; color: #707070; line-height: 20px; margin-left: 5px;}
@@ -2246,14 +2263,31 @@ span[data-status]{
             img{height: 53px; width: auto; max-width: none;}
         }
     }
-
+    @media (max-width: 1080px) {
+        gap: 20px;
+        li{width: 100%; padding: 20px; gap: 20px; flex-direction: column; 
+            >div{
+                justify-content: center;
+                strong{font-size: 16px; text-align: center;}
+                font-size: 14px; line-height: 1.4em; text-align: center;
+            }
+            figure{
+                img{height: 40px;}
+            }
+        }
+    }
 }
 
 .content_list{
     margin-top: 50px;
     li{
-        .sub_tit_md{margin-bottom: 18px;}
+        //.sub_tit_md{margin-bottom: 18px;}
         .bar li{color:#434343; font-size: $fs-17; font-weight: 400; line-height: 28px;}
         .tableB.type2 table > tbody > tr > td{word-break: break-all; overflow-wrap: anywhere;}
+    }
+    @media (max-width: 1080px) {
+        li{
+            //.sub_tit_md{margin: 20px 0 8px;}
+        }
     }
 }

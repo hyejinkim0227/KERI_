@@ -286,6 +286,7 @@
 .bar > li {
   position: relative;
   padding-left: 26px !important;
+  line-height: 1.4em;
 }
 .bar > li:before {
   position: absolute;
@@ -4005,8 +4006,8 @@ a[data-btn=arrow] {
 }
 @media (max-width: 1080px) {
   .titlebox h2 {
-    font-size: 1.125rem;
-    margin-bottom: 15px;
+    font-size: 1.25rem;
+    margin-bottom: 0px;
   }
   .titlebox h2::after {
     width: 6px;
@@ -4542,7 +4543,6 @@ a[data-btn=arrow] {
 }
 .tableB table tbody tr td:last-of-type {
   border-right: 0;
-  border-left: 1px solid #d9d9d9;
 }
 .tableB table tbody tr td .block {
   display: inline-block;
@@ -4663,6 +4663,7 @@ a[data-btn=arrow] {
     border-top: 2px solid #222;
     margin-top: 0;
     border-bottom: 1px solid #d9d9d9;
+    table-layout: auto;
   }
   .tableB.type2 table colgroup {
     display: table-column-group;
@@ -4723,13 +4724,16 @@ a[data-btn=arrow] {
     text-align: center;
     border-right: 1px solid #d9d9d9;
     float: none;
-  }
-  .tableB.type2 table td div {
-    display: inline;
-    float: none;
-    padding-left: 0;
-    text-align: inherit;
-    width: auto;
+    /* @@@ 0826 공통으로 적용됨부부인데
+    >div {
+        display: inline;
+        float: none;
+        padding-left: 0;
+        text-align: inherit;
+        width: auto;
+        a:not(:first-child){margin-top: 7px;}
+    }
+    */
   }
   .tableB.type2 table td:before {
     display: none;
@@ -4738,6 +4742,36 @@ a[data-btn=arrow] {
     border-left: 1px solid #d9d9d9;
     width: 80px;
     min-width: 80px;
+  }
+}
+@media (max-width: 1080px) {
+  .tableB.type3 table {
+    border-top: 0;
+  }
+  .tableB.type3 table tbody tr td {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    line-height: 1.4em;
+  }
+  .tableB.type3 table tbody tr td:before {
+    display: inline-block !important;
+    content: attr(data-th);
+    width: auto;
+    height: 20px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    line-height: 1.4em;
+    margin-right: 10px;
+    color: #000;
+  }
+  .tableB.type3 table tbody tr td:first-child {
+    padding-top: 15px;
+  }
+  .tableB.type3 table tbody tr td:last-child {
+    padding-bottom: 10px;
   }
 }
 
@@ -5427,6 +5461,7 @@ span[data-status][data-status=order1] {
   color: #000;
   line-height: 20px;
   position: relative;
+  text-align: left;
   padding-left: 30px;
 }
 .detail_file dd > a:before {
@@ -6874,12 +6909,33 @@ span[data-status][data-status=order1] {
   width: auto;
   max-width: none;
 }
+@media (max-width: 1080px) {
+  .apply_list {
+    gap: 20px;
+  }
+  .apply_list li {
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .apply_list li > div {
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1.4em;
+    text-align: center;
+  }
+  .apply_list li > div strong {
+    font-size: 16px;
+    text-align: center;
+  }
+  .apply_list li figure img {
+    height: 40px;
+  }
+}
 
 .content_list {
   margin-top: 50px;
-}
-.content_list li .sub_tit_md {
-  margin-bottom: 18px;
 }
 .content_list li .bar li {
   color: #434343;
@@ -6891,7 +6947,6 @@ span[data-status][data-status=order1] {
   word-break: break-all;
   overflow-wrap: anywhere;
 }
-
 @keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
@@ -10198,13 +10253,13 @@ section .fp-tableCell {
   font-size: 1.5rem;
   font-weight: 500;
   font-family: "SBAggro", "Pretendard";
-  margin: 40px 0 24px;
+  margin: 40px 0 20px;
   line-height: 1;
 }
 @media (max-width: 1080px) {
   .sub_tit_md {
-    font-size: 1.125rem;
-    margin-bottom: 15px;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
   }
   .sub_tit_md::after {
     width: 6px;

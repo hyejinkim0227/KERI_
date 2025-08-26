@@ -12,8 +12,8 @@
         }
     }
 }
-.sub_tit_md{ font-size: $fs-24; font-weight: 500; font-family: $ff-sbaggro; margin: 40px 0 24px; line-height: 1;
-    @media (max-width: 1080px) {font-size: $fs-18; margin-bottom: 15px;
+.sub_tit_md{ font-size: $fs-24; font-weight: 500; font-family: $ff-sbaggro; margin: 40px 0 20px; line-height: 1;
+    @media (max-width: 1080px) {font-size: $fs-20; margin-bottom: 10px;
         &::after{
             width: 6px; height: 6px;margin-bottom: 10px;margin-left: 5px;
         }

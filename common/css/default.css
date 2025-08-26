@@ -6958,7 +6958,7 @@ span[data-status][data-status=order1] {
     text-align: center;
   }
   .apply_list li div figure img {
-    height: 40px;
+    height: 30px;
   }
 }
 .apply_list.link li {
@@ -7050,6 +7050,9 @@ span[data-status][data-status=order1] {
   .apply_list.logo li figure {
     margin-bottom: 0px;
     padding: 20px;
+  }
+  .apply_list.logo li figure img {
+    height: 28px;
   }
 }
 @media (max-width: 1080px) {

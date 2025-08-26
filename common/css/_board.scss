@@ -2286,7 +2286,7 @@ span[data-status]{
                     dd{font-size: 14px; line-height: 1.4em; text-align: center;}
                 }
 
-                figure{img{height: 40px;}}
+                figure{img{height: 30px;}}
             }
         }
     }
@@ -2337,6 +2337,7 @@ span[data-status]{
                 width: 100%; 
                 figure{
                     margin-bottom: 0px; padding: 20px;
+                    img{height: 28px;}
                 }
             }
         }

@@ -788,7 +788,7 @@
         <div id="sub" class="bg_01">
           <!-- sub_title -->
           <div class="sub_top">
-            <h2 class="title">에러페이지</h2>
+            <h2 class="title">미래인재등록</h2>
           </div>
           <div class="white">
             <!-- lnb -->
@@ -879,20 +879,59 @@
 
             <!-- sub_content -->
             <div class="sub_content">
-
-                <div class="error_page">
-                    <dl>
-                        <dt>죄송합니다. 페이지를 찾을 수 없습니다.</dt>
-                        <dd>
-                            <strong>페이지의 URL이나 이름이 변경되었거나 일시적으로 사용할 수 없습니다.</strong>
-                            주소가 정확하다면 브라우저의 “새로고침(reload)” 버튼을 눌러 확인하시거나, <b class="br">잠시 후에 다시 접속을 시도해 주십시오.</b>
-                        </dd>
-                        <dd>
-                            <a href="#" class="btn_blue">홈으로 이동</a>
-                        </dd>
-                    </dl>
+                <div class="titlebox_B" data-menu="menu05">
+                    <h5>
+                        한국전기연구원은 정규직원 채용 공고내용을 이메일로 안내해드리는 ‘미래인재등록’ 서비스를 운영하고 있습니다.<br/>
+                        연구원 채용 소식을 희망하시는 분들의 많은 관심과 문의 바랍니다.
+                    </h5>
+                    <ul class="bar">
+                        <li>미래인재 등록 시 정규직 또는 박사후연구원 채용 공고가 이메일로 발송됩니다.</li>
+                    </ul>
                 </div>
- 
+                
+                <div class="titlebox flex_LR">
+                    <h2>해지신청 정보</h2>
+                    <div class="point_b">필수 입력 항목입니다.</div>
+                </div>
+            
+                <div class="table">
+                    <table>
+                        <caption>작성자,연락처,이메일</caption>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th><label for="name">작성자</label></th>
+                                <td><input type="text" name="name" value="홍길동" readonly="readonly" placeholder="익명 제보 가능합니다."></td>
+                            </tr>
+                            <tr>
+                                <th><label for="email" class="point">이메일</label></th>
+                                <td>
+                                    <div class="email flex">
+                                        <input type="text" name="email_id">
+                                        <span>@</span>
+                                        <input type="text" name="email_domain">
+                                        <select id="email_domain_select">
+                                            <option value="">직접입력</option>
+                                            <option value="">naver.com</option>
+                                            <option value="">gmail.com</option>
+                                            <option value="">daum.net</option>
+                                            <option value="">hanmail.net</option>
+                                            <option value="">nate.com</option>
+                                            <option value="">kakao.com</option>
+                                        </select>
+                                    </div>
+                                </td>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="btn_box flex_R">
+                    <button type="button" data-btn="blueBg">해지신청</button>
+                </div>
+                  
             </div>
           </div>
         </div>

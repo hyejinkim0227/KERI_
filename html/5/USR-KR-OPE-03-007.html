@@ -788,7 +788,7 @@
         <div id="sub" class="bg_01">
           <!-- sub_title -->
           <div class="sub_top">
-            <h2 class="title">에러페이지</h2>
+            <h2 class="title">미래인재등록</h2>
           </div>
           <div class="white">
             <!-- lnb -->
@@ -879,20 +879,142 @@
 
             <!-- sub_content -->
             <div class="sub_content">
-
-                <div class="error_page">
-                    <dl>
-                        <dt>죄송합니다. 페이지를 찾을 수 없습니다.</dt>
-                        <dd>
-                            <strong>페이지의 URL이나 이름이 변경되었거나 일시적으로 사용할 수 없습니다.</strong>
-                            주소가 정확하다면 브라우저의 “새로고침(reload)” 버튼을 눌러 확인하시거나, <b class="br">잠시 후에 다시 접속을 시도해 주십시오.</b>
-                        </dd>
-                        <dd>
-                            <a href="#" class="btn_blue">홈으로 이동</a>
-                        </dd>
-                    </dl>
+                <div class="titlebox_B" data-menu="menu05">
+                    <h5>
+                        한국전기연구원은 정규직원 채용 공고내용을 이메일로 안내해드리는 ‘미래인재등록’ 서비스를 운영하고 있습니다.<br/>
+                        연구원 채용 소식을 희망하시는 분들의 많은 관심과 문의 바랍니다.
+                    </h5>
+                    <ul class="bar">
+                        <li>미래인재 등록 시 정규직 또는 박사후연구원 채용 공고가 이메일로 발송됩니다.</li>
+                    </ul>
                 </div>
- 
+                
+                <div class="titlebox flex_LR">
+                    <h2>등록신청 정보</h2>
+                    <div class="point_b">필수 입력 항목입니다.</div>
+                </div>
+            
+                <div class="table">
+                    <table>
+                        <caption>작성자,연락처,이메일</caption>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th><label for="name" class="point" placeholder="익명 제보 가능합니다.">작성자</label></th>
+                                <td><input type="text" name="name" value="홍길동" readonly="readonly"></td>
+                            </tr>
+                            <tr>
+                                <th><label for="email" class="point">이메일</label></th>
+                                <td>
+                                    <div class="email flex">
+                                        <input type="text" name="email_id">
+                                        <span>@</span>
+                                        <input type="text" name="email_domain">
+                                        <select id="email_domain_select">
+                                            <option value="">직접입력</option>
+                                            <option value="">naver.com</option>
+                                            <option value="">gmail.com</option>
+                                            <option value="">daum.net</option>
+                                            <option value="">hanmail.net</option>
+                                            <option value="">nate.com</option>
+                                            <option value="">kakao.com</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="email">현 소속</label></th>
+                                <td><input type="text" name="company" class="W100"></td>
+                            </tr>
+                            <tr>
+                                <th><label for="email">전공</label></th>
+                                <td><input type="text" name="company" class="W100"></td>
+                            </tr>
+                            <tr>
+                                <th><label for="email">세부전공</label></th>
+                                <td><input type="text" name="company" class="W100"></td>
+                            </tr>
+                            <tr>
+                                <th><label for="email">학위</label></th>
+                                <td>
+                                    <div class="select">
+                                        <select name="consulting_type">
+                                            <option value="">선택</option>
+                                            <option value="">학사</option>
+                                            <option value="">석사</option>
+                                            <option value="">박사</option>
+                                            <option value="">기타</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="email">주요 연구분야</label></th>
+                                <td><input type="text" name="company" class="W100"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 개인정보 수집 및 이용 동의 -->
+                <div class="agree_box mt60">
+                    <h5 class="sub_tit_md">개인정보 수집 및 이용 동의(필수)</h5>
+                    <div class="scroll">
+                        <p>한국전기연구원은 원활한 홈페이지 서비스를 제공하기 위하여 아래와 같은 최소한의 개인정보를 수집하고 있습니다.</p>
+                        <div class="table">
+                            <table>
+                                <caption>
+                                    개인정보 수집 및 이용 동의
+                                </caption>
+                                <colgroup>
+                                    <col width="260px" />
+                                    <col width="auto" />
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th class="center">수집·이용 항목</th>
+                                        <td>
+                                            필수항목 : 이메일
+                                            <br />
+                                            선택항목 : 성명, 현 소속, 전공, 세부전공, 학위, 주요 연구분야
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="center">수집·이용 목적</th>
+                                        <td>미래인재 등록, 채용 공고 시 이메일 발송</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="center">보유·이용 기간</th>
+                                        <td>보존기간 : 미래인재 등록 신청 후 3년 (단, 해지신청 시 삭제)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>
+                            귀하는 해당 개인정보 수집 및 이용 동의를 거부할 수 있습니다.<br/>
+                            단, 위 개인정보의 수집·이용에 동의하지 않을 경우, 게시글 작성 및 등록에 제한을 받을 수 있습니다.
+                        </p>
+                    </div>
+                    <div class="radio">
+                        <p>개인정보 수집 및 이용에 동의합니다</p>
+                        <ul>
+                            <li>
+                                <label><input type="radio" name="agree" value="agree" /><span>동의함</span></label>
+                            </li>
+                            <li>
+                                <label><input type="radio" name="agree" value="disagree" /><span>동의하지 않음</span></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="btn_box flex_R">
+                    <button type="button" data-btn="blueBg">등록신청</button>
+                </div>
+                  
             </div>
           </div>
         </div>

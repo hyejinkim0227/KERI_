@@ -788,7 +788,7 @@
         <div id="sub" class="bg_01">
           <!-- sub_title -->
           <div class="sub_top">
-            <h2 class="title">에러페이지</h2>
+            <h2 class="title">예산낭비신고</h2>
           </div>
           <div class="white">
             <!-- lnb -->
@@ -879,20 +879,198 @@
 
             <!-- sub_content -->
             <div class="sub_content">
-
-                <div class="error_page">
-                    <dl>
-                        <dt>죄송합니다. 페이지를 찾을 수 없습니다.</dt>
-                        <dd>
-                            <strong>페이지의 URL이나 이름이 변경되었거나 일시적으로 사용할 수 없습니다.</strong>
-                            주소가 정확하다면 브라우저의 “새로고침(reload)” 버튼을 눌러 확인하시거나, <b class="br">잠시 후에 다시 접속을 시도해 주십시오.</b>
-                        </dd>
-                        <dd>
-                            <a href="#" class="btn_blue">홈으로 이동</a>
-                        </dd>
-                    </dl>
+                <div class="titlebox_B" data-menu="menu05">
+                    <h5>
+                      한국전기연구원 예산낭비 신고센터는 예산집행 낭비사례에 위반한 사항을 신고하는 공식 창구입니다.<br/>
+                      신고자의 신분과 신고 내용은 철저히 비밀이 보장되며, 모든 신고는 담당 부서에서만 확인 가능합니다.                      
+                    </h5>
+                    <ul class="bar">
+                        <li>실명 신고를 원칙으로 하며, 사실확인을 위해 반드시 정보를 정확히 기재해 주시기 바랍니다.(성명/연락처/이메일 주소)</li>
+                        <li>접수된 신고는 홈페이지를 통해 진행 상황을 확인하실 수 있습니다.</li>
+                    </ul>
+                    <div>
+                      <p class="mark">문의 및 접수처 : 기획조정본부 예산실 (전화 : 055-280-1103 / 팩스 : 055-280-1154)</p>
+                    </div>
                 </div>
- 
+            
+                <div class="titlebox flex_LR">
+                    <h2>신고자 정보</h2>
+                    <div class="point_b">필수 입력 항목입니다.</div>
+                </div>
+
+                <ul class="caution mb20">
+                    <li>본 신고는 실명을 원칙으로 하고 있습니다. 사실확인을 위하여 성명, 이메일, 연락처를 정확히 적어 주시기 바랍니다</li>
+                </ul>
+            
+                <div class="table">
+                    <table>
+                        <caption>작성자,연락처,이메일</caption>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th><label for="name" class="point">작성자</label></th>
+                                <td><input type="text" name="name" value="홍길동" readonly="readonly"></td>
+                            </tr>
+                            <tr>
+                                <th><label for="email" class="point">이메일</label></th>
+                                <td>
+                                    <div class="email flex">
+                                        <input type="text" name="email_id">
+                                        <span>@</span>
+                                        <input type="text" name="email_domain">
+                                        <select id="email_domain_select">
+                                            <option value="">직접입력</option>
+                                            <option value="naver.com">naver.com</option>
+                                            <option value="daum.net">daum.net</option>
+                                            <option value="gmail.com">gmail.com</option>
+                                            <option value="nate.com">nate.com</option>
+                                            <option value="kakao.com">kakao.com</option>
+                                            <option value="hanmail.net">hanmail.net</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="phone">연락처</label></th>
+                                <td>
+                                    <div class="phone flex">
+                                        <select name="phone_1">
+                                            <option value="">선택</option>
+                                            <option value="010">010</option>
+                                            <option value="011">011</option>
+                                            <option value="016">016</option>
+                                            <option value="017">017</option>
+                                            <option value="018">018</option>
+                                            <option value="019">019</option>
+                                        </select>
+                                        <span>-</span>
+                                        <input type="text" name="phone_2">
+                                        <span>-</span>
+                                        <input type="text" name="phone_3">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="titlebox flex_LR mt60">
+                    <h2>신고 내용</h2>
+                    <div class="point_b">필수 입력 항목입니다.</div>
+                </div>
+
+                <div class="table">
+                    <table> 
+                        <caption>작성자,소속,연락처,이메일,상담내용,상담일시</caption>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th><label for="name" class="point">제목</label></th>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <th><label for="content" class="point">내용</label></th>
+                                <td>
+                                    <textarea name="content" class="h190">
+※ 행위자의 신원을 가능한 한 명확히 기재해 주시기 바랍니다.
+
+※ 신고 내용은 육하원칙(누가, 언제, 어디서, 무엇을, 어떻게, 왜)에 따라 구체적으로 작성해 주십시오.
+  - 문제가 되는 행위의 내용 및 지속 여부
+  - 목격자 또는 증인의 유무 등 사실 확인에 필요한 사항을 포함해 주시기 바랍니다.
+                                    </textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="file" class="point">파일첨부</label></th>
+                                <td>
+                                    <div class="file_box">
+                                        <div>
+                                            <span class="fileName">전기기술의 미래.PPT</span>
+                                            <input type="file" name="file">
+                                            <b>파일첨부</b>
+                                        </div>
+                                        <button type="button" data-btn="gray" class="btn_sm">삭제</button>
+                                    </div>
+                                    <div class="file_box mt10">
+                                        <div>
+                                            <span class="fileName">전기기술의 미래.PPT</span>
+                                            <input type="file" name="file">
+                                            <b>파일첨부</b>
+                                        </div>
+                                        <button type="button" data-btn="gray" class="btn_sm">삭제</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 개인정보 수집 및 이용 동의 -->
+                <div class="agree_box mt60">
+                    <h5 class="sub_tit_md">개인정보 수집 및 이용 동의(필수)</h5>
+                    <div class="scroll">
+                        <p>한국전기연구원은 원활한 홈페이지 서비스를 제공하기 위하여 아래와 같은 최소한의 개인정보를 수집하고 있습니다.</p>
+                        <div class="table">
+                            <table>
+                                <caption>
+                                    개인정보 수집 및 이용 동의
+                                </caption>
+                                <colgroup>
+                                    <col width="260px" />
+                                    <col width="auto" />
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th class="center">수집·이용 항목</th>
+                                        <td>
+                                            필수항목 : 성명, 이메일
+                                            <br />
+                                            선택항목 : 연락처
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="center">수집·이용 목적</th>
+                                        <td>한국전기연구원 홈페이지 내 각종 문의 및 신청, 접수 및 처리결과 안내</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="center">보유·이용 기간</th>
+                                        <td>
+                                            보존기간 : 삭제 시<br />
+                                            보존근거 : 정보주체 동의 및 관련 법령
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>
+                            귀하는 해당 개인정보 수집 및 이용 동의를 거부할 수 있습니다.<br/>
+                            단, 위 개인정보의 수집·이용에 동의하지 않을 경우, 게시글 작성 및 등록에 제한을 받을 수 있습니다.
+                        </p>
+                    </div>
+                    <div class="radio">
+                        <p>개인정보 수집 및 이용에 동의합니다</p>
+                        <ul>
+                            <li>
+                                <label><input type="radio" name="agree" value="agree" /><span>동의함</span></label>
+                            </li>
+                            <li>
+                                <label><input type="radio" name="agree" value="disagree" /><span>동의하지 않음</span></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="btn_box flex_R">
+                    <button type="button" data-btn="blueBg">저장</button>
+                    <a href="sub_common.html"><button type="button" data-btn="blue">목록</button></a>
+                </div>
+                  
             </div>
           </div>
         </div>

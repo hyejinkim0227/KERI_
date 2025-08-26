@@ -1309,7 +1309,7 @@ span[data-status]{
         display: flex;
         li{
             &:not(:last-child){margin-right: 30px;}
-            span{line-height: 1.2em;}
+            span{line-height: 1.2em; text-align: left;}
         }
     }
     // 라디오 버튼 반응형
@@ -2233,20 +2233,6 @@ span[data-status]{
         }
     }
 
-    &.logo{
-        li{width: calc((100% - 40px)/3);
-            img{width: auto; height: 40px;}
-            figcaption{ background: url(../images/sub/icon_pdf_link.png) no-repeat right center / auto 16px; padding-right: 35px;
-                &.no{background: none; padding-right: 0;}
-            }
-        }
-        @media (max-width: 900px) {
-            li{width: 100%; padding-top: 20px;
-                figure{margin-bottom: 0px;}
-            }
-        }
-    }
-
     @media (max-width: 1350px) {
         li{padding: 60px 30px 30px;
             figure img{height: 60px;}
@@ -2279,45 +2265,84 @@ span[data-status]{
 .apply_list{
     display: flex; gap: 40px;
     li{
-        width: calc((100% - 40px) / 2); padding: 20px; background: #f4f6f9; border-radius: 20px; 
-        display: flex; align-items: center; gap: 40px; padding : 40px 60px;
-        >div{
-            display: flex; flex-direction: column; gap: 10px;
-            strong{font-size: $fs-20; font-family: $ff-sbaggro; font-weight: 500; color: #000; line-height: 1.4em;}
-            font-size: $fs-17; font-weight: 400; color: #000; line-height: 1.4em;
+        width: calc((100% - 40px) / 2); display: flex; align-items: center; gap: 40px; 
+        div{
+            display: flex; gap: 30px; align-items: center; padding : 40px 60px; background: #f4f6f9; border-radius: 20px;
+
+            dl{
+                dt{font-size: $fs-20; font-family: $ff-sbaggro; font-weight: 500; color: #000; line-height: 1.4em; margin-bottom: 10px;}
+                dd{font-size: $fs-17; font-weight: 400; color: #000; line-height: 1.4em;}
+            }
+            figure{
+                img{height: 53px; width: auto; max-width: none;}
+            }
         }
-        figure{
-            img{height: 53px; width: auto; max-width: none;}
+        @media (max-width: 1080px) {
+            width: 100%; gap: 20px;
+            div{
+                flex-direction: column; gap: 15px; padding: 25px 20px;
+                dl{
+                    dt{font-size: 18px; text-align: center; margin-bottom: 3px;}
+                    dd{font-size: 14px; line-height: 1.4em; text-align: center;}
+                }
+
+                figure{img{height: 40px;}}
+            }
         }
     }
-
+    
     &.link{
-        li{
-            padding: 0; border-radius: 20px; background: #f4f6f9;
-            a{ width: 100%; height: 100%;
-                display: block; background: url(../images/sub/icon_apply_arrow.png) no-repeat center right 48px; border: 1px solid #c9cbcf; padding: 0 50px 0 20px; border:none;
-                figure{
-                    display: flex; align-items: center; gap: 20px; padding: 50px 0;
-                    img{height: 53px; width: auto; max-width: none;}
-                    figcaption{font-size: $fs-21; font-weight: 500; font-family: $ff-sbaggro; color: #000; line-height: 1.4em; text-align: left;}
+        li{ gap: 0px; width: calc((100% - 60px) / 3); display: block;
+            div{
+                background: #f4f6f9 url(../images/sub/icon_apply_arrow.png) no-repeat center right 35px; padding: 50px 40px; height: 100%; gap: 20px; border-radius: 20px; flex-direction: row;
+                &.outlink{ background-image: url(../images/sub/member_email_outlink.png); background-size: auto 20px;}
+                dl{
+                    margin-bottom: 0;
+                    dt{margin-bottom: 0px;}
+                }
+            }
+            a{height: 100%;}
+        }
+
+        @media (max-width: 1240px) {
+            flex-direction: column; gap: 20px;
+            li{
+                width: 100%; 
+                div{
+                    padding: 20px; background-size: auto 16px;
+                    dl dt{text-align: left; font-size: 18px;}
+                    &.outlink{background-size: auto 14px;}
                 }
             }
         }
     }
 
-    @media (max-width: 1080px) {
-        gap: 20px;
-        li{width: 100%; padding: 20px; gap: 20px; flex-direction: column; 
-            >div{
-                justify-content: center;
-                strong{font-size: 16px; text-align: center;}
-                font-size: 14px; line-height: 1.4em; text-align: center;
-            }
+    &.logo{
+        gap: 30px;
+        li{width: calc((100% - 60px)/3); display: block;
             figure{
-                img{height: 40px;}
+                background: #f4f6f9 url(../images/sub/icon_pdf_link.png) no-repeat right 30px center / auto 16px; border-radius: 20px; padding: 35px 30px;
+
+                img{width: auto; height: 35px;}
+                figcaption{
+                    font-size: $fs-20; font-weight: 400; font-family: $ff-sbaggro; color: #000; line-height: 1.4em; margin-top: 10px;
+                    &.no{background: none; padding-right: 0;}
+                }
+            }
+            a{display: block; height: 100%;}
+        }
+        @media (max-width: 900px) {
+            flex-direction: column; gap: 20px;
+            li{ 
+                width: 100%; 
+                figure{
+                    margin-bottom: 0px; padding: 20px;
+                }
             }
         }
     }
+
+    @media (max-width: 1080px) {gap: 20px;}
 }
 
 .content_list{
@@ -2422,6 +2447,7 @@ span[data-what]{
     &[data-what="blue"]{color: #3193de; border-color: #3193de;}
     &[data-what="green"]{color: #1fb1c2; border-color: #1fb1c2;}
 }
+
 .dot{
     &.wide{
         >li{
@@ -2439,8 +2465,11 @@ span[data-what]{
         font-size: $fs-16; font-weight: 400; color: #424242; line-height: 1.4em; text-align: center;
     }
 }
-.radio{
+
+.agree_box .radio{
     &.center{
-        ul{margin: auto;}
+        ul{margin: auto; justify-content: flex-end;
+            li{width: auto;}
+        }
     }
 }

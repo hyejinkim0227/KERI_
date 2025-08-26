@@ -5114,6 +5114,7 @@ span[data-status][data-status=order1] {
 }
 .radio ul li span {
   line-height: 1.2em;
+  text-align: left;
 }
 @media (max-width: 1080px) {
   .radio ul {
@@ -6856,30 +6857,6 @@ span[data-status][data-status=order1] {
   color: #fff;
   border-color: #1f60c2;
 }
-.report_list.logo li {
-  width: calc((100% - 40px) / 3);
-}
-.report_list.logo li img {
-  width: auto;
-  height: 40px;
-}
-.report_list.logo li figcaption {
-  background: url(../images/sub/icon_pdf_link.png) no-repeat right center/auto 16px;
-  padding-right: 35px;
-}
-.report_list.logo li figcaption.no {
-  background: none;
-  padding-right: 0;
-}
-@media (max-width: 900px) {
-  .report_list.logo li {
-    width: 100%;
-    padding-top: 20px;
-  }
-  .report_list.logo li figure {
-    margin-bottom: 0px;
-  }
-}
 @media (max-width: 1350px) {
   .report_list li {
     padding: 60px 30px 30px;
@@ -6929,90 +6906,155 @@ span[data-status][data-status=order1] {
 }
 .apply_list li {
   width: calc((100% - 40px) / 2);
-  padding: 20px;
-  background: #f4f6f9;
-  border-radius: 20px;
   display: flex;
   align-items: center;
   gap: 40px;
-  padding: 40px 60px;
 }
-.apply_list li > div {
+.apply_list li div {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-size: 1.0625rem;
-  font-weight: 400;
-  color: #000;
-  line-height: 1.4em;
+  gap: 30px;
+  align-items: center;
+  padding: 40px 60px;
+  background: #f4f6f9;
+  border-radius: 20px;
 }
-.apply_list li > div strong {
+.apply_list li div dl dt {
   font-size: 1.25rem;
   font-family: "SBAggro", "Pretendard";
   font-weight: 500;
   color: #000;
   line-height: 1.4em;
+  margin-bottom: 10px;
 }
-.apply_list li figure img {
-  height: 53px;
-  width: auto;
-  max-width: none;
-}
-.apply_list.link li {
-  padding: 0;
-  border-radius: 20px;
-  background: #f4f6f9;
-}
-.apply_list.link li a {
-  width: 100%;
-  height: 100%;
-  display: block;
-  background: url(../images/sub/icon_apply_arrow.png) no-repeat center right 48px;
-  border: 1px solid #c9cbcf;
-  padding: 0 50px 0 20px;
-  border: none;
-}
-.apply_list.link li a figure {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 50px 0;
-}
-.apply_list.link li a figure img {
-  height: 53px;
-  width: auto;
-  max-width: none;
-}
-.apply_list.link li a figure figcaption {
-  font-size: 1.3125rem;
-  font-weight: 500;
-  font-family: "SBAggro", "Pretendard";
+.apply_list li div dl dd {
+  font-size: 1.0625rem;
+  font-weight: 400;
   color: #000;
   line-height: 1.4em;
-  text-align: left;
+}
+.apply_list li div figure img {
+  height: 53px;
+  width: auto;
+  max-width: none;
 }
 @media (max-width: 1080px) {
-  .apply_list {
-    gap: 20px;
-  }
   .apply_list li {
     width: 100%;
-    padding: 20px;
     gap: 20px;
-    flex-direction: column;
   }
-  .apply_list li > div {
-    justify-content: center;
+  .apply_list li div {
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px 20px;
+  }
+  .apply_list li div dl dt {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+  .apply_list li div dl dd {
     font-size: 14px;
     line-height: 1.4em;
     text-align: center;
   }
-  .apply_list li > div strong {
-    font-size: 16px;
-    text-align: center;
-  }
-  .apply_list li figure img {
+  .apply_list li div figure img {
     height: 40px;
+  }
+}
+.apply_list.link li {
+  gap: 0px;
+  width: calc((100% - 60px) / 3);
+  display: block;
+}
+.apply_list.link li div {
+  background: #f4f6f9 url(../images/sub/icon_apply_arrow.png) no-repeat center right 35px;
+  padding: 50px 40px;
+  height: 100%;
+  gap: 20px;
+  border-radius: 20px;
+  flex-direction: row;
+}
+.apply_list.link li div.outlink {
+  background-image: url(../images/sub/member_email_outlink.png);
+  background-size: auto 20px;
+}
+.apply_list.link li div dl {
+  margin-bottom: 0;
+}
+.apply_list.link li div dl dt {
+  margin-bottom: 0px;
+}
+.apply_list.link li a {
+  height: 100%;
+}
+@media (max-width: 1240px) {
+  .apply_list.link {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .apply_list.link li {
+    width: 100%;
+  }
+  .apply_list.link li div {
+    padding: 20px;
+    background-size: auto 16px;
+  }
+  .apply_list.link li div dl dt {
+    text-align: left;
+    font-size: 18px;
+  }
+  .apply_list.link li div.outlink {
+    background-size: auto 14px;
+  }
+}
+.apply_list.logo {
+  gap: 30px;
+}
+.apply_list.logo li {
+  width: calc((100% - 60px) / 3);
+  display: block;
+}
+.apply_list.logo li figure {
+  background: #f4f6f9 url(../images/sub/icon_pdf_link.png) no-repeat right 30px center/auto 16px;
+  border-radius: 20px;
+  padding: 35px 30px;
+}
+.apply_list.logo li figure img {
+  width: auto;
+  height: 35px;
+}
+.apply_list.logo li figure figcaption {
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-family: "SBAggro", "Pretendard";
+  color: #000;
+  line-height: 1.4em;
+  margin-top: 10px;
+}
+.apply_list.logo li figure figcaption.no {
+  background: none;
+  padding-right: 0;
+}
+.apply_list.logo li a {
+  display: block;
+  height: 100%;
+}
+@media (max-width: 900px) {
+  .apply_list.logo {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .apply_list.logo li {
+    width: 100%;
+  }
+  .apply_list.logo li figure {
+    margin-bottom: 0px;
+    padding: 20px;
+  }
+}
+@media (max-width: 1080px) {
+  .apply_list {
+    gap: 20px;
   }
 }
 
@@ -7295,8 +7337,12 @@ span[data-what][data-what=green] {
   text-align: center;
 }
 
-.radio.center ul {
+.agree_box .radio.center ul {
   margin: auto;
+  justify-content: flex-end;
+}
+.agree_box .radio.center ul li {
+  width: auto;
 }
 
 @keyframes slideInFromRight {
@@ -11157,6 +11203,9 @@ section .fp-tableCell {
   justify-content: flex-end;
 }
 @media (max-width: 1080px) {
+  .agree_box > .scroll.scroll {
+    padding: 20px;
+  }
   .agree_box .table th, .agree_box .table td {
     height: auto;
   }

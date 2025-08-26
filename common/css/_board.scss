@@ -528,6 +528,13 @@ a{
             &.active a{ background: #1f60c2; color: #fff; }
         }
     }
+    &.type2{
+        ul{
+            li{
+                flex: 0 0 calc((100% - (10px * 3)) / 4);
+            }
+        }
+    }
     // 탭 리스트 반응형
     @media (max-width: 1080px) {
         ul{ 
@@ -535,6 +542,13 @@ a{
             li{
                 flex: 0 0 calc(100% / 3); border: 1px solid #c2c2c2; border-width: 0 1px 1px 0; transition: all 0.4s;
                 &.active a{border-radius: 0;}
+            }
+        }
+        &.type2{
+            ul{
+                li{
+                    flex: 0 0 calc(100% / 2);
+                }
             }
         }
     }

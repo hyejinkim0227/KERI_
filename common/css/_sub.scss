@@ -3917,26 +3917,38 @@ justify-content: space-between;
             font-weight: 400;
             line-height: 59px;
          
-            &[icon-type="1"]{
+            &[icon-type="1"]{ //기관
                 background: url(../images/sub/icon_acco_01.png) no-repeat left center/ 26px auto;
             }
-            &[icon-type="2"]{
+            &[icon-type="2"]{//인증체제
                 background: url(../images/sub/icon_acco_02.png) no-repeat left center/ 27px auto;
             }
-            &[icon-type="3"]{
+            &[icon-type="3"]{//제품인증서 종류 및 인증마크
                 background: url(../images/sub/icon_acco_03.png) no-repeat left center/ 27px auto;
             }
-            &[icon-type="4"]{
+            &[icon-type="4"]{//대상제품
                 background: url(../images/sub/icon_acco_04.png) no-repeat left center/ 22px auto;
             }
-            &[icon-type="5"]{
+            &[icon-type="5"]{//제품인증절차
                 background: url(../images/sub/icon_acco_05.png) no-repeat left center/ 27px auto;   
             }
-            &[icon-type="6"]{
+            &[icon-type="6"]{//제품인증절차(사후관리)
                 background: url(../images/sub/icon_acco_06.png) no-repeat left center/ 26px auto;
             }
-            &[icon-type="7"]{
+            &[icon-type="7"]{//인증스킴
                 background: url(../images/sub/icon_acco_07.png) no-repeat left center/ 26px auto;
+            }
+            &[icon-type="8"]{//제품인증이란
+                background: url(../images/sub/icon_acco_08.png) no-repeat left center/ 26px auto;
+            }
+            &[icon-type="9"]{ //인정현황
+                background: url(../images/sub/icon_acco_09.png) no-repeat left center/ 26px auto;
+            }
+            &[icon-type="10"]{ //연혁
+                background: url(../images/sub/icon_acco_10.png) no-repeat left center/ 26px auto;
+            }
+            &[icon-type="11"]{ //공평성 보장선언문
+                background: url(../images/sub/icon_acco_11.png) no-repeat left center/ 26px auto;
             }
 
         }

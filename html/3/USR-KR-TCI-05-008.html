@@ -671,11 +671,11 @@
           <div class="tabmenu">
             <ul>
               <li>
-                <a href="USR-KR-TCI-05-006.html"class="active">자주묻는질문FAQ
+                <a href="USR-KR-TCI-05-006.html">자주묻는질문FAQ
                 </a>
               </li>
               <li>
-                <a href="USR-KR-TCI-05-007.html">문의하기</a>
+                <a href="USR-KR-TCI-05-007.html"class="active">문의하기</a>
               </li>
             </ul>
           </div>
@@ -771,326 +771,309 @@
 
           <!-- sub_content -->
           <div class="sub_content">
-            <h4 class="sub_tit">자주묻는질문FAQ</h4>
-            <!-- search 검색 -->
-            <div class="search flex_C">
-              <div>
-                <select name="select">
-                  <option value="">전체</option>
-                  <option value="title">제목</option>
-                  <option value="ntt_cntn">내용</option>
-                </select>
-              </div>
-              <div class="input_btn flex_nF">
-                <div>
-                  <input
-                    type="text"
-                    name="search"
-                    placeholder="검색어를 입력해주세요."
-                  />
-                </div>
-                <button type="button" data-btn="blackBg">검색</button>
-              </div>
+            <div class="titlebox_B mb60" data-menu="기술지원">
+              <h4>
+                한국전기연구원은 시험인증, 제품인증, 검사 등 다양한 시험인증검사 서비스를 제공하고 있습니다.<br />
+                시험인증검사를 희망하시는 분들의 많은 관심과 문의 바랍니다.                
+              </h4>
+             <p>  문의글을 등록해 주시면 이메일과 전화를 통해 문의 처리현황을 알려드립니다.</p>
+              <span class="mark"
+                >관리부서 : 시험운영기획실 (전화 : 055-280-1111 / 팩스 : &#60;창원&#62; 055-280-1512 &#60;안산&#62; 031-8040-4499)
+                </span
+              >
             </div>
-            <!-- //search 검색 -->
+              <!--신청자 정보-->
+              <div class="titlebox flex_LR">
+                <h2>작성자 정보</h2>
+                <div class="point_b">필수 입력 항목입니다.</div>
+              </div>
+              <div class="table">
+                <table>
+                  <caption>
+                    성명, 소속, 이메일, 연락처
+                  </caption>
+                  <colgroup>
+                    <col width="20%" />
+                    <col width="auto" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>
+                        <label for="name" class="point">작성자(성명)</label>
+                      </th>
+                      <td >
+                        <input
+                          type="text"
+                          name="name"
+                          value="홍길동"
+                          readonly="readonly"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <label for="name" class="point">소속(회사명)
+                        </label>
+                      </th>
+                      <td ><input type="text" name="name" /></td>
+                    </tr>
+                    <tr>
+                      <th><label for="email" class="point">이메일</label></th>
+                      <td >
+                        <div class="email flex">
+                          <input type="text" name="email_id" />
+                          <span>@</span>
+                          <input type="text" name="email_domain" />
+                          <select id="email_domain_select">
+                            <option value="">직접입력</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="daum.net">daum.net</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="nate.com">nate.com</option>
+                            <option value="kakao.com">kakao.com</option>
+                            <option value="hanmail.net">hanmail.net</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th><label for="phone">연락처</label></th>
+                      <td>
+                        <div class="phone flex">
+                          <select name="phone_1">
+                            <option value="">선택</option>
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                            <option value="02">02</option>
+                            <option value="031">031</option>
+                            <option value="032">032</option>
+                            <option value="033">033</option>
+                            <option value="041">041</option>
+                            <option value="042">042</option>
+                            <option value="043">043</option>
+                            <option value="044">044</option>
+                            <option value="051">051</option>
+                            <option value="052">052</option>
+                            <option value="053">053</option>
+                            <option value="054">054</option>
+                            <option value="055">055</option>
+                            <option value="061">061</option>
+                            <option value="062">062</option>
+                            <option value="063">063</option>
+                            <option value="064">064</option>
+                            <option value="070">070</option>
+                          </select>
+                          <span>-</span>
+                          <input type="text" name="phone_2" />
+                          <span>-</span>
+                          <input type="text" name="phone_3" />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
-            <div class="faq">
-              <div class="faq_list">
-               
+              </div>
 
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">국내용으로 형식시험을 실시하면서, 일부 항목에 대한 시험인증서 발행이 가능한지요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>가능합니다.</p>
-                        <p>예로서 한전시방서에 따라 형식시험을 실시하고 단락성능, 절연성능, 온도상승성능, 소전류개폐성능 등 일부 항목에 대한 시험인증서 발행이 가능합니다. 이러한 경우 반드시 우리 연구원의 시험설비를 이용하여야 하며, 시험신청시 별도로 요청하시기 바랍니다.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="titlebox flex_LR mt60">
+                <h2>문의 내용</h2>
+                <div class="point_b">필수 입력 항목입니다.</div>
+              </div>
+              <div class="table">
+                <table>
+                  <caption>
+                    문의지역, 첨부파일
+                  </caption>
+                  <colgroup>
+                    <col width="20%" />
+                    <col width="auto" />
+                  </colgroup>
+                    <tbody>
+                      <tr>
+                        <th>
+                          <label for="name" class="point">문의지역</label>
+                        </th>
+                        <td >
+                          <select id="email_domain_select">
+                            <option value="">선택</option>
+                            <option value="창원">
+                              창원
+                            </option>
+                            <option value="안산/의왕/광주">
+                              안산/의왕/광주
+                            </option>
+                            <option value="미정">
+                              미정
+                            </option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><label for="name" class="point">제목</label></th>
+                        <td><input type="text" name="name" /></td>
+                      </tr>
+                      <tr>
+                        <th><label for="name" class="point">내용</label></th>
+                        <td>
+                          <textarea
+                            name="etc"
+                            placeholder="내용을 입력해 주세요."
+                          ></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><label>파일첨부</label></th>
+                        <td>
+                          <div class="file_box">
+                            <div>
+                              <span class="fileName"
+                                ></span
+                              >
+                              <input type="file" name="file" />
+                              <b>파일첨부</b>
+                            </div>
+                            <button type="button" data-btn="gray" class="btn_sm">
+                              삭제
+                            </button>
+                          </div>
+                          <div class="file_box mt10">
+                            <div>
+                              <span class="fileName"
+                                ></span
+                              >
+                              <input type="file" name="file" />
+                              <b>파일첨부</b>
+                            </div>
+                            <button type="button" data-btn="gray" class="btn_sm">
+                              삭제
+                            </button>
+                          </div>
+                          <div class="file_box mt10">
+                            <div>
+                              <span class="fileName"
+                                ></span
+                              >
+                              <input type="file" name="file" />
+                              <b>파일첨부</b>
+                            </div>
+                            <button type="button" data-btn="gray" class="btn_sm">
+                              삭제
+                            </button>
+                          </div>
+                          <div class="file_box mt10">
+                            <div>
+                              <span class="fileName"
+                                ></span
+                              >
+                              <input type="file" name="file" />
+                              <b>파일첨부</b>
+                            </div>
+                            <button type="button" data-btn="gray" class="btn_sm">
+                              삭제
+                            </button>
+                          </div>
+                          <div class="file_box mt10">
+                            <div>
+                              <span class="fileName"
+                                ></span
+                              >
+                              <input type="file" name="file" />
+                              <b>파일첨부</b>
+                            </div>
+                            <button type="button" data-btn="gray" class="btn_sm">
+                              삭제
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+              </div>
 
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">이미 형식시험 완료한 제품에 대해서도 시험인증서(Test Certificate) 발행이 가능한지요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>형식시험 적용표준의 개정, 시료의 확인가능 여부 등에 따라 가능할 수가 있습니다.</p>
-                        <p>자세한 사항은 아래의 연락처로 문의하시면 됩니다.</p>
-                        <p>* 시험(창원) 시험운영지원실  T. 055-280-2410   F. 055-280-1512   hphv@keri.re.kr</p>
-                        <p>* 시험(안산) 시험운영지원실  T. 031-8040-4492   F. 031-8040-4499  gad@keri.re.kr</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               <!-- 개인정보 수집 및 이용 동의 -->
+               <div class="agree_box">
+                <h5 class="sub_tit_md">개인정보 수집 및 이용 동의(필수)</h5>
+                <div class="scroll">
+                  <p>
+                    한국전기연구원은 제증명서 발급 서비스를 제공하기 위하여 아래와 같은 최소한의 개인정보를 수집하고 있습니다.
 
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">시험 및 인증 신청에 대한 문의는 어떻게 하는지요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>시험 및 인증에 대한 문의사항이 있을 시에는 아래의 연락처로 문의하시면 됩니다.</p>
-                        <p>* 시험(창원) 시험운영지원실  T. 055-280-2410   F. 055-280-1512   hphv@keri.re.kr</p>
-                        <p>* 시험(안산) 시험운영지원실  T. 031-8040-4492   F. 031-8040-4499  gad@keri.re.kr</p>
-                        <p>* 제품인증 T.055-280-1560, E-mail. cert@keri.re.kr</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  </p>
+                  <div class="table">
+                    <table>
+                      <caption>
+                        개인정보 수집 및 이용 동의
+                      </caption>
+                      <colgroup>
+                        <col width="260px" />
+                        <col width="auto" />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="center">수집·이용 항목</th>
+                          <td>
+                            필수항목 : 성명, 이메일
 
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">시험중 피시품의 성능에 문제가 발생하여 보완을 하고 싶은 경우 가능한지요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>시험중에 피시품을 보완하게 되면 표준에서 허용하는 항목 외 제품의 성능에 변화를 주게 되어 결과판정에 영향을 미치므로 보완작업은 허용하지 않습니다.                    					</p>
-                       
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                            <br />
+                            선택항목 : 소속, 연락처
 
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">시험수수료 및 출장비는 송금수수료가 포함되어 있는지요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>당원의 규정상 송금수수료는 신청자 부담으로 되어 있습니다.                    					</p>
-                 
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="center">수집·이용 목적</th>
+                          <td>한국전기연구원 홈페이지 내 각종 문의 및 신청, 접수 및 처리결과 안내
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="center">보유·이용 기간</th>
+                          <td>보존기간 : 삭제 시
+                            <br />
+                            보존근거 : 정보주체 동의 및 관련 법령
 
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">시험수수료견적서는 어떻게 발행받나요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>시험신청서를 접수하면 담당자 검토 후에 발행해드립니다.</p>
-                        <p>시험수수료는 발행된 견적서의 금액보다 적어지거나 많아질 수 있으며, 
-                          시험 종료 후 정산서 발행을 통해 최종 정산을 하게 됩니다.</p>
-                      </div>
-                    </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                </div>
+                  <p>귀하는 해당 개인정보 수집 및 이용 동의를 거부할 수 있습니다.
+<br />단, 위 개인정보의 수집·이용에 동의하지 않을 경우, 게시글 작성 및 등록에 제한을 받을 수 있습니다.
 
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">시험신청시 필요한 서류 및 절차는 어떻게 되는지요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>당원에 최초로 시험을 신청하는 회사 및 기관은 시험신청시에 사업자등록증 사본, 법인통장 사본, 거래은행 계좌 입금의뢰서를 첨부해주셔야 합니다.<br>
-                          또한 사용자의 승인사양이 있을 경우에는 사양서를 같이 제출하셔야 합니다. <br>
-                          시험신청서는 홈페이지 첫화면의 고객포털을 통해 웹에서 직접 작성 후 제출할 수 있으며, 
-                          신청서 양식은 홈페이지 첫화면 또는 시험인증신청•문의 &gt; 신청서다운로드 에서 내려받을 수 있습니다. 
-                          자세한 시험절차는 시험인증서비스 &gt; 시험신청 절차 에서 확인하실 수 있습니다.              
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  </p>
                 </div>
-
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">시험성적서의 재발행 또는 번역본발행은 어떻게 하나요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>성능시험의 경우 발행일로부터 4년(단, 시험표준이 개정되지 않은 경우 최대 10년이내)이며, 검수시험의 경우 1년이내에 추가발행을 요청시 가능합니다.<br>
-                          시험인증신청•문의 &gt; 신청서다운로드에서 추가발행신청서 또는 검수시험 추가발행 신청서를 다운로드 받아 Fax, E-mail 또는 직접 시험행정 담당에 제출해 주시면 재발행료/번역료를 계산하여 통보해 드리고 
-                          재발행료/번역료를 입금해 주시면 성적서 및 계산서를 송부해 드립니다.                    					</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">개발 또는 생산공정에 맞추어 시험 사전예약이 가능한지요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>형식시험의 경우 가능합니다. 그러나 설비의 운영상 예약일자는반드시 지켜져야 하며, 특히 한국전력공사 의뢰 형식시험은 되도록 시험신청 순으로 진행되고 있으니 참조바랍니다.                    					</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">출장시험시 출장비는 어떻게 하는지요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>출장시험이 필요할 경우 당원의 출장비 규정에 따라 출장지, 출장일수에 따른 출장비를 견적서에 명기해 드리므로, 시험수수료 입금시 일괄적으로 입금해 주시면 됩니다.                    					</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">검수시험 접수 후 시험 소요일수는 어느정도인가요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                      <p>검수시험의 경우 시험완료일로부터 배전반 및 전선류는 10일 이내, 기타물품은 8일 이내에 시험성적서 발행을 원칙으로 하고 있습니다. 단, 공휴일은 소요일자에 포함되지 않습니다.                    					</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">공인된 적용 표준이 없는 제품에 대한 시험신청은 어떻게 하나요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                      <p>시험기준, 시험방법 등에 대한 충분한 협의를 거쳐 시험이 가능하다고 판단될 경우 참고시험으로 신청하시면 됩니다.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">시험진행시 신청자/제작자의 협조사항은 있는지요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                      <p>당원의 시험 시 제품의 분해, 조립 및 시험보조가 필요한 경우 신청자가 노무를 제공하여야 합니다.                    					</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">사용중 또는 수리품(부품)에 대한 성능검증시험을 받고 싶습니다.</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>사용중 또는 수리변압기 등은 외관을 미려하게 수리하여 수리사양서와 같이 접수하시면 시험이 가능합니다.<br>
-                          단, 사용품 또는 수리품 중 차단기, 개폐기 등 보호용 전기기기에 대한 성능시험은 원 제작회사가 수리하여 신청할 경우에만 시험이 가능합니다. 
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">공장에 출장시험은 어떠한 경우에 실시하나요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>표준을 만족시키는 시험설비를 보유하고 있으며, 시험품이 중량물이거나 정착물로서 운반이 용이하지 않을 경우에 실시하게 됩니다. 
-                          또한 시험의 효율성을 위하여 원외시험이 필요하다고 해당 기술책임자가 인정하는 경우 출장시험(입회)을 실시합니다. </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">외국 제조회사의 시험설비를 이용하여 출장(입회)시험은 가능한지요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>시험설비 등에 관한 조건이 표준에 만족될 경우 신청자의 요청에 의하여 국외출장(입회)시험이 가능합니다.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq_item">
-                  <button type="button" class="faq_question">
-                    <span class="faq_q_label">Q</span>
-                    <span class="faq_q_text">시험과 제품인증의 차이가 무엇인가요?</span>
-                  </button>
-                  <div class="faq_answer">
-                    <div class="faq_a_content">
-                      <span class="faq_a_label">A</span>
-                      <div class="faq_a_text">
-                        <p>시험은 시험절차에 따라 신청자가 제출한 시험품의 특성을 결정(측정)하는 작업으로 표준에 의해 수행된 시험의 결과물은 시험인증서/성적서가 됩니다.<br>
-                          제품인증은 제품이 특정 요구사항을 충족한다는 보장을 제공하는 것입니다. 적합성에 대한 합부 평가를 내려 제품의 사용 및 출하가 가능하다고 입증해준다는 점이 시험과의 가장 큰 차이이며, 그 결과물은 인증서가 됩니다. 제품에 대한 동일성이 검증된다면 동일 제품에 대한 성능 또한 보장되고, 인증은 시험 또는 검사를 필요로 합니다.<br>
-                          신청자가 제출하고자 하는 결과물의 종류 및 필요에 따라 시험 또는 인증을 구분하여 신청해주시면 됩니다.                    					</p>
-                      </div>
-                    </div>
-                  </div>
+                <div class="radio">
+                  <p>개인정보 수집 및 이용에 동의합니다</p>
+                  <ul>
+                    <li>
+                      <label
+                        ><input type="radio" name="agree" value="agree" /><span
+                          >동의함</span
+                        ></label
+                      >
+                    </li>
+                    <li>
+                      <label
+                        ><input
+                          type="radio"
+                          name="agree"
+                          value="disagree"
+                        /><span>동의하지 않음</span></label
+                      >
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
-
-
-
-           <!-- paginations @@@_0820 마크업수정 -->
-           <div class="pagination flex_C">
-            <a href="#none" class="prev_first"><span class="hidden">처음으로</span></a>
-            <a href="#none" class="prev"><span class="hidden">이전으로</span></a>
-            <ul>
-                <li class="active"><a href="#none">1</a></li>
-                <li><a href="#none">2</a></li>
-                <li><a href="#none">3</a></li>
-                <li><a href="#none">4</a></li>
-                <li><a href="#none">5</a></li>
-                <li><a href="#none">6</a></li>
-                <li><a href="#none">7</a></li>
-                <li><a href="#none">8</a></li>
-                <li><a href="#none">9</a></li>
-                <li><a href="#none">10</a></li>
-            </ul>
-            <a href="#none" class="next"><span class="hidden">다음으로</span></a>
-            <a href="#none" class="next_last"><span class="hidden">맨끝으로</span></a>
-        </div>
+               <!--btn_box-->
+               <div class="btn_box flex_R">
+                <button type="button" data-btn="line">저장</button>
+                <a href="USR-KR-TCI-05-009.html"
+                  ><button type="button" data-btn="blue">
+                    목록
+                  </button></a
+                >
+              </div>
           </div>
         </div>
       </div>

@@ -15054,6 +15054,18 @@ section .fp-tableCell {
 .icon_accordion .acc_btn strong[icon-type="7"] {
   background: url(../images/sub/icon_acco_07.png) no-repeat left center/26px auto;
 }
+.icon_accordion .acc_btn strong[icon-type="8"] {
+  background: url(../images/sub/icon_acco_08.png) no-repeat left center/26px auto;
+}
+.icon_accordion .acc_btn strong[icon-type="9"] {
+  background: url(../images/sub/icon_acco_09.png) no-repeat left center/26px auto;
+}
+.icon_accordion .acc_btn strong[icon-type="10"] {
+  background: url(../images/sub/icon_acco_10.png) no-repeat left center/26px auto;
+}
+.icon_accordion .acc_btn strong[icon-type="11"] {
+  background: url(../images/sub/icon_acco_11.png) no-repeat left center/26px auto;
+}
 .icon_accordion .acc_content {
   display: none;
   border-radius: 0 0 14px 14px;

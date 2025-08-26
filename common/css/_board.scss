@@ -1167,10 +1167,13 @@ a{
                 tbody{
                     tr{
                         td{ 
-                            display: flex; justify-content: flex-start; align-items: center; padding: 0; line-height: 1.4em;
-                            &:before{display: inline-block !important; content: attr(data-th); width: auto; height: 20px; text-align: left; font-weight: 500; font-size: $fs-15; line-height: 1.4em; margin-right: 10px; color: #000}
-                            &:first-child{padding-top: 15px;}
-                            &:last-child{padding-bottom: 10px;}
+                            justify-content: flex-start; align-items: flex-start; padding: 0; line-height: 1.3em;
+                            &:before{display: inline-block !important; content: attr(data-th); width: auto; height: 20px; text-align: left; font-weight: 500; font-size: $fs-15; line-height: 1.3em; margin-right: 10px; color: #000; }
+                            
+                            &:not(:first-child){padding-top: 10px;}
+                            &:first-child{padding-top: 20px;}
+                            &:last-child{padding-bottom: 15px;}
+                            
                         }
                     }
                 }

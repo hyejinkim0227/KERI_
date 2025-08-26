@@ -4749,11 +4749,10 @@ a[data-btn=arrow] {
     border-top: 0;
   }
   .tableB.type3 table tbody tr td {
-    display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     padding: 0;
-    line-height: 1.4em;
+    line-height: 1.3em;
   }
   .tableB.type3 table tbody tr td:before {
     display: inline-block !important;
@@ -4763,15 +4762,18 @@ a[data-btn=arrow] {
     text-align: left;
     font-weight: 500;
     font-size: 0.9375rem;
-    line-height: 1.4em;
+    line-height: 1.3em;
     margin-right: 10px;
     color: #000;
   }
+  .tableB.type3 table tbody tr td:not(:first-child) {
+    padding-top: 10px;
+  }
   .tableB.type3 table tbody tr td:first-child {
-    padding-top: 15px;
+    padding-top: 20px;
   }
   .tableB.type3 table tbody tr td:last-child {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
   }
 }
 

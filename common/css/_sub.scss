@@ -241,6 +241,11 @@ p{
         font-weight: 400;
         position: absolute; left: 0; top: 0;
     }
+
+
+    &.markB{
+        &::before {color: $color-blue}
+    }
     @media (max-width: 1080px) {
         font-size: $fs-15;
     }

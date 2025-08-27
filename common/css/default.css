@@ -3194,6 +3194,19 @@ a.btn_blue.report {
   padding: 0 60px 0 30px;
   background: #1f60c2 url(../images/sub/member_email_outlink_white.png) no-repeat right 30px center/auto 16px;
 }
+a.btn_white {
+  border-radius: 10px;
+  padding: 0 30px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #424242;
+  color: #333;
+  width: 250px;
+  padding: 0 60px 0 30px;
+  background: #fff url(../images/sub/member_email_outlink.png) no-repeat right 30px center/auto 16px;
+}
 a.btn_line {
   background: #fff;
   color: #000;
@@ -7563,6 +7576,102 @@ span[data-what][data-what=green] {
   }
 }
 
+.TEC_info {
+  max-width: 1214px;
+  margin: 0 auto;
+}
+.TEC_info h3 {
+  font-size: 1.375rem;
+  font-family: "SBAggro", "Pretendard";
+  font-weight: 500;
+  color: #fff;
+  border-radius: 50%;
+  margin: 0 auto 55px;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../images/sub/circle.png) no-repeat center;
+}
+.TEC_info ul {
+  display: flex;
+  gap: 30px;
+  position: relative;
+}
+.TEC_info ul li {
+  width: calc((100% - 60px) / 3);
+  padding: 0 30px 25px;
+  background: #f1f7fb;
+  border-radius: 20px;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.4em;
+  text-align: center;
+}
+.TEC_info ul li strong {
+  font-size: 1.25rem;
+  font-family: "SBAggro", "Pretendard";
+  font-weight: 500;
+  color: #000;
+  line-height: 98px;
+  height: 75px;
+  display: block;
+  text-align: center;
+  margin: 0 0 15px;
+  border-bottom: 1px solid #cdd3db;
+}
+.TEC_info ul::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 62px;
+  background: url(../images/sub/line.png) no-repeat center bottom/100% auto;
+  position: absolute;
+  top: -55px;
+  left: 0;
+  z-index: 2;
+}
+@media (max-width: 1080px) {
+  .TEC_info h3 {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    background-size: 100% auto;
+  }
+  .TEC_info ul {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .TEC_info ul li {
+    width: 100%;
+    padding: 0 25px 25px;
+    position: relative;
+    font-size: 16px;
+  }
+  .TEC_info ul li strong {
+    font-size: 18px;
+    line-height: 70px;
+    height: 60px;
+  }
+  .TEC_info ul li::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 36px;
+    position: absolute;
+    left: 0;
+    top: -30px;
+    background: url(../images/sub/line2.png) no-repeat center bottom/auto auto;
+    z-index: 2;
+  }
+  .TEC_info ul::before {
+    display: none;
+  }
+}
+
 @keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
@@ -11356,6 +11465,9 @@ p {
   position: absolute;
   left: 0;
   top: 0;
+}
+.mark.markB::before {
+  color: #1f60c2;
 }
 @media (max-width: 1080px) {
   .mark {

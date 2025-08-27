@@ -7390,6 +7390,179 @@ span[data-what][data-what=green] {
   width: auto;
 }
 
+.family {
+  display: flex;
+  justify-content: space-between;
+}
+.family > div:first-child {
+  width: 360px;
+}
+.family > div.tableB {
+  width: calc(100% - 360px);
+}
+@media (max-width: 1080px) {
+  .family {
+    flex-direction: column;
+  }
+  .family > div:first-child {
+    width: 100%;
+  }
+  .family > div:first-child figure {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .family > div:first-child figure img {
+    height: 200px;
+  }
+  .family > div.tableB {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .mw150 {
+    width: 150px;
+  }
+}
+@media (max-width: 720px) {
+  .mw150 {
+    width: auto !important;
+  }
+}
+
+.process_6 {
+  background: #f4f6f9;
+  border-radius: 20px;
+  padding: 50px;
+  transition: all 0.3s;
+}
+.process_6 > ul {
+  display: flex;
+  align-items: stretch;
+  gap: 50px;
+}
+.process_6 > ul li {
+  display: flex;
+  width: calc((100% - 100px) / 3);
+  position: relative;
+}
+.process_6 > ul li > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border: 1px solid #cdd3db;
+  border-radius: 14px;
+  background: #fff;
+  flex: 1;
+  transition: all 0.3s;
+  height: 90px;
+}
+.process_6 > ul li > div strong {
+  font-size: 1.125rem;
+  font-family: "SBAggro", "Pretendard";
+  font-weight: 500;
+  color: #424242;
+  line-height: 1.4em;
+}
+.process_6 > ul li > div b {
+  display: block;
+  width: 45px;
+  height: 45px;
+  line-height: 50px;
+  background: #1f60c2;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-family: "SBAggro", "Pretendard";
+  text-align: center;
+}
+.process_6 > ul li:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 100%;
+  background: url(../images/sub/process_arr.png) no-repeat right 20px center;
+  position: absolute;
+  right: -50px;
+  bottom: 0;
+}
+.process_6 > ul.reverse {
+  flex-direction: row-reverse;
+  margin-top: 50px;
+}
+.process_6 > ul.reverse li:after {
+  transform: rotate(180deg);
+}
+.process_6 > ul.reverse li:first-child:after {
+  display: none;
+}
+.process_6 > ul:first-child li:last-child:after {
+  right: calc(50% - 25px);
+  transform: translate(50%, -50%);
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  transform: rotate(90deg);
+}
+@media (max-width: 1200px) {
+  .process_6 {
+    padding: 30px;
+  }
+}
+@media (max-width: 1080px) {
+  .process_6 > ul {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .process_6 > ul li {
+    width: 100%;
+  }
+  .process_6 > ul li > div {
+    height: 76px;
+  }
+  .process_6 > ul li > div b {
+    height: 36px;
+    line-height: 40px;
+    width: 36px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  .process_6 > ul li > div strong {
+    font-size: 16px;
+    text-align: left;
+  }
+  .process_6 > ul li:after {
+    width: 30px !important;
+    height: 30px !important;
+    background: url(../images/sub/process_arr.png) no-repeat center;
+    bottom: -30px !important;
+    transform: rotate(90deg);
+    right: calc(50% - 15px) !important;
+  }
+  .process_6 > ul.reverse {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .process_6 > ul.reverse li:after {
+    width: 30px !important;
+    height: 30px !important;
+    background: url(../images/sub/process_arr.png) no-repeat center;
+    bottom: -30px;
+    transform: rotate(90deg) !important;
+    right: calc(50% - 15px) !important;
+    top: auto !important;
+  }
+  .process_6 > ul.reverse li:first-child:after {
+    display: block;
+  }
+  .process_6 > ul.reverse li:last-child:after {
+    display: none;
+  }
+}
+
 @keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
@@ -14854,26 +15027,76 @@ p {
   border-radius: 6px;
   width: 36px;
   height: 36px;
-  line-height: 36px;
+  line-height: 40px;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
+  font-family: "SBAggro", "Pretendard";
 }
 .procedures li b {
   font-size: 22px;
   line-height: 30px;
   font-weight: 500;
+  font-family: "SBAggro", "Pretendard";
 }
 .procedures li p {
   font-size: 16px;
-  line-height: 28px;
+  line-height: 1.5em;
   color: #444;
   letter-spacing: -0.3px;
+}
+.procedures.type501 li {
+  background: url(../images/sub/icon_501_1.png) no-repeat center left 30px/100px auto;
+}
+.procedures.type501 li[icon-type="2"] {
+  background-image: url(../images/sub/icon_501_2.png);
+}
+.procedures.type501 li[icon-type="3"] {
+  background-image: url(../images/sub/icon_501_3.png);
+}
+.procedures.type501 li[icon-type="4"] {
+  background-image: url(../images/sub/icon_501_4.png);
+}
+.procedures.type501 li[icon-type="5"] {
+  background-image: url(../images/sub/icon_501_5.png);
+}
+.procedures.type501 li[icon-type="6"] {
+  background-image: url(../images/sub/icon_501_6.png);
+}
+.procedures.type501 li[icon-type="7"] {
+  background-image: url(../images/sub/icon_501_7.png);
+}
+.procedures.type501 li[icon-type="8"] {
+  background-image: url(../images/sub/icon_501_8.png);
+}
+.procedures.type501 li[icon-type="9"] {
+  background-image: url(../images/sub/icon_501_9.png);
+}
+.procedures.type501 li[icon-type="10"] {
+  background-image: url(../images/sub/icon_501_10.png);
+}
+.procedures.type501 li[icon-type="11"] {
+  background-image: url(../images/sub/icon_501_11.png);
+}
+@media (max-width: 1080px) {
+  .procedures.type501 li {
+    background-size: 70px auto;
+    padding: 20px 20px 20px 120px;
+    width: 100%;
+  }
+  .procedures.type501 li b {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .procedures.type501 li p {
+    font-size: 15px;
+    line-height: 24px;
+  }
 }
 @media (max-width: 1080px) {
   .procedures li {
     background-size: 70px auto;
-    padding: 30px 20px 30px 120px;
+    padding: 20px 20px 20px 120px;
     width: 100%;
   }
   .procedures li b {

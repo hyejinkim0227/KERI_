@@ -3341,14 +3341,38 @@ p{
             background-image: url(../images/sub/icon_procedures_16.png);
         }
         span{ position: absolute; top: -20px; left: 30px;  background: #17469d; text-align: center;
-        border-radius: 6px; width: 36px; height: 36px; line-height: 36px; color: #fff;
-         font-size:14px; font-weight: 500;
+        border-radius: 6px; width: 36px; height: 36px; line-height: 40px; color: #fff;
+         font-size:14px; font-weight: 500; font-family: $ff-sbaggro;
        }
-        b{font-size:22px; line-height: 30px; font-weight: 500;}
-        p{font-size:16px; line-height: 28px; color: #444; letter-spacing: -0.3px;}
+        b{font-size:22px; line-height: 30px; font-weight: 500; font-family: $ff-sbaggro;}
+        p{font-size:16px; line-height: 1.5em; color: #444; letter-spacing: -0.3px;}
     }
+
+    &.type501{
+        li{
+            background: url(../images/sub/icon_501_1.png) no-repeat center left 30px/ 100px auto;
+            &[icon-type="2"] {background-image: url(../images/sub/icon_501_2.png);}
+            &[icon-type="3"] {background-image: url(../images/sub/icon_501_3.png);}
+            &[icon-type="4"] {background-image: url(../images/sub/icon_501_4.png);}
+            &[icon-type="5"] {background-image: url(../images/sub/icon_501_5.png);}
+            &[icon-type="6"] {background-image: url(../images/sub/icon_501_6.png);}
+            &[icon-type="7"] {background-image: url(../images/sub/icon_501_7.png);}
+            &[icon-type="8"] {background-image: url(../images/sub/icon_501_8.png);}
+            &[icon-type="9"] {background-image: url(../images/sub/icon_501_9.png);}
+            &[icon-type="10"] {background-image: url(../images/sub/icon_501_10.png);}
+            &[icon-type="11"] {background-image: url(../images/sub/icon_501_11.png);}
+        }
+        @media (max-width: 1080px) {
+            li{background-size: 70px auto;  padding: 20px 20px 20px 120px;width: 100%;
+                
+                b{font-size:20px; line-height: 26px;}
+                p{font-size:15px; line-height: 24px;}
+            }
+        }
+    }
+
     @media (max-width: 1080px) {
-        li{background-size: 70px auto;  padding: 30px 20px 30px 120px;width: 100%;
+        li{background-size: 70px auto;  padding: 20px 20px 20px 120px;width: 100%;
             
             b{font-size:20px; line-height: 26px;}
             p{font-size:15px; line-height: 24px;}

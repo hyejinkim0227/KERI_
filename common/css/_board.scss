@@ -2510,3 +2510,87 @@ span[data-what]{
         }
     }
 }
+
+
+//패밀리기업
+.family{
+    display: flex; justify-content: space-between;
+    >div{
+        &:first-child{width: 360px}
+        &.tableB{ width: calc(100% - 360px); }   
+    }
+    @media (max-width: 1080px) {
+        flex-direction: column;
+        >div{
+            &:first-child{width: 100%;
+                figure{text-align: center; margin-bottom: 20px;
+                    img{height: 200px}
+                }
+            }
+            &.tableB{width: 100%;} 
+        }
+    }
+}
+
+.mw150{
+    @media (max-width: 1080px) {width: 150px;}
+    @media (max-width: 720px) {width: auto!important;}
+}
+
+
+//채용안내 프로세스
+.process_6{
+    background: #f4f6f9; border-radius: 20px; padding: 50px; transition: all 0.3s;
+
+    >ul{
+        display: flex; align-items: stretch; gap: 50px;
+
+        li{
+            display: flex; width: calc((100% - 100px) / 3); position: relative;
+
+            >div{
+                display: flex; justify-content: space-between; align-items: center; padding: 0 20px; border: 1px solid #cdd3db; border-radius: 14px; background: #fff; flex: 1; transition: all 0.3s; height: 90px;
+                
+                strong{font-size: $fs-18; font-family: $ff-sbaggro; font-weight: 500; color: #424242; line-height: 1.4em;}
+                b{display: block; width: 45px; height: 45px; line-height: 50px; background: $color-blue; border-radius: 12px; color: #fff; font-size: $fs-18; font-weight: 500; font-family: $ff-sbaggro; text-align: center;}
+
+            }
+            &:after{content: ''; display: block; width: 50px; height: 100%; background: url(../images/sub/process_arr.png) no-repeat  right 20px center; position: absolute; right: -50px; bottom: 0;}
+        }
+        &.reverse{
+            flex-direction: row-reverse; margin-top: 50px;
+            li{
+                &:after{transform: rotate(180deg);}
+                &:first-child:after{display: none;}
+            }
+        }
+        &:first-child{
+            li{
+                &:last-child:after{right: calc(50% - 25px); transform: translate(50%, -50%); bottom: -50px; width: 50px; height: 50px; background-position: center; transform: rotate(90deg);}
+            }
+        }
+    }
+    @media (max-width: 1200px) {padding: 30px;}
+
+    @media (max-width: 1080px) {
+        >ul{flex-direction: column; gap: 30px;
+            li{
+                width: 100%;
+                >div{height: 76px;
+                    b{height: 36px; line-height: 40px; width: 36px; font-size: 14px; border-radius: 8px;} 
+                    strong{font-size: 16px; text-align: left;}
+                }
+                &:after{width: 30px!important; height: 30px!important; background: url(../images/sub/process_arr.png) no-repeat center; bottom: -30px!important; transform: rotate(90deg); right: calc(50% - 15px)!important;}
+            }
+            &.reverse{
+                flex-direction: column; margin-top: 30px;
+                li{
+                    &:after{width: 30px!important; height: 30px!important; background: url(../images/sub/process_arr.png) no-repeat center; bottom: -30px; transform: rotate(90deg)!important; right: calc(50% - 15px)!important; top: auto!important;}
+
+                    &:first-child:after{display: block;}
+                    &:last-child:after{display: none;}
+                }
+            }
+        }
+    }
+} 

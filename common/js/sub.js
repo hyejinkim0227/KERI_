@@ -794,5 +794,13 @@ $(document).ready(function() {
   
   // 첫 번째 항목의 content를 보이도록 설정
   $('.icon_accordion li:first-child.active .acc_content').show();
+  
+  // map_pin_item 클릭 시 active 클래스 추가
+  $('.map_pin_item').on('click', function() {
+    // 모든 map_pin_item에서 active 클래스 제거
+    $('.map_pin_item').removeClass('active');
+    // 클릭된 요소에 active 클래스 추가
+    $(this).addClass('active');
+  });
 });
 

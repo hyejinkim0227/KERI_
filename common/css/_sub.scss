@@ -4061,3 +4061,158 @@ justify-content: space-between;
         }
     }
 }
+
+
+.map_box{
+    .map_img_wrap{ margin-bottom: 30px; border-radius: 37px; overflow: hidden;
+        position: relative; height: 880px;
+        // .map_img{
+        //     border-radius: 37px;
+        // }
+        .map_pin_wrap{ cursor: pointer; height: 100%; width: 100%;
+            background: url(../images/sub/img_map.png) no-repeat center;
+         
+            .map_pin_item{   width: 34px;     cursor: pointer;
+                height: 41px;  position: absolute;
+                transform: translate(-50%, -50%);
+                background: url(../images/sub/icon_map_pin_black.png) no-repeat center;
+           
+                span{font-size: 12px; color: #fff; width: 100%; font-weight: 500; text-align: center; line-height: 29px;}
+                b{display: none;}
+                &.active{ height: 44px; padding: 10px; width: fit-content; display: flex;
+                        align-items: center; gap: 5px; margin-top: -16px;
+                    background: #fff; border-radius: 4px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    b{display: block;}
+                    span{position: unset; background: #1f60c2; border-radius: 50%; width: 20px;
+                         height: 20px; line-height: 20px;
+                         transform: none;
+                    }
+                    &:after{ content: ''; display: block; position: absolute; bottom: -10px; left: 40%;
+                        width: 0;
+                        height: 0;
+                        border-left: 10px solid transparent;   /* 좌측 투명 */
+                        border-right: 10px solid transparent;  /* 우측 투명 */
+                        border-top: 10px solid #fff;
+                     
+                    }
+                }
+            }
+        }
+    }
+    .map_list{ border: 1px solid #dedede; border-radius: 14px;
+       tr{
+        &:last-child{
+            td{
+                border-bottom: none;
+            }
+        }
+
+            td{ min-height: 50px;
+             
+                &:last-child{
+                    border-right: none;
+                }
+            }
+        
+       }
+        td{ gap: 10px; padding: 10px 16px; 
+            align-items: center;
+            border-right: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
+            position: relative;
+            padding-left: 30px;padding-left: 48px;
+            vertical-align: middle;
+            span{  margin-right: 10px; width: 24px; height: 24px; border-radius: 6px; font-weight: 500;
+                background: #dcecf9; font-size: 12px; line-height: 24px; text-align: center;
+                position: absolute; left: 16px; top: 47%; transform: translateY(-50%);
+            }
+        }
+    }
+ .map_area{ margin-top: 80px; 
+    .map_area_wrap{
+        border-radius: 37px; overflow: hidden;
+
+    }
+   
+    ul{ margin-top: 20px; display: flex; padding: 0 40px;
+        background: #f4f6f9; width: 100%;
+        border-radius: 20px;  height: 90px;
+        li{
+            width: 50%; display: flex; align-items: center; gap: 40px;
+            b{
+                font-weight: 600; font-size: 18px; flex-shrink: 0; padding-left: 30px;
+                &[data-type="address"]{  
+                    background: url(../images/sub/icon_map_pin.png) no-repeat left center/ 14px auto; padding-left: 30px;
+                }
+                &[data-type="tel"]{
+                    background: url(../images/sub/icon_phone-call.png) no-repeat left center/ 20px auto; padding-left: 30px;
+                }
+            }
+            span{ color: #666666; font-size: 17px;
+            }
+        }
+    }
+ }   
+ @media (max-width: 1080px) {
+    .map_list{
+        tr{
+            &:last-child{
+                td{
+                    border-bottom: 1px solid #dedede;
+                    &:last-child{
+                        border-bottom: 0;
+                    }
+                }
+            }
+            
+        }
+        td{     line-height: 32px;
+            border-right: none;
+        }
+    }
+    .map_area{
+        ul{ flex-direction: column; gap: 10px;
+            padding: 16px 20px; height: auto;
+          li{        align-items: flex-start; gap: 20px;
+              width: 100%;
+              b{width: 93px;}
+            }
+        }
+    }
+ }
+}
+
+
+//기관상징 소개
+.border_box_wrap{ display: flex; gap: 40px; width: 100%;
+    >div{ flex: 1;}
+    .border_box{ flex-shrink: 0; padding: 50px 40px; 
+        min-height: 280px ;
+        display: flex; align-items: center;
+        border: 1px solid #dedede; border-radius: 20px;
+      flex: 1; justify-content: center;
+      &.w400{
+        flex: unset
+      }
+     
+    }
+    &+.btn_wrap{margin-top: 40px;
+        display: flex; gap: 25px; justify-content: flex-end;
+      }
+    @media (max-width: 1080px) {
+        flex-direction: column;
+        .border_box{ 
+            width: 100%;
+            flex-direction: column;
+            padding: 30px 20px;
+            &.w400{
+                flex: 1; width: 100%;
+            }
+        }
+        &+.btn_wrap{ flex-wrap: wrap; gap: 10px;
+            justify-content: flex-start;
+          }
+
+    }
+
+}

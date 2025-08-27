@@ -243,7 +243,7 @@
 /*아이템 정렬*/
 .dot > li {
   position: relative;
-  padding-left: 16px !important;
+  padding-left: 16px;
   line-height: 1.4em;
   margin-bottom: 5px;
 }
@@ -263,11 +263,14 @@
     font-size: 0.9375rem;
     margin-bottom: 3px;
   }
+  .dot > li:before {
+    top: 8px;
+  }
 }
 
 .dot_blue > li {
   position: relative;
-  padding-left: 16px !important;
+  padding-left: 16px;
   line-height: 1.4em;
   margin-bottom: 5px;
 }
@@ -3784,17 +3787,25 @@ a[data-btn=arrow] {
   padding: 25px;
   border-radius: 17px;
 }
-.caution li {
+.caution > li {
   background: url(../images/sub/icon_bullet.png) no-repeat left top 5px/17px auto;
   padding-left: 28px;
   line-height: 28px;
   font-size: 16px;
   color: #da4d4f;
 }
+.caution > li ul {
+  margin-top: 5px;
+}
+.caution > li ul li {
+  color: #424242;
+  margin-bottom: 2px;
+  padding-left: 15px;
+}
 .caution[data-type=gray] {
   background: #f4f6f9;
 }
-.caution[data-type=gray] li {
+.caution[data-type=gray] > li {
   color: #454545;
   background: url(../images/sub/icon_caption_gray.png) no-repeat left top 5px/17px auto;
   padding-left: 28px;
@@ -3803,13 +3814,14 @@ a[data-btn=arrow] {
 }
 @media (max-width: 1080px) {
   .caution {
-    padding: 20px 15px;
+    padding: 15px;
   }
-  .caution li {
-    font-size: 0.875rem;
-    line-height: 20px;
+  .caution > li {
+    font-size: 0.9375rem;
+    line-height: 1.4em;
     background-size: 16px auto;
     margin-top: 5px;
+    background-position: left top 2px;
   }
 }
 
@@ -6983,7 +6995,7 @@ span[data-status][data-status=order1] {
     text-align: center;
   }
   .apply_list li div figure img {
-    height: 30px;
+    height: 25px;
   }
 }
 .apply_list.link li {
@@ -7023,10 +7035,11 @@ span[data-status][data-status=order1] {
   .apply_list.link li div {
     padding: 20px;
     background-size: auto 16px;
+    height: 90px;
   }
   .apply_list.link li div dl dt {
     text-align: left;
-    font-size: 18px;
+    font-size: 17px;
   }
   .apply_list.link li div.outlink {
     background-size: auto 14px;
@@ -7292,6 +7305,10 @@ span[data-status][data-status=order1] {
 
 .W100 {
   width: 100% !important;
+}
+
+.mtb2010 {
+  margin: 20px 0 10px !important;
 }
 
 .btn_blue.arrow {
@@ -10714,6 +10731,20 @@ section .fp-tableCell {
   font-family: "SBAggro", "Pretendard";
   margin: 40px 0 20px;
   line-height: 1;
+}
+@media (max-width: 1080px) {
+  .sub_tit_sm {
+    font-size: 1.0625rem;
+  }
+}
+
+p {
+  line-height: 1.4em;
+}
+@media (max-width: 1080px) {
+  p {
+    font-size: 0.9375rem;
+  }
 }
 
 .intro_box .intro_visual {

@@ -251,16 +251,17 @@ $w720 : 720px;
 //블릿 적용
 .dot{ 
     > li{ 
-        position: relative; padding-left: 16px !important; line-height: 1.4em; margin-bottom: 5px;
+        position: relative; padding-left: 16px; line-height: 1.4em; margin-bottom: 5px;
         &:before{position: absolute; content: ''; display: block;left: 0px; top: 10px; background-color: #b9b9b9; width: 4px; height: 4px; border-radius: 50%; }
     
         @media (max-width: 1080px) {
             font-size: $fs-15; margin-bottom: 3px;
+            &:before{top: 8px;}
         }
     }
 }
 .dot_blue{ 
-    > li{ position: relative; padding-left: 16px !important; line-height: 1.4em; margin-bottom: 5px;
+    > li{ position: relative; padding-left: 16px; line-height: 1.4em; margin-bottom: 5px;
         &:before{position: absolute; content: ''; display: block;left: 0px; top: 10px; background-color: #17469d; width: 4px; height: 4px; border-radius: 50%; }
     
         @media (max-width: 1080px) {

@@ -25,6 +25,11 @@
 .sub_tit_sm{
     font-size: $fs-22; font-weight: 400; font-family: $ff-sbaggro;
     margin: 40px 0 20px; line-height: 1;
+    @media (max-width: 1080px) {font-size: $fs-17;}
+}
+p{
+    line-height: 1.4em;
+    @media (max-width: 1080px) {font-size: $fs-15;}
 }
 
 

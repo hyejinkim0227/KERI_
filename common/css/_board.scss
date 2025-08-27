@@ -500,18 +500,21 @@ a{
 
 .caution{ //0824 공통 사용으로 titlebox에서 뺌
     background: #f4f6f9; padding: 25px; border-radius: 17px;
-    li{
+    >li{
         background: url(../images/sub/icon_bullet.png) no-repeat left top 5px / 17px auto; padding-left: 28px; line-height: 28px; font-size: 16px; color: #da4d4f;
+        ul{margin-top: 5px;
+            li{color: #424242; margin-bottom: 2px; padding-left: 15px;}
+        }
     }
     &[data-type="gray"]{
         background: #f4f6f9;
-        li{ color: #454545;
+        >li{ color: #454545;
             background: url(../images/sub/icon_caption_gray.png) no-repeat left top 5px / 17px auto; padding-left: 28px; line-height: 28px; font-size: 16px; 
         }
     }
     @media (max-width: 1080px) {
-        padding: 20px 15px;
-        li{font-size: $fs-14; line-height: 20px; background-size: 16px auto; margin-top: 5px;}
+        padding: 15px;
+        >li{font-size: $fs-15; line-height: 1.4em; background-size: 16px auto; margin-top: 5px; background-position: left top 2px;}
     }
 }
 // 탭 리스트
@@ -2317,7 +2320,7 @@ span[data-status]{
                     dd{font-size: 14px; line-height: 1.4em; text-align: center;}
                 }
 
-                figure{img{height: 30px;}}
+                figure{img{height: 25px;}}
             }
         }
     }
@@ -2340,8 +2343,8 @@ span[data-status]{
             li{
                 width: 100%; 
                 div{
-                    padding: 20px; background-size: auto 16px;
-                    dl dt{text-align: left; font-size: 18px;}
+                    padding: 20px; background-size: auto 16px; height: 90px;
+                    dl dt{text-align: left; font-size: 17px;}
                     &.outlink{background-size: auto 14px;}
                 }
             }
@@ -2464,6 +2467,8 @@ span[data-status]{
 
 .red{color: #f43f3f; vertical-align: top;}
 .W100{width: 100% !important;}
+.mtb2010{margin: 20px 0 10px !important;}
+
 .btn_blue{
     &.arrow{
         display: inline-block; background-image: url(../../common/images/sub/icon_arrow.png); background-position: right 30px center; background-repeat: no-repeat; padding: 0 90px 0 30px;

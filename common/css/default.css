@@ -4824,6 +4824,11 @@ a[data-btn=arrow] {
     align-items: flex-start;
     padding: 0;
     line-height: 1.3em;
+    font-size: 1rem;
+  }
+  .tableB.type3 table tbody tr td a {
+    display: inline-block;
+    width: auto;
   }
   .tableB.type3 table tbody tr td:before {
     display: inline-block !important;
@@ -4832,19 +4837,19 @@ a[data-btn=arrow] {
     height: 20px;
     text-align: left;
     font-weight: 500;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     line-height: 1.3em;
     margin-right: 10px;
     color: #000;
   }
   .tableB.type3 table tbody tr td:not(:first-child) {
-    padding-top: 10px;
+    padding-top: 7px;
   }
   .tableB.type3 table tbody tr td:first-child {
     padding-top: 20px;
   }
   .tableB.type3 table tbody tr td:last-child {
-    padding-bottom: 15px;
+    padding-bottom: 20px;
   }
 }
 
@@ -7322,6 +7327,10 @@ span[data-status][data-status=order1] {
 
 .mtb2010 {
   margin: 20px 0 10px !important;
+}
+
+.lineh20 {
+  line-height: 1.5em !important;
 }
 
 .btn_blue.arrow {
@@ -11158,6 +11167,7 @@ p {
   gap: 40px;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: stretch;
 }
 .intro_box .area .flex li {
   flex: 0 0 calc(33.333% - 27px);
@@ -11166,14 +11176,20 @@ p {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  height: 100%;
 }
 .intro_box .area .flex li a figure {
   border-radius: 20px;
   overflow: hidden;
+  aspect-ratio: 3/2;
 }
 .intro_box .area .flex li a figure img {
   transition: all 0.3s;
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 .intro_box .area .flex li a b {
   font-size: 1.375rem;
@@ -11272,7 +11288,7 @@ p {
         */
   }
   .intro_box .area .flex {
-    gap: 10px;
+    gap: 20px;
   }
   .intro_box .area .flex li {
     flex: 0 0 calc(50% - 10px);
@@ -11284,6 +11300,11 @@ p {
   .intro_box .area .flex li a b {
     font-size: 1rem;
     font-weight: 500;
+  }
+  .intro_box .area .flex li a figure img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 

@@ -2516,7 +2516,6 @@ span[data-what]{
     }
 }
 
-
 //패밀리기업
 .family{
     display: flex; justify-content: space-between;
@@ -2549,16 +2548,13 @@ span[data-what]{
 
     >ul{
         display: flex; align-items: stretch; gap: 50px;
-
         li{
             display: flex; width: calc((100% - 100px) / 3); position: relative;
-
             >div{
                 display: flex; justify-content: space-between; align-items: center; padding: 0 20px; border: 1px solid #cdd3db; border-radius: 14px; background: #fff; flex: 1; transition: all 0.3s; height: 90px;
                 
                 strong{font-size: $fs-18; font-family: $ff-sbaggro; font-weight: 500; color: #424242; line-height: 1.4em;}
                 b{display: block; width: 45px; height: 45px; line-height: 50px; background: $color-blue; border-radius: 12px; color: #fff; font-size: $fs-18; font-weight: 500; font-family: $ff-sbaggro; text-align: center;}
-
             }
             &:after{content: ''; display: block; width: 50px; height: 100%; background: url(../images/sub/process_arr.png) no-repeat  right 20px center; position: absolute; right: -50px; bottom: 0;}
         }
@@ -2599,6 +2595,66 @@ span[data-what]{
         }
     }
 } 
+
+.process_img{
+    ul{
+        display: flex; gap: 20px;
+        li{
+            display: flex; flex-direction: column; justify-content: flex-start; align-items: center; width: calc((100% - 100px) / 6); background: #eff6ff; border-radius: 20px; padding: 30px 20px 25px; position: relative;
+            figure{display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+                img{width: auto; height: 80px;}
+            }
+            strong{font-size: $fs-16; font-weight: 500; color: #000; line-height: 1.4em; display: block; text-align: center;}
+            &::before{content: ''; display: block; width: 40px; height: 40px; background: url(../images/sub/arrow_6.png) no-repeat center / auto 100%; position: absolute; right: -30px; bottom: calc(50% - 20px); z-index: 2;}
+        }
+        &.reverse{margin-top: 20px; flex-direction: row-reverse;
+            li{
+                &::before{transform: rotate(180deg);}
+                &:first-child{
+                    &::before{transform: rotate(90deg); right: calc(50% - 20px); top: -30px; }
+                }
+            }
+        }
+        &:first-child li:last-child{&::before{display: none;}}
+    }
+
+    @media (max-width: 1080px) {
+        ul{
+            flex-direction: column; gap: 20px;
+            li{
+                width: 100%; flex-direction: row; align-items: center;
+                figure{margin-bottom: 0; margin-right: 20px; width: 100px; justify-content: flex-end;
+                    img{height: 50px;}
+                }
+                strong{font-size: 16px; text-align: left; }
+                &::before{right: calc(50% - 20px); bottom: -30px; width: 40px; height: 40px; transform: rotate(90deg);}
+            }
+            &.reverse{ flex-direction: column;
+                li{
+                    &::before{right: calc(50% - 20px); bottom: -30px; width: 40px; height: 40px; transform: rotate(90deg); right: calc(50% - 20px); top: -30px;}
+                }
+            }
+        }
+    }
+}
+
+.wideBG{width: 100%; background-color: #f4f6f9; padding:60px 0; margin-top: 60px; position: relative;
+    .sub_tit{margin-top: 0; position: relative; z-index: 1;}
+    .process_img{
+        ul{
+            li{background-color: #fff;
+                &::before{background-image: url(../images/sub/arrow_66.png);}
+            }
+        }
+    }
+    &::before{content: ''; display: block; width: 300%; height: 100%; background-color: #f4f6f9; position: absolute; top: 0; left: -100%; z-index: 0;}
+
+    @media (max-width: 1080px) {}
+}
+
+.sub_tit {
+    .num{ width: 34px; height: 34px; line-height: 38px; text-align: center; background: #17469d; border-radius: 8px; color: #fff; font-size: $fs-14; font-weight: 400; font-family: $ff-sbaggro; display: inline-block; margin-right: 13px;}
+}
 
 //기술이전 소개
 .TEC_info{

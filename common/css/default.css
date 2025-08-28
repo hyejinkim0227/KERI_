@@ -7585,6 +7585,153 @@ span[data-what][data-what=green] {
   }
 }
 
+.process_img ul {
+  display: flex;
+  gap: 20px;
+}
+.process_img ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: calc((100% - 100px) / 6);
+  background: #eff6ff;
+  border-radius: 20px;
+  padding: 30px 20px 25px;
+  position: relative;
+}
+.process_img ul li figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.process_img ul li figure img {
+  width: auto;
+  height: 80px;
+}
+.process_img ul li strong {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.4em;
+  display: block;
+  text-align: center;
+}
+.process_img ul li::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url(../images/sub/arrow_6.png) no-repeat center/auto 100%;
+  position: absolute;
+  right: -30px;
+  bottom: calc(50% - 20px);
+  z-index: 2;
+}
+.process_img ul.reverse {
+  margin-top: 20px;
+  flex-direction: row-reverse;
+}
+.process_img ul.reverse li::before {
+  transform: rotate(180deg);
+}
+.process_img ul.reverse li:first-child::before {
+  transform: rotate(90deg);
+  right: calc(50% - 20px);
+  top: -30px;
+}
+.process_img ul:first-child li:last-child::before {
+  display: none;
+}
+@media (max-width: 1080px) {
+  .process_img ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .process_img ul li {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+  .process_img ul li figure {
+    margin-bottom: 0;
+    margin-right: 20px;
+    width: 100px;
+    justify-content: flex-end;
+  }
+  .process_img ul li figure img {
+    height: 50px;
+  }
+  .process_img ul li strong {
+    font-size: 16px;
+    text-align: left;
+  }
+  .process_img ul li::before {
+    right: calc(50% - 20px);
+    bottom: -30px;
+    width: 40px;
+    height: 40px;
+    transform: rotate(90deg);
+  }
+  .process_img ul.reverse {
+    flex-direction: column;
+  }
+  .process_img ul.reverse li::before {
+    right: calc(50% - 20px);
+    bottom: -30px;
+    width: 40px;
+    height: 40px;
+    transform: rotate(90deg);
+    right: calc(50% - 20px);
+    top: -30px;
+  }
+}
+
+.wideBG {
+  width: 100%;
+  background-color: #f4f6f9;
+  padding: 60px 0;
+  margin-top: 60px;
+  position: relative;
+}
+.wideBG .sub_tit {
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
+}
+.wideBG .process_img ul li {
+  background-color: #fff;
+}
+.wideBG .process_img ul li::before {
+  background-image: url(../images/sub/arrow_66.png);
+}
+.wideBG::before {
+  content: "";
+  display: block;
+  width: 300%;
+  height: 100%;
+  background-color: #f4f6f9;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 0;
+}
+.sub_tit .num {
+  width: 34px;
+  height: 34px;
+  line-height: 38px;
+  text-align: center;
+  background: #17469d;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: "SBAggro", "Pretendard";
+  display: inline-block;
+  margin-right: 13px;
+}
+
 .TEC_info {
   max-width: 1214px;
   margin: 0 auto;

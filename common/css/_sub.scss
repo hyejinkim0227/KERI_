@@ -1,10 +1,17 @@
 .sub_tit{ font-size: $fs-34;; font-weight:400;  margin: 60px 0 30px;
     font-family: $ff-sbaggro;  line-height: 1;
+
     &::after {
         content: ''; display: inline-block;  width: 10px; height: 10px;
         border-radius: 50%;  background-color: $color-blue2; margin-left: 11px;
         vertical-align: bottom; margin-bottom: 7px;
     }
+    &[data-color="green"]{
+        &::after {
+            background-color: #1fb1c2;
+        }
+    }
+    
     @media (max-width: 1080px) {
         font-size: $fs-24; margin-bottom: 20px;
         &::after{

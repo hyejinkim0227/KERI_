@@ -436,7 +436,7 @@ $(document).ready(function() {
     $(controlSelector1).addClass('hidden');
   }
 
-  const swiperSelector2 = '.support_list2.swiper';
+  const swiperSelector2 = '.support_list2.swiper:not(#public-swiper):not(#private-swiper)';
   const controlSelector2 = '.support_list2.control';
   // 슬라이드 개수 조회
   const item_size2 = $(`${swiperSelector2} .swiper-slide`).length;
@@ -627,6 +627,79 @@ $(document).ready(function() {
       });
     }
   }
+});
+
+// KERITAGE 페이지 공공분야/민간분야 슬라이더
+$(document).ready(function() {
+  // 공공분야 슬라이더
+  if ($('#public-swiper').length > 0) {
+    const publicItemSize = $('#public-swiper .swiper-slide').length;
+    
+    let publicOption = {
+      slidesPerView: 'auto',
+      speed: 600,
+      loop: true,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: '.public-next',
+        prevEl: '.public-prev',
+      }
+    };
+
+    if (publicItemSize <= 2) {
+      publicOption.loop = false;
+    }
+
+    if (publicItemSize > 2) {
+      // 슬라이드 복사
+      const publicSlides = $('#public-swiper .swiper-slide').clone();
+      $('#public-swiper .swiper-wrapper').append(publicSlides);
+    }
+
+    window.publicSwiper = new Swiper('#public-swiper', publicOption);
+  }
+
+  // 민간분야 슬라이더
+  if ($('#private-swiper').length > 0) {
+    const privateItemSize = $('#private-swiper .swiper-slide').length;
+    
+    let privateOption = {
+      slidesPerView: 'auto',
+      speed: 600,
+      loop: true,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: '.private-next',
+        prevEl: '.private-prev',
+      }
+    };
+
+    if (privateItemSize <= 2) {
+      privateOption.loop = false;
+    }
+
+    if (privateItemSize > 2) {
+      // 슬라이드 복사
+      const privateSlides = $('#private-swiper .swiper-slide').clone();
+      $('#private-swiper .swiper-wrapper').append(privateSlides);
+    }
+
+    window.privateSwiper = new Swiper('#private-swiper', privateOption);
+  }
+});
+
+// KERITAGE 슬라이드 클릭 시 모달 열기 (기존 모달 시스템 활용)
+$(document).ready(function() {
+  $(document).on('click', '.support_item.swiper-slide', function(e) {
+    e.preventDefault();
+    // 기존 모달 시스템의 btn_modal_open 클릭 이벤트 트리거
+    const $modal = $('#modal-keritage');
+    
+    if ($modal.length && typeof preventBodyScroll === 'function') {
+      preventBodyScroll();
+      $modal.addClass('show');
+    }
+  });
 });
 
 // 기술지원 아코디언 기능

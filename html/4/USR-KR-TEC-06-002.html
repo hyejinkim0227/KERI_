@@ -796,7 +796,15 @@
         <div id="sub" class="bg_01">
           <!-- sub_title -->
           <div class="sub_top">
-            <h2 class="title">보유기기 안내</h2>
+            <h2 class="title">보유기기 및 이용료 안내</h2>
+            <!-- @@@_0831 기획변경으로 서브상단 탭메뉴 추가 -->
+            <div class="tabmenu">
+              <ul>
+                <li><a href="USR-KR-TEC-06-001.html">소재분석실 안내</a></li>
+                <li><a href="USR-KR-TEC-06-002.html" class="active">보유기기 및 이용료 안내</a></li>
+                <li><a href="USR-KR-TEC-06-003.html">분석의뢰절차</a></li>
+              </ul>
+          </div>
           </div>
 
           <div class="white">
@@ -923,183 +931,189 @@
                   </div>
                   <button type="button" data-btn="blackBg">검색</button>
               </div>
-          </div>
-              <!-- table 형태B -->
-              <div class="tableB">
-                <table class="h-auto">
+              </div>
+              <!-- table 형태B @@@_0831 기획변경으로 마크업 수정 -->
+              <p class="right mb10">※ 중소기업: 기준 단가의 50% 적용</p>
+              <div class="tableB type3">
+                <table>
+                  <caption>보유기기 및 이용료 안내</caption>
+                  <colgroup>
+                    <col style="width: 100px">
+                    <col style="width: auto">
+                    <col style="width: 200px" span="2">
+                    <col style="width: 250px">
+                    <col style="width: 120px">
                   <thead>
                     <tr>
-                      <th class="w100">번호</th>
-                      <th class="auto">기기명</th>
-                      <th class="w300">모델</th>
+                      <th>번호</th>
+                      <th>장비명</th>
+                      <th>모델명</th>
+                      <th>제작사</th>
+                      <th>분석항목</th>
+                      <th>이용료 <span class="block">(원/시간)</span></th>
                     </tr>
                   </thead>
 
                   <tbody>
                     <tr>
-                      <td data-type="number">
-                        <b><span>1</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html">
-                          <strong>normal-SEM</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>Hitachi, S-2700</b></td>
+                      <td>1</td>
+                      <td class="left"><a href="#">전계방사형주사전자현미경</a></td>
+                      <td>S4800</td>
+                      <td>HITACHI</td>
+                      <td>FESEM/EDS</td>
+                      <td>43,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>2</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>FE-SEM </strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>Hitachi, S-2700</b></td>
+                      <td>2</td>
+                      <td class="left"><a href="#">전계방사형주사전자현미경</a></td>
+                      <td>MIRA II LMH</td>
+                      <td>TESCAN</td>
+                      <td>FESEM/EDS</td>
+                      <td>43,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>3</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>AFM</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>Park systems, XE-100</b></td>
+                      <td>3</td>
+                      <td class="left"><a href="#">고분해능 전계방사형 주사전자현미경</a></td>
+                      <td>SU8600</td>
+                      <td>HITACHI</td>
+                      <td>FESEM/EDS</td>
+                      <td>79,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>4</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>Raman</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>NTEGRA SPECTRA, NT-MDT</b></td>
+                      <td>4</td>
+                      <td class="left"><a href="#">원자힘현미경</a></td>
+                      <td>NX10</td>
+                      <td>Park Systems</td>
+                      <td>표면구조 및 roughness</td>
+                      <td>38,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>5</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>TG-DTA</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>TA instrument, SDT Q-600</b></td>
+                      <td>5</td>
+                      <td class="left"><a href="#">X-선 회절분석기</a></td>
+                      <td>X-Pert PRO MPD</td>
+                      <td>Malvern Panalytical</td>
+                      <td>phase id, thin film, micro-xrd</td>
+                      <td>40,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>6</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>TMA</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>TA instrument, Q-400</b></td>
+                      <td>6</td>
+                      <td class="left"><a href="#">실시간 X-선 구조 분석기</a></td>
+                      <td>Empyrean</td>
+                      <td>Malvern Panalytical</td>
+                      <td>phase id, thin film, micro-xrd</td>
+                      <td>62,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>7</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>DSC</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>TA instrument, Q-1000</b></td>
+                      <td>7</td>
+                      <td class="left"><a href="#">열중량분석기시차열분석기</a></td>
+                      <td>SDT Q600</td>
+                      <td>TA instruments</td>
+                      <td>열중량 분석</td>
+                      <td>13,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>8</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>normal-XRD</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>Philips, PW 3830-PW 1710</b></td>
+                      <td>8</td>
+                      <td class="left"><a href="#">열기계분석기</a></td>
+                      <td>TMA Q400</td>
+                      <td>TA instruments</td>
+                      <td>열변형 분석</td>
+                      <td>13,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>9</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>XRD-MPD</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>Philips, X-Pert PRO MPD</b></td>
+                      <td>9</td>
+                      <td class="left"><a href="#">시차주사열량계</a></td>
+                      <td>DSC Q1000</td>
+                      <td>TA instruments</td>
+                      <td>결정화도, 융점, 유리전이온도 등</td>
+                      <td>13,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>10</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>PSDA(입도분석기)</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>Melvern Mastersizer 2000E</b></td>
+                      <td>10</td>
+                      <td class="left"><a href="#">시차주사열량계</a></td>
+                      <td>DSC8000</td>
+                      <td>Perkin Elmer</td>
+                      <td>결정화도, 융점, 유리전이온도 등</td>
+                      <td>23,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>11</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>중고온용 열전특성 측정 시스템</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>ZEM-3(M-10)</b></td>
+                      <td>11</td>
+                      <td class="left"><a href="#">라만분광기</a></td>
+                      <td>NTEGRA SPECTRA</td>
+                      <td>NT-MDT</td>
+                      <td>라만분광 분석</td>
+                      <td>41,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>12</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>전기전도도 및 열전특성 측정 시스템</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>ZEM-3(M-8)</b></td>
+                      <td>12</td>
+                      <td class="left"><a href="#">열물성 측정 시스템</a></td>
+                      <td>PPMS-ECII</td>
+                      <td>Quantum Design</td>
+                      <td>열물성측정</td>
+                      <td>32,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>13</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>열전도도 측정 시스템</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>NanoFlash® LFA 447</b></td>
+                      <td>13</td>
+                      <td class="left"><a href="#">전기전도도 및 열전특성 측정 시스템</a></td>
+                      <td>ZEM-3(M8)</td>
+                      <td>Ulvac</td>
+                      <td>열전특성측정</td>
+                      <td>22,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>14</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>고온용 열전도도 측정시스템</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>NanoFlash® LFA 457</b></td>
+                      <td>14</td>
+                      <td class="left"><a href="#">열전특성 측정 시스템(중고온용)</a></td>
+                      <td>ZEM-3(M10)</td>
+                      <td>Ulvac</td>
+                      <td>열전특성(중고온용)측정</td>
+                      <td>21,000</td>
                     </tr>
                     <tr>
-                      <td data-type="number">
-                        <b><span>15</span></b>
-                      </td>
-                      <td data-type="title">
-                        <a href="USR-KR-TEC-06-003.html"
-                          ><strong>PPMS</strong></a
-                        >
-                      </td>
-                      <td data-type="con"><b>PPMS-ECⅡ Quantum Design(USA)</b></td>
+                      <td>15</td>
+                      <td class="left"><a href="#">열확산도 측정 시스템</a></td>
+                      <td>LFA447</td>
+                      <td>NETZSCH</td>
+                      <td>열확산도측정</td>
+                      <td>21,000</td>
+                    </tr>
+                    <tr>
+                      <td>16</td>
+                      <td class="left"><a href="#">열확산도 측정시스템(고온용)</a></td>
+                      <td>LFA457</td>
+                      <td>NETZSCH</td>
+                      <td>열확산도(고온용)측정</td>
+                      <td>36,000</td>
+                    </tr>
+                    <tr>
+                      <td>17</td>
+                      <td class="left"><a href="#">열전재료 정밀 비열측정시스템</a></td>
+                      <td>DSC204 F1</td>
+                      <td>NETZSCH</td>
+                      <td>비열측정</td>
+                      <td>23,000</td>
+                    </tr>
+                    <tr>
+                      <td>18</td>
+                      <td class="left"><a href="#">제벡 계수와 열전도율 동시 분포 평가 시스템</a></td>
+                      <td>STPM-1000</td>
+                      <td>Ulvac</td>
+                      <td>제벡계수 및 열전도율 분포 측정</td>
+                      <td>35,000</td>
+                    </tr>
+                    <tr>
+                      <td>19</td>
+                      <td class="left"><a href="#">자외선-가시광선-근적외선 분광분석기</a></td>
+                      <td>V-770</td>
+                      <td>Jasco</td>
+                      <td>흡광도, 투과도 측정</td>
+                      <td>31,000</td>
+                    </tr>
+                    <tr>
+                      <td>20</td>
+                      <td class="left"><a href="#">대면적솔라시뮬레이터</a></td>
+                      <td>8x8inch,AAB급</td>
+                      <td>Hs Technologies</td>
+                      <td>태양전지 특성 (I-V curve) 측정</td>
+                      <td>32,000</td>
                     </tr>
                   </tbody>
                 </table>

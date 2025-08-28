@@ -1211,12 +1211,13 @@ a{
                 tbody{
                     tr{
                         td{ 
-                            justify-content: flex-start; align-items: flex-start; padding: 0; line-height: 1.3em;
-                            &:before{display: inline-block !important; content: attr(data-th); width: auto; height: 20px; text-align: left; font-weight: 500; font-size: $fs-15; line-height: 1.3em; margin-right: 10px; color: #000; }
-                            
-                            &:not(:first-child){padding-top: 10px;}
+                            justify-content: flex-start; align-items: flex-start; padding: 0; line-height: 1.3em; font-size: $fs-16;
+
+                            a{display: inline-block; width: auto;}
+                            &:before{display: inline-block !important; content: attr(data-th); width: auto; height: 20px; text-align: left; font-weight: 500; font-size: $fs-16; line-height: 1.3em; margin-right: 10px; color: #000; }  
+                            &:not(:first-child){padding-top: 7px;}
                             &:first-child{padding-top: 20px;}
-                            &:last-child{padding-bottom: 15px;}
+                            &:last-child{padding-bottom: 20px;}
                             
                         }
                     }
@@ -2604,6 +2605,7 @@ span[data-status]{
 .red{color: #f43f3f; vertical-align: top;}
 .W100{width: 100% !important;}
 .mtb2010{margin: 20px 0 10px !important;}
+.lineh20{line-height: 1.5em !important;}
 
 .btn_blue{
     &.arrow{

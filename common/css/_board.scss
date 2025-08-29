@@ -962,7 +962,7 @@ a{
     
         th {
             background-color: #f8f9fa; font-weight: 500; color: $color-bk; padding-left: 30px;
-            //border-bottom: 1px solid #d9d9d9;
+            border-bottom: 1px solid #d9d9d9;
             border-right: 1px solid #d9d9d9;
             label{cursor: unset;}
             &:last-of-type {border-right: 0;}
@@ -970,10 +970,13 @@ a{
         
         tbody {
           tr {
+            th{ border-bottom: 1px solid #d9d9d9;}
             td {
+           
               text-align: center;
               border-left: 0;
-              border: 1px solid #d9d9d9; border-color: 0;
+              border: 1px solid #d9d9d9;
+              border-top: 0;
 
               &.left {text-align: left;}
               .br{display: block;}

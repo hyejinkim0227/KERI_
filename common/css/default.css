@@ -4585,6 +4585,7 @@ a[data-btn=arrow] {
   font-weight: 500;
   color: #000;
   padding-left: 30px;
+  border-bottom: 1px solid #d9d9d9;
   border-right: 1px solid #d9d9d9;
 }
 .tableB table th label {
@@ -4593,11 +4594,14 @@ a[data-btn=arrow] {
 .tableB table th:last-of-type {
   border-right: 0;
 }
+.tableB table tbody tr th {
+  border-bottom: 1px solid #d9d9d9;
+}
 .tableB table tbody tr td {
   text-align: center;
   border-left: 0;
   border: 1px solid #d9d9d9;
-  border-color: 0;
+  border-top: 0;
 }
 .tableB table tbody tr td.left {
   text-align: left;
